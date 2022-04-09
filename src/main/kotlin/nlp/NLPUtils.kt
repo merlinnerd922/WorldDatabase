@@ -13,6 +13,7 @@ import opennlp.tools.sentdetect.SentenceDetectorME
 import opennlp.tools.sentdetect.SentenceModel
 import opennlp.tools.tokenize.TokenizerME
 import opennlp.tools.tokenize.TokenizerModel
+import opennlp.tools.util.Span
 import utils.resourceObj
 import java.io.InputStream
 
@@ -74,3 +75,17 @@ internal fun SentenceDetectorME.detectSentencesAndProcess(text: String): List<Se
 }
 
 val ENGLISH_TAGGER: POSTaggerME = POSTaggerME(POSModel(getResource("en-pos-maxent.bin")))
+public fun getNamesFromSentenceAndSpanInfo(sentenceList: List<Sentence>, listOfSpans: List<List<Span>>): MutableList<String> {
+    // TODO
+    val namesFound = mutableListOf<String>();
+    for ((index, arraySpan) in listOfSpans!!.withIndex()) {
+        for (span: Span in arraySpan) {
+            println("${span.start} to ${span.end}");
+            val message = sentenceList[index]
+            val slice = message.tokensAsStringArray!!.slice(IntRange(span.start, span.end - 1))
+            val nameString = slice.joinToString(separator = " ");
+            namesFound.add(nameString)
+        }
+    }
+    return namesFound
+}

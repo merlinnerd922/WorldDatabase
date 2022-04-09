@@ -15,12 +15,12 @@ class Chunk : SmartAny() {
     /**
      * The list of tags constituting this chunk.
      */
-    private val tagList : MutableList<String> = mutableListOf();
+    public var tagList : MutableList<String> = mutableListOf();
 
     /**
      * The list of tokens constituting this chunk.
      */
-    private val tokenList : MutableList<String> = mutableListOf();
+    public var tokenList : MutableList<String> = mutableListOf();
 
     /**
      * Append the provided tag/token pair to this chunk by adding them to their respective lists.

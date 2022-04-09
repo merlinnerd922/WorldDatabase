@@ -31,7 +31,7 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.13.2.2")
     implementation("com.fasterxml.jackson.core:jackson-core:2.13.2")
     implementation("com.github.javafaker:javafaker:1.0.2")
-
+    implementation(kotlin("reflect"))
     implementation("io.github.bonigarcia:webdrivermanager:5.1.0")
 
 

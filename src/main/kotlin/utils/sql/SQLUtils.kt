@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package utils.sql
 
 import utils.sql.SQLUtils.Companion.appendGroupByIfNonNull
@@ -76,7 +78,7 @@ class SQLUtils {
 
 
         /**
-         * TODO
+         * Append the provided (where) string as a WHERE clause to the given string (sqlString), if it is non-null.
          */
         fun appendWhereIfNonNull(sqlString: String, where: String?): String {
             if (where == null) {
@@ -99,7 +101,10 @@ internal fun ResultSet?.skipAndGetNextRowAsArray(): List<Any> {
     return getCurrentRowAsArray()
 }
 
-public fun Connection?.selectAllFrom(tableName: String): ResultSet? = this!!.executeQuery(
+/**
+ * Select ALL rows from the given table.
+ */
+fun Connection?.selectAllFrom(tableName: String): ResultSet? = this!!.executeQuery(
     select = "*",
     from = tableName
 )
@@ -113,9 +118,9 @@ internal fun getPreparedUpdateStatement(
 ) = "update `${schema}`.`${table}` SET `${setColumn}` = '${setValue.replace("'", "\\'")}' WHERE $where"
 
 /**
- * TODO
+ * Insert the given (values) into the provided schema's table.
  */
-public fun Connection.insert(schema: String, table: String, values: List<Any?>) {
+fun Connection.insert(schema: String, table: String, values: List<Any?>) {
     val queryStr = "insert into ${schema}.${table} values ${MySQLUtils.toInsertValuesStr(values)}"
     this.prepareStatement(queryStr).execute();
 }
@@ -145,3 +150,19 @@ fun Connection.executeQuery(
     return this.prepareStatement(builtString).executeQuery();
 }
 
+/**
+ * Delete all contents from the given table within the given schema, then turn on safe update mode to prevent any
+ * further deletions.
+ */
+fun Connection.deleteContentsThenSecure(schema: String, table: String) {
+    executeStatement("SET SQL_SAFE_UPDATES = 0");
+    executeStatement("DELETE FROM $schema.$table");
+    executeStatement("SET SQL_SAFE_UPDATES = 1");
+}
+
+/**
+ * Execute the provided statement.
+ */
+private fun Connection.executeStatement(statement: String) {
+    this.prepareStatement(statement).execute()
+}

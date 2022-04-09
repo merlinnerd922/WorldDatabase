@@ -28,7 +28,15 @@ class Sentence() : SmartAny() {
      * The list of part-of-speech tags corresponding to the tokens in this sentence.
      */
     private var tags: List<Tag>? = null;
+
+    /**
+     * The list of tokens corresponding to different words and punctuation marks in this sentence.
+     */
     private var tokens: List<Token>? = null;
+
+    /**
+     * TODO
+     */
     internal var chunkList: MutableList<Chunk>? =null;
     internal var chunksAsStrings: Array<String>? = null;
     internal var tagsAsStringArray: Array<String>? = null;

@@ -1,24 +1,33 @@
 package webBrowsing
 
-import org.openqa.selenium.By
-import org.openqa.selenium.WebDriver
 import java.lang.Integer.parseInt
 
 /**
  * TODO
  */
 class RPDRWikipediaPage(
-    val wikipediaSite: WikipediaSite
+
+    /**
+     * TODO
+     */
+    private val wikipediaSite: WikipediaSite
 ) {
-    fun insertContestants(season: Int) {
-        val tableLocatorByChildCaptionPartial =
+    /**
+     * TODO
+     */
+    fun addContestants(season: Int) {
+
+        // Retrieve a locator for the table we're extracting info from, by making use of its caption.
+        val tableLocatorByChildCaptionPartial: WebTableLocator =
             wikipediaSite.webDriver.getTableLocatorByChildCaptionPartial("List of contestants on season $season of ")
+
+        // TODO
         for (tableRowElement in tableLocatorByChildCaptionPartial) {
-            val queenName = tableRowElement.getColumn(1).asString()
+            val queenName = tableRowElement.getTextByColNum(colNum = 1)
             RPDRSqlUtils.insertQueen(
                 queenName,
-                parseInt(tableRowElement.getColumn(2).asString().removeSuffix("[a]")),
-                tableRowElement.getColumn(3).asString()
+                parseInt(tableRowElement.getTextByColNum(colNum = 2).removeSuffix("[a]")),
+                tableRowElement.getTextByColNum(colNum = 3)
             )
             println("Inserting $queenName");
         }
@@ -26,9 +35,3 @@ class RPDRWikipediaPage(
 
 }
 
-private fun WebDriver.getTableLocatorByChildCaptionPartial(caption: String): WebTableLocator {
-    val webTable = WebTableLocator()
-    webTable.locator = By.xpath("//table[caption[contains(text(), \"$caption\")]]")
-    webTable.driver = this;
-    return webTable
-}

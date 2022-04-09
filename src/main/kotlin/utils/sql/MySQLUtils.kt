@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package utils.sql
 
 import java.sql.Connection
@@ -7,6 +9,11 @@ import java.sql.Connection
  */
 public class MySQLUtils {
     companion object {
+
+        /**
+         * Convert the given list of objects into a String, the way it is formatted when being provided to an INSERT
+         * statement as part of the VALUES clause.
+         */
         public fun toInsertValuesStr(values: List<Any?>): String {
             var builtString = "(";
             for ((index, value) in values.withIndex()) {
@@ -29,7 +36,11 @@ public class MySQLUtils {
     }
 }
 
-private fun Connection.update(schema: String, table: String, setColumn: String, setValue: String, where: String): Int {
+/**
+ * Update the value of the row/column entry in the table (schema).(table) within the column (setColumn) to (setValue),
+ * where the provided condition (where) holds.
+ */
+private fun Connection.updateColumnValue(schema: String, table: String, setColumn: String, setValue: String, where: String): Int {
     val query = getPreparedUpdateStatement(
         schema = schema,
         table = table,
