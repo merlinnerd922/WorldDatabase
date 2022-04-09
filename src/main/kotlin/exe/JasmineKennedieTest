@@ -1,0 +1,15 @@
+import nlp.ENGLISH_SENTENCE_DETECTOR
+import nlp.Sentence
+import nlp.detectSentencesAndProcess
+
+
+/**
+ * TODO
+ */
+fun main() {
+    val text: String = getResource("jasmineKennedie.txt").readText();
+    val sentences: List<Sentence> = ENGLISH_SENTENCE_DETECTOR.detectSentencesAndProcess(text);
+    processFacts(sentences);
+}
+
+
