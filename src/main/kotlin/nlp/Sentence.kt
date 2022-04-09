@@ -2,7 +2,17 @@ package nlp
 
 import SmartAny
 
-class Sentence(private val sentenceString: String) : SmartAny() {
+class Sentence : SmartAny {
+
+    constructor() {
+
+    }
+    private var sentenceString: String? = null;
+
+    constructor(sentenceString: String) : this() {
+        this.sentenceString = sentenceString
+    }
+
     private var tags: List<Tag>? = null;
     private var tokens: List<Token>? = null;
     internal var chunkList: MutableList<Chunk>? =null;
@@ -26,7 +36,9 @@ class Sentence(private val sentenceString: String) : SmartAny() {
         newChunkProcessor.processChunks(this);
     }
 
-
+    fun extractProperNouns(): List<Chunk> {
+        return this.chunkList!!.filter { it.partOfSpeech == "NP" };
+    }
 
 
 }

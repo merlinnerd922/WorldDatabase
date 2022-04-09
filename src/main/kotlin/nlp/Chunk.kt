@@ -7,6 +7,7 @@ import SmartAny
  */
 class Chunk : SmartAny() {
 
+    var partOfSpeech: String? = null;
     val tagList : MutableList<String> = mutableListOf();
     val tokenList : MutableList<String> = mutableListOf();
 

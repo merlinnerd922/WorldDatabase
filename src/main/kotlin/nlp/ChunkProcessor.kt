@@ -2,6 +2,9 @@ package nlp
 
 import java.lang.IllegalStateException
 
+/**
+ * TODO
+ */
 class ChunkProcessor {
 
     var verbose: Boolean = false;
@@ -30,8 +33,7 @@ class ChunkProcessor {
     private fun processChunkWhileOnNonChunk(chunk: String, i: Int) {
         when {
             chunk.startsWith("B") -> {
-                markStartChunk(i)
-                currentChunkState = ChunkState.BEGINNING;
+                markBeginningOfChunk(chunk, i)
             }
             chunk.startsWith("I") -> {
                 throw IllegalStateException()
@@ -51,8 +53,7 @@ class ChunkProcessor {
         when {
             chunk.startsWith("B") -> {
                 markEndOfChunk();
-                markStartChunk(i)
-                currentChunkState = ChunkState.BEGINNING;
+                markBeginningOfChunk(chunk, i)
             }
             chunk.startsWith("I") -> {
                 addTokenAndTagAt(currentChunk, i)
@@ -73,8 +74,7 @@ class ChunkProcessor {
     private fun processChunkWhileAtBeginning(chunk: String, currentChunk: Chunk?, i: Int) {
         if (chunk.startsWith("B")) {
             markEndOfChunk();
-            markStartChunk(i)
-            currentChunkState = ChunkState.BEGINNING;
+            markBeginningOfChunk(chunk, i)
         } else if (chunk.startsWith("I")) {
             addTokenAndTagAt(currentChunk, i)
             currentChunkState = ChunkState.MIDDLE;
@@ -89,22 +89,27 @@ class ChunkProcessor {
         return
     }
 
+    private fun markBeginningOfChunk(chunk: String, i: Int) {
+        markStartChunk(i)
+        currentChunk!!.partOfSpeech = chunk.removePrefix("B-")
+        currentChunkState = ChunkState.BEGINNING;
+    }
+
     /**
      * TODO
      */
     private fun processFromStart(chunk: String, i: Int) {
         when {
             chunk.startsWith("B") -> {
-                markStartChunk(i)
-                ChunkState.BEGINNING;
+                markBeginningOfChunk(chunk, i);
             }
             chunk.startsWith("I") -> throw IllegalStateException()
             chunk.startsWith("O") -> {
                 markChunkOfLengthOne(i)
-                ChunkState.NON_CHUNK;
+                currentChunkState = ChunkState.NON_CHUNK;
             }
             else -> throw IllegalStateException()
-        }.also { currentChunkState = it }
+        }
     }
 
     private fun markChunkOfLengthOne(i: Int) {

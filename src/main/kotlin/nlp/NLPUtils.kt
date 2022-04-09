@@ -3,6 +3,8 @@ package nlp
 import getResource
 import opennlp.tools.chunker.ChunkerME
 import opennlp.tools.chunker.ChunkerModel
+import opennlp.tools.namefind.NameFinderME
+import opennlp.tools.namefind.TokenNameFinderModel
 import opennlp.tools.postag.POSModel
 import opennlp.tools.postag.POSTaggerME
 import opennlp.tools.sentdetect.SentenceDetectorME
@@ -22,8 +24,10 @@ fun getSentenceDetector(@Suppress("SameParameterValue") resourceName: String): S
 // TODO
 public val ENGLISH_SENTENCE_DETECTOR: SentenceDetectorME get() = getSentenceDetector("en-sent.bin")
 public val ENGLISH_TOKENIZER: TokenizerME get() = TokenizerME(TokenizerModel(getResource("en-token.bin")))
-val ENGLISH_POS_TAGGER get() = POSTaggerME(POSModel(getResource("en-pos-maxent.bin")))
-val ENGLISH_CHUNKER get() = ChunkerME(ChunkerModel(getResource("en-chunker.bin")))
+val ENGLISH_POS_TAGGER: POSTaggerME get() = POSTaggerME(POSModel(getResource("en-pos-maxent.bin")))
+val ENGLISH_CHUNKER: ChunkerME get() = ChunkerME(ChunkerModel(getResource("en-chunker.bin")))
+val ENGLISH_NAME_FINDER: NameFinderME
+    get() = NameFinderME(TokenNameFinderModel(getResource("en-ner-person.bin")))
 
 /**
  * TODO

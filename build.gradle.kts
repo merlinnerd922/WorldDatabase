@@ -18,7 +18,9 @@ dependencies {
     implementation("us.codecraft:xsoup:0.3.2")
     implementation("org.apache.commons:commons-lang3:3.12.0")
 
-
+    implementation("com.fasterxml.jackson.core:jackson-core:2.13.2")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.2.2")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.2")
 
 }
 
