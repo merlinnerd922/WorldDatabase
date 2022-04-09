@@ -5,24 +5,31 @@ import org.apache.commons.lang3.builder.ToStringStyle
 import java.lang.reflect.Field
 
 /**
- * TODO
+ * A generic version of the "Any" class with smart implementations of equals(), hashCode() and toString().
  */
 open class SmartAny {
-    override fun toString(): String {
-        val myself: Any = this
-        val builder: ReflectionToStringBuilder = object : ReflectionToStringBuilder(
+
+    /**
+     * A String builder that returns a String representation of an object, but only for non-null fields.
+     */
+    private val toStringBuilder: ReflectionToStringBuilder by lazy {
+
+        // Initialize a StringBuilder that only builds with non-null fields.
+        object : ReflectionToStringBuilder(
             this, ToStringStyle.SHORT_PREFIX_STYLE
         ) {
             override fun accept(field: Field): Boolean {
                 return try {
-                    super.accept(field) && field.get(myself) != null
+                    super.accept(field) && field.get(this) != null
                 } catch (e: IllegalAccessException) {
                     super.accept(field)
                 }
             }
         }
+    }
 
-        return builder.toString()
+    override fun toString(): String {
+        return toStringBuilder.toString()
     }
 
     override fun hashCode(): Int {

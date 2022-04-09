@@ -1,5 +1,8 @@
-package nlp
+package nlp.chunk
 
+/**
+ * TODO
+ */
 enum class ChunkState {
     NULL,
     BEGINNING,

@@ -1,5 +1,6 @@
-package nlp
+package nlp.chunk
 
+import nlp.Sentence
 import java.lang.IllegalStateException
 
 /**
@@ -17,7 +18,11 @@ class ChunkProcessor {
         this.sentence = sentence;
 
         for ((i, chunk) in sentence.chunksAsStrings!!.withIndex()) {
-            println("Processing chunk ${i};");
+
+            if (verbose) {
+                println("Processing chunk ${i};");
+            }
+
             when (currentChunkState) {
                 ChunkState.BEGINNING -> processChunkWhileAtBeginning(chunk, currentChunk, i)
                 ChunkState.MIDDLE -> processChunkWhileInMiddle(chunk, currentChunk, i)
@@ -32,23 +37,20 @@ class ChunkProcessor {
 
     private fun processChunkWhileOnNonChunk(chunk: String, i: Int) {
         when {
-            chunk.startsWith("B") -> {
-                markBeginningOfChunk(chunk, i)
-            }
-            chunk.startsWith("I") -> {
-                throw IllegalStateException()
-            }
+            chunk.startsWith("B") -> markBeginningOfChunk(chunk, i)
+            chunk.startsWith("I") -> throw IllegalStateException()
             chunk.startsWith("O") -> {
                 markChunkOfLengthOne(i)
                 currentChunkState = ChunkState.NON_CHUNK;
             }
-            else -> {
-                throw IllegalStateException();
-            }
+            else -> throw IllegalStateException()
         }
         return
     }
 
+    /**
+     * TODO
+     */
     private fun processChunkWhileInMiddle(chunk: String, currentChunk: Chunk?, i: Int) {
         when {
             chunk.startsWith("B") -> {

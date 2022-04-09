@@ -1,3 +1,5 @@
+package nlp
+
 import com.fasterxml.jackson.core.JsonParser
 import com.fasterxml.jackson.databind.DeserializationContext
 import com.fasterxml.jackson.databind.JsonDeserializer
@@ -5,6 +7,9 @@ import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import opennlp.tools.util.Span
 
+/**
+ * TODO
+ */
 class SpanDeserializer(@Suppress("unused") private val spanClass: Class<Span>) : JsonDeserializer<Span>() {
     override fun deserialize(p: JsonParser?, ctxt: DeserializationContext?): Span {
         val mapper = p!!.codec as ObjectMapper

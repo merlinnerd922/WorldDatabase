@@ -1,18 +1,31 @@
+@file:Suppress("unused")
+
 package nlp
 
 import SmartAny
+import nlp.chunk.Chunk
+import nlp.chunk.ChunkProcessor
 
-class Sentence : SmartAny {
+/**
+ * TODO
+ */
+class Sentence() : SmartAny() {
 
-    constructor() {
-
-    }
-    private var sentenceString: String? = null;
-
+    /**
+     * Construct a sentence from the provided String.
+     */
     constructor(sentenceString: String) : this() {
         this.sentenceString = sentenceString
     }
 
+    /**
+     * The String representation of this sentence.
+     */
+    private var sentenceString: String? = null;
+
+    /**
+     * The list of part-of-speech tags corresponding to the tokens in this sentence.
+     */
     private var tags: List<Tag>? = null;
     private var tokens: List<Token>? = null;
     internal var chunkList: MutableList<Chunk>? =null;
