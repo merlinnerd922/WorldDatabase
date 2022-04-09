@@ -1,5 +1,7 @@
 @file:Suppress("unused")
 
+package utils
+
 import java.io.File
 import java.nio.file.Paths
 
@@ -20,5 +22,5 @@ fun getResource(fileName: String) : File {
  * Write the provided string to the resource file provided by the given file name.
  */
 fun writeToResourceFile(filename: String, jsonString: String?) {
-    Paths.get("src", "main", "resources", filename).toFile().absoluteFile.writeText(jsonString!!);
+    Paths.get("src", "exe.main", "resources", filename).toFile().absoluteFile.writeText(jsonString!!);
 }

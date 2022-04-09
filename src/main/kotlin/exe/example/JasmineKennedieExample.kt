@@ -1,10 +1,10 @@
-package example
+package exe.example
 
-import JSONUtils
 import com.fasterxml.jackson.module.kotlin.readValue
-import getResource
+import utils.getResource
 import nlp.Sentence
 import opennlp.tools.util.Span
+import utils.JSONUtils
 
 /**
  * TODO
@@ -13,7 +13,7 @@ private fun getNamesFromJasmineKennedieFiles() {
     var jasmineKennedieText = getResource("jasmineKennedieFile.json").readText();
     val jasmineKennedieAnalysis: List<Sentence> = JSONUtils.mapper.readValue(jasmineKennedieText);
 //    val namesFound: List<Array<Span>> = jasmineKennedieAnalysis.map { ENGLISH_NAME_FINDER.find(it.tokensAsStringArray) }
-//    writeToResourceFile("jasmineKennedieNamesFound", namesFound.toJSONString());
+//    utils.writeToResourceFile("jasmineKennedieNamesFound", namesFound.toJSONString());
     val jasmineKennedieNamesFound = getResource("jasmineKennedieNamesFound").readText();
     val jasmineKennedieNameSpans: List<Array<Span>> = JSONUtils.mapper.readValue(jasmineKennedieNamesFound);
 

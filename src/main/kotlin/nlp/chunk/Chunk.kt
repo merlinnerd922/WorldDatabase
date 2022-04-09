@@ -1,6 +1,6 @@
 package nlp.chunk
 
-import SmartAny
+import utils.SmartAny
 
 /**
  * A grammatical chunk representing a concept representable by a single part-of-speech.

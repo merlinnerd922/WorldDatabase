@@ -1,6 +1,6 @@
 package nlp
 
-import SmartAny
+import utils.SmartAny
 
 class Tag(val tagString: String) : SmartAny() {
 

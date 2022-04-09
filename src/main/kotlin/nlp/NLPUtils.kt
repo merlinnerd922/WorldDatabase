@@ -1,6 +1,8 @@
+@file:Suppress("unused")
+
 package nlp
 
-import getResource
+import utils.getResource
 import opennlp.tools.chunker.ChunkerME
 import opennlp.tools.chunker.ChunkerModel
 import opennlp.tools.namefind.NameFinderME
@@ -11,7 +13,7 @@ import opennlp.tools.sentdetect.SentenceDetectorME
 import opennlp.tools.sentdetect.SentenceModel
 import opennlp.tools.tokenize.TokenizerME
 import opennlp.tools.tokenize.TokenizerModel
-import resourceObj
+import utils.resourceObj
 import java.io.InputStream
 
 fun getSentenceDetector(@Suppress("SameParameterValue") resourceName: String): SentenceDetectorME {
@@ -22,7 +24,15 @@ fun getSentenceDetector(@Suppress("SameParameterValue") resourceName: String): S
 
 
 // TODO
-public val ENGLISH_SENTENCE_DETECTOR: SentenceDetectorME get() = getSentenceDetector("en-sent.bin")
+
+/**
+ * A sentence detector, meant to detect sentences written in English.
+ */
+public val ENGLISH_SENTENCE_DETECTOR: SentenceDetectorME get() = SentenceDetectorME(SentenceModel(getResource("en-sent.bin")!!))
+
+/**
+ * A tokenizer meant to detect tokens written in the English language.
+ */
 public val ENGLISH_TOKENIZER: TokenizerME get() = TokenizerME(TokenizerModel(getResource("en-token.bin")))
 val ENGLISH_POS_TAGGER: POSTaggerME get() = POSTaggerME(POSModel(getResource("en-pos-maxent.bin")))
 val ENGLISH_CHUNKER: ChunkerME get() = ChunkerME(ChunkerModel(getResource("en-chunker.bin")))

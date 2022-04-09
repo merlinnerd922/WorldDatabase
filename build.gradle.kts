@@ -21,6 +21,19 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-core:2.13.2")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.13.2.2")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.2")
+    implementation("org.seleniumhq.selenium:selenium-java:4.1.3")
+
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.6.10")
+    implementation("mysql:mysql-connector-java:8.0.28")
+    implementation("org.apache.commons:commons-lang3:3.12.0")
+    implementation("com.konghq:unirest-java:4.0.0-RC2")
+    implementation("org.apache.httpcomponents:httpclient:4.5.13")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.2.2")
+    implementation("com.fasterxml.jackson.core:jackson-core:2.13.2")
+    implementation("com.github.javafaker:javafaker:1.0.2")
+
+    implementation("io.github.bonigarcia:webdrivermanager:5.1.0")
+
 
 }
 

@@ -2,12 +2,13 @@
 
 package nlp
 
-import SmartAny
+import utils.SmartAny
 import nlp.chunk.Chunk
 import nlp.chunk.ChunkProcessor
 
 /**
  * TODO
+ * A representation of a sentence, as processed by an NLP.
  */
 class Sentence() : SmartAny() {
 

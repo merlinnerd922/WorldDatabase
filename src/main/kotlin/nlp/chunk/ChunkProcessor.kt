@@ -11,7 +11,7 @@ class ChunkProcessor {
     var verbose: Boolean = false;
     private var sentence: Sentence? = null;
     private var currentChunk: Chunk? = null;
-    private var currentChunkState: ChunkState = ChunkState.NULL;
+    private var currentChunkProcessingState: ChunkProcessingState = ChunkProcessingState.NULL;
     private var chunkList: MutableList<Chunk> = mutableListOf();
 
     internal fun processChunks(sentence: Sentence) {
@@ -23,11 +23,11 @@ class ChunkProcessor {
                 println("Processing chunk ${i};");
             }
 
-            when (currentChunkState) {
-                ChunkState.BEGINNING -> processChunkWhileAtBeginning(chunk, currentChunk, i)
-                ChunkState.MIDDLE -> processChunkWhileInMiddle(chunk, currentChunk, i)
-                ChunkState.NULL -> processFromStart(chunk, i)
-                ChunkState.NON_CHUNK -> processChunkWhileOnNonChunk(chunk, i)
+            when (currentChunkProcessingState) {
+                ChunkProcessingState.BEGINNING -> processChunkWhileAtBeginning(chunk, currentChunk, i)
+                ChunkProcessingState.MIDDLE -> processChunkWhileInMiddle(chunk, currentChunk, i)
+                ChunkProcessingState.NULL -> processFromStart(chunk, i)
+                ChunkProcessingState.NON_CHUNK -> processChunkWhileOnNonChunk(chunk, i)
             }
         }
 
@@ -41,7 +41,7 @@ class ChunkProcessor {
             chunk.startsWith("I") -> throw IllegalStateException()
             chunk.startsWith("O") -> {
                 markChunkOfLengthOne(i)
-                currentChunkState = ChunkState.NON_CHUNK;
+                currentChunkProcessingState = ChunkProcessingState.NON_CHUNK;
             }
             else -> throw IllegalStateException()
         }
@@ -59,12 +59,12 @@ class ChunkProcessor {
             }
             chunk.startsWith("I") -> {
                 addTokenAndTagAt(currentChunk, i)
-                currentChunkState = ChunkState.MIDDLE;
+                currentChunkProcessingState = ChunkProcessingState.MIDDLE;
             }
             chunk.startsWith("O") -> {
                 markEndOfChunk();
                 markChunkOfLengthOne(i)
-                currentChunkState = ChunkState.NON_CHUNK;
+                currentChunkProcessingState = ChunkProcessingState.NON_CHUNK;
             }
             else -> {
                 throw IllegalStateException();
@@ -79,11 +79,11 @@ class ChunkProcessor {
             markBeginningOfChunk(chunk, i)
         } else if (chunk.startsWith("I")) {
             addTokenAndTagAt(currentChunk, i)
-            currentChunkState = ChunkState.MIDDLE;
+            currentChunkProcessingState = ChunkProcessingState.MIDDLE;
         } else if (chunk.startsWith("O")) {
             markEndOfChunk();
             markChunkOfLengthOne(i)
-            currentChunkState = ChunkState.NON_CHUNK;
+            currentChunkProcessingState = ChunkProcessingState.NON_CHUNK;
         } else {
             throw IllegalStateException();
         }
@@ -94,7 +94,7 @@ class ChunkProcessor {
     private fun markBeginningOfChunk(chunk: String, i: Int) {
         markStartChunk(i)
         currentChunk!!.partOfSpeech = chunk.removePrefix("B-")
-        currentChunkState = ChunkState.BEGINNING;
+        currentChunkProcessingState = ChunkProcessingState.BEGINNING;
     }
 
     /**
@@ -108,7 +108,7 @@ class ChunkProcessor {
             chunk.startsWith("I") -> throw IllegalStateException()
             chunk.startsWith("O") -> {
                 markChunkOfLengthOne(i)
-                currentChunkState = ChunkState.NON_CHUNK;
+                currentChunkProcessingState = ChunkProcessingState.NON_CHUNK;
             }
             else -> throw IllegalStateException()
         }
