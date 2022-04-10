@@ -2,21 +2,23 @@ package webBrowsing
 
 import org.openqa.selenium.By
 
-open class ByX(val internalXPath: String) {
+/**
+ * A wrapper around a By locator that exposes the XPath of this locator, which also is a mandatory field.
+ */
+open class ByX(private val internalXPath: String) {
 
-
-
+    /**
+     * Return the internal XPath of this locator.
+     */
     fun getXPath(): String {
         return internalXPath;
     }
 
-    fun toBy(): By? {
+    /**
+     * Return a By object wrapped around this locator's path.
+     */
+    fun toBy(): By {
         return By.xpath(internalXPath);
-    }
-
-    companion object {
-
-
     }
 
 }

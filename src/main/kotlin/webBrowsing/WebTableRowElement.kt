@@ -5,25 +5,27 @@ import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.pagefactory.ByChained
 
 /**
- * TODO
+ * An abstraction of a row in a table on a web page.
  */
 class WebTableRowElement(
+
+    /**
+     * The WebElement that this row object wraps around.
+     */
     private val webElement: WebElementXPathed
 ) {
 
     /**
-     * TODO
+     * Return the table cell element at the (columnIndex)th column within this row. Moreover, assert it exists.
      */
-    fun getColumn(columnIndex: Int): WebTableRowCellElement {
-
-
-
+    private fun getColumn(columnIndex: Int): WebTableRowCellElement {
         val findElements = webElement.findElements(ByX("td[${columnIndex}]"))
-        val xPath = webElement.getXPath();
         val cellElement: WebElementXPathed? = findElements.getOrNull(0);
-        val xpath = cellElement!!.getXPath();
-        return WebTableRowCellElement(cellElement.webElement);
+        return WebTableRowCellElement(cellElement!!.webElement);
     }
 
+    /**
+     * Return the text within the (colNum)th column within the row.
+     */
+    public fun getTextByColNum(colNum: Int) = getColumn(colNum).asString()
 }
-

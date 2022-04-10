@@ -3,8 +3,8 @@ package exe.program
 import org.openqa.selenium.WebDriver
 import utils.sql.MySQLDB
 import utils.sql.deleteContentsThenSecure
-import webBrowsing.RPDRWikipediaPage
-import webBrowsing.WikipediaSite
+import worldDB.RPDRWikipediaPage
+import WikipediaSite
 import webBrowsing.getChromeDriver
 
 /**

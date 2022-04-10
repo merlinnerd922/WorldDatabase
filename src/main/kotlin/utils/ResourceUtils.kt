@@ -22,7 +22,7 @@ fun getResource(fileName: String) : File {
  * Write the provided string to the resource file provided by the given file name.
  */
 fun writeToMainResourceFile(filename: String, jsonString: String?) {
-    Paths.get("src", "exe.example.main", "resources", filename).toFile().absoluteFile.writeText(jsonString!!);
+    Paths.get(System.getProperty("user.dir"),"src", "main", "resources", filename).toFile().absoluteFile.writeText(jsonString!!);
 }
 
 /**

@@ -1,7 +1,6 @@
 package webBrowsing
 
-import org.openqa.selenium.By
-
-class ByXChained(vararg args : String) : ByX(args.joinToString(separator = "/")) {
-
-}
+/**
+ * A wrapper around a ByChained object that exposes the internal XPath.
+ */
+class ByXChained(vararg args : String) : ByX(args.joinToString(separator = "/"))

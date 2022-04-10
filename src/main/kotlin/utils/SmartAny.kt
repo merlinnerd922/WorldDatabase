@@ -11,10 +11,34 @@ import java.lang.reflect.Field
  */
 open class SmartAny {
 
-    /**
-     * A String builder that returns a String representation of an object, but only for non-null fields.
-     */
-    private val toStringBuilder: ReflectionToStringBuilder by lazy {
+    public override fun toString(): String {
+        var myself = this;
+        val builder: ReflectionToStringBuilder = object : ReflectionToStringBuilder(
+            this, ToStringStyle.SHORT_PREFIX_STYLE
+        ) {
+            override fun accept(field: Field): Boolean {
+                return super.accept(field) && field.get(myself) != null;
+            }
+        }
+
+        return builder.toString()
+    }
+
+    public override fun hashCode(): Int {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    public override fun equals(other: Any?): Boolean {
+        return EqualsBuilder.reflectionEquals(this, other)
+    }
+
+}
+
+/**
+ * A String builder that returns a String representation of an object, but only for non-null fields.
+ */
+public fun getToStringBuilder(smartAny: SmartAny): ReflectionToStringBuilder {
+    return smartAny.run {
 
         // Initialize a StringBuilder that only builds with non-null fields.
         object : ReflectionToStringBuilder(
@@ -28,17 +52,5 @@ open class SmartAny {
                 }
             }
         }
-    }
-
-    override fun toString(): String {
-        return toStringBuilder.toString()
-    }
-
-    override fun hashCode(): Int {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    override fun equals(other: Any?): Boolean {
-        return EqualsBuilder.reflectionEquals(this, other)
     }
 }

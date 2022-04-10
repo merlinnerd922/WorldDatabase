@@ -5,7 +5,7 @@ package utils.sql
 import java.sql.Connection
 
 /**
- * TODO
+ * A class of utilities for MySQL.
  */
 public class MySQLUtils {
     companion object {
@@ -15,17 +15,20 @@ public class MySQLUtils {
          * statement as part of the VALUES clause.
          */
         public fun toInsertValuesStr(values: List<Any?>): String {
+
+            // The values string should start and end with parentheses as markers.
             var builtString = "(";
             for ((index, value) in values.withIndex()) {
 
-                // TODO
+                // Given the current value to parse, add single quotes to indicate strings and the value "NULL" for null
+                // strings; otherwise, just provide the value in its literal form.
                 when (value) {
                     is String -> builtString += "'${value}'"
                     null -> builtString += "NULL"
                     else -> builtString += value
                 }
 
-                // TODO
+                // Values should be separated by commas (no comma needed for the last element).
                 if (index != values.size - 1) {
                     builtString += ", ";
                 }

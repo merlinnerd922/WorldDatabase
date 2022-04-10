@@ -7,7 +7,11 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.module.SimpleModule
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
-import nlp.SpanDeserializer
+import com.google.gson.Gson
+import kotlinx.serialization.*
+import kotlinx.serialization.json.Json;
+import kotlinx.serialization.json.Json.Default.encodeToString
+import nlp.opennlp.chunk.SpanDeserializer
 import opennlp.tools.util.Span
 
 /**
@@ -28,8 +32,10 @@ class JSONUtils {
 /**
  * Convert the provided object (this) into a JSON representation of an object.
  */
-fun Any.toJSONString(): String? {
-    return JSONUtils.mapper.writeValueAsString(this);
+inline fun <reified T> T.toJSONString(): String? {
+//    return Json.encodeToString(this);
+    return Gson().toJson(this);
+//    return JSONUtils.mapper.writeValueAsString(this);
 }
 
 /**

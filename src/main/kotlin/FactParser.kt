@@ -1,6 +1,6 @@
 @file:Suppress("unused", "UNUSED_PARAMETER")
 
-import nlp.Sentence
+import nlp.opennlp.chunk.Sentence
 
 /**
  * Process all facts from the provided list of sentences.

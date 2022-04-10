@@ -3,8 +3,8 @@
 package exe.program
 
 import com.fasterxml.jackson.module.kotlin.readValue
-import nlp.SpanDeserializer
-import nlp.getNamesFromSentenceAndSpanInfo
+import nlp.opennlp.chunk.SpanDeserializer
+import nlp.opennlp.chunk.getNamesFromSentenceAndSpanInfo
 import opennlp.tools.util.Span
 import utils.JSONUtils
 import utils.getResourceText
