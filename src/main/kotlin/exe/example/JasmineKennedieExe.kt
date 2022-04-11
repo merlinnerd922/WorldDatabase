@@ -14,7 +14,7 @@ import java.util.*
 fun main() {
 
     val stopwatch = Stopwatch.createStarted();
-    var jasmineKennedyDocument = getAnnotatedDocument(getResourceText("jasmineKennedie.txt"));
+    var jasmineKennedyDocument: CoreDocument = getAnnotatedDocument(getResourceText("jasmineKennedie.txt"));
     var jsonString = jasmineKennedyDocument.toJSONString();
     writeToMainResourceFile("jasmineKennedyCoreDocumentJSON.json", jsonString)
     var coreDocument = JSONUtils.mapper.readValue(jsonString, CoreDocument::class.java);
