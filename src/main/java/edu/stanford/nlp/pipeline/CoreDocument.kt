@@ -20,6 +20,7 @@ import java.util.function.Consumer
  * Wrapper around an annotation representing a document.  Adds some helpful methods.
  *
  */
+@kotlinx.serialization.Serializable
 class CoreDocument {
     @JvmField
     var annotationDocument: Annotation
