@@ -182,7 +182,7 @@ public class MatchedExpression {
 
   private boolean extractAnnotation(CoreMap sourceAnnotation,
                                     CoreMapAggregator aggregator) {
-    Class<TypesafeMap.Key<List<? extends CoreMap>>> tokensAnnotationKey = extractFunc.tokensAnnotationField;
+    Class<TSMKey<List<? extends CoreMap>>> tokensAnnotationKey = extractFunc.tokensAnnotationField;
     if (chunkOffsets != null) {
       annotation = aggregator.merge((List<? extends CoreMap>) sourceAnnotation.get(tokensAnnotationKey),
               chunkOffsets.getBegin(), chunkOffsets.getEnd());

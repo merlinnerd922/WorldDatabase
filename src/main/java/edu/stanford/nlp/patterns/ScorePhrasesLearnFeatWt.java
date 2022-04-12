@@ -592,7 +592,7 @@ public class ScorePhrasesLearnFeatWt<E extends Pattern> extends PhraseScorer<E> 
       Map<String, DataInstance> sentsf = data.next().first();
       for(Entry<String, DataInstance> en: sentsf.entrySet()){
         for(CoreLabel l : en.getValue().getTokens()){
-          for(Entry<String, Class<? extends TypesafeMap.Key<String>>> enc: constVars.getAnswerClass().entrySet()){
+          for(Entry<String, Class<? extends TSMKey<String>>> enc: constVars.getAnswerClass().entrySet()){
             if(l.get(enc.getValue()).equals(enc.getKey())){
               counter.incrementCount(enc.getKey());
             }

@@ -35,13 +35,13 @@ public class ArrayCoreMap implements CoreMap /*, Serializable */ {
    * A listener for when a key is retrieved by the CoreMap.
    * This should only be used for testing.
    */
-  public static Consumer<Class<? extends Key<?>>> listener; // = null;
+  public static Consumer<Class<? extends TSMKey<?>>> listener; // = null;
 
   /** Initial capacity of the array */
   private static final int INITIAL_CAPACITY = 4;
 
   /** Array of keys */
-  private Class<? extends Key<?>>[] keys;
+  private Class<? extends TSMKey<?>>[] keys;
 
   /** Array of values */
   private Object[] values;
@@ -104,7 +104,7 @@ public class ArrayCoreMap implements CoreMap /*, Serializable */ {
    */
   @Override
   @SuppressWarnings("unchecked")
-  public <VALUE> VALUE get(Class<? extends Key<VALUE>> key) {
+  public <VALUE> VALUE get(Class<? extends TSMKey<VALUE>> key) {
     for (int i = 0; i < size; i++) {
       if (key == keys[i]) {
         if (listener != null) {
@@ -122,7 +122,7 @@ public class ArrayCoreMap implements CoreMap /*, Serializable */ {
    */
   @Override
   @SuppressWarnings("unchecked")
-  public <VALUE> VALUE set(Class<? extends Key<VALUE>> key, VALUE value) {
+  public <VALUE> VALUE set(Class<? extends TSMKey<VALUE>> key, VALUE value) {
 
     // search array for existing value to replace
     for (int i = 0; i < size; i++) {
@@ -215,7 +215,7 @@ public class ArrayCoreMap implements CoreMap /*, Serializable */ {
    */
   @Override
   @SuppressWarnings("unchecked")
-  public <VALUE> VALUE remove(Class<? extends Key<VALUE>> key) {
+  public <VALUE> VALUE remove(Class<? extends TSMKey<VALUE>> key) {
 
     Object rv = null;
     for (int i = 0; i < size; i++) {
@@ -236,7 +236,7 @@ public class ArrayCoreMap implements CoreMap /*, Serializable */ {
    * {@inheritDoc}
    */
   @Override
-  public <VALUE> boolean containsKey(Class<? extends Key<VALUE>> key) {
+  public <VALUE> boolean containsKey(Class<? extends TSMKey<VALUE>> key) {
     for (int i = 0; i < size; i++) {
       if (keys[i] == key) {
         return true;

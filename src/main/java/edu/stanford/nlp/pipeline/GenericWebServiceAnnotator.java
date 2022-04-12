@@ -98,7 +98,7 @@ public class GenericWebServiceAnnotator extends WebServiceAnnotator {
   }
 
   private static <V> void copyValue(CoreMap source, CoreMap target, Class k) {
-    Class<? extends TypesafeMap.Key<V>> k_ = (Class<? extends TypesafeMap.Key<V>>) k;
+    Class<? extends TSMKey<V>> k_ = (Class<? extends TSMKey<V>>) k;
     target.set(k_, source.get(k_));
   }
 

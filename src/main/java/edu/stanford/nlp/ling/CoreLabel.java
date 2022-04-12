@@ -9,6 +9,7 @@ import java.util.function.Consumer;
 import edu.stanford.nlp.util.ArrayCoreMap;
 import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.Generics;
+import edu.stanford.nlp.util.TSMKey;
 
 
 /**
@@ -71,7 +72,7 @@ public class CoreLabel extends ArrayCoreMap implements AbstractCoreLabel, HasCat
   @SuppressWarnings({"unchecked"})
   public CoreLabel(CoreMap label) {
     super(label.size());
-    Consumer<Class<? extends Key<?>>> savedListener = ArrayCoreMap.listener;  // don't listen to the clone operation
+    Consumer<Class<? extends TSMKey<?>>> savedListener = ArrayCoreMap.listener;  // don't listen to the clone operation
     ArrayCoreMap.listener = null;
     for (Class key : label.keySet()) {
       set(key, label.get(key));
@@ -330,12 +331,12 @@ public class CoreLabel extends ArrayCoreMap implements AbstractCoreLabel, HasCat
    * {@inheritDoc}
    */
   @Override
-  public <KEY extends Key<String>> String getString(Class<KEY> key) {
+  public <KEY extends TSMKey<String>> String getString(Class<KEY> key) {
     return this.getString(key, "");
   }
 
   @Override
-  public <KEY extends Key<String>> String getString(Class<KEY> key, String def) {
+  public <KEY extends TSMKey<String>> String getString(Class<KEY> key, String def) {
     String value = get(key);
     if (value == null) {
       return def;

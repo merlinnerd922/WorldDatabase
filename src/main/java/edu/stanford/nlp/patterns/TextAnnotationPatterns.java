@@ -4,10 +4,7 @@ import edu.stanford.nlp.io.IOUtils;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.stats.ClassicCounter;
 import edu.stanford.nlp.stats.Counter;
-import edu.stanford.nlp.util.ArgumentParser;
-import edu.stanford.nlp.util.Pair;
-import edu.stanford.nlp.util.StringUtils;
-import edu.stanford.nlp.util.TypesafeMap;
+import edu.stanford.nlp.util.*;
 import edu.stanford.nlp.patterns.surface.*;
 import edu.stanford.nlp.util.logging.Redwood;
 
@@ -26,8 +23,8 @@ import java.util.concurrent.ExecutionException;
  */
 public class TextAnnotationPatterns {
 
-  private Map<String, Class<? extends TypesafeMap.Key<String>>> humanLabelClasses = new HashMap<>();
-  private Map<String, Class<? extends TypesafeMap.Key<String>>> machineAnswerClasses = new HashMap<>();
+  private Map<String, Class<? extends TSMKey<String>>> humanLabelClasses = new HashMap<>();
+  private Map<String, Class<? extends TSMKey<String>>> machineAnswerClasses = new HashMap<>();
   Properties props;
   private String outputFile;
 
@@ -56,7 +53,7 @@ public class TextAnnotationPatterns {
       for(CoreLabel l : sent.getValue().getTokens()){
         boolean haslabel = false;
         JsonArrayBuilder labelArr = Json.createArrayBuilder();
-        for(Map.Entry<String, Class<? extends TypesafeMap.Key<String>>> en: this.humanLabelClasses.entrySet()){
+        for(Map.Entry<String, Class<? extends TSMKey<String>>> en: this.humanLabelClasses.entrySet()){
           if(!l.get(en.getValue()).equals(backgroundSymbol)){
             haslabel = true;
             sentHasLabel = true;
@@ -79,7 +76,7 @@ public class TextAnnotationPatterns {
     for(CoreLabel l : Data.sents.get(input).getTokens()){
       boolean haslabel = false;
       JsonArrayBuilder labelArr = Json.createArrayBuilder();
-      for(Map.Entry<String, Class<? extends TypesafeMap.Key<String>>> en: this.humanLabelClasses.entrySet()){
+      for(Map.Entry<String, Class<? extends TSMKey<String>>> en: this.humanLabelClasses.entrySet()){
         if(!l.get(en.getValue()).equals(backgroundSymbol)){
           haslabel = true;
           labelArr.add(en.getKey());
@@ -169,7 +166,7 @@ public class TextAnnotationPatterns {
   private void resetPatternLabelsInSents(Map<String, DataInstance> sents) {
     for(Map.Entry<String, DataInstance> sent: sents.entrySet()){
       for(CoreLabel l : sent.getValue().getTokens()){
-        for(Map.Entry<String, Class<? extends TypesafeMap.Key<String>>> cl: humanLabelClasses.entrySet()){
+        for(Map.Entry<String, Class<? extends TSMKey<String>>> cl: humanLabelClasses.entrySet()){
           l.set(machineAnswerClasses.get(cl.getKey()), l.get(cl.getValue()));
         }
       }
@@ -263,10 +260,10 @@ public class TextAnnotationPatterns {
     int i = 1;
     for (String label : seedWords.keySet()) {
       String ansclstr = "edu.stanford.nlp.patterns.PatternsAnnotations$PatternLabel" + i;
-      Class<? extends TypesafeMap.Key<String>> mcCl = (Class<? extends TypesafeMap.Key<String>>) Class.forName(ansclstr);
+      Class<? extends TSMKey<String>> mcCl = (Class<? extends TSMKey<String>>) Class.forName(ansclstr);
       machineAnswerClasses.put(label, mcCl);
       String humanansclstr = "edu.stanford.nlp.patterns.PatternsAnnotations$PatternHumanLabel" + i;
-      humanLabelClasses.put(label, (Class<? extends TypesafeMap.Key<String>>) Class.forName(humanansclstr));
+      humanLabelClasses.put(label, (Class<? extends TSMKey<String>>) Class.forName(humanansclstr));
       i++;
     }
 

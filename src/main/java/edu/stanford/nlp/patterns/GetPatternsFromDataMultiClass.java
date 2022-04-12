@@ -42,7 +42,7 @@ import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.trees.TreeCoreAnnotations.TreeAnnotation;
 import edu.stanford.nlp.util.*;
 import edu.stanford.nlp.util.PriorityQueue;
-import edu.stanford.nlp.util.TypesafeMap.Key;
+import edu.stanford.nlp.util.TSMKey;
 import edu.stanford.nlp.util.logging.Redwood;
 
 /**
@@ -172,7 +172,7 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
       Class answerClass, String answerLabel) throws IOException, InstantiationException, IllegalAccessException, IllegalArgumentException,
       InvocationTargetException, NoSuchMethodException, SecurityException, InterruptedException, ExecutionException, ClassNotFoundException {
     this.props = props;
-    Map<String, Class<? extends TypesafeMap.Key<String>>> ansCl = new HashMap<>();
+    Map<String, Class<? extends TSMKey<String>>> ansCl = new HashMap<>();
     ansCl.put(answerLabel, answerClass);
 
     Map<String, Class> generalizeClasses = new HashMap<>();
@@ -200,7 +200,7 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
       InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException,
       InterruptedException, ExecutionException, ClassNotFoundException {
     this.props = props;
-    Map<String, Class<? extends TypesafeMap.Key<String>>> ansCl = new HashMap<>();
+    Map<String, Class<? extends TSMKey<String>>> ansCl = new HashMap<>();
     ansCl.put(answerLabel, answerClass);
 
     Map<String, Map<Class, Object>> iC = new HashMap<>();
@@ -216,13 +216,13 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
       boolean labelUsingSeedSets) throws IOException, InstantiationException, IllegalAccessException, IllegalArgumentException,
       InvocationTargetException, NoSuchMethodException, SecurityException, ClassNotFoundException, InterruptedException, ExecutionException {
     this.props = props;
-    Map<String, Class<? extends TypesafeMap.Key<String>>> ansCl = new HashMap<>();
+    Map<String, Class<? extends TSMKey<String>>> ansCl = new HashMap<>();
     Map<String, Class> gC = new HashMap<>();
     Map<String, Map<Class, Object>> iC = new HashMap<>();
     int i = 1;
     for (String label : seedSets.keySet()) {
       String ansclstr = "edu.stanford.nlp.patterns.PatternsAnnotations$PatternLabel" + i;
-      ansCl.put(label, (Class<? extends Key<String>>) Class.forName(ansclstr));
+      ansCl.put(label, (Class<? extends TSMKey<String>>) Class.forName(ansclstr));
       iC.put(label, new HashMap<>());
       i++;
     }
@@ -232,7 +232,7 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
 
   @SuppressWarnings("rawtypes")
   public GetPatternsFromDataMultiClass(Properties props, Map<String, DataInstance> sents, Map<String, Set<CandidatePhrase>> seedSets,
-      boolean labelUsingSeedSets, Map<String, Class<? extends TypesafeMap.Key<String>>> answerClass) throws IOException, InstantiationException,
+      boolean labelUsingSeedSets, Map<String, Class<? extends TSMKey<String>>> answerClass) throws IOException, InstantiationException,
       IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException, InterruptedException,
       ExecutionException, ClassNotFoundException {
     this(props, sents, seedSets, labelUsingSeedSets, answerClass, new HashMap<>(), new HashMap<>());
@@ -255,8 +255,8 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
    */
   @SuppressWarnings("rawtypes")
   public GetPatternsFromDataMultiClass(Properties props, Map<String, DataInstance> sents, Map<String, Set<CandidatePhrase>> seedSets,
-      boolean labelUsingSeedSets, Map<String, Class<? extends TypesafeMap.Key<String>>> answerClass, Map<String, Class> generalizeClasses,
-      Map<String, Map<Class, Object>> ignoreClasses) throws IOException, InstantiationException, IllegalAccessException, IllegalArgumentException,
+                                       boolean labelUsingSeedSets, Map<String, Class<? extends TSMKey<String>>> answerClass, Map<String, Class> generalizeClasses,
+                                       Map<String, Map<Class, Object>> ignoreClasses) throws IOException, InstantiationException, IllegalAccessException, IllegalArgumentException,
       InvocationTargetException, NoSuchMethodException, SecurityException, InterruptedException, ExecutionException, ClassNotFoundException {
     this.props = props;
 
@@ -269,8 +269,8 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
 
   @SuppressWarnings("rawtypes")
   private void setUpConstructor(Map<String, DataInstance> sents, Map<String, Set<CandidatePhrase>> seedSets, boolean labelUsingSeedSets,
-      Map<String, Class<? extends TypesafeMap.Key<String>>> answerClass, Map<String, Class> generalizeClasses,
-      Map<String, Map<Class, Object>> ignoreClasses) throws IOException, InstantiationException, IllegalAccessException, IllegalArgumentException,
+                                Map<String, Class<? extends TSMKey<String>>> answerClass, Map<String, Class> generalizeClasses,
+                                Map<String, Map<Class, Object>> ignoreClasses) throws IOException, InstantiationException, IllegalAccessException, IllegalArgumentException,
       InvocationTargetException, NoSuchMethodException, SecurityException, InterruptedException, ExecutionException, ClassNotFoundException {
 
     Data.sents = sents;
@@ -534,7 +534,7 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
           if(!"OTHERSEM".equals(longestMatchingLabel))
              l.set(PatternsAnnotations.OtherSemanticLabel.class, constVars.backgroundSymbol);
 
-          for(Entry<String, Class<? extends Key<String>>> en: constVars.getAnswerClass().entrySet()) {
+          for(Entry<String, Class<? extends TSMKey<String>>> en: constVars.getAnswerClass().entrySet()) {
             if (!en.getKey().equals(longestMatchingLabel)){
               l.set(en.getValue(), constVars.backgroundSymbol);
             }
@@ -2407,7 +2407,7 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
    */
   private static boolean countResultsPerEntity(List<CoreLabel> doc, Counter<String> entityTP, Counter<String> entityFP, Counter<String> entityFN,
                                                String background, Counter<String> wordTP, Counter<String> wordTN, Counter<String> wordFP, Counter<String> wordFN,
-                                               Class<? extends TypesafeMap.Key<String>> whichClassToCompare) {
+                                               Class<? extends TSMKey<String>> whichClassToCompare) {
     int index = 0;
     int goldIndex = 0, guessIndex = 0;
     String lastGold = background, lastGuess = background;
@@ -2515,7 +2515,7 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
    */
   public static void countResultsPerToken(List<CoreLabel> doc, Counter<String> entityTP, Counter<String> entityFP, Counter<String> entityFN,
       String background, Counter<String> wordTP, Counter<String> wordTN, Counter<String> wordFP, Counter<String> wordFN,
-      Class<? extends TypesafeMap.Key<String>> whichClassToCompare) {
+      Class<? extends TSMKey<String>> whichClassToCompare) {
 
     IOBUtils.countEntityResults(doc, entityTP, entityFP, entityFN, background);
 
@@ -2557,8 +2557,8 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
   }
 
   public static void countResults(List<CoreLabel> doc, Counter<String> entityTP, Counter<String> entityFP, Counter<String> entityFN,
-      String background, Counter<String> wordTP, Counter<String> wordTN, Counter<String> wordFP, Counter<String> wordFN,
-      Class<? extends TypesafeMap.Key<String>> whichClassToCompare, boolean evalPerEntity) {
+                                  String background, Counter<String> wordTP, Counter<String> wordTN, Counter<String> wordFP, Counter<String> wordFN,
+                                  Class<? extends TSMKey<String>> whichClassToCompare, boolean evalPerEntity) {
     if (evalPerEntity) {
       countResultsPerEntity(doc, entityTP, entityFP, entityFN, background, wordTP, wordTN, wordFP, wordFN, whichClassToCompare);
     } else {
@@ -2582,7 +2582,7 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
         //to first finish labels before starting
         List<String> startingLabels = new ArrayList<>();
 
-        for (Entry<String, Class<? extends TypesafeMap.Key<String>>> as : constVars.getAnswerClass().entrySet()) {
+        for (Entry<String, Class<? extends TSMKey<String>>> as : constVars.getAnswerClass().entrySet()) {
           String label = as.getKey();
           boolean lastwordlabeled = lastWordLabeled.get(label);
           if (s.get(as.getValue()).equals(label)) {
@@ -2621,7 +2621,7 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
     writer.close();
   }
 
-  static public void writeColumnOutput(String outFile, boolean batchProcessSents, Map<String, Class<? extends TypesafeMap.Key<String>>> answerclasses) throws IOException, ClassNotFoundException {
+  static public void writeColumnOutput(String outFile, boolean batchProcessSents, Map<String, Class<? extends TSMKey<String>>> answerclasses) throws IOException, ClassNotFoundException {
     BufferedWriter writer = new BufferedWriter(new FileWriter(outFile));
 
     ConstantsAndVariables.DataSentsIterator sentsIter = new ConstantsAndVariables.DataSentsIterator(batchProcessSents);
@@ -2632,7 +2632,7 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
     writer.close();
   }
 
-  private static void writeColumnOutputSents(Map<String, DataInstance> sents, BufferedWriter writer, Map<String, Class<? extends TypesafeMap.Key<String>>> answerclasses) throws IOException {
+  private static void writeColumnOutputSents(Map<String, DataInstance> sents, BufferedWriter writer, Map<String, Class<? extends TSMKey<String>>> answerclasses) throws IOException {
     for (Entry<String, DataInstance> sent : sents.entrySet()) {
 
       writer.write("\n\n" + sent.getKey() + "\n");
@@ -2640,7 +2640,7 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
       for (CoreLabel s : sent.getValue().getTokens()) {
         writer.write(s.word()+"\t");
         Set<String> labels = new HashSet<>();
-        for (Entry<String, Class<? extends TypesafeMap.Key<String>>> as : answerclasses.entrySet()) {
+        for (Entry<String, Class<? extends TSMKey<String>>> as : answerclasses.entrySet()) {
           String label = as.getKey();
           if (s.get(as.getValue()).equals(label)) {
             labels.add(label);
@@ -2764,7 +2764,7 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
 
   public void evaluate(Map<String, DataInstance> testSentences, boolean evalPerEntity) throws IOException {
 
-    for (Entry<String, Class<? extends Key<String>>> anscl : constVars.getAnswerClass().entrySet()) {
+    for (Entry<String, Class<? extends TSMKey<String>>> anscl : constVars.getAnswerClass().entrySet()) {
       String label = anscl.getKey();
       Counter<String> entityTP = new ClassicCounter<>();
       Counter<String> entityFP = new ClassicCounter<>();
@@ -2890,7 +2890,7 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
 
   public Set<String> getNonBackgroundLabels(CoreLabel l){
     Set<String> labels = new HashSet<>();
-    for(Map.Entry<String, Class<? extends Key<String>>> en: constVars.getAnswerClass().entrySet()){
+    for(Map.Entry<String, Class<? extends TSMKey<String>>> en: constVars.getAnswerClass().entrySet()){
       if(!l.get(en.getValue()).equals(constVars.backgroundSymbol)){
         labels.add(en.getKey());
       }

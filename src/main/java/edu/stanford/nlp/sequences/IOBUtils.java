@@ -1,4 +1,5 @@
 package edu.stanford.nlp.sequences; 
+import edu.stanford.nlp.util.TSMKey;
 import edu.stanford.nlp.util.logging.Redwood;
 
 import java.util.List;
@@ -9,7 +10,6 @@ import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.stats.Counter;
 import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.PaddedList;
-import edu.stanford.nlp.util.TypesafeMap;
 
 
 /** A static class with functions to convert lists of tokens between
@@ -55,7 +55,7 @@ public class IOBUtils  {
    */
   @SuppressWarnings("StringContatenationInLoop")
   public static <TOK extends CoreMap> void entitySubclassify(List<TOK> tokens,
-                                 Class<? extends TypesafeMap.Key<String>> key,
+                                 Class<? extends TSMKey<String>> key,
                                  String backgroundLabel,
                                  String style,
                                  boolean intern) {

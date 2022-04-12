@@ -2,7 +2,6 @@ package edu.stanford.nlp.patterns.surface;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.Reader;
 import java.io.StringReader;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -16,10 +15,7 @@ import edu.stanford.nlp.process.DocumentPreprocessor;
 import edu.stanford.nlp.process.PTBTokenizer.PTBTokenizerFactory;
 import edu.stanford.nlp.sequences.CoNLLDocumentReaderAndWriter;
 import edu.stanford.nlp.sequences.SeqClassifierFlags;
-import edu.stanford.nlp.util.ArrayCoreMap;
-import edu.stanford.nlp.util.CoreMap;
-import edu.stanford.nlp.util.StringUtils;
-import edu.stanford.nlp.util.TypesafeMap;
+import edu.stanford.nlp.util.*;
 
 /**
  * CanNOT handle overlapping labeled text (that is one token cannot belong to
@@ -33,7 +29,7 @@ public class AnnotatedTextReader {
 
     public static Map<String, DataInstance> parseColumnFile(BufferedReader reader,
                                                 Set<String> categoriesAllowed,
-                                                Map<String, Class<? extends TypesafeMap.Key<String>>> setClassForTheseLabels,
+                                                Map<String, Class<? extends TSMKey<String>>> setClassForTheseLabels,
                                                 boolean setGoldClass, String sentIDprefix ){
 
       CoNLLDocumentReaderAndWriter conllreader = new CoNLLDocumentReaderAndWriter();
@@ -108,7 +104,7 @@ public class AnnotatedTextReader {
   public static List<CoreMap> parseFile(
       BufferedReader reader,
       Set<String> categoriesAllowed,
-      Map<String, Class<? extends TypesafeMap.Key<String>>> setClassForTheseLabels,
+      Map<String, Class<? extends TSMKey<String>>> setClassForTheseLabels,
       boolean setGoldClass, String sentIDprefix)
       throws IOException {
 

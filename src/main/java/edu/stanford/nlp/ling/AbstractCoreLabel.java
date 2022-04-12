@@ -1,5 +1,6 @@
 package edu.stanford.nlp.ling;
 
+import edu.stanford.nlp.util.TSMKey;
 import edu.stanford.nlp.util.TypesafeMap;
 
 public interface AbstractCoreLabel extends AbstractToken, Label, TypesafeMap {
@@ -16,8 +17,8 @@ public interface AbstractCoreLabel extends AbstractToken, Label, TypesafeMap {
    * @return "" if the key is not in the map or has the value {@code null}
    *     and the String value of the key otherwise
    */
-  <KEY extends Key<String>> String getString(Class<KEY> key);
+  <KEY extends TSMKey<String>> String getString(Class<KEY> key);
 
-  <KEY extends Key<String>> String getString(Class<KEY> key, String def);
+  <KEY extends TSMKey<String>> String getString(Class<KEY> key, String def);
 
 }

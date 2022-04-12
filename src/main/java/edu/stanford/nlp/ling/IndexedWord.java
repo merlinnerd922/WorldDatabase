@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import edu.stanford.nlp.util.StringUtils;
-import edu.stanford.nlp.util.TypesafeMap;
+import edu.stanford.nlp.util.TSMKey;
 import edu.stanford.nlp.util.logging.Redwood;
 
 /**
@@ -154,32 +154,32 @@ public class IndexedWord implements AbstractCoreLabel, Comparable<IndexedWord>  
   public CoreLabel backingLabel() { return label; }
 
   @Override
-  public <VALUE> VALUE get(Class<? extends TypesafeMap.Key<VALUE>> key) {
+  public <VALUE> VALUE get(Class<? extends TSMKey<VALUE>> key) {
     return label.get(key);
   }
 
   @Override
-  public <VALUE> boolean containsKey(Class<? extends TypesafeMap.Key<VALUE>> key) {
+  public <VALUE> boolean containsKey(Class<? extends TSMKey<VALUE>> key) {
     return label.containsKey(key);
   }
 
   @Override
-  public <VALUE> VALUE set(Class<? extends TypesafeMap.Key<VALUE>> key, VALUE value) {
+  public <VALUE> VALUE set(Class<? extends TSMKey<VALUE>> key, VALUE value) {
     return label.set(key, value);
   }
 
   @Override
-  public <KEY extends TypesafeMap.Key<String>> String getString(Class<KEY> key) {
+  public <KEY extends TSMKey<String>> String getString(Class<KEY> key) {
     return label.getString(key);
   }
 
   @Override
-  public <KEY extends TypesafeMap.Key<String>> String getString(Class<KEY> key, String def) {
+  public <KEY extends TSMKey<String>> String getString(Class<KEY> key, String def) {
     return label.getString(key, def);
   }
 
   @Override
-  public <VALUE> VALUE remove(Class<? extends Key<VALUE>> key) {
+  public <VALUE> VALUE remove(Class<? extends TSMKey<VALUE>> key) {
     return label.remove(key);
   }
 

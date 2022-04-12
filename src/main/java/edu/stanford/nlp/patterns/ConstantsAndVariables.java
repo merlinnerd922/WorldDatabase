@@ -24,7 +24,7 @@ import edu.stanford.nlp.stats.Counter;
 import edu.stanford.nlp.stats.Counters;
 import edu.stanford.nlp.util.*;
 import edu.stanford.nlp.util.ArgumentParser.Option;
-import edu.stanford.nlp.util.TypesafeMap.Key;
+import edu.stanford.nlp.util.TSMKey;
 import edu.stanford.nlp.util.logging.Redwood;
 
 import javax.json.Json;
@@ -259,7 +259,7 @@ public class ConstantsAndVariables implements Serializable {
   private Set<String> labels = new HashSet<>();
 
 
-  private Map<String, Class<? extends TypesafeMap.Key<String>>> answerClass = null;
+  private Map<String, Class<? extends TSMKey<String>>> answerClass = null;
 
 
   /**
@@ -823,7 +823,7 @@ public class ConstantsAndVariables implements Serializable {
 
   public List<String> functionWords = Arrays.asList("a","an","the","of","at","on","in","he","she","him","her","they","them","and","no","not","nor","as","do");
 
-  public ConstantsAndVariables(Properties props, Set<String> labels, Map<String, Class<? extends Key<String>>> answerClass, Map<String, Class> generalizeClasses,
+  public ConstantsAndVariables(Properties props, Set<String> labels, Map<String, Class<? extends TSMKey<String>>> answerClass, Map<String, Class> generalizeClasses,
                                Map<String, Map<Class, Object>> ignoreClasses) throws IOException {
     this.labels = labels;
     for(String label: labels){
@@ -838,7 +838,7 @@ public class ConstantsAndVariables implements Serializable {
     setUp(props);
   }
 
-  public ConstantsAndVariables(Properties props, Map<String, Set<CandidatePhrase>> labelDictionary, Map<String, Class<? extends Key<String>>> answerClass, Map<String, Class> generalizeClasses,
+  public ConstantsAndVariables(Properties props, Map<String, Set<CandidatePhrase>> labelDictionary, Map<String, Class<? extends TSMKey<String>>> answerClass, Map<String, Class> generalizeClasses,
                                Map<String, Map<Class, Object>> ignoreClasses) throws IOException {
 
     //make the list unmodifiable!
@@ -856,7 +856,7 @@ public class ConstantsAndVariables implements Serializable {
     setUp(props);
   }
 
-  public ConstantsAndVariables(Properties props, Set<String> labels,  Map<String, Class<? extends TypesafeMap.Key<String>>> answerClass) throws IOException {
+  public ConstantsAndVariables(Properties props, Set<String> labels,  Map<String, Class<? extends TSMKey<String>>> answerClass) throws IOException {
     this.labels = labels;
     for(String label: labels){
       this.seedLabelDictionary.put(label, new HashSet<>());
@@ -867,7 +867,7 @@ public class ConstantsAndVariables implements Serializable {
     setUp(props);
   }
 
-  public ConstantsAndVariables(Properties props, String label,  Class<? extends TypesafeMap.Key<String>> answerClass) throws IOException {
+  public ConstantsAndVariables(Properties props, String label,  Class<? extends TSMKey<String>> answerClass) throws IOException {
     this.labels = new HashSet<>();
     this.labels.add(label);
     this.seedLabelDictionary.put(label, new HashSet<>());
@@ -879,7 +879,7 @@ public class ConstantsAndVariables implements Serializable {
   }
 
 
-  public ConstantsAndVariables(Properties props, Set<String> labels,  Map<String, Class<? extends TypesafeMap.Key<String>>> answerClass, Map<String, Class> generalizeClasses) throws IOException {
+  public ConstantsAndVariables(Properties props, Set<String> labels, Map<String, Class<? extends TSMKey<String>>> answerClass, Map<String, Class> generalizeClasses) throws IOException {
     this.labels = labels;
     for(String label: labels){
       this.seedLabelDictionary.put(label, new HashSet<>());
@@ -913,7 +913,7 @@ public class ConstantsAndVariables implements Serializable {
     for (String label : labels) {
       env.put(label, TokenSequencePattern.getNewEnv());
       // env.get(label).bind("answer", answerClass.get(label));
-      for (Entry<String, Class<? extends Key<String>>> en : this.answerClass
+      for (Entry<String, Class<? extends TSMKey<String>>> en : this.answerClass
           .entrySet()) {
         env.get(label).bind(en.getKey(), en.getValue());
       }
@@ -1468,7 +1468,7 @@ public class ConstantsAndVariables implements Serializable {
   }
 
 
-  public Map<String, Class<? extends Key<String>>> getAnswerClass() {
+  public Map<String, Class<? extends TSMKey<String>>> getAnswerClass() {
     return answerClass;
   }
 

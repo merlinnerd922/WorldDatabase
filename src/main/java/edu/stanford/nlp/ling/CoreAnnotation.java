@@ -1,7 +1,7 @@
 package edu.stanford.nlp.ling;
 
 import edu.stanford.nlp.util.CoreMap;
-import edu.stanford.nlp.util.TypesafeMap;
+import edu.stanford.nlp.util.TSMKey;
 
 /**
  * The base class for any annotation that can be marked on a {@link CoreMap},
@@ -12,7 +12,7 @@ import edu.stanford.nlp.util.TypesafeMap;
  * @author dramage
  * @author rafferty
  */
-public interface CoreAnnotation<V> extends TypesafeMap.Key<V> {
+public interface CoreAnnotation<V> extends TSMKey<V> {
 
   /**
    * Returns the type associated with this annotation.  This method must
