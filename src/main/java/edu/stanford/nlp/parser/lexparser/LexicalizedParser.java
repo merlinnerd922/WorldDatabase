@@ -884,8 +884,8 @@ public class LexicalizedParser extends ParserGrammar implements Serializable  {
       log.info("Compacting grammar...");
       Triple<Index<String>, UnaryGrammar, BinaryGrammar> compacted = compactor.compactGrammar(bgug, stateIndex);
       stateIndex = compacted.first();
-      bgug.setFirst(compacted.second());
-      bgug.setSecond(compacted.third());
+      bgug.first = (compacted.second());
+      bgug.second = (compacted.third());
       Timing.tick("done.");
     }
 

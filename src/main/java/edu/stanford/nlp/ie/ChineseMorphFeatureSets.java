@@ -130,9 +130,9 @@ public class ChineseMorphFeatureSets implements Serializable {
             affixFeatures.put(singleFeatIndexString, p = new Pair<>());
           }
           if (featType == FeatType.PREFIX) {
-            p.setFirst(featureSet);
+            p.setFirstTo(featureSet);
           } else {
-            p.setSecond(featureSet);
+            p.setSecondTo(featureSet);
           }
           featureSet = Generics.newHashSet();
         }
@@ -154,9 +154,9 @@ public class ChineseMorphFeatureSets implements Serializable {
           affixFeatures.put(singleFeatIndexString, p = new Pair<>());
         }
         if (featType == FeatType.PREFIX) {
-          p.setFirst(featureSet);
+          p.setFirstTo(featureSet);
         } else {
-          p.setSecond(featureSet);
+          p.setSecondTo(featureSet);
         }
       }
     }
@@ -171,12 +171,12 @@ public class ChineseMorphFeatureSets implements Serializable {
     if (isPrefix) {
       feature = p.first();
       if (feature == null) {
-        p.setFirst(feature = Generics.newHashSet());
+        p.setFirstTo(feature = Generics.newHashSet());
       }
     } else {
       feature = p.second();
       if (feature == null) {
-        p.setSecond(feature = Generics.newHashSet());
+        p.setSecondTo(feature = Generics.newHashSet());
       }
     }
     feature.add(featChar);

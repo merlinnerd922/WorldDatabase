@@ -47,8 +47,10 @@ public class IOBUtils  {
   public static final String RewriteSymbol = "REW";
   
   /** @deprecated use RewriteSymbol instead */
+  @Deprecated
   public static final String RewriteTahSymbol = "REWTA";
   /** @deprecated use RewriteSymbol instead */
+  @Deprecated
   public static final String RewriteTareefSymbol = "REWAL";
 
   private static final String BoundarySymbol = ".##.";

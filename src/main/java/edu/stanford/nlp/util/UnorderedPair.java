@@ -18,12 +18,12 @@ public class UnorderedPair<T1,T2> extends Pair<T1,T2> {
 
   @SuppressWarnings("unchecked")
   @Override
-  public boolean equals(Object o) {
-    if (o == this) {
+  public boolean equals(Object other) {
+    if (other == this) {
       return true;
     }
-    if (o instanceof UnorderedPair) {
-      UnorderedPair p = (UnorderedPair) o;
+    if (other instanceof UnorderedPair) {
+      UnorderedPair p = (UnorderedPair) other;
       return (((first == null ? p.first == null : first.equals(p.first)) && (second == null ? p.second == null : second.equals(p.second))) || ((first == null ? p.second == null : first.equals(p.second)) && (second == null ? p.first == null : second.equals(p.first))));
     }
     return false;

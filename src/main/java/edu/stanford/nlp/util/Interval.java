@@ -852,18 +852,18 @@ public class Interval<E extends Comparable<E>> extends Pair<E,E> implements HasI
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object other) {
+    if (this == other) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (other == null || getClass() != other.getClass()) {
       return false;
     }
-    if (!super.equals(o)) {
+    if (!super.equals(other)) {
       return false;
     }
 
-    Interval interval = (Interval) o;
+    Interval interval = (Interval) other;
 
     if (flags != interval.flags) {
       return false;

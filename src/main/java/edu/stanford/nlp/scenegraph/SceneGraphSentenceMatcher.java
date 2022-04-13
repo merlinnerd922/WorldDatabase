@@ -80,8 +80,8 @@ public class SceneGraphSentenceMatcher {
             int dist = Math.abs(subjIndex - objIdx);
             if (dist < minDistance) {
               minDistance = dist;
-              pair.setFirst(subj);
-              pair.setSecond(obj);
+              pair.setFirstTo(subj);
+              pair.setSecondTo(obj);
             }
           }
         }

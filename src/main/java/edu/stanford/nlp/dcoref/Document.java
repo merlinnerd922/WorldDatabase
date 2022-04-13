@@ -660,12 +660,12 @@ public class Document implements Serializable {
         if(utterIndex != 0 && !insideQuotation) {
           utterNum = utterIndex;
           insideQuotation = true;
-          beginQuotation.setFirst(i);
-          beginQuotation.setSecond(j);
+          beginQuotation.setFirstTo(i);
+          beginQuotation.setSecondTo(j);
         } else if (utterIndex == 0 && insideQuotation) {
           insideQuotation = false;
-          endQuotation.setFirst(i);
-          endQuotation.setSecond(j);
+          endQuotation.setFirstTo(i);
+          endQuotation.setSecondTo(j);
           findQuotationSpeaker(utterNum, sentences, beginQuotation, endQuotation, dict);
         }
       }

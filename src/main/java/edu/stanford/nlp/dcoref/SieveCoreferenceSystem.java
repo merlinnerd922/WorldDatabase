@@ -999,8 +999,8 @@ public class SieveCoreferenceSystem  {
         additionalCorrectLinksCount = (int) (scoreSingleDoc.get(currentSieve).precisionNumSum - scoreSingleDoc.get(currentSieve-1).precisionNumSum);
         additionalLinksCount = (int) (scoreSingleDoc.get(currentSieve).precisionDenSum - scoreSingleDoc.get(currentSieve-1).precisionDenSum);
       }
-      linksCountInPass.get(currentSieve).setFirst(linksCountInPass.get(currentSieve).first() + additionalCorrectLinksCount);
-      linksCountInPass.get(currentSieve).setSecond(linksCountInPass.get(currentSieve).second() + additionalLinksCount);
+      linksCountInPass.get(currentSieve).setFirstTo(linksCountInPass.get(currentSieve).first() + additionalCorrectLinksCount);
+      linksCountInPass.get(currentSieve).setSecondTo(linksCountInPass.get(currentSieve).second() + additionalLinksCount);
 
       printSieveScore(document, sieve);
     }
