@@ -20,7 +20,6 @@ import java.util.function.Consumer
  * Wrapper around an annotation representing a document.  Adds some helpful methods.
  *
  */
-@kotlinx.serialization.Serializable
 class CoreDocument {
     @JvmField
     var annotationDocument: Annotation
@@ -56,7 +55,7 @@ class CoreDocument {
         sentences = annotationDocument.get(SentencesAnnotation::class.java).stream()
             .map { coreMapSentence: CoreMap? -> CoreSentence(this, coreMapSentence) }
             .collect(Collectors.toList())
-        sentences.forEach(Consumer { obj: CoreSentence -> obj.wrapEntityMentions() })
+        sentences!!.forEach(Consumer { obj: CoreSentence -> obj.wrapEntityMentions() })
     }
 
     /** build a list of all entity mentions in the document from the sentences  */
