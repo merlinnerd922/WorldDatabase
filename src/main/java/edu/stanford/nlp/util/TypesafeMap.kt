@@ -1,5 +1,7 @@
 package edu.stanford.nlp.util
 
+typealias TSMKeyClass<V> = Class<out TSMKey<V>?>
+
 /**
  * Type signature for a class that supports the basic operations required
  * of a typesafe heterogeneous map.
