@@ -47,7 +47,6 @@ import java.util.ArrayList
  * @author Anna Rafferty
  * @author bethard
  */
-@Serializable
 open class Annotation : ArrayCoreMap {
     /** Copy constructor.
      * @param map The new Annotation copies this one.

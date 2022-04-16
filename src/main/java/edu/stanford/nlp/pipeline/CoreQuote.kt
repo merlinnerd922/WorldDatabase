@@ -24,7 +24,7 @@ import java.util.*
  *
  * @author Jason Bolton
  */
-@kotlinx.serialization.Serializable
+
 class CoreQuote(private val document: CoreDocument, private val quoteCoreMap: CoreMap) {
     private val sentences: MutableList<CoreSentence>
 

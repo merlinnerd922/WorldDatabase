@@ -20,7 +20,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.function.*;
 import java.util.stream.Collectors;
-@kotlinx.serialization.Serializable
+
 public class CoreSentence {
 
   private final CoreDocument document;
