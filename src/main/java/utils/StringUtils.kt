@@ -1,0 +1,5 @@
+package utils
+
+internal fun String.matches(regex: String): Boolean {
+    return this.matches(Regex(regex));
+}

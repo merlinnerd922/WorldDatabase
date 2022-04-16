@@ -16,8 +16,8 @@ class CoreQuote(private val document: CoreDocument, private val quoteCoreMap: Co
     private val sentences: MutableList<CoreSentence>
 
     // optional speaker info...note there may not be an entity mention corresponding to the speaker
-    var hasSpeaker: Boolean
-    var hasCanonicalSpeaker: Boolean
+    private var hasSpeaker: Boolean
+    private var hasCanonicalSpeaker: Boolean
     private val speaker: String?
     internal val canonicalSpeaker: String?
     private var speakerTokens: MutableList<CoreLabel>?

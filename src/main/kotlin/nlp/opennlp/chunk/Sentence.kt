@@ -45,7 +45,7 @@ class Sentence() : SmartAny() {
         this.tokens = ENGLISH_TOKENIZER.tokenizeAsToken<Token>(sentenceString);
     }
 
-    public fun <T> TokenizerME.tokenizeAsToken(sentenceString: String?) = tokenize(sentenceString)!!.map { Token(it) }
+    private fun <T> TokenizerME.tokenizeAsToken(sentenceString: String?) = tokenize(sentenceString)!!.map { Token(it) }
 
     /**
      * TODO

@@ -1,6 +1,6 @@
 package utils
 
-enum class SortOrder(var asSQLString: String) {
+enum class SortOrder(private var asSQLString: String) {
     ASCENDING("ASC"),DESCENDING("DESC");
 
     fun toSQLString(): String {

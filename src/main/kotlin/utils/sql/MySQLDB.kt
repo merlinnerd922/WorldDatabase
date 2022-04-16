@@ -6,7 +6,7 @@ import java.sql.Connection
 class MySQLDB {
 
     companion object {
-        public val MY_SQL_DB_REFERENCE : MySQLDB by lazy { MySQLDB() }
+        private val MY_SQL_DB_REFERENCE : MySQLDB by lazy { MySQLDB() }
         public val MY_SQL_DB_CONNECTION : Connection by lazy { MY_SQL_DB_REFERENCE.dbConnection!! }
     }
 
