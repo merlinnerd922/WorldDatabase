@@ -39,7 +39,7 @@ class CoreDocument {
     /** complete the wrapping process post annotation by a pipeline  */
     fun wrapAnnotations() {
         // wrap all of the sentences
-        if (annotationDocument.get(SentencesAnnotation::class.java) != null) {
+        if (annotationDocument[SentencesAnnotation::class.java] != null) {
             wrapSentences()
             // if there are entity mentions, build a document wide list
             if (!sentences!!.isEmpty() && sentences!![0].entityMentions() != null) {
@@ -52,7 +52,7 @@ class CoreDocument {
 
     /** create list of CoreSentence's based on the Annotation's sentences  */
     private fun wrapSentences() {
-        sentences = annotationDocument.get(SentencesAnnotation::class.java).stream()
+        sentences = annotationDocument[SentencesAnnotation::class.java].stream()
             .map { coreMapSentence: CoreMap? -> CoreSentence(this, coreMapSentence) }
             .collect(Collectors.toList())
         sentences!!.forEach(Consumer { obj: CoreSentence -> obj.wrapEntityMentions() })
@@ -77,22 +77,22 @@ class CoreDocument {
 
     /** return the doc id of this doc  */
     fun docID(): String {
-        return annotationDocument.get(DocIDAnnotation::class.java)
+        return annotationDocument[DocIDAnnotation::class.java]
     }
 
     /** return the doc date of this doc  */
     fun docDate(): String {
-        return annotationDocument.get(DocDateAnnotation::class.java)
+        return annotationDocument[DocDateAnnotation::class.java]
     }
 
     /** return the full text of the doc  */
     fun text(): String {
-        return annotationDocument.get(TextAnnotation::class.java)
+        return annotationDocument[TextAnnotation::class.java]
     }
 
     /** return the full token list for this doc  */
     fun tokens(): List<CoreLabel> {
-        return annotationDocument.get(TokensAnnotation::class.java)
+        return annotationDocument[TokensAnnotation::class.java]
     }
 
     /** the list of sentences in this document  */
@@ -107,9 +107,7 @@ class CoreDocument {
 
     /** coref info  */
     fun corefChains(): Map<Int, CorefChain> {
-        return annotationDocument.get(
-            CorefCoreAnnotations.CorefChainAnnotation::class.java
-        )
+        return annotationDocument[CorefCoreAnnotations.CorefChainAnnotation::class.java]
     }
 
     /** quotes  */

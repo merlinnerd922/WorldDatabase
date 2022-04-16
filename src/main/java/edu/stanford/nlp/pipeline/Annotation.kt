@@ -66,7 +66,7 @@ open class Annotation : ArrayCoreMap {
      * created Annotation.
      */
     constructor(text: String?) {
-        this.set(TextAnnotation::class.java, text)
+        this[TextAnnotation::class.java] = text
     }
 
     /** The basic toString() method of an Annotation simply
@@ -77,21 +77,19 @@ open class Annotation : ArrayCoreMap {
      * @return The text underlying this Annotation
      */
     override fun toString(): String {
-        return this.get(TextAnnotation::class.java)
+        return this[TextAnnotation::class.java]
     }
 
     /** Make a new Annotation from a List of tokenized sentences.  */
     constructor(sentences: List<CoreMap>) : super() {
-        this.set(SentencesAnnotation::class.java, sentences)
+        this[SentencesAnnotation::class.java] = sentences
         val tokens: MutableList<CoreLabel> = ArrayList()
         val text = StringBuilder()
         for (sentence in sentences) {
-            val sentenceTokens = sentence.get(
-                TokensAnnotation::class.java
-            )
+            val sentenceTokens = sentence[TokensAnnotation::class.java]
             tokens.addAll(sentenceTokens)
             if (sentence.containsKey(TextAnnotation::class.java)) {
-                text.append(sentence.get(TextAnnotation::class.java))
+                text.append(sentence[TextAnnotation::class.java])
             } else {
                 // If there is no text in the sentence, fake it as best as we can
                 if (text.length > 0) {
@@ -100,8 +98,8 @@ open class Annotation : ArrayCoreMap {
                 text.append(SentenceUtils.listToString(sentenceTokens))
             }
         }
-        this.set(TokensAnnotation::class.java, tokens)
-        this.set(TextAnnotation::class.java, text.toString())
+        this[TokensAnnotation::class.java] = tokens
+        this[TextAnnotation::class.java] = text.toString()
     }
 
     // ==================
