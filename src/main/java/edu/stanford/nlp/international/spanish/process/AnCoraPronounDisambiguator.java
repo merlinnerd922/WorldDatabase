@@ -36,7 +36,7 @@ import java.util.Set;
 public class AnCoraPronounDisambiguator  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AnCoraPronounDisambiguator.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AnCoraPronounDisambiguator.class);
 
   public static enum PersonalPronounType {OBJECT, REFLEXIVE, UNKNOWN}
 

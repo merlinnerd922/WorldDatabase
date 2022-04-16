@@ -45,7 +45,7 @@ public class ExtractPhraseFromPattern {
 
   // 0 means none, 1 means partial, 2 means it shows sentences and their
   // techniques, app and focus, and 3 means full
-  private static int DEBUG = 1;
+  private static final int DEBUG = 1;
 
   public ExtractPhraseFromPattern() {}
   public ExtractPhraseFromPattern(boolean ignoreCommonTags, int maxPhraseLength) {

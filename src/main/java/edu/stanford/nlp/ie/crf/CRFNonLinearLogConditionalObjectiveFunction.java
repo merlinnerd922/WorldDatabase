@@ -20,7 +20,7 @@ public class CRFNonLinearLogConditionalObjectiveFunction extends AbstractCaching
     HasCliquePotentialFunction, HasFeatureGrouping, HasRegularizerParamRange {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CRFNonLinearLogConditionalObjectiveFunction.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CRFNonLinearLogConditionalObjectiveFunction.class);
 
   public static final int NO_PRIOR = 0;
   public static final int QUADRATIC_PRIOR = 1;

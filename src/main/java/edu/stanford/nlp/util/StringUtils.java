@@ -2287,7 +2287,7 @@ public class StringUtils  {
     return ngrams;
   }
 
-  private static Pattern diacriticalMarksPattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}");
+  private static final Pattern diacriticalMarksPattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}");
   public static String normalize(String s) {
     // Normalizes string and strips diacritics (map to ascii) by
     // 1. taking the NFKD (compatibility decomposition -

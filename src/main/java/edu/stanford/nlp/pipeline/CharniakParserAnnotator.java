@@ -31,7 +31,7 @@ import edu.stanford.nlp.util.Generics;
 public class CharniakParserAnnotator implements Annotator  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CharniakParserAnnotator.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CharniakParserAnnotator.class);
 
   // TODO: make this an option?
   private static final boolean BUILD_GRAPHS = true;

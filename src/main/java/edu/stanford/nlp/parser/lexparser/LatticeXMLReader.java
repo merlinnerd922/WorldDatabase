@@ -18,7 +18,7 @@ import edu.stanford.nlp.util.XMLUtils;
 public class LatticeXMLReader implements Iterable<Lattice>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(LatticeXMLReader.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(LatticeXMLReader.class);
 
 //	private static final String ROOT = "sentences";
   public static final String SENTENCE = "sentence";

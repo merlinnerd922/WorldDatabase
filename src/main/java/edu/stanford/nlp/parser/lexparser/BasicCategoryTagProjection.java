@@ -8,7 +8,7 @@ import edu.stanford.nlp.trees.TreebankLanguagePack;
 public class BasicCategoryTagProjection implements TagProjection  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(BasicCategoryTagProjection.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(BasicCategoryTagProjection.class);
 
   private static final long serialVersionUID = -2322431101811335089L;
 

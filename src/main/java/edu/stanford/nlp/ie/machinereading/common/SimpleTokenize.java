@@ -11,7 +11,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class SimpleTokenize  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(SimpleTokenize.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(SimpleTokenize.class);
   /** Basic string tokenization, skipping over white spaces */
   public static ArrayList<String> tokenize(String line) {
     ArrayList<String> tokens = new ArrayList<>();

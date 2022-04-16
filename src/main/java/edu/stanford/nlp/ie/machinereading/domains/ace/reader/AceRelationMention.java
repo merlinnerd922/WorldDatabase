@@ -6,10 +6,10 @@ package edu.stanford.nlp.ie.machinereading.domains.ace.reader;
  * Stores one ACE relation mention
  */
 public class AceRelationMention extends AceMention {
-  private String mLexicalCondition;
+  private final String mLexicalCondition;
 
   /** The two argument mentions */
-  private AceRelationMentionArgument [] mArguments;
+  private final AceRelationMentionArgument [] mArguments;
 
   /** the parent event */
   private AceRelation mParent;

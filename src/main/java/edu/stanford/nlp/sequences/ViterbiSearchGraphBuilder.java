@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class ViterbiSearchGraphBuilder  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ViterbiSearchGraphBuilder.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ViterbiSearchGraphBuilder.class);
 
   public static DFSA<String, Integer> getGraph(SequenceModel ts, Index<String> classIndex) {
 

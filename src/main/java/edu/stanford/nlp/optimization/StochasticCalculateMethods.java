@@ -31,7 +31,7 @@ public enum StochasticCalculateMethods {
   *   In the case of ExternalFiniteDifference this is false since two calls are made to the objective
   *   function.
   */
-  private boolean objFuncCalculatesHdotV;
+  private final boolean objFuncCalculatesHdotV;
 
   StochasticCalculateMethods(boolean ObjectiveFunctionCalculatesHdotV){
     this.objFuncCalculatesHdotV = ObjectiveFunctionCalculatesHdotV;

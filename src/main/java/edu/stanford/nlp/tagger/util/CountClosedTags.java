@@ -56,16 +56,16 @@ public class CountClosedTags  {
   /**
    * Which tags to look for
    */
-  private Set<String> closedTags;
+  private final Set<String> closedTags;
 
   /**
    * Words seen in the first trainingRatio fraction of the trainFiles
    */
-  private Map<String, Set<String>> trainingWords = Generics.newHashMap();
+  private final Map<String, Set<String>> trainingWords = Generics.newHashMap();
   /**
    * Words seen in either trainFiles or testFiles
    */
-  private Map<String, Set<String>> allWords = Generics.newHashMap();
+  private final Map<String, Set<String>> allWords = Generics.newHashMap();
 
   private static final double DEFAULT_TRAINING_RATIO = 2.0 / 3.0;
   /**

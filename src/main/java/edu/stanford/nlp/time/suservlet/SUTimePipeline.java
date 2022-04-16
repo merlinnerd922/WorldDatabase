@@ -18,7 +18,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class SUTimePipeline  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(SUTimePipeline.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(SUTimePipeline.class);
   final StanfordCoreNLP pipeline;
 
   public SUTimePipeline() {

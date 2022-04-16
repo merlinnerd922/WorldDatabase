@@ -15,7 +15,7 @@ public class OSXAdapter extends ApplicationAdapter {
   private static OSXAdapter adapter;
   private static com.apple.eawt.Application app;
 
-  private TregexGUI mainApp;
+  private final TregexGUI mainApp;
   
   private OSXAdapter (TregexGUI inApp) {
     mainApp = inApp;

@@ -18,7 +18,7 @@ public class ThreeDimensionalCollectionValuedMap<K1, K2, K3, V> implements Seria
 
   private static final long serialVersionUID = 1L;
 
-  private Map<K1,TwoDimensionalCollectionValuedMap<K2, K3, V>> map = Generics.newHashMap();
+  private final Map<K1,TwoDimensionalCollectionValuedMap<K2, K3, V>> map = Generics.newHashMap();
 
   @Override
   public String toString() {

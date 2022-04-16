@@ -72,7 +72,7 @@ import edu.stanford.nlp.util.Generics;
 public class InputPanel extends JPanel implements ActionListener, ChangeListener  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(InputPanel.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(InputPanel.class);
 
   private static final long serialVersionUID = -8219840036914495876L;
 
@@ -88,7 +88,7 @@ public class InputPanel extends JPanel implements ActionListener, ChangeListener
   private int numRecentPatterns = 5;// we save the last n patterns in our combo box, where n = numRecentPatterns
   private JTextArea tsurgeonScript;
   private TregexPatternCompiler compiler;//this should change only when someone changes the headfinder/basic category finder
-  private List<HistoryEntry> historyList;
+  private final List<HistoryEntry> historyList;
   private JFrame historyFrame; // = null;
   private JLabel scriptLabel;
   private boolean tsurgeonEnabled; // = false;

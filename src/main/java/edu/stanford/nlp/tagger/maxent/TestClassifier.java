@@ -42,7 +42,7 @@ public class TestClassifier  {
   private boolean writeTopWords;
   private boolean writeConfusionMatrix;
 
-  private MaxentTagger maxentTagger;
+  private final MaxentTagger maxentTagger;
   TaggerConfig config;
   private String saveRoot;
 

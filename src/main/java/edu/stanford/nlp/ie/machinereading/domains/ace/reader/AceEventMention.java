@@ -13,7 +13,7 @@ import edu.stanford.nlp.util.Generics;
 public class AceEventMention extends AceMention {
 
   /** Maps argument roles to argument mentions */
-  private Map<String, AceEventMentionArgument> mRolesToArguments;
+  private final Map<String, AceEventMentionArgument> mRolesToArguments;
 
   /** the parent event */
   private AceEvent mParent;

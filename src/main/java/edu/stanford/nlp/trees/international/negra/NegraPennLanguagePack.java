@@ -18,14 +18,14 @@ import edu.stanford.nlp.trees.HeadFinder;
 public class NegraPennLanguagePack extends AbstractTreebankLanguagePack  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(NegraPennLanguagePack.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(NegraPennLanguagePack.class);
 
   private static final long serialVersionUID = 9081305982861675328L;
 
   /** Grammatical function parameters.  If this is true, keep subj, obj, iobj functional tags, only. */
   private boolean leaveGF = false;
 
-  private static String[] gfToKeepArray = {"SB", "OA", "DA"};
+  private static final String[] gfToKeepArray = {"SB", "OA", "DA"};
 
 
   /**
@@ -71,12 +71,12 @@ public class NegraPennLanguagePack extends AbstractTreebankLanguagePack  {
    * The first 3 are used by the Penn Treebank; # is used by the
    * BLLIP corpus, and ^ and ~ are used by Klein's lexparser.
    */
-  private static char[] annotationIntroducingChars = {'-', '%', '=', '|', '#', '^', '~'};
+  private static final char[] annotationIntroducingChars = {'-', '%', '=', '|', '#', '^', '~'};
 
   /**
    * This is valid for "BobChrisTreeNormalizer" conventions only.
    */
-  private static String[] pennStartSymbols = {"ROOT"};
+  private static final String[] pennStartSymbols = {"ROOT"};
 
 
   /**

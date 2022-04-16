@@ -19,7 +19,7 @@ class SemgrexParser implements SemgrexParserConstants {
   private boolean underNodeNegation = false;
   // keep track of which variables we've already seen
   // lets us make sure we don't name new nodes under a negation
-  private Set<String> knownVariables = Generics.newHashSet();
+  private final Set<String> knownVariables = Generics.newHashSet();
 
   private static final Redwood.RedwoodChannels log = Redwood.channels(SemgrexParser.class);
   private boolean deprecatedAmp = false;
@@ -740,7 +740,7 @@ pat = new NodePattern(r, underNodeNegation, attributes.attributes(), attributes.
 	   return (jj_ntk = jj_nt.kind);
   }
 
-  private java.util.List<int[]> jj_expentries = new java.util.ArrayList<int[]>();
+  private final java.util.List<int[]> jj_expentries = new java.util.ArrayList<int[]>();
   private int[] jj_expentry;
   private int jj_kind = -1;
 

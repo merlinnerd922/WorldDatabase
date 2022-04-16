@@ -36,7 +36,7 @@ public class ItalianTreebankParserParams extends AbstractTreebankParserParams  {
     headFinder = new LeftHeadFinder();
   }
 
-  private HeadFinder headFinder;
+  private final HeadFinder headFinder;
 
   private TreeNormalizer normalizer = null;
 

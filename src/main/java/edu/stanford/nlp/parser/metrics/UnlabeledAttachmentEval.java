@@ -35,7 +35,7 @@ import edu.stanford.nlp.util.StringUtils;
 public class UnlabeledAttachmentEval extends AbstractEval  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(UnlabeledAttachmentEval.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(UnlabeledAttachmentEval.class);
 
   private final HeadFinder headFinder;
 

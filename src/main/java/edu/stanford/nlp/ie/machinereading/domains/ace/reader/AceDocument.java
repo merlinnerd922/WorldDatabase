@@ -23,7 +23,7 @@ import edu.stanford.nlp.util.Generics;
 public class AceDocument extends AceElement  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AceDocument.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AceDocument.class);
   /** Prefix of the files from where this doc was created */
   private String mPrefix;
 
@@ -31,28 +31,28 @@ public class AceDocument extends AceElement  {
   private String mSource;
 
   /** All entities */
-  private Map<String, AceEntity> mEntities;
+  private final Map<String, AceEntity> mEntities;
   /** All entity mentions */
-  private Map<String, AceEntityMention> mEntityMentions;
+  private final Map<String, AceEntityMention> mEntityMentions;
   /** All entity mentions in a given sentence, sorted in textual order */
-  private ArrayList<ArrayList<AceEntityMention>> mSentenceEntityMentions;
+  private final ArrayList<ArrayList<AceEntityMention>> mSentenceEntityMentions;
 
   /** All relations */
-  private Map<String, AceRelation> mRelations;
+  private final Map<String, AceRelation> mRelations;
   /** All relation mentions */
-  private Map<String, AceRelationMention> mRelationMentions;
+  private final Map<String, AceRelationMention> mRelationMentions;
   /** All relation mentions in a given sentence, sorted in textual order */
-  private ArrayList<ArrayList<AceRelationMention>> mSentenceRelationMentions;
+  private final ArrayList<ArrayList<AceRelationMention>> mSentenceRelationMentions;
 
   /** All events */
-  private Map<String, AceEvent> mEvents;
+  private final Map<String, AceEvent> mEvents;
   /** All event mentions */
-  private Map<String, AceEventMention> mEventMentions;
+  private final Map<String, AceEventMention> mEventMentions;
   /** All event mentions in a given sentence, sorted in textual order */
-  private ArrayList<ArrayList<AceEventMention>> mSentenceEventMentions;
+  private final ArrayList<ArrayList<AceEventMention>> mSentenceEventMentions;
   
   /** The list of all tokens in the document, sorted in textual order */
-  private Vector<AceToken> mTokens;
+  private final Vector<AceToken> mTokens;
   
   /** List of all sentences in the document */
   private List<List<AceToken>> mSentences;

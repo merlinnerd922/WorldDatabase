@@ -25,7 +25,7 @@ import edu.stanford.nlp.util.StringUtils;
 public class ManipulateTopBracket  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ManipulateTopBracket.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ManipulateTopBracket.class);
 
   private static final int minArgs = 1;
   private static String usage() {

@@ -11,8 +11,8 @@ import edu.stanford.nlp.util.MemoryMonitor;
 public class MemoryEvaluator implements Evaluator  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(MemoryEvaluator.class);
-  private MemoryMonitor memMonitor;
+  private static final Redwood.RedwoodChannels log = Redwood.channels(MemoryEvaluator.class);
+  private final MemoryMonitor memMonitor;
 
   public MemoryEvaluator()
   {

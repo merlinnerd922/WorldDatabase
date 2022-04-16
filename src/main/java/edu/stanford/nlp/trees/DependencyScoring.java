@@ -29,7 +29,7 @@ import edu.stanford.nlp.stats.Counters;
 public class DependencyScoring  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(DependencyScoring.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(DependencyScoring.class);
   public final static boolean VERBOSE = false;
 
   public final List<Set<TypedDependency>> goldDeps;

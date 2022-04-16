@@ -27,7 +27,7 @@ import java.util.*;
 public class Options implements Serializable  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(Options.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(Options.class);
 
   public Options() {
     this(new EnglishTreebankParserParams());

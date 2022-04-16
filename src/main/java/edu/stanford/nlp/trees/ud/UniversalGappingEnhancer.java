@@ -22,13 +22,13 @@ public class UniversalGappingEnhancer {
 
     //private final static Embedding embeddings = null;
 
-    private static double GAP_PENALTY = -10;
+    private static final double GAP_PENALTY = -10;
 
-    private static double POS_MISMATCH_PENALTY = -2;
+    private static final double POS_MISMATCH_PENALTY = -2;
 
     //for Joakim
     //private static double EDGE_WEIGHT = 4.0;
-    private static double EDGE_WEIGHT = Double.NEGATIVE_INFINITY;
+    private static final double EDGE_WEIGHT = Double.NEGATIVE_INFINITY;
 
 
     private static class ArgumentSequence {

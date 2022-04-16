@@ -19,9 +19,9 @@ public class SimpleGoodTuring {
   private static final double CONFID_FACTOR = 1.96;
   private static final double TOLERANCE = 1e-12;
 
-  private int[] r;               // for each bucket, a frequency
-  private int[] n;               // for each bucket, number of items w that frequency
-  private int rows;              // number of frequency buckets
+  private final int[] r;               // for each bucket, a frequency
+  private final int[] n;               // for each bucket, number of items w that frequency
+  private final int rows;              // number of frequency buckets
 
   private int bigN = 0;          // total count of all items
   private double pZero;          // probability of unseen items

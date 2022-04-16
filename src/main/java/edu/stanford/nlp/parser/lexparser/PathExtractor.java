@@ -16,8 +16,8 @@ import java.util.Map;
 class PathExtractor extends AbstractTreeExtractor<Map<String, List<List<String>>>> {
   private static final String END = "END";
   //protected final Index<String> stateIndex;
-  private Map<String, List<List<String>>> allPaths = Generics.newHashMap();
-  private HeadFinder hf;
+  private final Map<String, List<List<String>>> allPaths = Generics.newHashMap();
+  private final HeadFinder hf;
 
   public PathExtractor(HeadFinder hf, Options op) {
     super(op);

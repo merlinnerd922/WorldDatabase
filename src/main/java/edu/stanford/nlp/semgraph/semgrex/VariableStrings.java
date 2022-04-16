@@ -12,8 +12,8 @@ import java.util.Map;
  * @author Roger Levy (rog@nlp.stanford.edu)
  */
 class VariableStrings {
-  private Map<Object, String> varsToStrings;
-  private IntCounter<Object> numVarsSet;
+  private final Map<Object, String> varsToStrings;
+  private final IntCounter<Object> numVarsSet;
 
   public VariableStrings() {
     varsToStrings = Generics.newHashMap();

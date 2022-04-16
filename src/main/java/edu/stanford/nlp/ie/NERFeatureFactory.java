@@ -454,7 +454,7 @@ public class NERFeatureFactory<IN extends CoreLabel> extends FeatureFactory<IN> 
     String domain = null;
 
     /** String builder */
-    private StringBuilder buf = new StringBuilder(100);
+    private final StringBuilder buf = new StringBuilder(100);
 
     /** Output collection */
     Set<String> collection;
@@ -794,8 +794,8 @@ public class NERFeatureFactory<IN extends CoreLabel> extends FeatureFactory<IN> 
     }
   } // end class GazetteInfo
 
-  private Map<String,Collection<String>> wordToGazetteEntries = Generics.newHashMap();
-  private Map<String,Collection<GazetteInfo>> wordToGazetteInfos = Generics.newHashMap();
+  private final Map<String,Collection<String>> wordToGazetteEntries = Generics.newHashMap();
+  private final Map<String,Collection<GazetteInfo>> wordToGazetteInfos = Generics.newHashMap();
 
   /** Reads a gazette file.  Each line of it consists of a class name
    *  (a String not containing whitespace characters), followed by whitespace

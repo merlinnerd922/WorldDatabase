@@ -9,7 +9,7 @@ import edu.stanford.nlp.util.Index;
 public class FrenchUnknownWordModel extends BaseUnknownWordModel  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(FrenchUnknownWordModel.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(FrenchUnknownWordModel.class);
 
   private static final long serialVersionUID = -776564693549194424L;
 

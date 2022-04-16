@@ -15,7 +15,7 @@ import edu.stanford.nlp.util.Generics;
 public class PrintTagList  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(PrintTagList.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(PrintTagList.class);
   public static void main(String[] args) {
     String parserFile = null;
     for (int argIndex = 0; argIndex < args.length; ) {

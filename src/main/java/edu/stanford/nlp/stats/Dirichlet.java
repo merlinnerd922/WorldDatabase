@@ -12,7 +12,7 @@ public class Dirichlet<E> implements ConjugatePrior<Multinomial<E>, E> {
 
   private static final long serialVersionUID = 1L;
 
-  private Counter<E> parameters;
+  private final Counter<E> parameters;
 
   public Dirichlet(Counter<E> parameters) {
     checkParameters(parameters);

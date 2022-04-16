@@ -19,7 +19,7 @@ import java.util.*;
 public final class DFSAMinimizer  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(DFSAMinimizer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(DFSAMinimizer.class);
 
   static boolean debug = false;
 

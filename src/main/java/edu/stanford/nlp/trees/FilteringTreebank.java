@@ -13,7 +13,7 @@ import java.util.function.Predicate;
  */
 public class FilteringTreebank extends Treebank {
   private Predicate<Tree> filter;
-  private Treebank treebank;
+  private final Treebank treebank;
 
   private static final boolean VERBOSE = false;
 
@@ -74,8 +74,8 @@ public class FilteringTreebank extends Treebank {
 
 
   private static class FilteringTreebankIterator implements Iterator<Tree> {
-    private Iterator<Tree> iter;
-    private Predicate<Tree> filter;
+    private final Iterator<Tree> iter;
+    private final Predicate<Tree> filter;
 
     Tree next;
 

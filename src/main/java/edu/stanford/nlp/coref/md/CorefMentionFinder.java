@@ -46,7 +46,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public abstract class CorefMentionFinder  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CorefMentionFinder.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CorefMentionFinder.class);
 
   protected Locale lang;
 

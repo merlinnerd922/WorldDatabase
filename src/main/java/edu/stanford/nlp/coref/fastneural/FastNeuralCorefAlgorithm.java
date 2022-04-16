@@ -37,7 +37,7 @@ import org.ejml.simple.SimpleMatrix;
  * @author Kevin Clark
  */
 public class FastNeuralCorefAlgorithm implements CorefAlgorithm {
-  private static Redwood.RedwoodChannels log = Redwood.channels(FastNeuralCorefAlgorithm.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(FastNeuralCorefAlgorithm.class);
   private final double greedyness;
   private final int maxMentionDistance;
   private final int maxMentionDistanceWithStringMatch;

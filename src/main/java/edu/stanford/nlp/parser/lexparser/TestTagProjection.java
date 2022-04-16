@@ -17,7 +17,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class TestTagProjection implements TagProjection  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TestTagProjection.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TestTagProjection.class);
 
   private static final long serialVersionUID = 9161675508802284114L;
 

@@ -36,7 +36,7 @@ public class HungarianTreebankParserParams extends AbstractTreebankParserParams 
     headFinder = new RightHeadFinder();
   }
 
-  private HeadFinder headFinder;
+  private final HeadFinder headFinder;
 
   private TreeNormalizer normalizer = null;
 

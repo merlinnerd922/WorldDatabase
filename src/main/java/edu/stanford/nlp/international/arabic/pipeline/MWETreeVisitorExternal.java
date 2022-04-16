@@ -28,7 +28,7 @@ import edu.stanford.nlp.util.Generics;
 public class MWETreeVisitorExternal implements TreeVisitor  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(MWETreeVisitorExternal.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(MWETreeVisitorExternal.class);
 
   private static final String mweFile = "/home/rayder441/sandbox/javanlp/projects/core/data/edu/stanford/nlp/pipeline/attia-mwe-list.txt.out.tok.fixed.proc.uniq";
   

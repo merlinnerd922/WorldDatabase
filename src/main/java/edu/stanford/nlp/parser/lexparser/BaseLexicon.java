@@ -47,7 +47,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class BaseLexicon implements Lexicon  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(BaseLexicon.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(BaseLexicon.class);
 
   protected UnknownWordModel uwModel;
   protected final String uwModelTrainerClass;
@@ -122,7 +122,7 @@ public class BaseLexicon implements Lexicon  {
    * Only used when training, specifically when training on sentences
    * that weren't part of annotated (e.g., markovized, etc.) data.
    */
-  private Map<String, Counter<String>> baseTagCounts = Generics.newHashMap();
+  private final Map<String, Counter<String>> baseTagCounts = Generics.newHashMap();
 
   public BaseLexicon(Index<String> wordIndex, Index<String> tagIndex) {
     this(new Options(), wordIndex, tagIndex);

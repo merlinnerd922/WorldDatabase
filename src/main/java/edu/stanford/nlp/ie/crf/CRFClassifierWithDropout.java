@@ -42,7 +42,7 @@ import java.util.*;
 public class CRFClassifierWithDropout<IN extends CoreMap> extends CRFClassifier<IN>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CRFClassifierWithDropout.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CRFClassifierWithDropout.class);
 
   private List<List<IN>> unsupDocs;
 

@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 public class ExtractorVerbalVBNZero extends DictionaryExtractor  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ExtractorVerbalVBNZero.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ExtractorVerbalVBNZero.class);
 
   private static final String vbnTag = "VBN";
   private static final String vbdTag = "VBD";

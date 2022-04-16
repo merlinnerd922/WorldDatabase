@@ -33,7 +33,7 @@ import java.util.function.Predicate;
 public class ATBArabicDataset extends AbstractDataset  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ATBArabicDataset.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ATBArabicDataset.class);
 
   public ATBArabicDataset() {
     super();

@@ -75,7 +75,7 @@ public class SemanticGraph implements Serializable  {
   private static final MapFactory<IndexedWord, List<SemanticGraphEdge>> innerMapFactory = MapFactory.linkedHashMapFactory();
   private static final MapFactory<IndexedWord, IndexedWord> wordMapFactory = MapFactory.linkedHashMapFactory();
 
-  private LinkedList<String> comments = new LinkedList<>();
+  private final LinkedList<String> comments = new LinkedList<>();
 
   public int edgeCount() {
     return graph.getNumEdges();
@@ -1837,8 +1837,8 @@ public class SemanticGraph implements Serializable  {
   private static class SemanticGraphParsingTask extends StringParsingTask<SemanticGraph> {
 
     private SemanticGraph sg;
-    private Set<Integer> indexesUsed = Generics.newHashSet();
-    private Language language;
+    private final Set<Integer> indexesUsed = Generics.newHashSet();
+    private final Language language;
 
 
     public SemanticGraphParsingTask(String s) {

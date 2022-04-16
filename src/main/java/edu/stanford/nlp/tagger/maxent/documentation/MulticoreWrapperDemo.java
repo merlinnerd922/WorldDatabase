@@ -18,7 +18,7 @@ import edu.stanford.nlp.util.concurrent.ThreadsafeProcessor;
 public class MulticoreWrapperDemo  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(MulticoreWrapperDemo.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(MulticoreWrapperDemo.class);
 
   private MulticoreWrapperDemo() {} // static main
 

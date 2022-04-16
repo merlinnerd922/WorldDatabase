@@ -19,7 +19,7 @@ public class AceEntityMention extends AceMention {
 
   private String mLdctype;
 
-  private AceCharSeq mHead;
+  private final AceCharSeq mHead;
 
   /** Position of the head word of this mention */
   private int mHeadTokenPosition;
@@ -28,10 +28,10 @@ public class AceEntityMention extends AceMention {
   private AceEntity mParent;
 
   /** The set of relation mentions that contain this entity mention */
-  private List<AceRelationMention> mRelationMentions;
+  private final List<AceRelationMention> mRelationMentions;
 
   /** The set of event mentions that contain this entity mention */
-  private List<AceEventMention> mEventMentions;
+  private final List<AceEventMention> mEventMentions;
 
   public AceEntityMention(String id,
 			  String type,

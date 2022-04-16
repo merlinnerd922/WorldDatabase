@@ -27,7 +27,7 @@ import edu.stanford.nlp.util.Index;
 public class ChineseUnknownWordModel extends BaseUnknownWordModel  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ChineseUnknownWordModel.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ChineseUnknownWordModel.class);
 
   private static final String encoding = "GB18030"; // used only for debugging
 

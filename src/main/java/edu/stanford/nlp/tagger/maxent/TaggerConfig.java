@@ -27,7 +27,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class TaggerConfig extends Properties /* Inherits implementation of Serializable! */  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TaggerConfig.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TaggerConfig.class);
 
   private static final long serialVersionUID = -4136407850147157497L;
 

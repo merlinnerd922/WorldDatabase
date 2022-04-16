@@ -17,7 +17,7 @@ import java.util.Set;
  */
 
 public class StopList {
-  private Set<Word> wordSet;
+  private final Set<Word> wordSet;
 
   /*
 	 *     Constructs a stoplist with very few stopwords.

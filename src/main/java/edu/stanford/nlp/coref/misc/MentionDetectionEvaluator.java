@@ -17,7 +17,7 @@ import edu.stanford.nlp.util.logging.Redwood;
  * @author Kevin Clark
  */
 public class MentionDetectionEvaluator implements CorefDocumentProcessor {
-  private static Redwood.RedwoodChannels log = Redwood.channels(MentionDetectionEvaluator.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(MentionDetectionEvaluator.class);
   private int correctSystemMentions = 0;
   private int systemMentions = 0;
   private int goldMentions = 0;

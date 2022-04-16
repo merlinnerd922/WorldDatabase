@@ -37,16 +37,16 @@ public class WikidictAnnotator extends SentenceAnnotator {
   private static final Pattern NUMBER_PATTERN = Pattern.compile("[0-9.]+");
 
   @ArgumentParser.Option(name="threads", gloss="The number of threads to run this annotator on")
-  private int threads = 1;
+  private final int threads = 1;
 
   @ArgumentParser.Option(name="wikidict", gloss="The location of the <text, link, score> TSV file")
-  private String wikidictPath = DefaultPaths.DEFAULT_WIKIDICT_TSV;
+  private final String wikidictPath = DefaultPaths.DEFAULT_WIKIDICT_TSV;
 
   @ArgumentParser.Option(name="threshold", gloss="The score threshold under which to discard links")
-  private double threshold = 0.0;
+  private final double threshold = 0.0;
 
   @ArgumentParser.Option(name="caseless", gloss="Ignore case when looking up entries in wikidict")
-  private boolean wikidictCaseless = false;
+  private final boolean wikidictCaseless = false;
 
   /**
    * The actual Wikidict dictionary.

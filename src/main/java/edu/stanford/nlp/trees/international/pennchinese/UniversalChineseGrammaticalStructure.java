@@ -32,9 +32,9 @@ import static edu.stanford.nlp.trees.GrammaticalRelation.DEPENDENT;
 public class UniversalChineseGrammaticalStructure extends GrammaticalStructure  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(UniversalChineseGrammaticalStructure.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(UniversalChineseGrammaticalStructure.class);
 
-  private static HeadFinder shf = new UniversalChineseSemanticHeadFinder();
+  private static final HeadFinder shf = new UniversalChineseSemanticHeadFinder();
   //private static HeadFinder shf = new ChineseHeadFinder();
 
 

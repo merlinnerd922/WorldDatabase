@@ -40,7 +40,7 @@ import java.io.*;
 public class CRFClassifierNoisyLabel<IN extends CoreMap> extends CRFClassifier<IN>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CRFClassifierNoisyLabel.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CRFClassifierNoisyLabel.class);
 
   protected double[][] errorMatrix;
 

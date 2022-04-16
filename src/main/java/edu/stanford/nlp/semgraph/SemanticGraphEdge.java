@@ -122,7 +122,7 @@ public class SemanticGraphEdge
 
   }
 
-  private static Comparator<SemanticGraphEdge> targetComparator = new SemanticGraphEdgeTargetComparator();
+  private static final Comparator<SemanticGraphEdge> targetComparator = new SemanticGraphEdgeTargetComparator();
 
   public static Comparator<SemanticGraphEdge> orderByTargetComparator() {
     return targetComparator;

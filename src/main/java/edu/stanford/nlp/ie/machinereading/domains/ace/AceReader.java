@@ -53,7 +53,7 @@ import edu.stanford.nlp.util.StringUtils;
 public class AceReader extends GenericDataSetReader  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AceReader.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AceReader.class);
 
   private final Counter<String> entityCounts;
   private final Counter<String> adjacentEntityMentions;

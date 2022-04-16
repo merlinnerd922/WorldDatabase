@@ -22,7 +22,7 @@ import java.util.*;
 public class ArrayHeap<E> extends AbstractSet<E> implements Heap<E>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ArrayHeap.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ArrayHeap.class);
 
   /**
    * A <code>HeapEntry</code> stores an object in the heap along with

@@ -78,7 +78,7 @@ import edu.stanford.nlp.util.ReflectionLoading;
 public class TregexGUI extends JFrame implements ActionListener, MatchesPanelListener  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TregexGUI.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TregexGUI.class);
 
   private static TregexGUI instance; // = null;
 

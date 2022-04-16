@@ -20,7 +20,7 @@ import java.io.Serializable;
 public class TrainOptions implements Serializable  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TrainOptions.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TrainOptions.class);
 
   public String trainTreeFile = null; // same for me -- Teg
 

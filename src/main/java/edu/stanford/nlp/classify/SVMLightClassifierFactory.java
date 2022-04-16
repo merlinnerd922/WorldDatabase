@@ -41,15 +41,15 @@ public class SVMLightClassifierFactory<L, F> implements ClassifierFactory<L, F, 
   private String svmLightLearn = "/u/nlp/packages/svm_light/svm_learn";
   private String svmStructLearn = "/u/nlp/packages/svm_multiclass/svm_multiclass_learn";
   private String svmPerfLearn = "/u/nlp/packages/svm_perf/svm_perf_learn";
-  private String svmLightClassify = "/u/nlp/packages/svm_light/svm_classify";
-  private String svmStructClassify = "/u/nlp/packages/svm_multiclass/svm_multiclass_classify";
-  private String svmPerfClassify = "/u/nlp/packages/svm_perf/svm_perf_classify";
+  private final String svmLightClassify = "/u/nlp/packages/svm_light/svm_classify";
+  private final String svmStructClassify = "/u/nlp/packages/svm_multiclass/svm_multiclass_classify";
+  private final String svmPerfClassify = "/u/nlp/packages/svm_perf/svm_perf_classify";
 
   private boolean useAlphaFile = false;
   protected File alphaFile;
   private boolean deleteTempFilesOnExit = true;
   private int svmLightVerbosity = 0;  // not verbose
-  private boolean doEval = false;
+  private final boolean doEval = false;
   private boolean useSVMPerf = false;
 
   final static Redwood.RedwoodChannels logger = Redwood.channels(SVMLightClassifierFactory.class);

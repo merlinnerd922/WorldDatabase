@@ -16,7 +16,7 @@ import java.util.List;
 public class EmpiricalNERPrior<IN extends CoreMap> extends EntityCachingAbstractSequencePrior<IN>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(EmpiricalNERPrior.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(EmpiricalNERPrior.class);
 
   protected static final String ORG = "ORGANIZATION";
   protected static final String PER = "PERSON";

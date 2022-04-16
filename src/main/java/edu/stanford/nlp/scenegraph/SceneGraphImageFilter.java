@@ -15,9 +15,9 @@ import edu.stanford.nlp.util.Generics;
 
 public class SceneGraphImageFilter {
 
-  private static Counter<String> attributeCounter = new ClassicCounter<String>();
-  private static Counter<String> relationCounter = new ClassicCounter<String>();
-  private static Counter<String> entityCounter = new ClassicCounter<String>();
+  private static final Counter<String> attributeCounter = new ClassicCounter<String>();
+  private static final Counter<String> relationCounter = new ClassicCounter<String>();
+  private static final Counter<String> entityCounter = new ClassicCounter<String>();
 
 
   private static void countAll(List<SceneGraphImage> images) {

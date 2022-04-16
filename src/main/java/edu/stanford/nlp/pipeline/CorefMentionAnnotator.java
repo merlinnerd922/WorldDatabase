@@ -51,11 +51,11 @@ public class CorefMentionAnnotator extends TextAnnotationCreator implements Anno
    */
   private static final Redwood.RedwoodChannels log = Redwood.channels(CorefMentionAnnotator.class);
 
-  private HeadFinder headFinder;
-  private CorefMentionFinder md;
+  private final HeadFinder headFinder;
+  private final CorefMentionFinder md;
   private String mdName;
-  private Dictionaries dictionaries;
-  private Properties corefProperties;
+  private final Dictionaries dictionaries;
+  private final Properties corefProperties;
 
   private final Set<Class<? extends CoreAnnotation>> mentionAnnotatorRequirements = new HashSet<>();
 

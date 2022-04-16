@@ -354,8 +354,8 @@ public abstract class AbstractSequenceClassifier<IN extends CoreMap> implements 
 
   public Sampler<List<IN>> getSampler(final List<IN> input) {
     return new Sampler<List<IN>>() {
-      SequenceModel model = getSequenceModel(input);
-      SequenceSampler sampler = new SequenceSampler();
+      final SequenceModel model = getSequenceModel(input);
+      final SequenceSampler sampler = new SequenceSampler();
 
       @Override
       public List<IN> drawSample() {

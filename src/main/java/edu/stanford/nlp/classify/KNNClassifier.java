@@ -25,8 +25,8 @@ public class KNNClassifier<K,V> implements Classifier<K, V> {
    */
   private static final long serialVersionUID = 7115357548209007944L;
   private boolean weightedVotes = false; // whether this is a weighted vote (by sim), or not
-  private CollectionValuedMap<K, Counter<V>> instances = new CollectionValuedMap<>();
-  private Map<Counter<V>, K> classLookup = Generics.newHashMap();
+  private final CollectionValuedMap<K, Counter<V>> instances = new CollectionValuedMap<>();
+  private final Map<Counter<V>, K> classLookup = Generics.newHashMap();
   private boolean l2Normalize = false;
   int k = 0;
 

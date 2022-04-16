@@ -33,9 +33,9 @@ public class ScorePatternsRatioModifiedFreq<E> extends ScorePatterns<E> {
   }
 
   // cached values
-  private TwoDimensionalCounter<CandidatePhrase, ScorePhraseMeasures> phInPatScores;
+  private final TwoDimensionalCounter<CandidatePhrase, ScorePhraseMeasures> phInPatScores;
 
-  private ScorePhrases scorePhrases;
+  private final ScorePhrases scorePhrases;
 
   @Override
   public void setUp(Properties props) {

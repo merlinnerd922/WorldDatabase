@@ -18,9 +18,9 @@ import java.util.*;
 public final class DFSAState<T,S> implements Scored {
 
   private S stateID;
-  private Map<T,DFSATransition<T,S>> inputToTransition;
+  private final Map<T,DFSATransition<T,S>> inputToTransition;
   public boolean accepting;
-  private DFSA<T,S> dfsa;
+  private final DFSA<T,S> dfsa;
 
   public double score;
 

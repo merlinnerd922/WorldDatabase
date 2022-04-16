@@ -33,9 +33,9 @@ import edu.stanford.nlp.util.Iterables;
 public class ParsedGigawordReader implements Iterable<Annotation>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ParsedGigawordReader.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ParsedGigawordReader.class);
 
-  private Iterable<File> files;
+  private final Iterable<File> files;
 
   public ParsedGigawordReader(File directory) {
     this.files = IOUtils.iterFilesRecursive(directory);
@@ -44,7 +44,7 @@ public class ParsedGigawordReader implements Iterable<Annotation>  {
   @Override
   public Iterator<Annotation> iterator() {
     return new Iterator<Annotation>() {
-      private Iterator<BufferedReader> readers = Iterables.transform(files,
+      private final Iterator<BufferedReader> readers = Iterables.transform(files,
           file -> IOUtils.readerFromFile(file)).iterator();
 
       private BufferedReader reader = findReader();

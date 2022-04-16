@@ -46,7 +46,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class EnglishUnknownWordModel extends BaseUnknownWordModel  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(EnglishUnknownWordModel.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(EnglishUnknownWordModel.class);
 
   private static final long serialVersionUID = 4825624957364628770L;
 

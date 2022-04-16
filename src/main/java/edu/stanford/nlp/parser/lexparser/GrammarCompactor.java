@@ -21,7 +21,7 @@ import java.util.Map.Entry;
 public abstract class GrammarCompactor  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(GrammarCompactor.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(GrammarCompactor.class);
 
   // so that the grammar remembers its graphs after compacting them
   Set<TransducerGraph> compactedGraphs;

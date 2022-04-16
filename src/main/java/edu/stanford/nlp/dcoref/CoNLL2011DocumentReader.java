@@ -48,7 +48,7 @@ import java.util.regex.Pattern;
 public class CoNLL2011DocumentReader  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CoNLL2011DocumentReader.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CoNLL2011DocumentReader.class);
 
   private static final int FIELD_LAST = -1;
 

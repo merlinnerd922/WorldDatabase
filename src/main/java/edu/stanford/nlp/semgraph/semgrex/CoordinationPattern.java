@@ -10,7 +10,7 @@ import edu.stanford.nlp.semgraph.SemanticGraph;
 public class CoordinationPattern extends SemgrexPattern  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CoordinationPattern.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CoordinationPattern.class);
 
   private static final long serialVersionUID = -3122330899634961002L;
   private final boolean isConj;
@@ -125,7 +125,7 @@ public class CoordinationPattern extends SemgrexPattern  {
 
 
   private static class CoordinationMatcher extends SemgrexMatcher {
-    private SemgrexMatcher[] children;
+    private final SemgrexMatcher[] children;
     private final CoordinationPattern myNode;
     private int currChild;
     private final boolean considerAll;

@@ -19,7 +19,7 @@ import java.util.zip.GZIPInputStream;
 public class GoogleNGramsSQLBacked  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(GoogleNGramsSQLBacked.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(GoogleNGramsSQLBacked.class);
 
   @Option(name="populateTables")
   static boolean populateTables = false;

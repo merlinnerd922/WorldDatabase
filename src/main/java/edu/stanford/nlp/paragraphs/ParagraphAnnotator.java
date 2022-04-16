@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
 public class ParagraphAnnotator implements Annotator {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ParagraphAnnotator.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ParagraphAnnotator.class);
 
   private final boolean VERBOSE;
   private final boolean DEBUG = true;

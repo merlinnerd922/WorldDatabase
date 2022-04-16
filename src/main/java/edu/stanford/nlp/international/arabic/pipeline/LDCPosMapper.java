@@ -23,7 +23,7 @@ import edu.stanford.nlp.util.Generics;
 public class LDCPosMapper implements Mapper  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(LDCPosMapper.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(LDCPosMapper.class);
 
 	protected Pattern startOfTagMap = Pattern.compile("\\(tag-map");
 	protected Pattern endOfTagMap = Pattern.compile("^\\s*\\)\\s*$");

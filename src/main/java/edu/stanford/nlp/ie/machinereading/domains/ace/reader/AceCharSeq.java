@@ -15,13 +15,13 @@ import edu.stanford.nlp.trees.Span;
 public class AceCharSeq  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AceCharSeq.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AceCharSeq.class);
 
   /** The exact text matched by this sequence */
-  private String mText;
+  private final String mText;
 
   /** Offset in the document stream */
-  private Span mByteOffset;
+  private final Span mByteOffset;
 
   /** Span of tokens that match this char sequence */
   private Span mTokenOffset;

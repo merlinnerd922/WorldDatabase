@@ -12,7 +12,7 @@ public class EnglishUnknownWordModelTrainer
 {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(EnglishUnknownWordModelTrainer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(EnglishUnknownWordModelTrainer.class);
 
   private static final boolean DOCUMENT_UNKNOWNS = false;
 

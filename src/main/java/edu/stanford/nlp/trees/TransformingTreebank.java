@@ -175,8 +175,8 @@ public class TransformingTreebank extends Treebank {
 
   private static class TransformingTreebankIterator implements Iterator<Tree> {
 
-    private Iterator<Tree> iter;
-    private TreeTransformer transformer;
+    private final Iterator<Tree> iter;
+    private final TreeTransformer transformer;
 
     TransformingTreebankIterator (Iterator<Tree> iter, TreeTransformer transformer) {
       this.iter = iter;

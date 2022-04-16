@@ -12,7 +12,7 @@ import edu.stanford.nlp.coref.data.Dictionaries.MentionType;
 public class OracleSieve extends Sieve  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(OracleSieve.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(OracleSieve.class);
 
   private static final long serialVersionUID = 3510248899162246138L;
 

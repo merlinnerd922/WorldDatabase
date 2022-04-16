@@ -23,7 +23,7 @@ import java.util.Map.Entry;
 public class ArabicUtils  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ArabicUtils.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ArabicUtils.class);
 
 
   public static Map<String,String> presToLogicalMap(){

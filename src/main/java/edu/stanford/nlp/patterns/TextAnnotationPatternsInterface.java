@@ -20,7 +20,7 @@ import java.util.concurrent.ExecutionException;
  */
 public class TextAnnotationPatternsInterface {
 
-  private ServerSocket server;
+  private final ServerSocket server;
   public TextAnnotationPatternsInterface(int portnum) throws IOException {
     server = new ServerSocket(portnum);
   }
@@ -56,8 +56,8 @@ public class TextAnnotationPatternsInterface {
    * containing only a period.
    */
   private static class PerformActionUpdateModel extends Thread {
-    private Socket socket;
-    private int clientNumber;
+    private final Socket socket;
+    private final int clientNumber;
     TextAnnotationPatterns annotate;
 
 

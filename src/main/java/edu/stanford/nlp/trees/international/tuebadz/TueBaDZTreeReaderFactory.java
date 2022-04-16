@@ -13,8 +13,8 @@ public class TueBaDZTreeReaderFactory implements TreeReaderFactory, Serializable
 
   private static final long serialVersionUID = 1614799885744961795L;
 
-  private TreebankLanguagePack tlp;
-  private int nodeCleanup;
+  private final TreebankLanguagePack tlp;
+  private final int nodeCleanup;
 
   public TueBaDZTreeReaderFactory(TreebankLanguagePack tlp) {
     this(tlp, 0);

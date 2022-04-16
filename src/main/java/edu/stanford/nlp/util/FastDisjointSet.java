@@ -23,7 +23,7 @@ public class FastDisjointSet<T> implements DisjointSet<T> {
     }
   }
 
-  private Map<T, Element<T>> objectToElement;
+  private final Map<T, Element<T>> objectToElement;
 
   private static <TTT> void linkElements(Element<TTT> e, Element<TTT> f) {
     if (e.rank > f.rank) {

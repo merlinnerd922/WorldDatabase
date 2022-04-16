@@ -160,7 +160,7 @@ public class CRFClassifier<IN extends CoreMap> extends AbstractSequenceClassifie
   /**
    * Fields for grouping features
    */
-  private Pattern suffixPatt = Pattern.compile(".+?((?:-[A-Z]+)+)\\|.*C");
+  private final Pattern suffixPatt = Pattern.compile(".+?((?:-[A-Z]+)+)\\|.*C");
   private Index<String> templateGroupIndex;
   private Map<Integer, Integer> featureIndexToTemplateIndex;
 

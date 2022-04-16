@@ -16,7 +16,7 @@ public class ChineseUnknownWordModelTrainer
 {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ChineseUnknownWordModelTrainer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ChineseUnknownWordModelTrainer.class);
 
   // Records the number of times word/tag pair was seen in training data.
   private ClassicCounter<IntTaggedWord> seenCounter;
@@ -41,7 +41,7 @@ public class ChineseUnknownWordModelTrainer
 
   private UnknownGTTrainer unknownGTTrainer;
 
-  private IntTaggedWord iTotal = new IntTaggedWord(nullWord, nullTag);
+  private final IntTaggedWord iTotal = new IntTaggedWord(nullWord, nullTag);
 
   private UnknownWordModel model;
 

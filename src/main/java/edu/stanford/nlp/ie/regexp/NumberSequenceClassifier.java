@@ -54,7 +54,7 @@ import java.util.regex.Pattern;
 public class NumberSequenceClassifier extends AbstractSequenceClassifier<CoreLabel>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(NumberSequenceClassifier.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(NumberSequenceClassifier.class);
 
   private static final boolean DEBUG = false;
 

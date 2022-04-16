@@ -32,7 +32,7 @@ import edu.stanford.nlp.util.RuntimeInterruptedException;
 public class LogConditionalObjectiveFunction<L, F> extends AbstractStochasticCachingDiffUpdateFunction  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(LogConditionalObjectiveFunction.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(LogConditionalObjectiveFunction.class);
 
   protected final LogPrior prior;
 

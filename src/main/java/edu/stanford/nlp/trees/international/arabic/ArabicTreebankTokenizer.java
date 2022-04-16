@@ -22,7 +22,7 @@ import java.io.Reader;
 public class ArabicTreebankTokenizer extends PennTreebankTokenizer  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ArabicTreebankTokenizer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ArabicTreebankTokenizer.class);
 
   public ArabicTreebankTokenizer(Reader r) {
     super(r);

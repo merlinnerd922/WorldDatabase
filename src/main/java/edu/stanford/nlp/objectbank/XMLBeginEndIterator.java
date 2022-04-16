@@ -37,7 +37,7 @@ import java.util.regex.Pattern;
 public class XMLBeginEndIterator<E> extends AbstractIterator<E>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(XMLBeginEndIterator.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(XMLBeginEndIterator.class);
 
   private final Pattern tagNamePattern;
   private final BufferedReader inputReader;

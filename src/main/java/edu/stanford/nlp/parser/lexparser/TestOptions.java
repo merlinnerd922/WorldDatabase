@@ -22,7 +22,7 @@ import java.util.Properties;
 public class TestOptions implements Serializable  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TestOptions.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TestOptions.class);
 
   static final String DEFAULT_PRE_TAGGER =
     "/u/nlp/data/pos-tagger/distrib/wsj-0-18-bidirectional-nodistsim.tagger";

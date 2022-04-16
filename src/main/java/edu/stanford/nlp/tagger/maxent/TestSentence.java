@@ -83,8 +83,8 @@ public class TestSentence implements SequenceModel  {
   int numWrongUnknown;
   private int endSizePairs; // = 0;
 
-  private volatile History history;
-  private volatile Map<String,double[]> localScores = Generics.newHashMap();
+  private final History history;
+  private final Map<String,double[]> localScores = Generics.newHashMap();
   private volatile double[][] localContextScores;
 
   protected final MaxentTagger maxentTagger;

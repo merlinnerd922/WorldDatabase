@@ -36,7 +36,7 @@ import edu.stanford.nlp.util.StringUtils;
 public class TreebankStats  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TreebankStats.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TreebankStats.class);
 
   private final Language languageName;
   private final TreebankLangParserParams tlpp;

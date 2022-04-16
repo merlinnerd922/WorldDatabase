@@ -449,10 +449,10 @@ public interface KBPRelationExtractor {
       }
     }
 
-    private Counter<String> correctCount   = new ClassicCounter<>();
-    private Counter<String> predictedCount = new ClassicCounter<>();
-    private Counter<String> goldCount      = new ClassicCounter<>();
-    private Counter<String> totalCount     = new ClassicCounter<>();
+    private final Counter<String> correctCount   = new ClassicCounter<>();
+    private final Counter<String> predictedCount = new ClassicCounter<>();
+    private final Counter<String> goldCount      = new ClassicCounter<>();
+    private final Counter<String> totalCount     = new ClassicCounter<>();
     public final ConfusionMatrix<String> confusion = new ConfusionMatrix<>();
 
 

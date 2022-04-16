@@ -52,7 +52,7 @@ public class DeterministicCorefAnnotator implements Annotator  {
   private final MentionExtractor mentionExtractor;
   private final SieveCoreferenceSystem corefSystem;
 
-  private boolean performMentionDetection;
+  private final boolean performMentionDetection;
   private CorefMentionAnnotator mentionAnnotator;
 
 

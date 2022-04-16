@@ -104,7 +104,7 @@ public class QNMinimizer implements Minimizer<DiffFunction>, HasEvaluators  {
   private static final NumberFormat nf = new DecimalFormat("0.000E0");
   private static final NumberFormat nfsec = new DecimalFormat("0.00"); // for times
   private static final double ftol = 1e-4; // Linesearch parameters
-  private double gtol = 0.9;
+  private final double gtol = 0.9;
   private static final double aMin = 1e-12; // Min step size
   private static final double aMax = 1e12; // Max step size
   private static final double p66 = 0.66; // used to check getting more than 2/3 of width improvement
@@ -310,7 +310,7 @@ public class QNMinimizer implements Minimizer<DiffFunction>, HasEvaluators  {
     // for convergence test
     private final List<Double> evals = new ArrayList<>(100);
     private final List<Double> values = new ArrayList<>(100);
-    private List<Double> gNorms = new ArrayList<>(100);
+    private final List<Double> gNorms = new ArrayList<>(100);
     // List<Double> xNorms = new ArrayList<Double>(100);
     private final List<Integer> funcEvals = new ArrayList<>(100);
     private final List<Double> time = new ArrayList<>(100);
@@ -319,7 +319,7 @@ public class QNMinimizer implements Minimizer<DiffFunction>, HasEvaluators  {
     // initialized you don't get a NAN but you will also never
     // get false convergence.
     private double gNormInit = Double.MIN_VALUE;
-    private double relativeTOL = 1e-8;
+    private final double relativeTOL = 1e-8;
     private double TOL = 1e-6;
     private double EPS = 1e-6;
     private long startTime;
@@ -328,7 +328,7 @@ public class QNMinimizer implements Minimizer<DiffFunction>, HasEvaluators  {
     private int maxSize = 100; // This will control the number of func values /
     // gradients to retain.
     private Function mon = null;
-    private boolean memoryConscious = true;
+    private final boolean memoryConscious = true;
     private PrintWriter outputFile = null;
 
     // private int noImproveItrCount = 0;

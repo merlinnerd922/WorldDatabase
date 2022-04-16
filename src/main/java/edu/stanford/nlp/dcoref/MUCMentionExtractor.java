@@ -60,7 +60,7 @@ import edu.stanford.nlp.util.Generics;
 public class MUCMentionExtractor extends MentionExtractor  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(MUCMentionExtractor.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(MUCMentionExtractor.class);
 
   private final TokenizerFactory<CoreLabel> tokenizerFactory;
   private final String fileContents;

@@ -21,13 +21,13 @@ import edu.stanford.nlp.util.StringUtils;
 public class SceneGraphImageCleaner {
 
 
-  private static String FINAL_PUNCT_REGEX = "\\.+$";
-  private static String INITIAL_DET_REGEX = "^(an?|the) ";
-  private static String FINAL_DET_REGEX = " (an?|the)$";
-  private static String TRAILING_NUMBER_REGEX = " [0-9]+$";
+  private static final String FINAL_PUNCT_REGEX = "\\.+$";
+  private static final String INITIAL_DET_REGEX = "^(an?|the) ";
+  private static final String FINAL_DET_REGEX = " (an?|the)$";
+  private static final String TRAILING_NUMBER_REGEX = " [0-9]+$";
 
 
-  private static Set<String> ALL_ATTRIBUTES = Generics.newHashSet();
+  private static final Set<String> ALL_ATTRIBUTES = Generics.newHashSet();
 
   private static StanfordCoreNLP pipeline;
 

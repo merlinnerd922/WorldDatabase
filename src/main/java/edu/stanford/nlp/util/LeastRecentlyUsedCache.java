@@ -80,8 +80,8 @@ public class LeastRecentlyUsedCache<K, V> {
     }
   }
 
-  private Map<K, Node<K, V>> map = new HashMap<>();
-  private LinkedList<K, V> list = new LinkedList<>();
+  private final Map<K, Node<K, V>> map = new HashMap<>();
+  private final LinkedList<K, V> list = new LinkedList<>();
   private final int maxSize;
 
   public LeastRecentlyUsedCache(int maxSize) {

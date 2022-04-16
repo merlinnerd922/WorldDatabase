@@ -26,7 +26,7 @@ import edu.stanford.nlp.util.CoreMap;
 
 public class DcorefPronounResolver extends AbstractPronounResolver {
 
-  private StanfordCoreNLP pipeline;
+  private final StanfordCoreNLP pipeline;
 
   public DcorefPronounResolver() {
     Properties props  = new Properties();

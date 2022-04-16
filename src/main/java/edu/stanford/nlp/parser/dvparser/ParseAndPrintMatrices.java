@@ -34,7 +34,7 @@ import edu.stanford.nlp.util.Pair;
 public class ParseAndPrintMatrices  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ParseAndPrintMatrices.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ParseAndPrintMatrices.class);
 
   public static void outputMatrix(BufferedWriter bout, SimpleMatrix matrix) throws IOException {
     for (int i = 0; i < matrix.getNumElements(); ++i) {

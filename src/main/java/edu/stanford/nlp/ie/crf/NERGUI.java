@@ -61,9 +61,9 @@ public class NERGUI  {
   private static final int HEIGHT = 600;
   private static final int WIDTH = 650;
   private Map<String, Color> tagToColorMap;
-  private JFileChooser fileChooser = new JFileChooser();
-  private MutableAttributeSet defaultAttrSet = new SimpleAttributeSet();
-  private ActionListener actor = new ActionPerformer();
+  private final JFileChooser fileChooser = new JFileChooser();
+  private final MutableAttributeSet defaultAttrSet = new SimpleAttributeSet();
+  private final ActionListener actor = new ActionPerformer();
   private File loadedFile;
   private String taggedContents; // = null;
   private String htmlContents; // = null;
@@ -785,7 +785,7 @@ public class NERGUI  {
   }
 
 
-  private static Color[] basicColors = new Color[]{new Color(204, 102, 0),
+  private static final Color[] basicColors = new Color[]{new Color(204, 102, 0),
                                                    new Color(102, 0, 102),
                                                    new Color(204, 0, 102),
                                                    new Color(153, 0, 0),

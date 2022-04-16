@@ -34,7 +34,7 @@ import java.util.*;
 public class ChineseTreebankParserParams extends AbstractTreebankParserParams  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ChineseTreebankParserParams.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ChineseTreebankParserParams.class);
 
   /**
    * The variable ctlp stores the same thing as the tlp variable in
@@ -42,7 +42,7 @@ public class ChineseTreebankParserParams extends AbstractTreebankParserParams  {
    * ChineseTreebankLanguagePack.
    * todo [cdm 2013]: Just change to method that casts
    */
-  private ChineseTreebankLanguagePack ctlp;
+  private final ChineseTreebankLanguagePack ctlp;
   public boolean charTags = false;
   public boolean useCharacterBasedLexicon = false;
   public boolean useMaxentLexicon = false;

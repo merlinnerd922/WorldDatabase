@@ -24,7 +24,7 @@ import edu.stanford.nlp.util.Generics;
 public class IBMMTArabicDataset implements Dataset  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(IBMMTArabicDataset.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(IBMMTArabicDataset.class);
 
   protected Mapper lexMapper = null;
   protected final List<File> pathsToData;

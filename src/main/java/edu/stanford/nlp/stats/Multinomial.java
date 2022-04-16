@@ -17,7 +17,7 @@ public class Multinomial<E> implements ProbabilityDistribution<E> {
    * 
    */
   private static final long serialVersionUID = -697457414113362926L;
-  private Counter<E> parameters;
+  private final Counter<E> parameters;
 
   public Multinomial(Counter<E> parameters) {
     double totalMass = parameters.totalCount();

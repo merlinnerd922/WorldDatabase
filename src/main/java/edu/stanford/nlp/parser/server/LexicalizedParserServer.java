@@ -31,7 +31,7 @@ import edu.stanford.nlp.util.Filters;
 public class LexicalizedParserServer  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(LexicalizedParserServer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(LexicalizedParserServer.class);
   final int port;
 
   final ServerSocket serverSocket;

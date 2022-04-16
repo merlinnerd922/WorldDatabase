@@ -18,7 +18,7 @@ import java.io.UnsupportedEncodingException;
 public class EncodingPrintWriter  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(EncodingPrintWriter.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(EncodingPrintWriter.class);
 
   private static final String DEFAULT_ENCODING = "UTF-8";
 

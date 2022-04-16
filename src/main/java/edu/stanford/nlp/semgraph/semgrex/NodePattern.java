@@ -39,7 +39,7 @@ public class NodePattern extends SemgrexPattern  {
   SemgrexPattern child;
   // specifies the groups in a regex that are captured as
   // matcher-global string variables
-  private List<Pair<Integer, String>> variableGroups;
+  private final List<Pair<Integer, String>> variableGroups;
 
   public NodePattern(GraphRelation r, boolean negDesc,
                      Map<String, String> attrs,

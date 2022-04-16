@@ -23,7 +23,7 @@ import edu.stanford.nlp.util.Generics;
 
 public class CorpusDictionary {
 
-  private static Redwood.RedwoodChannels logger = Redwood.channels(CorpusDictionary.class);
+  private static final Redwood.RedwoodChannels logger = Redwood.channels(CorpusDictionary.class);
 
   private Set<String> oneWord; // = null;
 

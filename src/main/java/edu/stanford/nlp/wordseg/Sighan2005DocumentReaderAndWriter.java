@@ -132,7 +132,7 @@ public class Sighan2005DocumentReaderAndWriter implements DocumentReaderAndWrite
   class CTBDocumentParser implements Function<String,List<CoreLabel>>, Serializable {
     private static final long serialVersionUID = 3260297180259462337L;
 
-    private String defaultMap = "char=0,answer=1";
+    private final String defaultMap = "char=0,answer=1";
     public String[] map = StringUtils.mapStringToArray(defaultMap);
 
 

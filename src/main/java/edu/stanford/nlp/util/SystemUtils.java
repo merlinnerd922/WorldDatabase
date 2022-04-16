@@ -96,8 +96,8 @@ public class SystemUtils {
    * Used as a helper for {@link #consume} to avoid deadlocks.
    */
   private static class WriterThread extends Thread {
-    private Reader reader;
-    private Writer writer;
+    private final Reader reader;
+    private final Writer writer;
     public WriterThread(InputStream inputStream, Writer writer) {
       this.reader = new InputStreamReader(inputStream);
       this.writer = writer;
@@ -127,9 +127,9 @@ public class SystemUtils {
    */
   public static class ProcessOutputStream extends OutputStream
   {
-    private Process process;
-    private Thread outWriterThread;
-    private Thread errWriterThread;
+    private final Process process;
+    private final Thread outWriterThread;
+    private final Thread errWriterThread;
 
     public ProcessOutputStream(String[] cmd) throws IOException {
       this(new ProcessBuilder(cmd), new PrintWriter(System.out), new PrintWriter(System.err));

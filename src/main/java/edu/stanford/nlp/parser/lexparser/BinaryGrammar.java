@@ -16,7 +16,7 @@ import java.util.*;
 public class BinaryGrammar implements Serializable, Iterable<BinaryRule>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(BinaryGrammar.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(BinaryGrammar.class);
 
   // private static final BinaryRule[] EMPTY_BINARY_RULE_ARRAY = new BinaryRule[0];
 

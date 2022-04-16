@@ -10,7 +10,7 @@ import edu.stanford.nlp.util.Index;
 public class OutsideRuleFilter {
 
   private final Index<String> tagIndex;
-  private int numTags;
+  private final int numTags;
   private int numFAs;
 
   private FA[] leftFA;

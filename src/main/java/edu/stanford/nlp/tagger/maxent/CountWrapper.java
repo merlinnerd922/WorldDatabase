@@ -19,7 +19,7 @@ import java.io.DataOutputStream;
 public class CountWrapper  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CountWrapper.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CountWrapper.class);
 
   private String word;
   private int countPart;

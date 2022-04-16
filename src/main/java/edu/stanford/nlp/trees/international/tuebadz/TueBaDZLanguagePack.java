@@ -15,21 +15,21 @@ import edu.stanford.nlp.trees.HeadFinder;
 public class TueBaDZLanguagePack extends AbstractTreebankLanguagePack {
   private boolean limitedGF = false;
 
-  private static String[] gfToKeepArray = {"ON", "OA", "OD"};
+  private static final String[] gfToKeepArray = {"ON", "OA", "OD"};
 
-  private static String[] tuebadzPunctTags = {"$.","$,","$-LRB"};
+  private static final String[] tuebadzPunctTags = {"$.","$,","$-LRB"};
 
-  private static String[] tuebadzSFPunctTags = {"$."};
+  private static final String[] tuebadzSFPunctTags = {"$."};
 
 
-  private static String[] tuebadzPunctWords = { "`", "-", ",", ";", ":", "!", "?", "/", ".", "...","'", "\"", "[", "]", "*"};
+  private static final String[] tuebadzPunctWords = { "`", "-", ",", ";", ":", "!", "?", "/", ".", "...","'", "\"", "[", "]", "*"};
 
-  private static String[] tuebadzSFPunctWords = {".", "!", "?"};
+  private static final String[] tuebadzSFPunctWords = {".", "!", "?"};
 
   /**
    * The first one is used by the TueBaDZ Treebank, and the rest are used by Klein's lexparser.
    */
-  private static char[] annotationIntroducingChars = {':', '^', '~', '%', '#', '='};
+  private static final char[] annotationIntroducingChars = {':', '^', '~', '%', '#', '='};
 
 
   /**

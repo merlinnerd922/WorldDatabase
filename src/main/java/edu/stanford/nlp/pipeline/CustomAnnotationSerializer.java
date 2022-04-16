@@ -35,7 +35,7 @@ import edu.stanford.nlp.util.*;
 public class CustomAnnotationSerializer extends AnnotationSerializer  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CustomAnnotationSerializer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CustomAnnotationSerializer.class);
 
   private final boolean compress;
 

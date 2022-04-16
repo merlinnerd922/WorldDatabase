@@ -26,7 +26,7 @@ import java.util.zip.GZIPOutputStream;
 public class CoNLLBenchmark   {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CoNLLBenchmark.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CoNLLBenchmark.class);
 
   static final String DATA_PATH = "/u/nlp/data/ner/conll/";
 

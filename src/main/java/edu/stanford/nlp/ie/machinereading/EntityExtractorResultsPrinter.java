@@ -21,17 +21,17 @@ import edu.stanford.nlp.util.StringUtils;
 public class EntityExtractorResultsPrinter extends ResultsPrinter  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(EntityExtractorResultsPrinter.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(EntityExtractorResultsPrinter.class);
 
 	/** Contains a set of labels that should be excluded from scoring */
-	private Set<String> excludedClasses;
+	private final Set<String> excludedClasses;
 
 	/** Use subtypes for scoring or just types? */
-	private boolean useSubTypes;
+	private final boolean useSubTypes;
 
-	private boolean verbose;
+	private final boolean verbose;
 	
-	private boolean verboseInstances;
+	private final boolean verboseInstances;
 
 	private static final DecimalFormat FORMATTER = new DecimalFormat();
 	static {

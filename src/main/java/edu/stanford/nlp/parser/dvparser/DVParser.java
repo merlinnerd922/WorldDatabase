@@ -40,7 +40,7 @@ import edu.stanford.nlp.util.Timing;
 public class DVParser  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(DVParser.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(DVParser.class);
   final DVModel dvModel;
   final LexicalizedParser parser;
   final Options op;

@@ -942,7 +942,7 @@ class ExtractorCapDistLC extends RareExtractor {
 class ExtractorCapLCSeen extends RareExtractor {
 
   final String tag;
-  private int cutoff = 1;
+  private final int cutoff = 1;
   private final Extractor cCapDist = new ExtractorCapDistLC();
 
   private transient Dictionary dict;
@@ -1294,7 +1294,8 @@ class ExtractorsConjunction extends RareExtractor {
   private final Extractor extractor1;
   private final Extractor extractor2;
 
-  private volatile boolean isLocal, isDynamic;
+  private final boolean isLocal;
+    private final boolean isDynamic;
 
   ExtractorsConjunction(Extractor e1, Extractor e2) {
     extractor1 = e1;
@@ -1445,7 +1446,7 @@ class PluralAcronymDetector extends RareExtractor {
 
 class CtbPreDetector extends RareExtractor {
 
-  private String t1;
+  private final String t1;
 
   CtbPreDetector(String t2, int n2) {
     super(n2);
@@ -1476,7 +1477,7 @@ class CtbPreDetector extends RareExtractor {
 
 class CtbSufDetector extends RareExtractor {
 
-  private String t1;
+  private final String t1;
 
   CtbSufDetector(String t2, int n2) {
     super(n2);
@@ -1545,8 +1546,8 @@ class ASBCSufDetector extends RareExtractor {
 
 class ASBCunkDetector extends RareExtractor {
 
-  private String t1;
-  private int n1;
+  private final String t1;
+  private final int n1;
 
   ASBCunkDetector(String t2, int n2) {
     t1=t2;
@@ -1571,8 +1572,8 @@ class ASBCunkDetector extends RareExtractor {
 
 class CTBunkDictDetector extends RareExtractor {
 
-  private String t1;
-  private int n1;
+  private final String t1;
+  private final int n1;
 
   CTBunkDictDetector(String t2, int n2) {
     t1=t2;

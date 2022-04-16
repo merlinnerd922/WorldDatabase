@@ -28,7 +28,7 @@ import java.io.ObjectInputStream;
 public class SentimentModel implements Serializable  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(SentimentModel.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(SentimentModel.class);
   /**
    * Nx2N+1, where N is the size of the word vectors
    */

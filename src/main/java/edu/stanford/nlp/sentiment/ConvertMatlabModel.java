@@ -28,7 +28,7 @@ import edu.stanford.nlp.util.Generics;
 public class ConvertMatlabModel  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ConvertMatlabModel.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ConvertMatlabModel.class);
 
   private ConvertMatlabModel() {} // static class
 

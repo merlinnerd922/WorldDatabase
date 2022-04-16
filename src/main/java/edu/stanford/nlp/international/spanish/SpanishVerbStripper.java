@@ -42,8 +42,8 @@ public final class SpanishVerbStripper implements Serializable  {
    */
   public static class StrippedVerb {
     private String stem;
-    private String originalStem;
-    private List<String> pronouns;
+    private final String originalStem;
+    private final List<String> pronouns;
 
     public StrippedVerb(String originalStem, List<String> pronouns) {
       this.originalStem = originalStem;

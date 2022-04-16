@@ -46,16 +46,16 @@ public class KBPAnnotator implements Annotator {
   //private String language = "english";
 
   @ArgumentParser.Option(name="kbp.model", gloss="The path to the model, set to \"none\" for no model")
-  private String model = DefaultPaths.DEFAULT_KBP_CLASSIFIER;
+  private final String model = DefaultPaths.DEFAULT_KBP_CLASSIFIER;
 
   @ArgumentParser.Option(name="kbp.semgrex", gloss="Semgrex patterns directory, set to \"none\" to not use semgrex")
-  private String semgrexdir = DefaultPaths.DEFAULT_KBP_SEMGREX_DIR;
+  private final String semgrexdir = DefaultPaths.DEFAULT_KBP_SEMGREX_DIR;
 
   @ArgumentParser.Option(name="kbp.tokensregex", gloss="Tokensregex patterns directory, set to \"none\" to not use tokensregex")
-  private String tokensregexdir = DefaultPaths.DEFAULT_KBP_TOKENSREGEX_DIR;
+  private final String tokensregexdir = DefaultPaths.DEFAULT_KBP_TOKENSREGEX_DIR;
 
   @ArgumentParser.Option(name="kbp.verbose", gloss="Print out KBP logging info")
-  private boolean VERBOSE = false;
+  private final boolean VERBOSE = false;
 
   private final LanguageInfo.HumanLanguage kbpLanguage;
   /**

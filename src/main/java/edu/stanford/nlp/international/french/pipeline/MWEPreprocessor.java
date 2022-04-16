@@ -27,7 +27,7 @@ import edu.stanford.nlp.util.Generics;
 public final class MWEPreprocessor  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(MWEPreprocessor.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(MWEPreprocessor.class);
 
   private static final boolean RESOLVE_DUMMY_TAGS = true;
 
@@ -53,7 +53,7 @@ public final class MWEPreprocessor  {
     private static final Set<String> preps = Generics.newHashSet();
     private static final String pStr = "c o t";
 
-    private static int nUnknownWordTypes;
+    private static final int nUnknownWordTypes;
 
     static {
       nouns.addAll(Arrays.asList(nStr.split("\\s+")));

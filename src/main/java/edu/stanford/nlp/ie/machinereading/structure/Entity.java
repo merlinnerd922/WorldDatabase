@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public class Entity {
 
-  private Map<String, List<EntityMention>> entityToEntityMentions = new HashMap<>();
+  private final Map<String, List<EntityMention>> entityToEntityMentions = new HashMap<>();
 
   /**
    * 

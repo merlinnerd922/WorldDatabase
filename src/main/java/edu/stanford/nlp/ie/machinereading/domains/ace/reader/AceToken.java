@@ -18,37 +18,37 @@ import edu.stanford.nlp.util.Generics;
 public class AceToken  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AceToken.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AceToken.class);
   /**
    * The actual token bytes
    * Normally we work with mWord (see below), but mLiteral is needed when
    *   we need to check if a sequence of tokens exists in a gazetteer
    */
-  private String mLiteral;
+  private final String mLiteral;
 
   /** The index of the literal in the WORDS hash */
-  private int mWord;
+  private final int mWord;
 
   /** Case of mWord */
-  private int mCase;
+  private final int mCase;
 
   /** Suffixes of mWord */
-  private int[] mSuffixes;
+  private final int[] mSuffixes;
 
-  private int mLemma;
+  private final int mLemma;
 
-  private int mPos;
+  private final int mPos;
 
-  private int mChunk;
+  private final int mChunk;
 
-  private int mNerc;
+  private final int mNerc;
 
   private Span mByteOffset;
 
   /** Raw byte offset in the SGM doc */
   private Span mRawByteOffset;
 
-  private int mSentence;
+  private final int mSentence;
 
   /** Entity class from Massi */
   private String mMassiClass;

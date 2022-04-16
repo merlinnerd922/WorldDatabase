@@ -54,7 +54,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class Morphology implements Function  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(Morphology.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(Morphology.class);
 
   private static final boolean DEBUG = false;
   private static Morpha staticLexer;

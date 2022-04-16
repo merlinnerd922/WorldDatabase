@@ -47,7 +47,7 @@ import edu.stanford.nlp.util.StringUtils;
 public class BasicRelationFeatureFactory extends RelationFeatureFactory implements Serializable  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(BasicRelationFeatureFactory.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(BasicRelationFeatureFactory.class);
   private static final long serialVersionUID = -7376668998622546620L;
 
   private static final Logger logger = Logger.getLogger(BasicRelationFeatureFactory.class.getName());

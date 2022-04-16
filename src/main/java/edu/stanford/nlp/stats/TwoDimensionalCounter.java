@@ -29,16 +29,16 @@ public class TwoDimensionalCounter<K1, K2> implements TwoDimensionalCounterInter
   private static final long serialVersionUID = 1L;
 
   // the outermost Map
-  private Map<K1, ClassicCounter<K2>> map;
+  private final Map<K1, ClassicCounter<K2>> map;
 
   // the total of all counts
   private double total;
 
   // the MapFactory used to make new maps to counters
-  private MapFactory<K1, ClassicCounter<K2>> outerMF;
+  private final MapFactory<K1, ClassicCounter<K2>> outerMF;
 
   // the MapFactory used to make new maps in the inner counter
-  private MapFactory<K2, MutableDouble> innerMF;
+  private final MapFactory<K2, MutableDouble> innerMF;
 
   private double defaultValue = 0.0;
 

@@ -27,17 +27,17 @@ import java.io.PrintStream;
 public class SequenceGibbsSampler implements BestSequenceFinder  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(SequenceGibbsSampler.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(SequenceGibbsSampler.class);
 
   // a random number generator
-  private static Random random = new Random(2147483647L);
+  private static final Random random = new Random(2147483647L);
   public static int verbose = 0;
 
-  private List document;
-  private int numSamples;
-  private int sampleInterval;
+  private final List document;
+  private final int numSamples;
+  private final int sampleInterval;
   private int speedUpThreshold = -1;
-  private SequenceListener listener;
+  private final SequenceListener listener;
   private static final int RANDOM_SAMPLING = 0;
   private static final int SEQUENTIAL_SAMPLING = 1;
   private static final int CHROMATIC_SAMPLING = 2;
@@ -47,10 +47,10 @@ public class SequenceGibbsSampler implements BestSequenceFinder  {
 
 
   public boolean returnLastFoundSequence = false;
-  private int samplingStyle;
+  private final int samplingStyle;
   // determines how many parallel threads to run in chromatic sampling
-  private int chromaticSize;
-  private List<List<Integer>> partition;
+  private final int chromaticSize;
+  private final List<List<Integer>> partition;
 
   public static int[] copy(int[] a) {
     int[] result = new int[a.length];

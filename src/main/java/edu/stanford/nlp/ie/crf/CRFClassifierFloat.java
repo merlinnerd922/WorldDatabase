@@ -44,7 +44,7 @@ import java.util.zip.GZIPInputStream;
 public class CRFClassifierFloat<IN extends CoreMap> extends CRFClassifier<IN>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CRFClassifierFloat.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CRFClassifierFloat.class);
 
   protected CRFClassifierFloat() {
     super(new SeqClassifierFlags());

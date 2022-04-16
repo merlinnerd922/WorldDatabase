@@ -56,7 +56,7 @@ public class SemanticGraphEnhancer {
   //do something about "a pair of sunglasses vs. the pair of sunglasses..."
   //TODO: Improve Partitives
 
-  private static SimplePronounResolution pronounResolver = new SimplePronounResolution();
+  private static final SimplePronounResolution pronounResolver = new SimplePronounResolution();
 
 
 

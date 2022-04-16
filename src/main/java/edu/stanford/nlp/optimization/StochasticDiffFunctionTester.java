@@ -18,9 +18,9 @@ import java.io.IOException;
 public class StochasticDiffFunctionTester  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(StochasticDiffFunctionTester.class);
-  static private double EPS = 1e-8;
-  static private boolean quiet = false;
+  private static final Redwood.RedwoodChannels log = Redwood.channels(StochasticDiffFunctionTester.class);
+  static private final double EPS = 1e-8;
+  static private final boolean quiet = false;
 
   protected int testBatchSize;
   protected int numBatches;
@@ -29,7 +29,7 @@ public class StochasticDiffFunctionTester  {
   double[]  approxGrad,fullGrad,diff,Hv,HvFD,v,curGrad,gradFD;
   double diffNorm,diffValue,fullValue,approxValue,diffGrad,maxGradDiff = 0.0,maxHvDiff = 0.0;
   Random generator;
-  private static NumberFormat nf = new DecimalFormat("00.0");
+  private static final NumberFormat nf = new DecimalFormat("00.0");
 
   public StochasticDiffFunctionTester(Function function){
 

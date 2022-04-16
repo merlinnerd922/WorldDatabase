@@ -17,7 +17,7 @@ public class NegraPennCollinizer implements TreeTransformer {
   /** A logger for this class */
   Redwood.RedwoodChannels log = Redwood.channels(NegraPennCollinizer.class);
 
-  private TreebankLangParserParams tlpp; 
+  private final TreebankLangParserParams tlpp;
   private final boolean deletePunct;
 
   public NegraPennCollinizer(TreebankLangParserParams tlpp) {

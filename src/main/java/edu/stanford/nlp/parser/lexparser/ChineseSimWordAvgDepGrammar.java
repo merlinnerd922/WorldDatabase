@@ -27,7 +27,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class ChineseSimWordAvgDepGrammar extends MLEDependencyGrammar  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ChineseSimWordAvgDepGrammar.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ChineseSimWordAvgDepGrammar.class);
 
   private static final long serialVersionUID = -1845503582705055342L;
 
@@ -35,8 +35,8 @@ public class ChineseSimWordAvgDepGrammar extends MLEDependencyGrammar  {
 
   private static final String argHeadFile = "simWords/ArgHead.5";
   private static final String headArgFile = "simWords/HeadArg.5";
-  private Map<Pair<Integer, String>, List<Triple<Integer, String, Double>>> simArgMap;
-  private Map<Pair<Integer, String>, List<Triple<Integer, String, Double>>> simHeadMap;
+  private final Map<Pair<Integer, String>, List<Triple<Integer, String, Double>>> simArgMap;
+  private final Map<Pair<Integer, String>, List<Triple<Integer, String, Double>>> simHeadMap;
 
   private static final boolean debug = true;
 
@@ -92,7 +92,7 @@ public class ChineseSimWordAvgDepGrammar extends MLEDependencyGrammar  {
     this.lex = lex;
   }
 
-  private ClassicCounter<String> statsCounter = new ClassicCounter<>();
+  private final ClassicCounter<String> statsCounter = new ClassicCounter<>();
 
   public void dumpSimWordAvgStats() {
     log.info("SimWordAvg stats:");

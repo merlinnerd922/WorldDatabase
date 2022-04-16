@@ -10,7 +10,7 @@ import edu.stanford.nlp.util.Generics;
 public class ASBCunkDict   {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ASBCunkDict.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ASBCunkDict.class);
 
   private static final String defaultFilename = "/u/nlp/data/pos-tagger/asbc_amb.fixed.gb18030";
   private static ASBCunkDict ASBCunkDictSingleton = null;

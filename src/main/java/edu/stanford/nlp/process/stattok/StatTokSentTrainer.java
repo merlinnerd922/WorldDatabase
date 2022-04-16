@@ -47,7 +47,7 @@ import java.util.*;
  * </pre>
  */
 public class StatTokSentTrainer{
-  private String[] propertiesArguments;
+  private final String[] propertiesArguments;
   private static final Redwood.RedwoodChannels logger = Redwood.channels(StatTokSentTrainer.class);
 
   /*

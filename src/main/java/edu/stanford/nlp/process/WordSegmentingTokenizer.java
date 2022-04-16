@@ -21,8 +21,8 @@ import edu.stanford.nlp.util.StringUtils;
 public class WordSegmentingTokenizer extends AbstractTokenizer<HasWord> {
 
   private Iterator<HasWord> wordIter;
-  private Tokenizer<CoreLabel> tok;
-  private WordSegmenter wordSegmenter;
+  private final Tokenizer<CoreLabel> tok;
+  private final WordSegmenter wordSegmenter;
 
   public WordSegmentingTokenizer(WordSegmenter segmenter, Reader r) {
     this(segmenter, WhitespaceTokenizer.newCoreLabelWhitespaceTokenizer(r));
@@ -65,7 +65,7 @@ public class WordSegmentingTokenizer extends AbstractTokenizer<HasWord> {
     private static final long serialVersionUID = -4697961121607489828L;
 
     boolean tokenizeNLs = false;
-    private WordSegmenter segmenter;
+    private final WordSegmenter segmenter;
 
     public WordSegmentingTokenizerFactory(WordSegmenter wordSegmenter) {
       segmenter = wordSegmenter;

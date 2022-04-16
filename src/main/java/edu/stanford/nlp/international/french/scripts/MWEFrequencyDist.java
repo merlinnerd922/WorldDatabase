@@ -32,7 +32,7 @@ import edu.stanford.nlp.util.Generics;
 public final class MWEFrequencyDist  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(MWEFrequencyDist.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(MWEFrequencyDist.class);
 
   private MWEFrequencyDist() {};
   

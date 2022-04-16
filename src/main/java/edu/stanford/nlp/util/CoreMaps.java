@@ -78,7 +78,7 @@ public class CoreMaps {
       @Override
       public Iterator<Map.Entry<CM, V>> iterator() {
         return new Iterator<Map.Entry<CM,V>>() {
-          Iterator<CM> it = coremaps.iterator();
+          final Iterator<CM> it = coremaps.iterator();
           CM last = null;
 
           public boolean hasNext() {

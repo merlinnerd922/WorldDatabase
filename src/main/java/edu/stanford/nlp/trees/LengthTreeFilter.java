@@ -10,7 +10,7 @@ import java.util.function.Predicate;
  *  @author John Bauer
  */
 public class LengthTreeFilter implements Predicate<Tree>, Serializable {
-  private int length;
+  private final int length;
 
   public LengthTreeFilter(int length) {
     this.length = length;

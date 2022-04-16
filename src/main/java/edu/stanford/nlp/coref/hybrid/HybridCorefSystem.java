@@ -37,7 +37,7 @@ import edu.stanford.nlp.util.logging.RedwoodConfiguration;
 public class HybridCorefSystem implements CorefAlgorithm {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(HybridCorefSystem.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(HybridCorefSystem.class);
 
   public Properties props;
   public List<Sieve> sieves;

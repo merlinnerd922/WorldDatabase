@@ -14,11 +14,11 @@ import java.util.Set;
 public class Prior {
 
   // Map<String, int> maps field names to indexes in the matrix
-  private Map<String, Integer> fieldIndices;
-  private String[] indexFields;
+  private final Map<String, Integer> fieldIndices;
+  private final String[] indexFields;
 
   // n-dimensional boolean matrix. There will be 2^n entries in the matrix.
-  private double[] matrix;
+  private final double[] matrix;
 
   public Prior(BufferedReader reader) throws IOException {
     String line;

@@ -26,7 +26,7 @@ import edu.stanford.nlp.util.*;
 public class BiLexPCFGParser implements KBestViterbiParser  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(BiLexPCFGParser.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(BiLexPCFGParser.class);
 
   protected static final boolean VERBOSE = false;
   protected static final boolean VERY_VERBOSE = false;

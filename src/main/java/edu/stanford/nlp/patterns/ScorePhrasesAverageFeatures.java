@@ -23,14 +23,14 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class ScorePhrasesAverageFeatures<E extends Pattern> extends PhraseScorer<E> {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ScorePhrasesAverageFeatures.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ScorePhrasesAverageFeatures.class);
 
   public ScorePhrasesAverageFeatures(ConstantsAndVariables constvar) {
     super(constvar);
   }
 
 
-  private TwoDimensionalCounter<CandidatePhrase, ScorePhraseMeasures> phraseScoresNormalized = new TwoDimensionalCounter<>();
+  private final TwoDimensionalCounter<CandidatePhrase, ScorePhraseMeasures> phraseScoresNormalized = new TwoDimensionalCounter<>();
 
   
   @Override

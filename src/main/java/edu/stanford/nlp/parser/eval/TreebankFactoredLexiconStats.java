@@ -32,7 +32,7 @@ import edu.stanford.nlp.util.Pair;
 public class TreebankFactoredLexiconStats  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TreebankFactoredLexiconStats.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TreebankFactoredLexiconStats.class);
 
 
 //  private static String stripTag(String tag) {

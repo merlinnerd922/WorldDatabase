@@ -27,7 +27,7 @@ import edu.stanford.nlp.util.Generics;
 public abstract class Sieve implements Serializable  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(Sieve.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(Sieve.class);
 
   private static final long serialVersionUID = 3986463332365306868L;
 

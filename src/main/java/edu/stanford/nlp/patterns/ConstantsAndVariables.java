@@ -251,7 +251,7 @@ public class ConstantsAndVariables implements Serializable {
   /**
    * Seed dictionary, set in the class that uses this class
    */
-  private Map<String, Set<CandidatePhrase>> seedLabelDictionary = new HashMap<>();
+  private final Map<String, Set<CandidatePhrase>> seedLabelDictionary = new HashMap<>();
 
   /**
    * Just the set of labels
@@ -382,29 +382,29 @@ public class ConstantsAndVariables implements Serializable {
   /**
    * Cached files
    */
-  private ConcurrentHashMap<String, Double> editDistanceFromEnglishWords = new ConcurrentHashMap<>();
+  private final ConcurrentHashMap<String, Double> editDistanceFromEnglishWords = new ConcurrentHashMap<>();
   /**
    * Cached files
    */
-  private ConcurrentHashMap<String, String> editDistanceFromEnglishWordsMatches = new ConcurrentHashMap<>();
+  private final ConcurrentHashMap<String, String> editDistanceFromEnglishWordsMatches = new ConcurrentHashMap<>();
   /**
    * Cached files
    */
-  private ConcurrentHashMap<String, Double> editDistanceFromOtherSemanticClasses = new ConcurrentHashMap<>();
+  private final ConcurrentHashMap<String, Double> editDistanceFromOtherSemanticClasses = new ConcurrentHashMap<>();
   /**
    * Cached files
    */
-  private ConcurrentHashMap<String, String> editDistanceFromOtherSemanticClassesMatches = new ConcurrentHashMap<>();
+  private final ConcurrentHashMap<String, String> editDistanceFromOtherSemanticClassesMatches = new ConcurrentHashMap<>();
   /**
    * Cached files
    */
-  private ConcurrentHashMap<String, Double> editDistanceFromThisClass = new ConcurrentHashMap<>();
+  private final ConcurrentHashMap<String, Double> editDistanceFromThisClass = new ConcurrentHashMap<>();
   /**
    * Cached files
    */
-  private ConcurrentHashMap<String, String> editDistanceFromThisClassMatches = new ConcurrentHashMap<>();
+  private final ConcurrentHashMap<String, String> editDistanceFromThisClassMatches = new ConcurrentHashMap<>();
 
-  private ConcurrentHashMap<String, Counter<String>> wordShapesForLabels = new ConcurrentHashMap<>();
+  private final ConcurrentHashMap<String, Counter<String>> wordShapesForLabels = new ConcurrentHashMap<>();
 
 
 
@@ -809,7 +809,7 @@ public class ConstantsAndVariables implements Serializable {
   public static String backgroundSymbol = "O";
 
   int wordShaper = WordShapeClassifier.WORDSHAPECHRIS2;
-  private ConcurrentHashMap<String, String> wordShapeCache = new ConcurrentHashMap<>();
+  private final ConcurrentHashMap<String, String> wordShapeCache = new ConcurrentHashMap<>();
 
   public SentenceIndex invertedIndex;
 

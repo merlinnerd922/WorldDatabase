@@ -24,7 +24,7 @@ import edu.stanford.nlp.ie.machinereading.common.DomReader;
 public class AceDomReader extends DomReader  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AceDomReader.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AceDomReader.class);
 
   private static AceCharSeq parseCharSeq(Node node) {
     Node child = getChildByName(node, "charseq");

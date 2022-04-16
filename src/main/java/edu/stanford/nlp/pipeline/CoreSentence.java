@@ -14,26 +14,27 @@ import edu.stanford.nlp.trees.*;
 import edu.stanford.nlp.trees.tregex.*;
 import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.Pair;
+import kotlinx.serialization.Serializable;
 
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.function.*;
 import java.util.stream.Collectors;
-
+@Serializable
 public class CoreSentence {
 
-  private CoreDocument document;
-  private CoreMap sentenceCoreMap;
+  private final CoreDocument document;
+  private final CoreMap sentenceCoreMap;
   private List<CoreEntityMention> entityMentions;
 
   /** common patterns to search for constituency parses **/
-  private static TregexPattern nounPhrasePattern = TregexPattern.compile("NP");
-  private static TregexPattern verbPhrasePattern = TregexPattern.compile("VP");
+  private static final TregexPattern nounPhrasePattern = TregexPattern.compile("NP");
+  private static final TregexPattern verbPhrasePattern = TregexPattern.compile("VP");
 
   /** cache to hold general patterns **/
-  private static ConcurrentHashMap<String, TregexPattern> patternCache = new ConcurrentHashMap<String, TregexPattern>();
-  private static Function<String,TregexPattern> compilePattern = s -> TregexPattern.compile(s);
-  private static Function<Tree, String> treeToSpanString = t -> t.spanString();
+  private static final ConcurrentHashMap<String, TregexPattern> patternCache = new ConcurrentHashMap<String, TregexPattern>();
+  private static final Function<String,TregexPattern> compilePattern = s -> TregexPattern.compile(s);
+  private static final Function<Tree, String> treeToSpanString = t -> t.spanString();
 
   public CoreSentence(CoreDocument myDocument, CoreMap coreMapSentence) {
     this.document = myDocument;

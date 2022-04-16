@@ -9,8 +9,8 @@ import java.util.Collection;
  * @author Galen Andrew
  */
 public class CompositeTreebank extends Treebank {
-  private Treebank t1;
-  private Treebank t2;
+  private final Treebank t1;
+  private final Treebank t2;
 
   public CompositeTreebank(Treebank t1, Treebank t2) {
     this.t1 = t1;

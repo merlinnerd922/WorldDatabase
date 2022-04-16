@@ -29,7 +29,7 @@ public abstract class Treebank extends AbstractCollection<Tree> {
    * Stores the {@code TreeReaderFactory} that will be used to
    * create a {@code TreeReader} to process a file of trees.
    */
-  private TreeReaderFactory trf;
+  private final TreeReaderFactory trf;
 
   /**
    * Stores the charset encoding of the Treebank on disk.

@@ -84,7 +84,7 @@ public class UniversalDependenciesConverter {
 
   private static class TreeToSemanticGraphIterator implements Iterator<Pair<SemanticGraph, SemanticGraph>> {
 
-    private Iterator<Tree> treeIterator;
+    private final Iterator<Tree> treeIterator;
     private Tree currentTree; // = null;
 
     public TreeToSemanticGraphIterator(Iterator<Tree> treeIterator) {
@@ -110,7 +110,7 @@ public class UniversalDependenciesConverter {
   } // end static class TreeToSemanticGraphIterator
 
 
-  private static Morphology MORPH = new Morphology();
+  private static final Morphology MORPH = new Morphology();
 
   private static void addLemmata(SemanticGraph sg) {
     sg.vertexListSorted().forEach(w -> {

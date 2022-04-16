@@ -22,7 +22,7 @@ import java.util.function.Consumer;
 public class EPEOutputter extends JSONOutputter {
 
 
-  private static String OUTPUT_REPRESENTATION = System.getProperty("outputRepresentation", "basic");
+  private static final String OUTPUT_REPRESENTATION = System.getProperty("outputRepresentation", "basic");
 
   @Override
   public void print(Annotation doc, OutputStream target, Options options) throws IOException {

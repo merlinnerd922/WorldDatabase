@@ -15,7 +15,7 @@ public interface LogFilter {
   boolean matches(Record message);
 
   class HasChannel implements LogFilter {
-    private Object matchingChannel;
+    private final Object matchingChannel;
 
     public HasChannel(Object message) {
       this.matchingChannel = message;
@@ -38,7 +38,7 @@ public interface LogFilter {
    * toString() on them anyway.
    */
   class ContainsMessage implements LogFilter {
-    private String substring;
+    private final String substring;
 
     public ContainsMessage(String message) {
       this.substring = message;
@@ -55,7 +55,7 @@ public interface LogFilter {
    * Propagate records when Records match a specific message exactly (equals() is used for comparisons)
    */
   class MatchesMessage implements LogFilter {
-    private Object message;
+    private final Object message;
 
     public MatchesMessage(Object message) {
       this.message = message;

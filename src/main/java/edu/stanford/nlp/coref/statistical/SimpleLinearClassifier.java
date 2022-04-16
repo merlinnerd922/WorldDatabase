@@ -18,7 +18,7 @@ import edu.stanford.nlp.util.logging.Redwood;
  * @author Kevin Clark
  */
 public class SimpleLinearClassifier {
-  private static Redwood.RedwoodChannels log = Redwood.channels(SimpleLinearClassifier.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(SimpleLinearClassifier.class);
 
   private final Loss defaultLoss;
   private final LearningRateSchedule learningRateSchedule;

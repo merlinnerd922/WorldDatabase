@@ -16,7 +16,7 @@ import edu.stanford.nlp.util.Generics;
 public class FixLocation  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(FixLocation.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(FixLocation.class);
 
   public static final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
@@ -78,7 +78,7 @@ public class FixLocation  {
     } catch (Exception e) {}
   }
 
-  private static Map<String,String> cache = Generics.newHashMap();
+  private static final Map<String,String> cache = Generics.newHashMap();
 
   public static void query(String[][] cols, int pos) throws Exception {
     String pre = "";

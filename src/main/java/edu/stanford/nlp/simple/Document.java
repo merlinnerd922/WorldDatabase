@@ -88,8 +88,8 @@ public class Document {
   /**
    * The default {@link edu.stanford.nlp.pipeline.POSTaggerAnnotator} implementation
    */
-  private static Supplier<Annotator> defaultPOS = new Supplier<Annotator>() {
-    private StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_POS,
+  private static final Supplier<Annotator> defaultPOS = new Supplier<Annotator>() {
+    private final StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_POS,
         PropertiesUtils.getSignature(STANFORD_POS, EMPTY_PROPS));
     @Override
     public synchronized Annotator get() {
@@ -104,8 +104,8 @@ public class Document {
   /**
    * The default {@link edu.stanford.nlp.pipeline.NERCombinerAnnotator} implementation
    */
-  private static Supplier<Annotator> defaultNER = new Supplier<Annotator>() {
-    private StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_NER,
+  private static final Supplier<Annotator> defaultNER = new Supplier<Annotator>() {
+    private final StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_NER,
         PropertiesUtils.getSignature(STANFORD_NER, EMPTY_PROPS));
     @Override
     public synchronized Annotator get() {
@@ -116,8 +116,8 @@ public class Document {
   /**
    * The default {@link edu.stanford.nlp.pipeline.RegexNERAnnotator} implementation
    */
-  private static Supplier<Annotator> defaultRegexner = new Supplier<Annotator>() {
-    private StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_REGEXNER,
+  private static final Supplier<Annotator> defaultRegexner = new Supplier<Annotator>() {
+    private final StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_REGEXNER,
         PropertiesUtils.getSignature(STANFORD_REGEXNER, EMPTY_PROPS));
     @Override
     public synchronized Annotator get() {
@@ -128,8 +128,8 @@ public class Document {
   /**
    * The default {@link edu.stanford.nlp.pipeline.ParserAnnotator} implementation
    */
-  private static Supplier<Annotator> defaultParse = new Supplier<Annotator>() {
-    private StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_PARSE,
+  private static final Supplier<Annotator> defaultParse = new Supplier<Annotator>() {
+    private final StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_PARSE,
         PropertiesUtils.getSignature(STANFORD_PARSE, EMPTY_PROPS));
     @Override
     public synchronized Annotator get() {
@@ -140,8 +140,8 @@ public class Document {
   /**
    * The default {@link edu.stanford.nlp.pipeline.DependencyParseAnnotator} implementation
    */
-  private static Supplier<Annotator> defaultDepparse = new Supplier<Annotator>() {
-    private StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_DEPENDENCIES,
+  private static final Supplier<Annotator> defaultDepparse = new Supplier<Annotator>() {
+    private final StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_DEPENDENCIES,
         PropertiesUtils.getSignature(STANFORD_DEPENDENCIES, EMPTY_PROPS));
     @Override
     public synchronized Annotator get() {
@@ -152,8 +152,8 @@ public class Document {
   /**
    * The default {@link edu.stanford.nlp.naturalli.NaturalLogicAnnotator} implementation
    */
-  private static Supplier<Annotator> defaultNatlog = new Supplier<Annotator>() {
-    private StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_NATLOG,
+  private static final Supplier<Annotator> defaultNatlog = new Supplier<Annotator>() {
+    private final StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_NATLOG,
         PropertiesUtils.getSignature(STANFORD_NATLOG, EMPTY_PROPS));
     @Override
     public synchronized Annotator get() {
@@ -164,8 +164,8 @@ public class Document {
   /**
    * The default {@link EntityMentionsAnnotator} implementation
    */
-  private static Supplier<Annotator> defaultEntityMentions = new Supplier<Annotator>() {
-    private StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_ENTITY_MENTIONS,
+  private static final Supplier<Annotator> defaultEntityMentions = new Supplier<Annotator>() {
+    private final StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_ENTITY_MENTIONS,
         PropertiesUtils.getSignature(STANFORD_ENTITY_MENTIONS, EMPTY_PROPS));
     @Override
     public synchronized Annotator get() {
@@ -176,8 +176,8 @@ public class Document {
   /**
    * The default {@link KBPAnnotator} implementation
    */
-  private static Supplier<Annotator> defaultKBP = new Supplier<Annotator>() {
-    private StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_KBP,
+  private static final Supplier<Annotator> defaultKBP = new Supplier<Annotator>() {
+    private final StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_KBP,
         PropertiesUtils.getSignature(STANFORD_KBP, EMPTY_PROPS));
     @Override
     public synchronized Annotator get() {
@@ -189,8 +189,8 @@ public class Document {
   /**
    * The default {@link edu.stanford.nlp.naturalli.OpenIE} implementation
    */
-  private static Supplier<Annotator> defaultOpenie = new Supplier<Annotator>() {
-    private StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_OPENIE,
+  private static final Supplier<Annotator> defaultOpenie = new Supplier<Annotator>() {
+    private final StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_OPENIE,
         PropertiesUtils.getSignature(STANFORD_OPENIE, EMPTY_PROPS));
     @Override
     public synchronized Annotator get() {
@@ -201,8 +201,8 @@ public class Document {
   /**
    * The default {@link edu.stanford.nlp.pipeline.CorefMentionAnnotator} implementation
    */
-  private static Supplier<Annotator> defaultMention = new Supplier<Annotator>() {
-    private StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_COREF_MENTION,
+  private static final Supplier<Annotator> defaultMention = new Supplier<Annotator>() {
+    private final StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_COREF_MENTION,
         PropertiesUtils.getSignature(STANFORD_COREF_MENTION, EMPTY_PROPS));
     @Override
     public synchronized Annotator get() {
@@ -213,8 +213,8 @@ public class Document {
   /**
    * The default {@link edu.stanford.nlp.pipeline.CorefAnnotator} implementation
    */
-  private static Supplier<Annotator> defaultCoref = new Supplier<Annotator>() {
-    private StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_COREF,
+  private static final Supplier<Annotator> defaultCoref = new Supplier<Annotator>() {
+    private final StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_COREF,
         PropertiesUtils.getSignature(STANFORD_COREF, EMPTY_PROPS));
     @Override
     public synchronized Annotator get() {
@@ -225,8 +225,8 @@ public class Document {
   /**
    * The default {@link edu.stanford.nlp.pipeline.SentimentAnnotator} implementation
    */
-  private static Supplier<Annotator> defaultSentiment = new Supplier<Annotator>() {
-    private StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_SENTIMENT,
+  private static final Supplier<Annotator> defaultSentiment = new Supplier<Annotator>() {
+    private final StanfordCoreNLP.AnnotatorSignature key = new StanfordCoreNLP.AnnotatorSignature(STANFORD_SENTIMENT,
         PropertiesUtils.getSignature(STANFORD_SENTIMENT, EMPTY_PROPS));
     @Override
     public synchronized Annotator get() {

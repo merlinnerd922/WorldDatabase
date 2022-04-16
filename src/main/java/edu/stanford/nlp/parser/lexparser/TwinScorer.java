@@ -8,8 +8,8 @@ import edu.stanford.nlp.ling.HasWord;
 /** @author Dan Klein */
 class TwinScorer implements Scorer {
 
-  private Scorer scorer1;
-  private Scorer scorer2;
+  private final Scorer scorer1;
+  private final Scorer scorer2;
 
   public double oScore(Edge edge) {
     return scorer1.oScore(edge) + scorer2.oScore(edge);

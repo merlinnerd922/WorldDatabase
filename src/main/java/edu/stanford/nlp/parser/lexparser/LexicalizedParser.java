@@ -98,7 +98,7 @@ public class LexicalizedParser extends ParserGrammar implements Serializable  {
   public DependencyGrammar dg;
   public Index<String> stateIndex, wordIndex, tagIndex;
 
-  private Options op;
+  private final Options op;
 
   @Override
   public Options getOp() { return op; }

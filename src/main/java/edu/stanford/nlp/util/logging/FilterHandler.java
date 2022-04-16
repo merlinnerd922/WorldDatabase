@@ -11,8 +11,8 @@ import edu.stanford.nlp.util.logging.Redwood.Record;
  * @author David McClosky
  */
 public class FilterHandler extends BooleanLogRecordHandler {
-  private List<LogFilter> filters;
-  private boolean disjunctiveMode;
+  private final List<LogFilter> filters;
+  private final boolean disjunctiveMode;
   
   public FilterHandler(List<LogFilter> filters, boolean disjunctiveMode) {
     this.filters = filters;

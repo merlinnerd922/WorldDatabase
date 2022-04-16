@@ -28,7 +28,7 @@ import java.util.function.DoubleUnaryOperator;
 public class ConcatVector  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ConcatVector.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ConcatVector.class);
   private double[][] pointers;
   private boolean[] sparse;
   private boolean[] copyOnWrite;
@@ -587,7 +587,7 @@ public class ConcatVector  {
     copyOnWrite = copyOnWriteBuf;
   }
 
-  private static boolean loadedNative = false;
+  private static final boolean loadedNative = false;
 
   // Right now I'm not loading the native library even if it's available, since the dot product "speedup" is actually
   // 10x slower. First need to diagnose if a speedup is possible by going through the JNI, which is unlikely.

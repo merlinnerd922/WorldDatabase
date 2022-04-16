@@ -171,9 +171,9 @@ public class SpanishTreeNormalizer extends BobChrisTreeNormalizer {
           ));
 
   // Customization
-  private boolean simplifiedTagset;
-  private boolean aggressiveNormalization;
-  private boolean retainNER;
+  private final boolean simplifiedTagset;
+  private final boolean aggressiveNormalization;
+  private final boolean retainNER;
 
   public SpanishTreeNormalizer() {
     this(true, false, false);
@@ -922,7 +922,7 @@ public class SpanishTreeNormalizer extends BobChrisTreeNormalizer {
   private static final List<Pair<TregexPattern, TsurgeonPattern>> elisionExpansions =
     compilePatterns(elisionExpansionStrs);
 
-  private static TregexPattern conmigoPattern =
+  private static final TregexPattern conmigoPattern =
     TregexPattern.compile("/(?i)^con[mst]igo$/=conmigo > (/^pp/ > (/^grup\\.nom$/ > sn=sn))");
 
   /**

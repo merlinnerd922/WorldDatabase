@@ -11,7 +11,7 @@ import java.util.stream.Stream;
  */
 public class IterableIterator<E> implements Iterator<E>, Iterable<E> {
 
-  private Iterator<E> it;
+  private final Iterator<E> it;
   private Iterable<E> iterable;
   private Stream<E> stream;
 

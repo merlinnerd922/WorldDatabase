@@ -23,7 +23,7 @@ import java.util.Arrays;
 public abstract class EntityCachingAbstractSequencePriorBIO <IN extends CoreMap> implements ListeningSequenceModel  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(EntityCachingAbstractSequencePriorBIO.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(EntityCachingAbstractSequencePriorBIO.class);
 
   protected int[] sequence;
   protected final int backgroundSymbol;
@@ -48,7 +48,7 @@ public abstract class EntityCachingAbstractSequencePriorBIO <IN extends CoreMap>
     }
   }
 
-  private boolean VERBOSE = false;
+  private final boolean VERBOSE = false;
 
   EntityBIO[] entities;
 

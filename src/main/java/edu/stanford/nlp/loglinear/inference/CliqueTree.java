@@ -18,8 +18,8 @@ public class CliqueTree  {
 
   /** A logger for this class */
   private static final Redwood.RedwoodChannels log = Redwood.channels(CliqueTree.class);
-  private GraphicalModel model;
-  private ConcatVector weights;
+  private final GraphicalModel model;
+  private final ConcatVector weights;
 
   // This is the metadata key for the model to store an observed value for a variable, as an int
   public static final String VARIABLE_OBSERVED_VALUE = "inference.CliqueTree.VARIABLE_OBSERVED_VALUE";
@@ -115,7 +115,7 @@ public class CliqueTree  {
   // OPTIMIZATION:
   // cache the creation of TableFactors, to avoid redundant dot products
 
-  private IdentityHashMap<GraphicalModel.Factor, CachedFactorWithObservations> cachedFactors = new IdentityHashMap<>();
+  private final IdentityHashMap<GraphicalModel.Factor, CachedFactorWithObservations> cachedFactors = new IdentityHashMap<>();
 
   private static class CachedFactorWithObservations {
     TableFactor cachedFactor;

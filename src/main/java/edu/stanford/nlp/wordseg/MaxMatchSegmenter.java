@@ -37,7 +37,7 @@ public class MaxMatchSegmenter implements WordSegmenter {
 
   private static final boolean DEBUG = false;
 
-  private static Redwood.RedwoodChannels logger = Redwood.channels(MaxMatchSegmenter.class);
+  private static final Redwood.RedwoodChannels logger = Redwood.channels(MaxMatchSegmenter.class);
 
   private final Set<String> words = Generics.newHashSet();
   private int len = -1;

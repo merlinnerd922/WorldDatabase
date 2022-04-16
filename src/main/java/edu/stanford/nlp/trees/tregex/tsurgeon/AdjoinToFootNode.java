@@ -12,7 +12,7 @@ import edu.stanford.nlp.trees.tregex.TregexMatcher;
 public class AdjoinToFootNode extends AdjoinNode  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AdjoinToFootNode.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AdjoinToFootNode.class);
 
   public AdjoinToFootNode(AuxiliaryTree t, TsurgeonPattern p) {
     super("adjoinF", t, p);

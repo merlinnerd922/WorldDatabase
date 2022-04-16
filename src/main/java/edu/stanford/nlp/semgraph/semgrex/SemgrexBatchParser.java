@@ -26,7 +26,7 @@ import edu.stanford.nlp.util.Pair;
 public class SemgrexBatchParser  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(SemgrexBatchParser.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(SemgrexBatchParser.class);
 
   /** Maximum stream size in characters */
   private static final int MAX_STREAM_SIZE = 1024 * 1024;

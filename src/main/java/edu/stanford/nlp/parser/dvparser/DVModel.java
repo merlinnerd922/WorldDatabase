@@ -34,7 +34,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class DVModel implements Serializable  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(DVModel.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(DVModel.class);
   // Maps from basic category to the matrix transformation matrices for
   // binary nodes and unary nodes.
   // The indices are the children categories.  For binaryTransform, for

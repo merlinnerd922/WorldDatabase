@@ -44,7 +44,7 @@ public class DVModelReranker implements Reranker {
     private final TreeTransformer transformer;
     private final DVParserCostAndGradient scorer;
 
-    private List<DeepTree> deepTrees;
+    private final List<DeepTree> deepTrees;
 
     public Query() {
       this.transformer = LexicalizedParser.buildTrainTransformer(op);

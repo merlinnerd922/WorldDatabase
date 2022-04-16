@@ -58,7 +58,7 @@ public class SequenceMatcher<T> extends BasicSequenceMatchResult<T> {
 
   private static final Logger logger = Logger.getLogger(SequenceMatcher.class.getName());
 
-  private boolean includeEmptyMatches = false;
+  private final boolean includeEmptyMatches = false;
   private boolean matchingCompleted = false;
   private boolean matched = false;
   boolean matchWithResult = false; // If result of matches should be kept

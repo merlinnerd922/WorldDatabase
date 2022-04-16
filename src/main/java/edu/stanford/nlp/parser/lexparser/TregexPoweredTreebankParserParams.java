@@ -45,7 +45,7 @@ import java.util.Map;
 public abstract class TregexPoweredTreebankParserParams extends AbstractTreebankParserParams  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TregexPoweredTreebankParserParams.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TregexPoweredTreebankParserParams.class);
 
   private static final long serialVersionUID = -1985603901694682420L;
 
@@ -219,7 +219,7 @@ public abstract class TregexPoweredTreebankParserParams extends AbstractTreebank
     String> {
 
     private static final long serialVersionUID = 6958776731059724396L;
-    private String annotationMark;
+    private final String annotationMark;
 
     public SimpleStringFunction(String annotationMark) {
       this.annotationMark = annotationMark;
@@ -245,7 +245,7 @@ public abstract class TregexPoweredTreebankParserParams extends AbstractTreebank
     private static final long serialVersionUID = -4213299755069618322L;
 
     private final HeadFinder headFinder;
-    private boolean lowerCase;
+    private final boolean lowerCase;
 
     public AnnotateHeadFunction(HeadFinder hf) {
       this(hf, true);

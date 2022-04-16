@@ -43,16 +43,16 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class SpanishXMLTreeReader implements TreeReader  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(SpanishXMLTreeReader.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(SpanishXMLTreeReader.class);
 
   private InputStream stream;
   private final SpanishTreeNormalizer treeNormalizer;
   private final TreeFactory treeFactory;
 
-  private boolean simplifiedTagset;
-  private boolean detailedAnnotations;
-  private boolean expandElisions;
-  private boolean expandConmigo;
+  private final boolean simplifiedTagset;
+  private final boolean detailedAnnotations;
+  private final boolean expandElisions;
+  private final boolean expandConmigo;
 
   private static final String NODE_SENT = "sentence";
 

@@ -52,7 +52,7 @@ public class SimpleSentiment {
   private static final Redwood.RedwoodChannels log = Redwood.channels(SimpleSentiment.class);
 
   /** An appropriate pipeline object for featurizing training data */
-  private static Lazy<StanfordCoreNLP> pipeline = Lazy.of(() -> {
+  private static final Lazy<StanfordCoreNLP> pipeline = Lazy.of(() -> {
     Properties props = new Properties();
     props.setProperty("annotators", "tokenize,ssplit,pos,lemma");
     props.setProperty("language", "english");

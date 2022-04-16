@@ -202,7 +202,7 @@ public class ConcurrentHashIndex<E> extends AbstractCollection<E> implements Ind
   public Iterator<E> iterator() {
     return new Iterator<E>() {
       private int index = 0;
-      private int size = ConcurrentHashIndex.this.size();
+      private final int size = ConcurrentHashIndex.this.size();
       @Override
       public boolean hasNext() {
         return index < size;

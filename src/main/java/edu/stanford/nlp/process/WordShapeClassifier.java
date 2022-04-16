@@ -26,7 +26,7 @@ import edu.stanford.nlp.util.Timing;
 public class WordShapeClassifier  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(WordShapeClassifier.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(WordShapeClassifier.class);
 
   public static final int NOWORDSHAPE = -1;
   public static final int WORDSHAPEDAN1 = 0;

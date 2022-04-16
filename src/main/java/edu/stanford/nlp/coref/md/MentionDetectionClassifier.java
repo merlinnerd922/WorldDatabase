@@ -23,7 +23,7 @@ import edu.stanford.nlp.util.Generics;
 public class MentionDetectionClassifier implements Serializable {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(MentionDetectionClassifier.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(MentionDetectionClassifier.class);
 
   private static final long serialVersionUID = -4100580709477023158L;
 

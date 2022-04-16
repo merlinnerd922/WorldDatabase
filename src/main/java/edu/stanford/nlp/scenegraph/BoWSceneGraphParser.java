@@ -44,8 +44,8 @@ public class BoWSceneGraphParser extends AbstractSceneGraphParser {
   EntityClassifier entityClassifer;
   boolean enforceSubtree;
   boolean includeAllObjects;
-  private Embedding embeddings;
-  private SceneGraphSentenceMatcher sentenceMatcher;
+  private final Embedding embeddings;
+  private final SceneGraphSentenceMatcher sentenceMatcher;
 
 
   public static final String NONE_RELATION = "----NONE----";
@@ -57,7 +57,7 @@ public class BoWSceneGraphParser extends AbstractSceneGraphParser {
 
     private static final double REG_STRENGTH = 1.0;
 
-  private static FEATURE_SET[] featureSets = {FEATURE_SET.LEMMA_BOW, FEATURE_SET.WORD_BOW, FEATURE_SET.TREE_FEAT};
+  private static final FEATURE_SET[] featureSets = {FEATURE_SET.LEMMA_BOW, FEATURE_SET.WORD_BOW, FEATURE_SET.TREE_FEAT};
 
 
   /**

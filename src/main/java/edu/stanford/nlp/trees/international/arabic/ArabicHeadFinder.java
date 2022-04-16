@@ -28,7 +28,7 @@ import edu.stanford.nlp.util.Generics;
 public class ArabicHeadFinder extends AbstractCollinsHeadFinder  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ArabicHeadFinder.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ArabicHeadFinder.class);
   private static final long serialVersionUID = 6203368998430280740L;
   protected TagSet tagSet;
 

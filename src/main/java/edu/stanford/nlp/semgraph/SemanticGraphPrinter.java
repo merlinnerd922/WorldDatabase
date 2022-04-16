@@ -29,7 +29,7 @@ import edu.stanford.nlp.util.StringUtils;
 public class SemanticGraphPrinter  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(SemanticGraphPrinter.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(SemanticGraphPrinter.class);
   private SemanticGraphPrinter() {} // main method only
 
   public static void main(String[] args) {

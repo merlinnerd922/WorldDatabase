@@ -20,7 +20,7 @@ import edu.stanford.nlp.util.Pair;
 public class LinearGrammarSmoother implements Function<Pair<UnaryGrammar,BinaryGrammar>, Pair<UnaryGrammar,BinaryGrammar>>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(LinearGrammarSmoother.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(LinearGrammarSmoother.class);
 
   private static final boolean DEBUG = false;
   

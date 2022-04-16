@@ -36,10 +36,10 @@ import java.util.concurrent.TimeoutException;
 
 public abstract class WebServiceAnnotator implements Annotator {
   /** A logger from this class. */
-  private static Redwood.RedwoodChannels log = Redwood.channels(WebServiceAnnotator.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(WebServiceAnnotator.class);
 
   /** A timeout to wait for a server to boot up. Beyond this, we simply give up and throw an exception. */
-  private static long CONNECT_TIMEOUT = Duration.ofMinutes(15).toMillis();
+  private static final long CONNECT_TIMEOUT = Duration.ofMinutes(15).toMillis();
 
 
   /**

@@ -23,7 +23,7 @@ public class LogisticClassifierFactory<L,F> implements ClassifierFactory<L, F, L
   private static final long serialVersionUID = 1L;
   private double[] weights;
   private Index<F> featureIndex;
-  private L[] classes = ErasureUtils.<L>mkTArray(Object.class,2);
+  private final L[] classes = ErasureUtils.<L>mkTArray(Object.class,2);
 
 
   public LogisticClassifier<L,F> trainWeightedData(GeneralDataset<L,F> data, float[] dataWeights){

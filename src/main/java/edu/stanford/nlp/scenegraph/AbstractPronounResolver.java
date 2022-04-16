@@ -16,7 +16,7 @@ import edu.stanford.nlp.util.StringUtils;
 
 public abstract class AbstractPronounResolver {
 
-  private static Pattern WORD_POS_IDX_PATTERN = Pattern.compile("^(?<word>.*)_(?<tag>[^_]+)_(?<idx>[0-9]+)$");
+  private static final Pattern WORD_POS_IDX_PATTERN = Pattern.compile("^(?<word>.*)_(?<tag>[^_]+)_(?<idx>[0-9]+)$");
 
 
   protected abstract HashMap<Integer, Integer> resolvePronouns(List<CoreLabel> tokens);
@@ -76,9 +76,9 @@ public abstract class AbstractPronounResolver {
 
   protected static class TestExample {
 
-    private List<CoreLabel> tokens;
-    private List<CoreLabel> pronouns;
-    private HashMap<Integer, Integer> corefPairs;
+    private final List<CoreLabel> tokens;
+    private final List<CoreLabel> pronouns;
+    private final HashMap<Integer, Integer> corefPairs;
 
 
     public TestExample(String line) {

@@ -12,9 +12,9 @@ import edu.stanford.nlp.util.CollectionValuedMap;
  */
 public class KNNClassifierFactory<K, V> {
 
-  private int k; // = 0;
-  private boolean weightedVotes; // = false;
-  private boolean l2NormalizeVectors; // = false;
+  private final int k; // = 0;
+  private final boolean weightedVotes; // = false;
+  private final boolean l2NormalizeVectors; // = false;
 
   /**
    * Creates a new factory that generates K-NN classifiers with the given k-value, and

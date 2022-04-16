@@ -19,7 +19,7 @@ import edu.stanford.nlp.util.Generics;
 public class NegraPennTreeNormalizer extends TreeNormalizer  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(NegraPennTreeNormalizer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(NegraPennTreeNormalizer.class);
   /** How to clean up node labels: 0 = do nothing, 1 = keep category and
    *  function, 2 = just category
    */
@@ -170,8 +170,8 @@ public class NegraPennTreeNormalizer extends TreeNormalizer  {
   }
 
 
-  private Set<String> prepositionTags = Generics.newHashSet(Arrays.asList(new String[]{"APPR", "APPRART"}));
-  private Set<String> postpositionTags = Generics.newHashSet(Arrays.asList(new String[]{"APPO", "APZR"}));
+  private final Set<String> prepositionTags = Generics.newHashSet(Arrays.asList(new String[]{"APPR", "APPRART"}));
+  private final Set<String> postpositionTags = Generics.newHashSet(Arrays.asList(new String[]{"APPO", "APZR"}));
 
 
   private void insertNPinPPall(Tree t) {

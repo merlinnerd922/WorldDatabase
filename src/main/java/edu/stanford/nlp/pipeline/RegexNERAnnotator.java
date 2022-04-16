@@ -22,7 +22,7 @@ import edu.stanford.nlp.util.PropertiesUtils;
 public class RegexNERAnnotator implements Annotator  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(RegexNERAnnotator.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(RegexNERAnnotator.class);
 
   private final RegexNERSequenceClassifier classifier;
   private final boolean verbose;

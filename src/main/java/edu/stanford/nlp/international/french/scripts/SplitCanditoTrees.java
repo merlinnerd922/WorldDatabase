@@ -45,7 +45,7 @@ import edu.stanford.nlp.util.Generics;
 public final class SplitCanditoTrees  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(SplitCanditoTrees.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(SplitCanditoTrees.class);
 
   /**
    * true -- mwetoolkit experiments, factored lexicon experiments

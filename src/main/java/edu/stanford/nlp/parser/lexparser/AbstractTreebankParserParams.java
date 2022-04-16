@@ -42,7 +42,7 @@ import java.util.List;
 public abstract class AbstractTreebankParserParams implements TreebankLangParserParams  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AbstractTreebankParserParams.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AbstractTreebankParserParams.class);
 
   /**
    * If true, then evaluation is over grammatical functions as well as the labels

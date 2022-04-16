@@ -70,7 +70,7 @@ public class Experiments {
   /**
    * v may hold the actual Experiments, i.e. Objects of type Experiments
    */
-  private ArrayList<Experiments> v = new ArrayList<>();
+  private final ArrayList<Experiments> v = new ArrayList<>();
 
   /**
    * Maximum ySize.

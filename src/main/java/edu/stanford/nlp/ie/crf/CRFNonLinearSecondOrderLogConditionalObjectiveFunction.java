@@ -16,7 +16,7 @@ import java.util.*;
 public class CRFNonLinearSecondOrderLogConditionalObjectiveFunction extends AbstractCachingDiffFunction implements HasCliquePotentialFunction  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CRFNonLinearSecondOrderLogConditionalObjectiveFunction.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CRFNonLinearSecondOrderLogConditionalObjectiveFunction.class);
 
   public static final int NO_PRIOR = 0;
   public static final int QUADRATIC_PRIOR = 1;

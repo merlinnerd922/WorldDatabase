@@ -31,7 +31,7 @@ public class NERServlet extends HttpServlet {
   private String format;
   private boolean spacing;
   private String defaultClassifier;
-  private List<String> classifiers = new ArrayList<>();
+  private final List<String> classifiers = new ArrayList<>();
   private Map<String, CRFClassifier<CoreMap>> ners;
 
   private static final int MAXIMUM_QUERY_LENGTH = 3000;

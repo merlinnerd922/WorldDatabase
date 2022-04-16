@@ -32,7 +32,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class DependencyCorefMentionFinder extends CorefMentionFinder  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(DependencyCorefMentionFinder.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(DependencyCorefMentionFinder.class);
 
   public DependencyCorefMentionFinder(Properties props) throws ClassNotFoundException, IOException {
     this.lang = CorefProperties.getLanguage(props);

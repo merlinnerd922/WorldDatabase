@@ -14,7 +14,7 @@ import java.util.List;
 public class FontDetector  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(FontDetector.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(FontDetector.class);
 
   public static final int NUM_LANGUAGES = 2;
   public static final int CHINESE = 0;

@@ -104,7 +104,7 @@ import java.util.regex.Pattern;
 public class Expressions  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(Expressions.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(Expressions.class);
 
   /** VAR - Variable */
   public static final String TYPE_VAR = "VAR";

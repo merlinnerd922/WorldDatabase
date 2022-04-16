@@ -38,7 +38,7 @@ import edu.stanford.nlp.util.StringUtils;
 public class LeafAncestorEval  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(LeafAncestorEval.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(LeafAncestorEval.class);
 
   private final String name;
 

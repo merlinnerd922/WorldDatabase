@@ -20,8 +20,8 @@ public class ShiftParamsLogisticClassifierFactory<L, F> implements ClassifierFac
   private int[] labels;
   private int numClasses;
   private int numFeatures;
-  private LogPrior prior;
-  private double lambda;
+  private final LogPrior prior;
+  private final double lambda;
   
   public ShiftParamsLogisticClassifierFactory() {
     this(new LogPrior(LogPriorType.NULL), 0.1);

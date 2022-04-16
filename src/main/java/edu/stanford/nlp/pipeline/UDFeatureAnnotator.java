@@ -20,7 +20,7 @@ import java.util.Set;
  */
 public class UDFeatureAnnotator extends SentenceAnnotator {
 
-  private UniversalDependenciesFeatureAnnotator featureAnnotator;
+  private final UniversalDependenciesFeatureAnnotator featureAnnotator;
 
 
   public UDFeatureAnnotator() {

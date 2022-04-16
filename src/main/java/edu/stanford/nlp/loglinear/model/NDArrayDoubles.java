@@ -77,7 +77,7 @@ public class NDArrayDoubles implements Iterable<int[]> {
   @Override
   public Iterator<int[]> iterator() {
     return new Iterator<int[]>() {
-      Iterator<int[]> unsafe = fastPassByReferenceIterator();
+      final Iterator<int[]> unsafe = fastPassByReferenceIterator();
 
       @Override
       public boolean hasNext() {

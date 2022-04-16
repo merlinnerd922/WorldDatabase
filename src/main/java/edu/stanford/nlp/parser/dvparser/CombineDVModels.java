@@ -24,7 +24,7 @@ import edu.stanford.nlp.util.Pair;
 public class CombineDVModels  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CombineDVModels.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CombineDVModels.class);
 
   public static void main(String[] args)
     throws IOException, ClassNotFoundException

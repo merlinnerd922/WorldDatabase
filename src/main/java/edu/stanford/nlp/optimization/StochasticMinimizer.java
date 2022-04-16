@@ -42,7 +42,7 @@ import edu.stanford.nlp.util.Pair;
 public abstract class StochasticMinimizer<T extends Function> implements Minimizer<T>, HasEvaluators  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(StochasticMinimizer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(StochasticMinimizer.class);
 
   public boolean outputIterationsToFile = false;
   public int outputFrequency = 1000;

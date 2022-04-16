@@ -17,7 +17,7 @@ import edu.stanford.nlp.util.concurrent.ThreadsafeProcessor;
 public class POSTaggerAnnotator implements Annotator  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(POSTaggerAnnotator.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(POSTaggerAnnotator.class);
 
   private final MaxentTagger pos;
 

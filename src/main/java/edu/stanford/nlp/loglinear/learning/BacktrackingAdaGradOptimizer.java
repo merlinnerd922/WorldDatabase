@@ -12,7 +12,7 @@ import edu.stanford.nlp.loglinear.model.ConcatVector;
 public class BacktrackingAdaGradOptimizer extends AbstractBatchOptimizer  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(BacktrackingAdaGradOptimizer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(BacktrackingAdaGradOptimizer.class);
 
   // this magic number was arrived at with relation to the CoNLL benchmark, and tinkering
   final static double alpha = 0.1;

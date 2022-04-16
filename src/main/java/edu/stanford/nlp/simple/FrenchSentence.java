@@ -31,7 +31,7 @@ public class FrenchSentence extends Sentence {
   }};
 
   /** A properties object for creating a document from a single tokenized sentence. */
-  private static Properties SINGLE_SENTENCE_TOKENIZED_DOCUMENT = new Properties() {{
+  private static final Properties SINGLE_SENTENCE_TOKENIZED_DOCUMENT = new Properties() {{
     try (InputStream is = IOUtils.getInputStreamFromURLOrClasspathOrFileSystem("edu/stanford/nlp/pipeline/StanfordCoreNLP-french.properties")){
       load(is);
     } catch (IOException e) {

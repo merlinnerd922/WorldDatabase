@@ -22,7 +22,7 @@ import edu.stanford.nlp.trees.Tree;
 public class TreeFromFile  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TreeFromFile.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TreeFromFile.class);
 
   private final String treeString;
   private String filename;

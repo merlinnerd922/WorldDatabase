@@ -42,7 +42,7 @@ public class CreateClauseDataset implements TSVSentenceProcessor  {
   private static final Redwood.RedwoodChannels log = Redwood.channels(CreateClauseDataset.class);
 
   @ArgumentParser.Option(name="in", gloss="The input to read from")
-  private static InputStream in = System.in;
+  private static final InputStream in = System.in;
 
 
   private CreateClauseDataset() {} // static methods class

@@ -12,12 +12,12 @@ public class AceRelation extends AceElement {
 
   private String mSubtype;
 
-  private String mModality;
+  private final String mModality;
 
-  private String mTense;
+  private final String mTense;
 
   /** The list of mentions for this event */
-  private List<AceRelationMention> mMentions;
+  private final List<AceRelationMention> mMentions;
 
   public static final String NIL_LABEL = "nil";
 

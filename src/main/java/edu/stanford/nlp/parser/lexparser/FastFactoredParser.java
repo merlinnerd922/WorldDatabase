@@ -25,7 +25,7 @@ import edu.stanford.nlp.util.*;
 public class FastFactoredParser implements KBestViterbiParser  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(FastFactoredParser.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(FastFactoredParser.class);
 
   // TODO Regression tests
   // TODO Set dependency tuning and test whether useful
@@ -41,7 +41,7 @@ public class FastFactoredParser implements KBestViterbiParser  {
   protected MLEDependencyGrammar dg;
   protected Options op;
 
-  private int numToFind;
+  private final int numToFind;
 
   private final Index<String> wordIndex;
   private final Index<String> tagIndex;

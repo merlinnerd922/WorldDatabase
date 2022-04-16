@@ -31,9 +31,9 @@ import edu.stanford.nlp.util.StringUtils;
 public class CollocationFinder  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CollocationFinder.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CollocationFinder.class);
 
-  private static boolean DEBUG = false;
+  private static final boolean DEBUG = false;
   private final Tree qTree;
   private final HeadFinder hf;
   private final List<Collocation> collocationCollector;

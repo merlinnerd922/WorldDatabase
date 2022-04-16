@@ -317,7 +317,7 @@ public class ClassicCounter<E> implements Serializable, Counter<E>, Iterable<E> 
       @Override
       public Iterator<Double> iterator() {
         return new Iterator<Double>() {
-          Iterator<MutableDouble> inner = map.values().iterator();
+          final Iterator<MutableDouble> inner = map.values().iterator();
 
           @Override
           public boolean hasNext() {

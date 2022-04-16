@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 public class HTKLatticeReader  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(HTKLatticeReader.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(HTKLatticeReader.class);
 
   public final boolean DEBUG;
   public final boolean PRETTYPRINT;

@@ -24,7 +24,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class DependencyAnalyzer  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(DependencyAnalyzer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(DependencyAnalyzer.class);
 
   /** Make true to record the dependencies as they are calculated. */
   private static final boolean VERBOSE = false;
@@ -82,7 +82,7 @@ public class DependencyAnalyzer  {
 
   } // end static class Identifier
 
-  private Map<String,Identifier> identifiers = Generics.newHashMap();
+  private final Map<String,Identifier> identifiers = Generics.newHashMap();
 
   /**
    * Adds the starting classes to depQueue and closure.

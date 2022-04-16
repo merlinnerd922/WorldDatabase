@@ -22,7 +22,7 @@ import edu.stanford.nlp.util.Index;
 public class LabelDictionary implements Serializable  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(LabelDictionary.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(LabelDictionary.class);
 
   private static final long serialVersionUID = 6790400453922524056L;
 

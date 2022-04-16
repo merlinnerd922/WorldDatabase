@@ -14,7 +14,7 @@ import edu.stanford.nlp.semgraph.SemanticGraph;
 
 public class ObjectSceneGraphParser extends AbstractSceneGraphParser {
 
-  private EntityClassifier entityClassifier;
+  private final EntityClassifier entityClassifier;
 
   public ObjectSceneGraphParser(String entityClassifierPath) {
     this.entityClassifier = new EntityClassifier(entityClassifierPath);

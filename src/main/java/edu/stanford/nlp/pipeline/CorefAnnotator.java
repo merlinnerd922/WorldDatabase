@@ -48,7 +48,7 @@ public class CorefAnnotator extends TextAnnotationCreator implements Annotator  
 
   private final CorefSystem corefSystem;
 
-  private boolean performMentionDetection;
+  private final boolean performMentionDetection;
   private CorefMentionAnnotator mentionAnnotator;
 
   private final Properties props;

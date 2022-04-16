@@ -36,7 +36,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class NaturalLogicAnnotator extends SentenceAnnotator  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(NaturalLogicAnnotator.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(NaturalLogicAnnotator.class);
 
   /**
    * A regex for arcs that act as determiners.
@@ -666,11 +666,11 @@ public class NaturalLogicAnnotator extends SentenceAnnotator  {
    * If false, don't annotate tokens for polarity but only find the operators and their scopes.
    */
   @ArgumentParser.Option(name="doPolarity", gloss="Mark polarity in addition to quantifier scopes")
-  private boolean doPolarity = true;
+  private final boolean doPolarity = true;
 
   @SuppressWarnings("FieldCanBeLocal")
   @ArgumentParser.Option(name="neQuantifiers", gloss="If true, mark named entities as quantifiers.")
-  private boolean neQuantifiers = false;
+  private final boolean neQuantifiers = false;
 
   /**
    * Create a new annotator.

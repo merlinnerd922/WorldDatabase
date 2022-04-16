@@ -27,7 +27,7 @@ import java.util.*;
 public class DependencyParseAnnotator extends SentenceAnnotator  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(DependencyParseAnnotator.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(DependencyParseAnnotator.class);
 
   private final DependencyParser parser;
 

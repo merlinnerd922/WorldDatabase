@@ -19,7 +19,7 @@ import edu.stanford.nlp.util.CoreMap;
 public class GenderAnnotator implements Annotator {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(GenderAnnotator.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(GenderAnnotator.class);
 
   /** paths to lists of male and female first names **/
   public static String MALE_FIRST_NAMES_PATH = "edu/stanford/nlp/models/gender/male_first_names.txt";

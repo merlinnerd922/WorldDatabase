@@ -31,7 +31,7 @@ import java.util.regex.Pattern;
 public class ChineseMaxentLexicon implements Lexicon  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ChineseMaxentLexicon.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ChineseMaxentLexicon.class);
 
   private static final long serialVersionUID = 238834703409896852L;
   private static final boolean verbose = true;
@@ -53,26 +53,26 @@ public class ChineseMaxentLexicon implements Lexicon  {
   private final int universalThreshold = 0;
 
   private LinearClassifier scorer;
-  private Map<String, String> functionWordTags = Generics.newHashMap();
+  private final Map<String, String> functionWordTags = Generics.newHashMap();
   private Distribution<String> tagDist;
   private final Index<String> wordIndex;
   private final Index<String> tagIndex;
   private transient Counter<String> logProbs;
-  private double iteratorCutoffFactor = 4;
+  private final double iteratorCutoffFactor = 4;
   private transient int lastWord = -1;
   String initialWeightFile = null;
   boolean trainFloat = false;
   private static final String featureDir = "gbfeatures";
 
-  private double tol = 1e-4;
-  private double sigma = 0.4;
+  private final double tol = 1e-4;
+  private final double sigma = 0.4;
 
   static final boolean tuneSigma = false;
   static final int trainCountThreshold = 5;
   final int featureLevel;
   static final int DEFAULT_FEATURE_LEVEL = 2;
-  private boolean trainOnLowCount = false;
-  private boolean trainByType = false;
+  private final boolean trainOnLowCount = false;
+  private final boolean trainByType = false;
   private final TreebankLangParserParams tlpParams;
   private final TreebankLanguagePack ctlp;
   private final Options op;

@@ -110,13 +110,13 @@ public class Document implements Serializable {
   public int numSentences;
 
   /** Set of incompatible clusters pairs */
-  private TwoDimensionalSet<Integer, Integer> incompatibles;
-  private TwoDimensionalSet<Integer, Integer> incompatibleClusters;
+  private final TwoDimensionalSet<Integer, Integer> incompatibles;
+  private final TwoDimensionalSet<Integer, Integer> incompatibleClusters;
 
   protected TwoDimensionalMap<Integer, Integer, Boolean> acronymCache;
 
   /** Map of speaker name/id to speaker info */
-  transient private Map<String, SpeakerInfo> speakerInfoMap = Generics.newHashMap();
+  final transient private Map<String, SpeakerInfo> speakerInfoMap = Generics.newHashMap();
 
   public Document() {
     positions = Generics.newHashMap();

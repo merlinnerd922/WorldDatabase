@@ -24,7 +24,7 @@ public class GoldenSectionLineSearch implements LineSearcher  {
   private static boolean VERBOSE = true;
 
   private Map<Double, Double> memory = Generics.newHashMap(); //remember where it was called and what were the values
-  private boolean geometric;
+  private final boolean geometric;
 
   private double tol;
   private double low;

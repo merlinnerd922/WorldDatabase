@@ -20,7 +20,7 @@ import edu.stanford.nlp.util.Generics;
 public abstract class AbstractEval implements Eval  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AbstractEval.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AbstractEval.class);
 
   private static final boolean DEBUG = false;
 
@@ -232,8 +232,8 @@ public abstract class AbstractEval implements Eval  {
 
     //private boolean verbose = false;
 
-    private ClassicCounter<String> over = new ClassicCounter<>();
-    private ClassicCounter<String> under = new ClassicCounter<>();
+    private final ClassicCounter<String> over = new ClassicCounter<>();
+    private final ClassicCounter<String> under = new ClassicCounter<>();
 
     protected static String localize(Tree tree) {
       if (tree.isLeaf()) {
@@ -306,8 +306,8 @@ public abstract class AbstractEval implements Eval  {
    */
   public static class CatErrorEval extends AbstractEval {
 
-    private ClassicCounter<String> over = new ClassicCounter<>();
-    private ClassicCounter<String> under = new ClassicCounter<>();
+    private final ClassicCounter<String> over = new ClassicCounter<>();
+    private final ClassicCounter<String> under = new ClassicCounter<>();
 
     /** Unused. Fake satisfying the abstract class. */
     @Override

@@ -143,7 +143,7 @@ public class ArabicTreebankLanguagePack extends AbstractTreebankLanguagePack {
   /**
    * TODO: there is no way to change this using options.
    */
-  private TokenizerFactory<? extends HasWord> tf =
+  private final TokenizerFactory<? extends HasWord> tf =
     ArabicTokenizer.atbFactory();
 
   /**

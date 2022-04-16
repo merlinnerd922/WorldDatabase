@@ -30,7 +30,7 @@ import java.util.*;
 public class OpenIEServlet extends HttpServlet  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(OpenIEServlet.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(OpenIEServlet.class);
   StanfordCoreNLP pipeline = null;
   StanfordCoreNLP backoff = null;
 

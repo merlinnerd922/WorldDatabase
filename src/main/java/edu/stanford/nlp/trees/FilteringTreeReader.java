@@ -15,8 +15,8 @@ import java.util.function.Predicate;
  */
 public class FilteringTreeReader implements TreeReader {
 
-  private TreeReader tr;
-  private Predicate<Tree> f;
+  private final TreeReader tr;
+  private final Predicate<Tree> f;
 
   public FilteringTreeReader(TreeReader tr, Predicate<Tree> f) {
     this.tr = tr;

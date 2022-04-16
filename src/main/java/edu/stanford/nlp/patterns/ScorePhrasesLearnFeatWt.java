@@ -38,7 +38,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class ScorePhrasesLearnFeatWt<E extends Pattern> extends PhraseScorer<E> {
 
   @Option(name = "scoreClassifierType")
-  private ClassifierType scoreClassifierType = ClassifierType.LR;
+  private final ClassifierType scoreClassifierType = ClassifierType.LR;
 
 
   private static Map<String, double[]> wordVectors = null;

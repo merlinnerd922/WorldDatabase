@@ -40,7 +40,7 @@ import static edu.stanford.nlp.trees.international.pennchinese.ChineseUtils.WHIT
 public class ChineseDocumentToSentenceProcessor implements Serializable  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ChineseDocumentToSentenceProcessor.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ChineseDocumentToSentenceProcessor.class);
 
   // todo: This class is a mess. We should try to get it out of core
 

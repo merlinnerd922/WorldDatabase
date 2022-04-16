@@ -794,7 +794,7 @@ static final long[] jjtoMore = {
     private final int[] jjrounds = new int[42];
     private final int[] jjstateSet = new int[2 * 42];
     private final StringBuilder jjimage = new StringBuilder();
-    private StringBuilder image = jjimage;
+    private final StringBuilder image = jjimage;
     private int jjimageLen;
     private int lengthOfMatch;
     protected int curChar;

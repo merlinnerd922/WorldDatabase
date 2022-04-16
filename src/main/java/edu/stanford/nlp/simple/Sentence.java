@@ -55,7 +55,7 @@ public class Sentence {
   );
 
   /** A Properties object for creating a document from a single tokenized sentence. */
-  private static Properties SINGLE_SENTENCE_TOKENIZED_DOCUMENT = PropertiesUtils.asProperties(
+  private static final Properties SINGLE_SENTENCE_TOKENIZED_DOCUMENT = PropertiesUtils.asProperties(
           "language", "english",
           "ssplit.isOneSentence", "true",
           "tokenize.class", "WhitespaceTokenizer",

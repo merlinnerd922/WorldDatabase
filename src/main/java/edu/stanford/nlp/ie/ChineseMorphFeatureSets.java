@@ -20,9 +20,9 @@ public class ChineseMorphFeatureSets implements Serializable {
 
   private static final long serialVersionUID = -1055526945031459198L;
 
-  private Index<String> featIndex = new HashIndex<>();
-  private Map<String, Set<Character>> singletonFeatures = Generics.newHashMap();
-  private Map<String, Pair<Set<Character>, Set<Character>>> affixFeatures = Generics.newHashMap();
+  private final Index<String> featIndex = new HashIndex<>();
+  private final Map<String, Set<Character>> singletonFeatures = Generics.newHashMap();
+  private final Map<String, Pair<Set<Character>, Set<Character>>> affixFeatures = Generics.newHashMap();
 
   public Map<String, Set<Character>> getSingletonFeatures() {
     return singletonFeatures;

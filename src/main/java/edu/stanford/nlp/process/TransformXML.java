@@ -33,7 +33,7 @@ import edu.stanford.nlp.util.XMLUtils;
 public class TransformXML<T>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TransformXML.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TransformXML.class);
 
   private final SAXParser saxParser;
 

@@ -60,7 +60,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class UniversalSemanticHeadFinder extends ModCollinsHeadFinder  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(UniversalSemanticHeadFinder.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(UniversalSemanticHeadFinder.class);
 
   private static final boolean DEBUG = System.getProperty("SemanticHeadFinder", null) != null;
 

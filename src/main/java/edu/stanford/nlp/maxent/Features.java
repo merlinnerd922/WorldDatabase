@@ -28,7 +28,7 @@ public class Features {
   /** A logger for this class */
   private static final Redwood.RedwoodChannels log = Redwood.channels(Features.class);
 
-  private ArrayList<Feature> f = new ArrayList<>();
+  private final ArrayList<Feature> f = new ArrayList<>();
   private static final int maxValue = 11000000;
 
   public Features() {

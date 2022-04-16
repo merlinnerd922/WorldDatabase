@@ -15,7 +15,7 @@ import java.util.*;
 public class BinaryHeapPriorityQueue<E> extends AbstractSet<E> implements PriorityQueue<E>, Iterator<E>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(BinaryHeapPriorityQueue.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(BinaryHeapPriorityQueue.class);
 
   /**
    * An {@code Entry} stores an object in the queue along with

@@ -30,7 +30,7 @@ import edu.stanford.nlp.util.Index;
 public class NegraPennTreebankParserParams extends AbstractTreebankParserParams  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(NegraPennTreebankParserParams.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(NegraPennTreebankParserParams.class);
 
   private static final long serialVersionUID = 757812264219400466L;
 

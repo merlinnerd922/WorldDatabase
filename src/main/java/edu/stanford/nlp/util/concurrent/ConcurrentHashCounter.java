@@ -253,7 +253,7 @@ public class ConcurrentHashCounter<E> implements Serializable, Counter<E>, Itera
       @Override
       public Iterator<Double> iterator() {
         return new Iterator<Double>() {
-          Iterator<AtomicDouble> iterator = map.values().iterator();
+          final Iterator<AtomicDouble> iterator = map.values().iterator();
           @Override
           public boolean hasNext() {
             return iterator.hasNext();

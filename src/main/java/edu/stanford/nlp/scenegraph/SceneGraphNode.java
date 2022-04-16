@@ -15,8 +15,8 @@ import edu.stanford.nlp.ling.IndexedWord;
 
 public class SceneGraphNode implements Comparable<SceneGraphNode> {
 
-  private IndexedWord value;
-  private Set<SceneGraphAttribute> attributes;
+  private final IndexedWord value;
+  private final Set<SceneGraphAttribute> attributes;
 
 
   public SceneGraphNode(IndexedWord value) {

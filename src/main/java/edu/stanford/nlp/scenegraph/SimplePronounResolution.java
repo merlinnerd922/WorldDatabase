@@ -33,7 +33,7 @@ import edu.stanford.nlp.util.CoreMap;
 public class SimplePronounResolution extends AbstractPronounResolver {
 
   private StanfordCoreNLP pipeline;
-  private Dictionaries dict;
+  private final Dictionaries dict;
 
 
   public SimplePronounResolution() {

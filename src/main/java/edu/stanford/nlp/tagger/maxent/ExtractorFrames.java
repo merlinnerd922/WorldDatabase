@@ -573,9 +573,9 @@ public class ExtractorFrames  {
 
     private static final long serialVersionUID = 8563584394721620568L;
 
-    private int position1;
-    private int position2;
-    private int position3;
+    private final int position1;
+    private final int position2;
+    private final int position3;
 
     public ExtractorThreeTags(int position1, int position2, int position3) {
       // bubblesort them!
@@ -642,9 +642,9 @@ public class ExtractorFrames  {
     private static final long serialVersionUID = -4942654091455804176L;
 
     // We sort so that position1 <= position2 and then rely on that.
-    private int position1;
-    private int position2;
-    private int word;
+    private final int position1;
+    private final int position2;
+    private final int word;
 
     public ExtractorWordTwoTags(int word, int position1, int position2) {
       if (position1 < position2) {

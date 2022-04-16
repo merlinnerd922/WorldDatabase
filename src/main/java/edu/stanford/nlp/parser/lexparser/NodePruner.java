@@ -17,7 +17,7 @@ import edu.stanford.nlp.ling.Label;
 public class NodePruner  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(NodePruner.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(NodePruner.class);
 
   private final ExhaustivePCFGParser parser;
   private final TreeTransformer debinarizer;

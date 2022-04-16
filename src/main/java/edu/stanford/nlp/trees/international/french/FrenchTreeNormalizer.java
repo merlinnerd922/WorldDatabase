@@ -23,7 +23,7 @@ import java.util.function.Predicate;
 public class FrenchTreeNormalizer extends BobChrisTreeNormalizer  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(FrenchTreeNormalizer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(FrenchTreeNormalizer.class);
 
   private static final long serialVersionUID = 7868735300308066991L;
 

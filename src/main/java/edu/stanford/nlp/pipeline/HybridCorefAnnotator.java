@@ -21,7 +21,7 @@ import edu.stanford.nlp.util.*;
 public class HybridCorefAnnotator extends TextAnnotationCreator implements Annotator  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(HybridCorefAnnotator.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(HybridCorefAnnotator.class);
 
   private static final boolean VERBOSE = false;
 

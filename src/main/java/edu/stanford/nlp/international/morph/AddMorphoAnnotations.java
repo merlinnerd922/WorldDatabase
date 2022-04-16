@@ -31,7 +31,7 @@ import edu.stanford.nlp.util.StringUtils;
 public final class AddMorphoAnnotations  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AddMorphoAnnotations.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AddMorphoAnnotations.class);
   
   private static final int minArgs = 2;
   private static String usage() {

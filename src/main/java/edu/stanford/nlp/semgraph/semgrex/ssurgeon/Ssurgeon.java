@@ -186,7 +186,7 @@ public class Ssurgeon  {
   //
   // Resource management
   //
-  private Map<String, SsurgeonWordlist> wordListResources = Generics.newHashMap();
+  private final Map<String, SsurgeonWordlist> wordListResources = Generics.newHashMap();
 
   /**
    * Places the given word list resource under the given ID.

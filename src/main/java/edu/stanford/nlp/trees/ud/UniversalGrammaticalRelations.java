@@ -168,11 +168,11 @@ public class UniversalGrammaticalRelations {
             new GrammaticalRelation(Language.Any, "obl:relobj", "relative object", DEPENDENT);
 
 
-    private static HashMap<String,GrammaticalRelation> nmodRelations = new HashMap<>();
-    private static HashMap<String,GrammaticalRelation> oblRelations = new HashMap<>();
-    private static HashMap<String,GrammaticalRelation> aclRelations = new HashMap<>();
-    private static HashMap<String,GrammaticalRelation> advclRelations = new HashMap<>();
-    private static HashMap<String,GrammaticalRelation> conjRelations = new HashMap<>();
+    private static final HashMap<String,GrammaticalRelation> nmodRelations = new HashMap<>();
+    private static final HashMap<String,GrammaticalRelation> oblRelations = new HashMap<>();
+    private static final HashMap<String,GrammaticalRelation> aclRelations = new HashMap<>();
+    private static final HashMap<String,GrammaticalRelation> advclRelations = new HashMap<>();
+    private static final HashMap<String,GrammaticalRelation> conjRelations = new HashMap<>();
 
     public static final GrammaticalRelation getConj(String subtype) {
         return getSpecificReln(conjRelations, subtype, CONJUNCT);

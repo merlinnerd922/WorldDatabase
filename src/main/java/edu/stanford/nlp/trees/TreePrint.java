@@ -26,7 +26,7 @@ import java.util.function.Predicate;
 public class TreePrint  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TreePrint.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TreePrint.class);
 
   // TODO: Add support for makeCopulaHead as an outputFormatOption here.
 

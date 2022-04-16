@@ -30,9 +30,9 @@ public class CRFFeatureExporter<IN extends CoreMap>  {
 
   /** A logger for this class */
   private static final Redwood.RedwoodChannels log = Redwood.channels(CRFFeatureExporter.class);
-  private char delimiter = '\t';
+  private final char delimiter = '\t';
   private static final String eol = System.lineSeparator();
-  private CRFClassifier<IN> classifier;
+  private final CRFClassifier<IN> classifier;
 
   public CRFFeatureExporter(CRFClassifier<IN> classifier)
   {

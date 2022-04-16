@@ -11,7 +11,7 @@ public class ArabicUnknownWordModelTrainer
 {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(BaseUnknownWordModelTrainer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(BaseUnknownWordModelTrainer.class);
 
   // Records the number of times word/tag pair was seen in training data.
   ClassicCounter<IntTaggedWord> seenCounter;

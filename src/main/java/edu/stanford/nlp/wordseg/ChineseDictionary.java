@@ -30,7 +30,7 @@ public class ChineseDictionary {
   // todo [2017]: This should be redone sometime to not have such a hardcoded upper limit.
   public static final int MAX_LEXICON_LENGTH = 6;
 
-  private static Redwood.RedwoodChannels logger = Redwood.channels(ChineseDictionary.class);
+  private static final Redwood.RedwoodChannels logger = Redwood.channels(ChineseDictionary.class);
   @SuppressWarnings({"unchecked"})
   private final Set<String>[] words_ = new HashSet[MAX_LEXICON_LENGTH+1];
 

@@ -159,8 +159,8 @@ public class GeneralizedCounter<K> implements Serializable {
   }
 
   private static class Entry<K, V> implements Map.Entry<K, V> {
-    private K key;
-    private V value;
+    private final K key;
+    private final V value;
 
     Entry(K key, V value) {
       this.key = key;

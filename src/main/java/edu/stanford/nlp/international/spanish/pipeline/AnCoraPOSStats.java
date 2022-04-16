@@ -27,13 +27,13 @@ import java.util.*;
 public class AnCoraPOSStats  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AnCoraPOSStats.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AnCoraPOSStats.class);
 
   private final TwoDimensionalCounter<String, String> unigramTagger;
   private static final String ANCORA_ENCODING = "ISO8859_1";
 
-  private List<File> fileList;
-  private String outputPath;
+  private final List<File> fileList;
+  private final String outputPath;
 
   public AnCoraPOSStats(List<File> fileList, String outputPath) {
     this.fileList = fileList;

@@ -15,7 +15,7 @@ import java.util.Arrays;
 public class EditDistance  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(EditDistance.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(EditDistance.class);
   final boolean allowTranspose;
 
   protected double[][] score = null;

@@ -14,12 +14,12 @@ import edu.stanford.nlp.util.Scored;
  */
 public final class DFSATransition<T,S> implements Scored {
 
-  private Object transitionID;
-  private DFSAState<T,S> source;
+  private final Object transitionID;
+  private final DFSAState<T,S> source;
   protected DFSAState<T,S> target; // used directly in DFSAMinimizer (only)
-  private double score;
-  private T input;
-  private Object output;
+  private final double score;
+  private final T input;
+  private final Object output;
 
   public DFSATransition(Object transitionID, DFSAState<T,S> source, DFSAState<T,S> target, T input, Object output, double score) {
     this.transitionID = transitionID;

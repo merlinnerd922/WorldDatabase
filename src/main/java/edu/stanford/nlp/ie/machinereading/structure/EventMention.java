@@ -20,7 +20,7 @@ import edu.stanford.nlp.util.IdentityHashSet;
 public class EventMention extends RelationMention  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(EventMention.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(EventMention.class);
 
   private static final long serialVersionUID = 1L;
 
@@ -31,7 +31,7 @@ public class EventMention extends RelationMention  {
   
   // this is set if we're a subevent
   // we might have multiple parents for the same event (at least in the reader before sanity check 4)!
-  private Set<ExtractionObject> parents;
+  private final Set<ExtractionObject> parents;
 
   public EventMention(String objectId, 
       CoreMap sentence,

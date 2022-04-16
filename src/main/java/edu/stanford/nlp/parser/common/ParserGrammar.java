@@ -50,7 +50,7 @@ import edu.stanford.nlp.parser.lexparser.TreebankLangParserParams;
  */
 public abstract class ParserGrammar implements Function<List<? extends HasWord>, Tree>, ParserQueryFactory {
 
-  private static Redwood.RedwoodChannels logger = Redwood.channels(ParserGrammar.class);
+  private static final Redwood.RedwoodChannels logger = Redwood.channels(ParserGrammar.class);
 
   public abstract ParserQuery parserQuery();
 

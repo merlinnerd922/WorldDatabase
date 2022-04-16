@@ -27,8 +27,8 @@ public class OneToOneMap<L,R> implements Serializable{
 
   //------------------------------------------------------------
 
-  private Map<L,R> m_leftAsKey;
-  private Map<R,L> m_rightAsKey;
+  private final Map<L,R> m_leftAsKey;
+  private final Map<R,L> m_rightAsKey;
 
   public OneToOneMap()
   {

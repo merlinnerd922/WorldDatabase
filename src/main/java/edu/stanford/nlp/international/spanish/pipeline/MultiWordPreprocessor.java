@@ -35,7 +35,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public final class MultiWordPreprocessor  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(MultiWordPreprocessor.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(MultiWordPreprocessor.class);
 
   private static int nMissingPOS;
   private static int nMissingPhrasal;
@@ -222,7 +222,7 @@ public final class MultiWordPreprocessor  {
       posMap.put("kms", "zu");
     }
 
-    private static int nUnknownWordTypes = posMap.size();
+    private static final int nUnknownWordTypes = posMap.size();
 
     private static final Pattern digit = Pattern.compile("\\d+");
     private static final Pattern participle = Pattern.compile("[ai]d[oa]$");

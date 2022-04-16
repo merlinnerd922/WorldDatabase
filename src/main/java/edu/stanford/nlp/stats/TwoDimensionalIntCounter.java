@@ -25,16 +25,16 @@ public class TwoDimensionalIntCounter<K1, K2> implements Serializable {
   private static final long serialVersionUID = 1L;
 
   // the outermost Map
-  private Map<K1, IntCounter<K2>> map;
+  private final Map<K1, IntCounter<K2>> map;
 
   // the total of all counts
   private int total;
 
   // the MapFactory used to make new maps to counters
-  private MapFactory<K1,IntCounter<K2>> outerMF;
+  private final MapFactory<K1,IntCounter<K2>> outerMF;
 
   // the MapFactory used to make new maps in the inner counter
-  private MapFactory<K2, MutableInteger> innerMF;
+  private final MapFactory<K2, MutableInteger> innerMF;
 
   private int defaultValue = 0;
 

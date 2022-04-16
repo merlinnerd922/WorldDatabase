@@ -15,7 +15,7 @@ import edu.stanford.nlp.util.Generics;
  * @author John Bauer
  */
 public class CreateSubtreeNode extends TsurgeonPattern {
-  private AuxiliaryTree auxTree;
+  private final AuxiliaryTree auxTree;
 
   public CreateSubtreeNode(TsurgeonPattern start, AuxiliaryTree tree) {
     this(start, null, tree);

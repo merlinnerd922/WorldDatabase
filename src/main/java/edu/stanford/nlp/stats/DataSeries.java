@@ -77,8 +77,8 @@ public interface DataSeries  {
 
   public static class FunctionDataSeries extends AbstractDataSeries {
 
-    private ToIntFunction<Object> sizeFn;
-    private IntToDoubleFunction function;
+    private final ToIntFunction<Object> sizeFn;
+    private final IntToDoubleFunction function;
 
     public FunctionDataSeries(String name,
                               IntToDoubleFunction function,
@@ -312,7 +312,7 @@ public interface DataSeries  {
 
   public static class AverageDataSeries implements DataSeries {
 
-    private DataSeries[] components;
+    private final DataSeries[] components;
 
     public AverageDataSeries(DataSeries[] components) {
       if (components == null || components.length < 1)

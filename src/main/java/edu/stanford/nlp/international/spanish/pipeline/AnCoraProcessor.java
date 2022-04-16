@@ -54,7 +54,7 @@ import java.util.stream.*;
 public class AnCoraProcessor  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AnCoraProcessor.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AnCoraProcessor.class);
 
   private final List<File> inputFiles;
   private final Properties options;
@@ -171,8 +171,8 @@ public class AnCoraProcessor  {
     }
   }
 
-  private static TreeNormalizer splittingNormalizer = new SpanishSplitTreeNormalizer();
-  private static TreeFactory splittingTreeFactory = new LabeledScoredTreeFactory();
+  private static final TreeNormalizer splittingNormalizer = new SpanishSplitTreeNormalizer();
+  private static final TreeFactory splittingTreeFactory = new LabeledScoredTreeFactory();
 
   /**
    * Split the given tree based on a split point such that the
@@ -215,8 +215,8 @@ public class AnCoraProcessor  {
 
     private static final long serialVersionUID = -5146948439247427344L;
 
-    private Tree reference;
-    private Tree root;
+    private final Tree reference;
+    private final Tree root;
 
     /**
      * @param reference Node to which nodes provided to this filter
@@ -251,10 +251,10 @@ public class AnCoraProcessor  {
 
     private static final long serialVersionUID = 8283161954004080591L;
 
-    private Tree root;
+    private final Tree root;
 
     // This should be the leftmost terminal node of the filtered tree
-    private Tree firstToKeep;
+    private final Tree firstToKeep;
 
     /**
      * @param reference Node to which nodes provided to this filter

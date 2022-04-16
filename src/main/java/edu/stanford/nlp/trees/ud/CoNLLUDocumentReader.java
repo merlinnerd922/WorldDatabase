@@ -30,7 +30,7 @@ public class CoNLLUDocumentReader implements
   
   private static final long serialVersionUID = -7340310509954331983L;
 
-  private IteratorFromReaderFactory<Pair<SemanticGraph, SemanticGraph>> ifrf;
+  private final IteratorFromReaderFactory<Pair<SemanticGraph, SemanticGraph>> ifrf;
 
 
   public CoNLLUDocumentReader() {
@@ -59,7 +59,7 @@ public class CoNLLUDocumentReader implements
   private static class SentenceProcessor implements Function<String,Pair<SemanticGraph, SemanticGraph>> {
 
 
-    private Language lang;
+    private final Language lang;
 
     private SentenceProcessor(Language lang) {
       this.lang = lang;

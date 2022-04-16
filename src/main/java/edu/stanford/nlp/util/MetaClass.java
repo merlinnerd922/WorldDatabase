@@ -283,7 +283,7 @@ public class MetaClass {
 
   } // end static class ClassFactory
 
-  private String classname;
+  private final String classname;
 
   /**
    * Creates a new MetaClass producing objects of the given type

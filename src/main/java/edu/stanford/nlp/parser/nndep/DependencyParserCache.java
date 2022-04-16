@@ -59,7 +59,7 @@ class DependencyParserCache {
     }
   }
 
-  private static Map<DependencyParserSpecification, WeakReference<DependencyParser>> modelCache = new HashMap<>();
+  private static final Map<DependencyParserSpecification, WeakReference<DependencyParser>> modelCache = new HashMap<>();
 
   public static DependencyParser loadFromModelFile(String modelFile, Properties extraProperties) {
     DependencyParserSpecification spec = new DependencyParserSpecification(modelFile, extraProperties);

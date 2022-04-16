@@ -143,10 +143,10 @@ public class CGMinimizer implements Minimizer<DiffFunction>  {
   //  }
 
   static class OneDimDiffFunction {
-    private DiffFunction function;
-    private double[] initial;
-    private double[] direction;
-    private double[] tempVector;
+    private final DiffFunction function;
+    private final double[] initial;
+    private final double[] direction;
+    private final double[] tempVector;
 
     private double[] vectorOf(double x) {
       for (int j = 0; j < initial.length; j++) {

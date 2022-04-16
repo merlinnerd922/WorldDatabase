@@ -60,7 +60,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public abstract class DeterministicCorefSieve extends Sieve  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(DeterministicCorefSieve.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(DeterministicCorefSieve.class);
 
   public final DcorefSieveOptions flags;
 

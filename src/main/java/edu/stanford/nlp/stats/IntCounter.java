@@ -39,9 +39,9 @@ import edu.stanford.nlp.util.logging.Redwood.RedwoodChannels;
 public class IntCounter<E> extends AbstractCounter<E> implements Serializable {
 
   @SuppressWarnings({"NonSerializableFieldInSerializableClass"})
-  private Map<E, MutableInteger>  map;
+  private final Map<E, MutableInteger>  map;
   @SuppressWarnings("unchecked")
-  private MapFactory mapFactory;
+  private final MapFactory mapFactory;
   private int totalCount;
   private int defaultValue; // = 0;
 
@@ -751,7 +751,7 @@ public class IntCounter<E> extends AbstractCounter<E> implements Serializable {
       @Override
       public Iterator<Double> iterator() {
         return new Iterator<Double>() {
-          Iterator<MutableInteger> inner = map.values().iterator();
+          final Iterator<MutableInteger> inner = map.values().iterator();
 
           public boolean hasNext() {
             return inner.hasNext();

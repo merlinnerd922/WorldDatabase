@@ -21,7 +21,7 @@ public class AceEvent extends AceElement {
   private String mTense;
 
   /** The list of mentions for this event */
-  private List<AceEventMention> mMentions;
+  private final List<AceEventMention> mMentions;
 
   public static final String NIL_LABEL = "nil";
 

@@ -32,7 +32,7 @@ import edu.stanford.nlp.util.Generics;
 public class ReadSentimentDataset  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ReadSentimentDataset.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ReadSentimentDataset.class);
   static final Function<Tree, String> TRANSFORM_TREE_TO_WORD = tree -> tree.label().value();
 
   static final Function<String, String> TRANSFORM_PARENS = word -> {

@@ -20,7 +20,7 @@ import java.util.regex.Pattern;
 public class PascalTemplate  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(PascalTemplate.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(PascalTemplate.class);
 
   public static final String[] fields = {
     //dates
@@ -78,7 +78,7 @@ public class PascalTemplate  {
   /*
    * Acronym stemming and matching fields
    */
-  private static Pattern acronymPattern = Pattern.compile("([ \r-/a-zA-Z]+?)(?:[ -'*\t\r\n\f0-9]*)", Pattern.DOTALL);
+  private static final Pattern acronymPattern = Pattern.compile("([ \r-/a-zA-Z]+?)(?:[ -'*\t\r\n\f0-9]*)", Pattern.DOTALL);
 
   /**
    *

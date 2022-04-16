@@ -33,8 +33,8 @@ public class MultiClassChunkEvalStats extends MultiClassPrecisionRecallExtendedS
   private boolean inCorrect = false;
   private LabeledChunkIdentifier.LabelTagType prevCorrect = null;
   private LabeledChunkIdentifier.LabelTagType prevGuess = null;
-  private LabeledChunkIdentifier chunker;
-  private boolean useLabel = false;
+  private final LabeledChunkIdentifier chunker;
+  private final boolean useLabel = false;
 
   public <F> MultiClassChunkEvalStats(Classifier<String,F> classifier, GeneralDataset<String,F> data, String negLabel)
   {

@@ -12,13 +12,13 @@ import edu.stanford.nlp.util.ArgumentParser;
 
 public class ModelSerializer {
   @ArgumentParser.Option(name="language", gloss="What language settings were used to train the model")
-  private static String LANGUAGE = "english";
+  private static final String LANGUAGE = "english";
 
   @ArgumentParser.Option(name="name", gloss="Model name")
-  private static String NAME = "default";
+  private static final String NAME = "default";
 
   @ArgumentParser.Option(name="path", gloss="Directory where the saved matrices can be found")
-  private static String DATA_PATH =
+  private static final String DATA_PATH =
     "data/models/reward_rescaling/exported_weights";
 
   private static final String PRETRAINED = "vectors_pretrained_all";

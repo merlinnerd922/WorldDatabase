@@ -47,13 +47,13 @@ public class KBPStatisticalExtractor implements KBPRelationExtractor, Serializab
 
   private enum MinimizerType{ QN, SGD, HYBRID, L1 }
   @ArgumentParser.Option(name="minimizer", gloss="The minimizer to use for training the classifier")
-  private static MinimizerType minimizer = MinimizerType.L1;
+  private static final MinimizerType minimizer = MinimizerType.L1;
 
   @ArgumentParser.Option(name="feature_threshold", gloss="The minimum number of times to see a feature to count it")
-  private static int FEATURE_THRESHOLD = 0;
+  private static final int FEATURE_THRESHOLD = 0;
 
   @ArgumentParser.Option(name="sigma", gloss="The regularizer for the classifier")
-  private static double SIGMA = 1.0;
+  private static final double SIGMA = 1.0;
 
 
   private static final Redwood.RedwoodChannels log = Redwood.channels(KBPStatisticalExtractor.class);

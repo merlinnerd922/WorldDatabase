@@ -16,16 +16,16 @@ import edu.stanford.nlp.util.Generics;
 public class TueBaDZHeadFinder extends AbstractCollinsHeadFinder  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TueBaDZHeadFinder.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TueBaDZHeadFinder.class);
 
   private static final long serialVersionUID = 1L;
 
   private static final boolean DEBUG = false;
 
   private final String left;
-  private String right;
+  private final String right;
 
-  private boolean coordSwitch = false;
+  private final boolean coordSwitch = false;
 
 
   public TueBaDZHeadFinder() {

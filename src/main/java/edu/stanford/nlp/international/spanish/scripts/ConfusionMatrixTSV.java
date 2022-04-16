@@ -13,7 +13,7 @@ import java.io.UnsupportedEncodingException;
 public class ConfusionMatrixTSV  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ConfusionMatrixTSV.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ConfusionMatrixTSV.class);
 
   public static void main(String[] args) throws IOException {
     if (args.length < 1) {

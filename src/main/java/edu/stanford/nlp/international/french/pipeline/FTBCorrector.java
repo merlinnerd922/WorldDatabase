@@ -31,7 +31,7 @@ import edu.stanford.nlp.util.Pair;
 public class FTBCorrector implements TreeTransformer  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(FTBCorrector.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(FTBCorrector.class);
 
   private static final boolean DEBUG = false;
   

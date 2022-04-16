@@ -26,14 +26,14 @@ import edu.stanford.nlp.util.Generics;
 public class Dependencies  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(Dependencies.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(Dependencies.class);
 
   private Dependencies() {} // only static methods
 
 
   public static class DependentPuncTagRejectFilter<G extends Label,D extends Label,N> implements Predicate<Dependency<G, D, N>>, Serializable {
 
-    private Predicate<String> tagRejectFilter;
+    private final Predicate<String> tagRejectFilter;
 
     public DependentPuncTagRejectFilter(Predicate<String> trf) {
       tagRejectFilter = trf;

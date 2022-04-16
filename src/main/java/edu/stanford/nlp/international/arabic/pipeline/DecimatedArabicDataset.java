@@ -19,7 +19,7 @@ import edu.stanford.nlp.util.Generics;
 public class DecimatedArabicDataset extends ATBArabicDataset  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(DecimatedArabicDataset.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(DecimatedArabicDataset.class);
 
   private boolean taggedOutput = false;
   private String wordTagDelim = "_";
@@ -63,7 +63,7 @@ public class DecimatedArabicDataset extends ATBArabicDataset  {
 
     private boolean taggedOutput = false;
 
-    private Map<String,String> outFilenames;
+    private final Map<String,String> outFilenames;
     private Map<String,PrintWriter> outFiles;
 
     public ArabicTreeDecimatedNormalizer(String filePrefix, boolean makeFlat, boolean makeTagged) {

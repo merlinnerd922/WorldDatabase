@@ -194,8 +194,8 @@ public class DeltaIndex<E> extends AbstractCollection<E> implements Index<E> {
   @Override
   public Iterator<E> iterator() {
     return new Iterator<E>() {
-      Iterator<E> backingIterator = backingIndex.iterator();
-      Iterator<E> spilloverIterator = spilloverIndex.iterator();
+      final Iterator<E> backingIterator = backingIndex.iterator();
+      final Iterator<E> spilloverIterator = spilloverIndex.iterator();
 
       @Override
       public boolean hasNext() {

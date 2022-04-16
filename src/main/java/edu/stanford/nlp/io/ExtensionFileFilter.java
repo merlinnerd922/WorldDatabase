@@ -10,7 +10,7 @@ import java.io.File;
 public class ExtensionFileFilter extends javax.swing.filechooser.FileFilter implements java.io.FileFilter {
 
   private String extension;    // = null
-  private boolean recursively;
+  private final boolean recursively;
 
   /**
    * Sets up Extension file filter by specifying an extension

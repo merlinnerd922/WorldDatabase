@@ -44,7 +44,7 @@ import edu.stanford.nlp.util.ErasureUtils;
 public class BasicEntityExtractor implements Extractor  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(BasicEntityExtractor.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(BasicEntityExtractor.class);
 
   private static final long serialVersionUID = -4011478706866593869L;
 

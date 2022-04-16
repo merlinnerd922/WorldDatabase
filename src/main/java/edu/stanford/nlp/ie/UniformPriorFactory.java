@@ -15,7 +15,7 @@ import java.util.List;
 public class UniformPriorFactory<IN extends CoreMap> implements PriorModelFactory<IN>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(UniformPriorFactory.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(UniformPriorFactory.class);
 
   @Override
   public ListeningSequenceModel getInstance(String backgroundSymbol,

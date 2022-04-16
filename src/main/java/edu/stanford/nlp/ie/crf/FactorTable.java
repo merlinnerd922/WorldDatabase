@@ -21,7 +21,7 @@ import java.util.List;
 public class FactorTable  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(FactorTable.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(FactorTable.class);
 
   private final int numClasses;
   private final int windowSize;

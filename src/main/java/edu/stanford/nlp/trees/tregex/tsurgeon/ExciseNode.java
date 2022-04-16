@@ -13,7 +13,7 @@ import edu.stanford.nlp.trees.tregex.TregexMatcher;
 public class ExciseNode extends TsurgeonPattern  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ExciseNode.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ExciseNode.class);
 
   /**
    * Top should evaluate to a node that dominates bottom, but this is not checked!

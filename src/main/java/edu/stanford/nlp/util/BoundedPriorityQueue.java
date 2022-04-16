@@ -14,7 +14,8 @@ import java.util.*;
  */
 public class BoundedPriorityQueue<E> extends TreeSet<E> {
 
-  private int remainingCapacity, initialCapacity;
+  private int remainingCapacity;
+    private final int initialCapacity;
 
   public BoundedPriorityQueue(int maxSize) {
     super();

@@ -20,7 +20,7 @@ import edu.stanford.nlp.international.morph.MorphoFeatures;
 public class ArabicMorphoFeatureSpecification extends MorphoFeatureSpecification  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ArabicMorphoFeatureSpecification.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ArabicMorphoFeatureSpecification.class);
 
   private static final long serialVersionUID = 4448045447200922076L;
 

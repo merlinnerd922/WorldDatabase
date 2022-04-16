@@ -73,7 +73,7 @@ class CoordinationPattern extends TregexPattern {
   }
 
   private static class CoordinationMatcher extends TregexMatcher {
-    private TregexMatcher[] children;
+    private final TregexMatcher[] children;
     private final CoordinationPattern myNode;
     private int currChild;
     private final boolean considerAll;

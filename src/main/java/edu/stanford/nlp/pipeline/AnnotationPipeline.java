@@ -32,7 +32,7 @@ public class AnnotationPipeline implements Annotator {
   protected static final boolean TIME = true;
 
   private final List<Annotator> annotators;
-  private List<MutableLong> accumulatedTime;
+  private final List<MutableLong> accumulatedTime;
 
   public AnnotationPipeline(List<Annotator> annotators) {
     this.annotators = annotators;

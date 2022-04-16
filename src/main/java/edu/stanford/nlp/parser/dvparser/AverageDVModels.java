@@ -28,7 +28,7 @@ import edu.stanford.nlp.util.TwoDimensionalSet;
 public class AverageDVModels  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AverageDVModels.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AverageDVModels.class);
   public static TwoDimensionalSet<String, String> getBinaryMatrixNames(List<TwoDimensionalMap<String, String, SimpleMatrix>> maps) {
     TwoDimensionalSet<String, String> matrixNames = new TwoDimensionalSet<>();
     for (TwoDimensionalMap<String, String, SimpleMatrix> map : maps) {

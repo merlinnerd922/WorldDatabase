@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 public class DescriptionPattern extends TregexPattern  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(DescriptionPattern.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(DescriptionPattern.class);
 
   enum DescriptionMode {
     PATTERN, STRINGS, EXACT, ANYTHING

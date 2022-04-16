@@ -19,7 +19,7 @@ import java.io.DataInputStream;
 public class LambdaSolveTagger extends LambdaSolve  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(LambdaSolveTagger.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(LambdaSolveTagger.class);
 
   /**
    * Suppress extraneous printouts

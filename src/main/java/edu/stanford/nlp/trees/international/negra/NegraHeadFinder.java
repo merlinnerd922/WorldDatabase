@@ -17,7 +17,7 @@ import edu.stanford.nlp.util.Generics;
 public class NegraHeadFinder extends AbstractCollinsHeadFinder  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(NegraHeadFinder.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(NegraHeadFinder.class);
   /**
    * 
    */
@@ -36,7 +36,7 @@ public class NegraHeadFinder extends AbstractCollinsHeadFinder  {
     return result;
   }
   
-  private boolean coordSwitch = false;
+  private final boolean coordSwitch = false;
 
   public NegraHeadFinder() {
     this(new NegraPennLanguagePack());

@@ -37,7 +37,7 @@ import edu.stanford.nlp.util.ScoredObject;
 public class FindNearestNeighbors  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(FindNearestNeighbors.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(FindNearestNeighbors.class);
   // TODO: parameter?
   static final int numNeighbors = 5;
   static final int maxLength = 8;

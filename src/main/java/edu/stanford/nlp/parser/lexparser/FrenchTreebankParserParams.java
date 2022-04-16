@@ -46,7 +46,7 @@ import java.util.List;
 public class FrenchTreebankParserParams extends TregexPoweredTreebankParserParams  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(FrenchTreebankParserParams.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(FrenchTreebankParserParams.class);
 
   private static final long serialVersionUID = -6976724734594763986L;
 
@@ -416,8 +416,8 @@ public class FrenchTreebankParserParams extends TregexPoweredTreebankParserParam
    */
   private class AddRelativeNodeFunction implements SerializableFunction<TregexMatcher,String> {
 
-    private String annotationMark;
-    private String key;
+    private final String annotationMark;
+    private final String key;
     private String key2;
     private boolean doBasicCat = false;
     private boolean toLower = false;

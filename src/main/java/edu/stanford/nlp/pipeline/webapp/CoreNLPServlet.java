@@ -34,7 +34,7 @@ public class CoreNLPServlet extends HttpServlet {
 
   private XSLTransform corenlpTransformer;
 
-  private String defaultFormat = "pretty";
+  private final String defaultFormat = "pretty";
 
   private static final int MAXIMUM_QUERY_LENGTH = 4096;
 

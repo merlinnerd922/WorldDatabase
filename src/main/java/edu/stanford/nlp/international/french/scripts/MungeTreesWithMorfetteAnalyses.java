@@ -29,7 +29,7 @@ import edu.stanford.nlp.trees.international.french.FrenchTreeReaderFactory;
 public final class MungeTreesWithMorfetteAnalyses  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(MungeTreesWithMorfetteAnalyses.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(MungeTreesWithMorfetteAnalyses.class);
 
   private static class MorfetteFileIterator implements Iterator<List<CoreLabel>> {
 

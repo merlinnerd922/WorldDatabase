@@ -16,10 +16,11 @@ import java.util.List;
 public class EmpiricalNERPriorBIO<IN extends CoreMap> extends EntityCachingAbstractSequencePriorBIO<IN>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(EmpiricalNERPriorBIO.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(EmpiricalNERPriorBIO.class);
 
-  private double[][] entityMatrix, subEntityMatrix;
-  private SeqClassifierFlags flags;
+  private final double[][] entityMatrix;
+    private final double[][] subEntityMatrix;
+  private final SeqClassifierFlags flags;
 
   protected double p1 = Math.log(0.01);
   protected double p2 = Math.log(2.0);

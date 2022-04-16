@@ -19,19 +19,19 @@ import java.util.Iterator;
 public class TreeTokenizerFactory implements TokenizerFactory<Tree>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TreeTokenizerFactory.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TreeTokenizerFactory.class);
 
   /** Create a TreeTokenizerFactory from a TreeReaderFactory. */
   public TreeTokenizerFactory(TreeReaderFactory trf) {
     this.trf = trf;
   }
 
-  private TreeReaderFactory trf;
+  private final TreeReaderFactory trf;
 
   /** Gets a tokenizer from a reader.*/
   public Tokenizer<Tree> getTokenizer(final Reader r) {
     return new AbstractTokenizer<Tree>() {
-      TreeReader tr = trf.newTreeReader(r);
+      final TreeReader tr = trf.newTreeReader(r);
       @Override
       public Tree getNext() {
         try {

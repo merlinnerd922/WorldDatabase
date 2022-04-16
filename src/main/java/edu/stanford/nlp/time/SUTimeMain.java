@@ -522,7 +522,7 @@ public class SUTimeMain  {
     }
   }
 
-  private static CoreLabelTokenFactory tokenFactory = new CoreLabelTokenFactory();
+  private static final CoreLabelTokenFactory tokenFactory = new CoreLabelTokenFactory();
 
   private static CoreMap wordsToSentence(List<String> sentWords) {
     String sentText = StringUtils.join(sentWords, " ");

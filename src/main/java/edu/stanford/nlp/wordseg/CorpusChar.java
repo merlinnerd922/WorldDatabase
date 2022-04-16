@@ -18,7 +18,7 @@ public class CorpusChar {
 
   private static final Redwood.RedwoodChannels logger = Redwood.channels(CorpusChar.class);
 
-  private Map <String, Set <String>> charMap;
+  private final Map <String, Set <String>> charMap;
 
   public CorpusChar(String charlistFilename)  {
     charMap=readDict(charlistFilename);

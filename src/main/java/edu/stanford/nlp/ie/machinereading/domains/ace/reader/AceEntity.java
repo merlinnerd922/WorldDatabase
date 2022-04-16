@@ -17,7 +17,7 @@ public class AceEntity extends AceElement {
 
   private String mClass;
 
-  private List<AceEntityMention> mMentions;
+  private final List<AceEntityMention> mMentions;
 
   public AceEntity(String id,
 		   String type,

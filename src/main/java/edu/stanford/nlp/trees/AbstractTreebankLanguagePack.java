@@ -394,7 +394,7 @@ public abstract class AbstractTreebankLanguagePack implements TreebankLanguagePa
 
     private static final long serialVersionUID = 1L;
 
-    private TreebankLanguagePack tlp;
+    private final TreebankLanguagePack tlp;
 
     BasicCategoryStringFunction(TreebankLanguagePack tlp) {
       this.tlp = tlp;
@@ -412,7 +412,7 @@ public abstract class AbstractTreebankLanguagePack implements TreebankLanguagePa
 
     private static final long serialVersionUID = 1L;
 
-    private TreebankLanguagePack tlp;
+    private final TreebankLanguagePack tlp;
 
     CategoryAndFunctionStringFunction(TreebankLanguagePack tlp) {
       this.tlp = tlp;

@@ -44,10 +44,10 @@ public class TransducerGraph implements Cloneable  {
   private final Map<Object, Set<Arc>> arcsBySource;
   private final Map<Object, Set<Arc>> arcsByTarget;
   private final Map<Object, Set<Arc>> arcsByInput;
-  private Map<Pair<Object, Object>, Arc> arcsBySourceAndInput;
-  private Map<Object, Set<Arc>> arcsByTargetAndInput;
+  private final Map<Pair<Object, Object>, Arc> arcsBySourceAndInput;
+  private final Map<Object, Set<Arc>> arcsByTargetAndInput;
   private Object startNode;
-  private Set endNodes;
+  private final Set endNodes;
   private boolean checkDeterminism = false;
 
   public void setDeterminism(boolean checkDeterminism) {
@@ -458,7 +458,7 @@ public class TransducerGraph implements Cloneable  {
   }
 
   public static class SetToStringNodeProcessor implements NodeProcessor {
-    private TreebankLanguagePack tlp;
+    private final TreebankLanguagePack tlp;
 
     public SetToStringNodeProcessor(TreebankLanguagePack tlp) {
       this.tlp = tlp;

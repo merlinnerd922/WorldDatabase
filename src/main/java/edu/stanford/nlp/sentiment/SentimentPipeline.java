@@ -48,7 +48,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class SentimentPipeline  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(SentimentPipeline.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(SentimentPipeline.class);
 
   private static final NumberFormat NF = new DecimalFormat("0.0000");
 

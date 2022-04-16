@@ -11,7 +11,7 @@ import edu.stanford.nlp.trees.Tree;
 public class EvalbFormatWriter  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(EvalbFormatWriter.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(EvalbFormatWriter.class);
   public final static String DEFAULT_GOLD_FILENAME = "parses.gld";
   public final static String DEFAULT_TEST_FILENAME = "parses.tst";
   private PrintWriter goldWriter;

@@ -8,7 +8,7 @@ import edu.stanford.nlp.util.Generics;
 public class ScorerMUC extends CorefScorer  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ScorerMUC.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ScorerMUC.class);
 
   public ScorerMUC() {
     super(ScoreType.MUC);

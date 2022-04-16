@@ -18,7 +18,7 @@ import edu.stanford.nlp.util.Index;
 public class ArabicUnknownWordModel extends BaseUnknownWordModel  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ArabicUnknownWordModel.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ArabicUnknownWordModel.class);
 
   private static final long serialVersionUID = 4825624957364628771L;
 

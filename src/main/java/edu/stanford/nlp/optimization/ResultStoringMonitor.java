@@ -15,7 +15,7 @@ import java.util.zip.GZIPOutputStream;
 public class ResultStoringMonitor implements Function  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ResultStoringMonitor.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ResultStoringMonitor.class);
   int i = 0;
   final int outputFreq;
   final String filename;

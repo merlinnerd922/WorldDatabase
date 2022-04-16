@@ -15,13 +15,13 @@ import org.ejml.simple.SimpleMatrix;
 public class NeuralCorefModel implements Serializable {
   private static final long serialVersionUID = 2139427931784505653L;
 
-  private SimpleMatrix antecedentMatrix;
-  private SimpleMatrix anaphorMatrix;
-  private SimpleMatrix pairFeaturesMatrix;
-  private SimpleMatrix pairwiseFirstLayerBias;
-  private List<SimpleMatrix> anaphoricityModel;
-  private List<SimpleMatrix> pairwiseModel;
-  private Embedding wordEmbeddings;
+  private final SimpleMatrix antecedentMatrix;
+  private final SimpleMatrix anaphorMatrix;
+  private final SimpleMatrix pairFeaturesMatrix;
+  private final SimpleMatrix pairwiseFirstLayerBias;
+  private final List<SimpleMatrix> anaphoricityModel;
+  private final List<SimpleMatrix> pairwiseModel;
+  private final Embedding wordEmbeddings;
 
   public NeuralCorefModel(SimpleMatrix antecedentMatrix, SimpleMatrix anaphorMatrix,
                           SimpleMatrix pairFeaturesMatrix, SimpleMatrix pairwiseFirstLayerBias,

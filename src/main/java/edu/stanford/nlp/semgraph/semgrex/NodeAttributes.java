@@ -18,7 +18,7 @@ import java.util.Map;
 public class NodeAttributes {
   private boolean root;
   private boolean empty;
-  private Map<String, String> attributes;
+  private final Map<String, String> attributes;
 
   public NodeAttributes() {
     root = false;

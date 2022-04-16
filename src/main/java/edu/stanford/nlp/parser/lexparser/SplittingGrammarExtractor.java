@@ -54,7 +54,7 @@ import java.io.*;
 public class SplittingGrammarExtractor  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(SplittingGrammarExtractor.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(SplittingGrammarExtractor.class);
   static final int MIN_DEBUG_ITERATION=0;
   static final int MAX_DEBUG_ITERATION=0;
   static final int MAX_ITERATIONS = Integer.MAX_VALUE;

@@ -42,7 +42,7 @@ public class Iterables {
       final Iterable<K> iterable, final Function<? super K,? extends V> function) {
 
     return ()-> { return new Iterator<V>() {
-          Iterator<K> inner = iterable.iterator();
+          final Iterator<K> inner = iterable.iterator();
 
           public boolean hasNext() {
             return inner.hasNext();
@@ -68,7 +68,7 @@ public class Iterables {
     return new Iterable<T>() {
       public Iterator<T> iterator() {
         return new Iterator<T>() {
-          Iterator<T> inner = iterable.iterator();
+          final Iterator<T> inner = iterable.iterator();
 
           boolean queued = false;
           T next = null;
@@ -119,7 +119,7 @@ public class Iterables {
       final Iterable<?> iterable, final Class<? extends T> type) {
 
     return ()-> { return new Iterator<T>() {
-          Iterator<?> inner = iterable.iterator();
+          final Iterator<?> inner = iterable.iterator();
 
           public boolean hasNext() {
             return inner.hasNext();
@@ -390,8 +390,8 @@ public class Iterables {
       final IncrementComparator<V1,V2> comparator) {
 
     return new Iterable<Pair<V1,V2>>() {
-      Iterator<V1> iterA = iter1.iterator();
-      Iterator<V2> iterB = iter2.iterator();
+      final Iterator<V1> iterA = iter1.iterator();
+      final Iterator<V2> iterB = iter2.iterator();
 
       public Iterator<Pair<V1, V2>> iterator() {
         return new Iterator<Pair<V1,V2>>() {
@@ -521,7 +521,7 @@ public class Iterables {
       public Iterator<Iterable<V>> iterator() {
         return new Iterator<Iterable<V>>() {
           /** Actual iterator */
-          Iterator<V> it = iterable.iterator();
+          final Iterator<V> it = iterable.iterator();
 
           /** Next element to return */
           V next;

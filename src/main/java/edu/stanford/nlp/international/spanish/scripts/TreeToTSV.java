@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 public class TreeToTSV  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TreeToTSV.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TreeToTSV.class);
 
   public static void main(String[] args) {
     if(args.length < 1) {

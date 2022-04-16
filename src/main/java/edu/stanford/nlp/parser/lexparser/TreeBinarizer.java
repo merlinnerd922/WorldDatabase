@@ -27,16 +27,16 @@ public class TreeBinarizer implements TreeTransformer  {
 
   private static final boolean DEBUG = false;
 
-  private HeadFinder hf;
-  private TreeFactory tf;
-  private TreebankLanguagePack tlp;
-  private boolean insideFactor; // true: DT JJ NN -> DT "JJ NN", false: DT "DT"
-  private boolean markovFactor;
-  private int markovOrder;
-  private boolean useWrappingLabels;
-  private double selectiveSplitThreshold;
-  private boolean markFinalStates;
-  private boolean unaryAtTop;
+  private final HeadFinder hf;
+  private final TreeFactory tf;
+  private final TreebankLanguagePack tlp;
+  private final boolean insideFactor; // true: DT JJ NN -> DT "JJ NN", false: DT "DT"
+  private final boolean markovFactor;
+  private final int markovOrder;
+  private final boolean useWrappingLabels;
+  private final double selectiveSplitThreshold;
+  private final boolean markFinalStates;
+  private final boolean unaryAtTop;
   private boolean doSelectiveSplit; // = false;
   private ClassicCounter<String> stateCounter = new ClassicCounter<>();
   private final boolean simpleLabels;

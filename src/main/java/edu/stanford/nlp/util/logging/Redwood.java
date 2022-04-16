@@ -824,7 +824,7 @@ public class Redwood  {
     //(known at creation)
     public final long thread = Thread.currentThread().getId();
     //(state)
-    private boolean channelsSorted = false;
+    private final boolean channelsSorted = false;
 
     /**
      * Create a new Record, based on the content of the log, the channels, and

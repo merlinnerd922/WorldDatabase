@@ -28,7 +28,7 @@ import edu.stanford.nlp.util.Generics;
 public abstract class AbstractDataset implements Dataset  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AbstractDataset.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AbstractDataset.class);
 
   protected final List<String> outputFileList;
   protected Mapper posMapper = null;

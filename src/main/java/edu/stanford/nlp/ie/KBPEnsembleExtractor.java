@@ -27,13 +27,13 @@ public class KBPEnsembleExtractor implements KBPRelationExtractor {
   protected static final Redwood.RedwoodChannels logger = Redwood.channels(KBPRelationExtractor.class);
 
   @ArgumentParser.Option(name="model", gloss="The path to the model")
-  private static String STATISTICAL_MODEL = DefaultPaths.DEFAULT_KBP_CLASSIFIER;
+  private static final String STATISTICAL_MODEL = DefaultPaths.DEFAULT_KBP_CLASSIFIER;
 
   @ArgumentParser.Option(name="semgrex", gloss="Semgrex patterns directory")
-  private static String SEMGREX_DIR = DefaultPaths.DEFAULT_KBP_SEMGREX_DIR;
+  private static final String SEMGREX_DIR = DefaultPaths.DEFAULT_KBP_SEMGREX_DIR;
 
   @ArgumentParser.Option(name="tokensregex", gloss="Tokensregex patterns directory")
-  private static String TOKENSREGEX_DIR = DefaultPaths.DEFAULT_KBP_TOKENSREGEX_DIR;
+  private static final String TOKENSREGEX_DIR = DefaultPaths.DEFAULT_KBP_TOKENSREGEX_DIR;
 
   @ArgumentParser.Option(name="predictions", gloss="Dump model predictions to this file")
   public static Optional<String> PREDICTIONS = Optional.empty();

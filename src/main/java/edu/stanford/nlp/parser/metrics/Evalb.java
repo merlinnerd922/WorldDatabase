@@ -51,7 +51,7 @@ import edu.stanford.nlp.util.Triple;
 public class Evalb extends AbstractEval  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(Evalb.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(Evalb.class);
 
   private final ConstituentFactory cf;
 

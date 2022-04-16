@@ -92,7 +92,7 @@ public class RedwoodConfiguration  {
   public RedwoodConfiguration listenOnChannels(Consumer<Redwood.Record> listener, Object... channels) {
     return this.handlers(
         Handlers.chain(new FilterHandler(Collections.singletonList(new LogFilter() {
-              Set<Object> matchAgainst = new HashSet<>(Arrays.asList(channels));
+              final Set<Object> matchAgainst = new HashSet<>(Arrays.asList(channels));
               @Override
               public boolean matches(Redwood.Record message) {
                 for (Object channel : message.channels()) {

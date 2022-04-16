@@ -20,7 +20,7 @@ import edu.stanford.nlp.util.Triple;
 public class TreeAnnotatorAndBinarizer implements TreeTransformer  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TreeAnnotatorAndBinarizer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TreeAnnotatorAndBinarizer.class);
 
   private final TreeFactory tf;
   private final TreebankLanguagePack tlp;

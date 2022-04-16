@@ -27,7 +27,7 @@ import java.util.List;
 public class ExtractQuotesClassifier {
 
   boolean verbose = true;
-  private Classifier<String, String> quoteToMentionClassifier;
+  private final Classifier<String, String> quoteToMentionClassifier;
   public ExtractQuotesClassifier(GeneralDataset<String, String> trainingSet)
   {
     LinearClassifierFactory<String, String> lcf = new LinearClassifierFactory<>();

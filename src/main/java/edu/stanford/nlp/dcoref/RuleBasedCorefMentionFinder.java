@@ -27,7 +27,7 @@ public class RuleBasedCorefMentionFinder implements CorefMentionFinder  {
   // /** A logger for this class */
   // private static Redwood.RedwoodChannels log = Redwood.channels(RuleBasedCorefMentionFinder.class);
 
-  private boolean assignIds = true;
+  private final boolean assignIds = true;
 //  protected int maxID = -1;
   private final HeadFinder headFinder;
   private Annotator parserProcessor;

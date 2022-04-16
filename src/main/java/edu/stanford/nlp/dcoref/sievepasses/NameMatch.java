@@ -17,7 +17,7 @@ public class NameMatch extends DeterministicCorefSieve {
   protected int minTokens = 0; // Minimum number of tokens in name before attempting match
   protected boolean ignoreGender = true;
 
-  private Set<String> supportedNerTypes = Generics.newHashSet();
+  private final Set<String> supportedNerTypes = Generics.newHashSet();
 
   public NameMatch() {
     super();

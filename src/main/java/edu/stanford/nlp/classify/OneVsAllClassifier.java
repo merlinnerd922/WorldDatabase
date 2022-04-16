@@ -35,10 +35,10 @@ public class OneVsAllClassifier<L,F> implements Classifier<L,F> {
     posIndex = binaryIndex.indexOf(POS_LABEL);
   }
 
-  private Index<F> featureIndex;
-  private Index<L> labelIndex;
-  private Map<L, Classifier<String,F>> binaryClassifiers;
-  private L defaultLabel;
+  private final Index<F> featureIndex;
+  private final Index<L> labelIndex;
+  private final Map<L, Classifier<String,F>> binaryClassifiers;
+  private final L defaultLabel;
 
   private static final Redwood.RedwoodChannels logger = Redwood.channels(OneVsAllClassifier.class);
 

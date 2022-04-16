@@ -24,7 +24,7 @@ public class NonDict2  {
   public final String corporaDict;
   private final CorpusDictionary cd;
 
-  private static Redwood.RedwoodChannels logger = Redwood.channels(NonDict2.class);
+  private static final Redwood.RedwoodChannels logger = Redwood.channels(NonDict2.class);
 
   public NonDict2(SeqClassifierFlags flags) {
     if (flags.sighanCorporaDict != null) {

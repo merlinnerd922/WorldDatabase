@@ -24,7 +24,7 @@ import edu.stanford.nlp.trees.international.arabic.ATBTreeUtils;
 public class TaggedArabicDataset extends ATBArabicDataset  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TaggedArabicDataset.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TaggedArabicDataset.class);
 
   private String wordTagDelim = "_";
 

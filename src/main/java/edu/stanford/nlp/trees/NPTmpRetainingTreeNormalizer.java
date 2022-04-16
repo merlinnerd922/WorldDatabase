@@ -35,7 +35,7 @@ import java.util.*;
 public class NPTmpRetainingTreeNormalizer extends BobChrisTreeNormalizer  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(NPTmpRetainingTreeNormalizer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(NPTmpRetainingTreeNormalizer.class);
 
   private static final long serialVersionUID = 7548777133196579107L;
 

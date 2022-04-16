@@ -363,7 +363,7 @@ public class UniversalGrammaticalStructure extends GrammaticalStructure {
 
 
     //add prepositions
-    private static SemgrexPattern[] PREP_PATTERNS = {
+    private static final SemgrexPattern[] PREP_PATTERNS = {
             SemgrexPattern.compile("{}=gov   >/^(nmod|obl)$/=reln ({}=mod >case {}=c1)"),
             SemgrexPattern.compile("{}=gov   >/^(advcl|acl)$/=reln ({}=mod >/^(mark|case)$/ {}=c1)")
     };

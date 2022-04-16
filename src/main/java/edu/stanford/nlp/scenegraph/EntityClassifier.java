@@ -25,7 +25,7 @@ import edu.stanford.nlp.util.Triple;
 public class EntityClassifier {
 
 
-  private static double REG_STRENGTH = 1.0;
+  private static final double REG_STRENGTH = 1.0;
 
 
   private Classifier<String, String> classifier;

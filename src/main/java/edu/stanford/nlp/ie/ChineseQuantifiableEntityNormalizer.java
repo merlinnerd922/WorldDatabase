@@ -28,7 +28,7 @@ import static java.lang.System.err;
  */
 public class ChineseQuantifiableEntityNormalizer {
 
-  private static Redwood.RedwoodChannels log = Redwood.channels(ChineseQuantifiableEntityNormalizer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ChineseQuantifiableEntityNormalizer.class);
 
   private static final boolean DEBUG = false;
 

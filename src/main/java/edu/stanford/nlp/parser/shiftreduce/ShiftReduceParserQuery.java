@@ -29,7 +29,7 @@ import edu.stanford.nlp.util.ScoredObject;
 public class ShiftReduceParserQuery implements ParserQuery  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ShiftReduceParserQuery.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ShiftReduceParserQuery.class);
   Debinarizer debinarizer = new Debinarizer(false);
 
   List<? extends HasWord> originalSentence;
@@ -64,10 +64,10 @@ public class ShiftReduceParserQuery implements ParserQuery  {
 
   // TODO: we are assuming that sentence final punctuation always has
   // either . or PU as the tag.
-  private static TregexPattern rearrangeFinalPunctuationTregex =
+  private static final TregexPattern rearrangeFinalPunctuationTregex =
     TregexPattern.compile("__ !> __ <- (__=top <- (__ <<- (/[.]|PU/=punc < /[.!?。！？]/ ?> (__=single <: =punc))))");
 
-  private static TsurgeonPattern rearrangeFinalPunctuationTsurgeon =
+  private static final TsurgeonPattern rearrangeFinalPunctuationTsurgeon =
     Tsurgeon.parseOperation("[move punc >-1 top] [if exists single prune single]");
 
   private boolean parseInternal() {

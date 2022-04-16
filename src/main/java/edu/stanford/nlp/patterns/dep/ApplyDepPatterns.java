@@ -39,13 +39,13 @@ import edu.stanford.nlp.util.Triple;
  */
 public class ApplyDepPatterns <E extends Pattern>  implements Callable<Pair<TwoDimensionalCounter<CandidatePhrase, E>, CollectionValuedMap<E, Triple<String, Integer, Integer>>>> {
 
-  private String label;
-  private Map<SemgrexPattern, E> patterns;
-  private List<String> sentids;
-  private boolean removeStopWordsFromSelectedPhrases;
-  private boolean removePhrasesWithStopWords;
-  private ConstantsAndVariables constVars;
-  private Map<String, DataInstance> sents; // = null;
+  private final String label;
+  private final Map<SemgrexPattern, E> patterns;
+  private final List<String> sentids;
+  private final boolean removeStopWordsFromSelectedPhrases;
+  private final boolean removePhrasesWithStopWords;
+  private final ConstantsAndVariables constVars;
+  private final Map<String, DataInstance> sents; // = null;
 
 
   public ApplyDepPatterns(Map<String, DataInstance> sents, List<String> sentids, Map<SemgrexPattern, E> patterns, String label, boolean removeStopWordsFromSelectedPhrases, boolean removePhrasesWithStopWords, ConstantsAndVariables cv) {
@@ -180,7 +180,7 @@ public class ApplyDepPatterns <E extends Pattern>  implements Callable<Pair<TwoD
 
   }
 
-  private Predicate<CoreLabel> matchingWordRestriction = new Predicate<CoreLabel>(){
+  private final Predicate<CoreLabel> matchingWordRestriction = new Predicate<CoreLabel>(){
     @Override
     public boolean test(CoreLabel coreLabel) {
       return matchedRestriction(coreLabel, label);

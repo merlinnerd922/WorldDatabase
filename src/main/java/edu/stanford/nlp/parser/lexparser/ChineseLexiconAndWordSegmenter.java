@@ -33,7 +33,7 @@ import java.net.URLConnection;
 public class ChineseLexiconAndWordSegmenter implements Lexicon, WordSegmenter  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ChineseLexiconAndWordSegmenter.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ChineseLexiconAndWordSegmenter.class);
 
   private final ChineseLexicon chineseLexicon;
   private final WordSegmenter wordSegmenter;

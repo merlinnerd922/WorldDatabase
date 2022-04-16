@@ -45,7 +45,7 @@ import edu.stanford.nlp.process.SerializableFunction;
 public class Buckwalter implements SerializableFunction<String,String>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(Buckwalter.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(Buckwalter.class);
 
   private static final long serialVersionUID = 4351710914246859336L;
 

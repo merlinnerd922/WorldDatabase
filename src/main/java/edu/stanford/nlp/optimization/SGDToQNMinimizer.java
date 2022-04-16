@@ -21,7 +21,7 @@ import java.io.Serializable;
 public class SGDToQNMinimizer implements Minimizer<DiffFunction>, Serializable   {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(SGDToQNMinimizer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(SGDToQNMinimizer.class);
 
   private static final long serialVersionUID = -7551807670291500396L;
 

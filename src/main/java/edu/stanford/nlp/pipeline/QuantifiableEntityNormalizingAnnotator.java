@@ -27,9 +27,9 @@ import java.util.*;
 public class QuantifiableEntityNormalizingAnnotator implements Annotator  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(QuantifiableEntityNormalizingAnnotator.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(QuantifiableEntityNormalizingAnnotator.class);
 
-  private Timing timer = new Timing();
+  private final Timing timer = new Timing();
   private final boolean VERBOSE;
   private static final String DEFAULT_BACKGROUND_SYMBOL = "O";
   private final boolean collapse;  // TODO: collpase = true won't work properly (see annotateTokens)

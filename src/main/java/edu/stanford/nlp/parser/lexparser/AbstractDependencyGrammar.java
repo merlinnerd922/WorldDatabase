@@ -33,7 +33,7 @@ import java.util.Map;
 public abstract class AbstractDependencyGrammar implements DependencyGrammar  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AbstractDependencyGrammar.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AbstractDependencyGrammar.class);
 
   protected TagProjection tagProjection;
   protected final Index<String> tagIndex;

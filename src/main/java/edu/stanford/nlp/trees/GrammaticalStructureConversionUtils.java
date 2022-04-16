@@ -181,7 +181,7 @@ public class GrammaticalStructureConversionUtils {
 
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(GrammaticalStructureConversionUtils.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(GrammaticalStructureConversionUtils.class);
 
   private static String[] parseClassConstructArgs(String namePlusArgs) {
     String[] args = StringUtils.EMPTY_STRING_ARRAY;

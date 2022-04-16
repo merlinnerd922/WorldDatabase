@@ -27,7 +27,7 @@ import edu.stanford.nlp.util.StringUtils;
 public class CountTrees  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CountTrees.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CountTrees.class);
 
   private static final int minArgs = 1;
   private static final String usage;

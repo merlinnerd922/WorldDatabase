@@ -9,7 +9,7 @@ import java.util.*;
 
 class TsurgeonParser/*@bgen(jjtree)*/implements TsurgeonParserTreeConstants, TsurgeonParserConstants {/*@bgen(jjtree)*/
   protected JJTTsurgeonParserState jjtree = new JJTTsurgeonParserState();
-  private TreeFactory treeFactory = new LabeledScoredTreeFactory();
+  private final TreeFactory treeFactory = new LabeledScoredTreeFactory();
 
   public static void main(String[] args) {
     System.out.println("Reading from standard input...");
@@ -1076,10 +1076,10 @@ if (jjtc000) {
 	   return (jj_ntk = jj_nt.kind);
   }
 
-  private java.util.List<int[]> jj_expentries = new java.util.ArrayList<int[]>();
+  private final java.util.List<int[]> jj_expentries = new java.util.ArrayList<int[]>();
   private int[] jj_expentry;
   private int jj_kind = -1;
-  private int[] jj_lasttokens = new int[100];
+  private final int[] jj_lasttokens = new int[100];
   private int jj_endpos;
 
   private void jj_add_error_token(int kind, int pos) {

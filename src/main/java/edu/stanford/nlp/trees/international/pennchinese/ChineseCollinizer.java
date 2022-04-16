@@ -26,7 +26,7 @@ import java.util.List;
 public class ChineseCollinizer implements TreeTransformer  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ChineseCollinizer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ChineseCollinizer.class);
 
   private final static boolean VERBOSE = false;
 

@@ -23,7 +23,7 @@ import java.util.Set;
 public abstract class AbstractEvaluate  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AbstractEvaluate.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AbstractEvaluate.class);
 
   String[] equivalenceClassNames;
   int labelsCorrect;

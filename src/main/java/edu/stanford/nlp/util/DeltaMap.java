@@ -14,10 +14,10 @@ import java.util.function.Predicate;
  */
 public class DeltaMap<K,V> extends AbstractMap<K,V> {
 
-  private Map<K,V> originalMap;
-  private Map<K,V> deltaMap;
-  private static Object nullValue = new Object();
-  private static Object removedValue = new Object();
+  private final Map<K,V> originalMap;
+  private final Map<K,V> deltaMap;
+  private static final Object nullValue = new Object();
+  private static final Object removedValue = new Object();
 
   static class SimpleEntry<K,V> implements Map.Entry<K,V> {
     K key;
@@ -206,7 +206,7 @@ public class DeltaMap<K,V> extends AbstractMap<K,V> {
         Predicate<Entry<K,V>> filter2 = e -> e.getValue() != removedValue;
 
         class NullingIterator<KK, VV> implements Iterator<Map.Entry<KK,VV>> {
-          private Iterator<Map.Entry<KK, VV>> i;
+          private final Iterator<Map.Entry<KK, VV>> i;
 
           private NullingIterator(Iterator<Map.Entry<KK, VV>> i) {
             this.i = i;

@@ -28,13 +28,13 @@ public class BoundedCostOrderedMap<K,V> extends AbstractMap<K,V> {
    * Priority queue on the keys - note that the priority queue only orders on the cost,
    * We can't control the ordering of keys with the same cost
    */
-  private PriorityQueue<K> priorityQueue = new BinaryHeapPriorityQueue<>();
+  private final PriorityQueue<K> priorityQueue = new BinaryHeapPriorityQueue<>();
 
   /** Map of keys to their values */
-  private Map<K,V> valueMap = new HashMap<>();
+  private final Map<K,V> valueMap = new HashMap<>();
 
   /** Cost function on the values */
-  private ToDoubleFunction<V> costFunction;
+  private final ToDoubleFunction<V> costFunction;
 
   public BoundedCostOrderedMap(ToDoubleFunction<V> costFunction, int maxSize, double maxCost) {
     this.costFunction = costFunction;

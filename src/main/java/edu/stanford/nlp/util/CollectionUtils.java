@@ -909,7 +909,7 @@ public class CollectionUtils  {
   public static <E> Iterator<E> concatIterators(final Iterator<E>... iterators) {
     return new Iterator<E>() {
       Iterator<E> lastIter = null;
-      List<Iterator<E>> iters = new LinkedList<>(Arrays.asList(iterators));
+      final List<Iterator<E>> iters = new LinkedList<>(Arrays.asList(iterators));
       @Override
       public boolean hasNext() {
         return !iters.isEmpty() && iters.get(0).hasNext();

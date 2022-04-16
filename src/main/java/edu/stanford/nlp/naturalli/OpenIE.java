@@ -79,52 +79,52 @@ public class OpenIE implements Annotator  {
   //
 
   @ArgumentParser.Option(name="format", gloss="The format to output the triples in.")
-  private static OutputFormat FORMAT = OutputFormat.DEFAULT;
+  private static final OutputFormat FORMAT = OutputFormat.DEFAULT;
 
   @ArgumentParser.Option(name="filelist", gloss="The files to annotate, as a list of files one per line.")
-  private static File FILELIST  = null;
+  private static final File FILELIST  = null;
 
   @ArgumentParser.Option(name="output", gloss="The files to annotate, as a list of files one per line.")
-  private static PrintStream OUTPUT  = System.out;
+  private static final PrintStream OUTPUT  = System.out;
 
   //
   // Annotator Options (for running in the pipeline)
   //
   @ArgumentParser.Option(name="splitter.model", gloss="The location of the clause splitting model.")
-  private String splitterModel = DefaultPaths.DEFAULT_OPENIE_CLAUSE_SEARCHER;
+  private final String splitterModel = DefaultPaths.DEFAULT_OPENIE_CLAUSE_SEARCHER;
 
   @ArgumentParser.Option(name="splitter.nomodel", gloss="If true, don't load a clause splitter model. This is primarily useful for training.")
-  private boolean noModel = false;
+  private final boolean noModel = false;
 
   @ArgumentParser.Option(name="splitter.threshold", gloss="The minimum threshold for accepting a clause.")
-  private double splitterThreshold = 0.1;
+  private final double splitterThreshold = 0.1;
 
   @ArgumentParser.Option(name="splitter.disable", gloss="If true, don't run the sentence splitter")
-  private boolean splitterDisable = false;
+  private final boolean splitterDisable = false;
 
   @ArgumentParser.Option(name="max_entailments_per_clause", gloss="The maximum number of entailments allowed per sentence of input.")
-  private int entailmentsPerSentence = 1000;
+  private final int entailmentsPerSentence = 1000;
 
   @ArgumentParser.Option(name="ignore_affinity", gloss="If true, don't use the affinity models for dobj and pp attachment.")
-  private boolean ignoreAffinity = false;
+  private final boolean ignoreAffinity = false;
 
   @ArgumentParser.Option(name="affinity_models", gloss="The directory (or classpath directory) containing the affinity models for pp/obj attachments.")
-  private String affinityModels = DefaultPaths.DEFAULT_NATURALLI_AFFINITIES;
+  private final String affinityModels = DefaultPaths.DEFAULT_NATURALLI_AFFINITIES;
 
   @ArgumentParser.Option(name="affinity_probability_cap", gloss="The affinity to consider 1.0")
-  private double affinityProbabilityCap = 1.0 / 3.0;
+  private final double affinityProbabilityCap = 1.0 / 3.0;
 
   @ArgumentParser.Option(name="triple.strict", gloss="If true, only generate triples if the entire fragment has been consumed.")
-  private boolean consumeAll = true;
+  private final boolean consumeAll = true;
 
   @ArgumentParser.Option(name="triple.all_nominals", gloss="If true, generate not only named entity nominal relations.")
-  private boolean allNominals = false;
+  private final boolean allNominals = false;
 
   @ArgumentParser.Option(name="resolve_coref", gloss="If true, resolve pronouns to their canonical mention")
-  private boolean resolveCoref = false;
+  private final boolean resolveCoref = false;
 
   @ArgumentParser.Option(name="strip_entailments", gloss="If true, don't keep the entailed sentences annotations around.")
-  private boolean stripEntailments = false;
+  private final boolean stripEntailments = false;
 
   /**
    * The natural logic weights loaded from the models file.

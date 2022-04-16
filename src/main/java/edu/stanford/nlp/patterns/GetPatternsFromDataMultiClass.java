@@ -141,11 +141,11 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
     BPB, WEIGHTEDNORM
   }
 
-  private Map<String, Boolean> writtenPatInJustification = new HashMap<>();
+  private final Map<String, Boolean> writtenPatInJustification = new HashMap<>();
 
-  private Map<String, Counter<E>> learnedPatterns = new HashMap<>();
+  private final Map<String, Counter<E>> learnedPatterns = new HashMap<>();
   //Same as learnedPatterns but with iteration information
-  private Map<String, Map<Integer, Counter<E>>> learnedPatternsEachIter = new HashMap<>();
+  private final Map<String, Map<Integer, Counter<E>>> learnedPatternsEachIter = new HashMap<>();
   Map<String, Counter<CandidatePhrase>> matchedSeedWords = new HashMap<>();
   public Map<String, TwoDimensionalCounter<CandidatePhrase, E>> wordsPatExtracted = new HashMap<>();
 
@@ -912,7 +912,7 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
   }
 
   //if matchcontextlowercase is on, transform that. escape the word etc. Useful for pattern matching later on
-  private static Function<CoreLabel, String> stringTransformationFunction = new Function<CoreLabel, String>() {
+  private static final Function<CoreLabel, String> stringTransformationFunction = new Function<CoreLabel, String>() {
     @Override
     public String apply(CoreLabel l) {
       String s;
@@ -1576,7 +1576,7 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
     }
   }
 
-  private static AtomicInteger numCallsToCalStats = new AtomicInteger();
+  private static final AtomicInteger numCallsToCalStats = new AtomicInteger();
 
 
   private static <E> List<List<E>> splitIntoNumThreadsWithSampling(List<E> c, int n, int numThreads) {

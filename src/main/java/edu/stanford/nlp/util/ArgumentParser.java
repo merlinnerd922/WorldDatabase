@@ -97,10 +97,10 @@ public class ArgumentParser  {
   public static String host = "(unknown)";
   @SuppressWarnings({"FieldCanBeLocal", "RedundantFieldInitialization"})
   @Option(name = "strict", gloss = "If true, make sure that all options passed in are used somewhere")
-  private static boolean strict = false;
+  private static final boolean strict = false;
   @SuppressWarnings({"FieldCanBeLocal", "RedundantFieldInitialization"})
   @Option(name = "exec.verbose", gloss = "If true, print options as they are set.")
-  private static boolean verbose = false;
+  private static final boolean verbose = false;
 
   static {
     try {

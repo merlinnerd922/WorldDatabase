@@ -426,7 +426,7 @@ public class ArabicTreebankParserParams extends AbstractTreebankParserParams  {
       this.result = result;
     }
 
-    private String result;
+    private final String result;
 
     @Override
     public String apply(TregexMatcher tregexMatcher) {
@@ -442,8 +442,8 @@ public class ArabicTreebankParserParams extends AbstractTreebankParserParams  {
 
   private static class AddRelativeNodeFunction implements SerializableFunction<TregexMatcher,String> {
 
-    private String annotationMark;
-    private String key;
+    private final String annotationMark;
+    private final String key;
     private String key2;
     private boolean doBasicCat = false;
 
@@ -487,11 +487,11 @@ public class ArabicTreebankParserParams extends AbstractTreebankParserParams  {
 
   private static class AddRelativeNodeRegexFunction implements SerializableFunction<TregexMatcher,String> {
 
-    private String annotationMark;
-    private String key;
+    private final String annotationMark;
+    private final String key;
     private Pattern pattern;
 
-    private String key2 = null;
+    private final String key2 = null;
     private Pattern pattern2;
 
     public AddRelativeNodeRegexFunction(String annotationMark, String key, String regex) {
@@ -542,8 +542,8 @@ public class ArabicTreebankParserParams extends AbstractTreebankParserParams  {
    */
   private static class AddEquivalencedNodeFunction implements SerializableFunction<TregexMatcher,String> {
 
-    private String annotationMark;
-    private String key;
+    private final String annotationMark;
+    private final String key;
 
     public AddEquivalencedNodeFunction(String annotationMark, String key) {
       this.annotationMark = annotationMark;
@@ -572,8 +572,8 @@ public class ArabicTreebankParserParams extends AbstractTreebankParserParams  {
   /** This one only distinguishes VP, S*, A* versus other (mainly nominal) contexts. */
   private static class AddEquivalencedNodeFunctionVar implements SerializableFunction<TregexMatcher,String> {
 
-    private String annotationMark;
-    private String key;
+    private final String annotationMark;
+    private final String key;
 
     public AddEquivalencedNodeFunctionVar(String annotationMark, String key) {
       this.annotationMark = annotationMark;
@@ -648,8 +648,8 @@ public class ArabicTreebankParserParams extends AbstractTreebankParserParams  {
 
   private static class AddEquivalencedConjNode implements SerializableFunction<TregexMatcher,String> {
 
-    private String annotationMark;
-    private String key;
+    private final String annotationMark;
+    private final String key;
 
     private static final String nnTags = "DTNN DTNNP DTNNPS DTNNS NN NNP NNS NNPS";
     private static final Set<String> nnTagClass = Collections.unmodifiableSet(Generics.newHashSet(Arrays.asList(nnTags.split("\\s+"))));

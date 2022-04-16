@@ -30,7 +30,7 @@ import edu.stanford.nlp.util.StringUtils;
 public class RelationExtractorAnnotator implements Annotator  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(RelationExtractorAnnotator.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(RelationExtractorAnnotator.class);
   MachineReading mr;
   private static boolean verbose = false;
 

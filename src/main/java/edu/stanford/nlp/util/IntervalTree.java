@@ -697,7 +697,7 @@ public class IntervalTree<E extends Comparable<E>, T extends HasInterval<E>> ext
 
   private static class ContainsValueFunction<E extends Comparable<E>, T extends HasInterval<E>>
       implements Predicate<T> {
-    private T target;
+    private final T target;
 
     public ContainsValueFunction(T target) {
       this.target = target;
@@ -711,8 +711,8 @@ public class IntervalTree<E extends Comparable<E>, T extends HasInterval<E>> ext
 
   private static class ContainsIntervalFunction<E extends Comparable<E>, T extends HasInterval<E>>
       implements Predicate<T> {
-    private Interval<E> target;
-    private boolean exact;
+    private final Interval<E> target;
+    private final boolean exact;
 
     public ContainsIntervalFunction(Interval<E> target, boolean exact) {
       this.target = target;

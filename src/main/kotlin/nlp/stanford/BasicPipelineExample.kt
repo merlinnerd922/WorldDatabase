@@ -91,12 +91,12 @@ object BasicPipelineExample {
         // original speaker of quote
         // note that quote.speaker() returns an Optional
         println("Example: original speaker of quote")
-        println(quote.speaker().get())
+        println(quote.speaker()!!)
         println()
 
         // canonical speaker of quote
         println("Example: canonical speaker of quote")
-        println(quote.canonicalSpeaker().get())
+        println(quote.canonicalSpeaker!!)
         println()
     }
 

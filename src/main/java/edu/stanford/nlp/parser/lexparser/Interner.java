@@ -7,7 +7,7 @@ import edu.stanford.nlp.util.Generics;
  *  @author Dan Klein
  */
 class Interner<E> {
-  private Map<E, E> oToO = Generics.newHashMap();
+  private final Map<E, E> oToO = Generics.newHashMap();
 
   public E intern(E o) {
     E i = oToO.get(o);

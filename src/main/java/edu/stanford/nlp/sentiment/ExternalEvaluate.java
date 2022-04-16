@@ -18,7 +18,7 @@ public class ExternalEvaluate extends AbstractEvaluate  {
   /** A logger for this class */
   private static final Redwood.RedwoodChannels log = Redwood.channels(ExternalEvaluate.class);
 
-  private List<Tree> predicted;
+  private final List<Tree> predicted;
 
   public ExternalEvaluate(RNNOptions op, List<Tree> predictedTrees) {
     super(op);

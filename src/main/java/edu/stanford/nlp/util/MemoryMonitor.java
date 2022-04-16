@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class MemoryMonitor  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(MemoryMonitor.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(MemoryMonitor.class);
 
   public static final int MAX_SWAPS = 50;
 
@@ -250,10 +250,10 @@ public class MemoryMonitor  {
     private static final float GIGABYTE = 1 << 30;
     private static final int DEFAULT_POLL_FREQUENCY = 1000; /* 1 second */
     private static final int DEFAULT_LOG_FREQUENCY = 60000; /* 1 minute */
-    private int pollFrequency;
-    private int logFrequency;
-    private Timing timer;
-    private PrintStream outstream;
+    private final int pollFrequency;
+    private final int logFrequency;
+    private final Timing timer;
+    private final PrintStream outstream;
     private long peak = 0;
 
     public PeakMemoryMonitor() {

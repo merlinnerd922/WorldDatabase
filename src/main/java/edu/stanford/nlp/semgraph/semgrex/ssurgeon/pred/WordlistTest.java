@@ -8,9 +8,9 @@ public class WordlistTest extends NodeTest {
   public static enum TYPE {
     lemma, current_lasttoken, lemma_and_currlast, word, pos
   };
-  private TYPE type;
-  private String resourceID;
-  private String myID;
+  private final TYPE type;
+  private final String resourceID;
+  private final String myID;
 
   public WordlistTest(String myID, String resourceID, String type, String matchName) {
     super(matchName);

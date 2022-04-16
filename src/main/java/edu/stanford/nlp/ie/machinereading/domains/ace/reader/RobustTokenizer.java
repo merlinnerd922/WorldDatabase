@@ -25,13 +25,13 @@ import edu.stanford.nlp.util.Generics;
 public class RobustTokenizer<T extends Word> extends AbstractTokenizer<Word>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(RobustTokenizer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(RobustTokenizer.class);
   
   /** Buffer to tokenize */
   String buffer;
 
   /** The set of known abbreviations */
-  private AbbreviationMap mAbbreviations;
+  private final AbbreviationMap mAbbreviations;
   
   public final static int MAX_MULTI_WORD_SIZE = 20;
 
@@ -591,7 +591,7 @@ public class RobustTokenizer<T extends Word> extends AbstractTokenizer<Word>  {
 
   public static class AbbreviationMap {
 
-    private Set<String> mAbbrevSet;
+    private final Set<String> mAbbrevSet;
 
     private static List<String> normalizeCase(boolean caseInsensitive, List<String> words) {
       if(! caseInsensitive) return words;

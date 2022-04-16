@@ -31,7 +31,7 @@ import edu.stanford.nlp.util.concurrent.ThreadsafeProcessor;
 public class DVParserCostAndGradient extends AbstractCachingDiffFunction  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(DVParserCostAndGradient.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(DVParserCostAndGradient.class);
   List<Tree> trainingBatch;
   IdentityHashMap<Tree, List<Tree>> topParses;
   DVModel dvModel;

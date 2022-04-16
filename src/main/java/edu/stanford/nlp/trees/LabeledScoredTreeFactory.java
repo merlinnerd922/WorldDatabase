@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class LabeledScoredTreeFactory extends SimpleTreeFactory {
 
-  private LabelFactory lf;
+  private final LabelFactory lf;
 
   /**
    * Make a TreeFactory that produces LabeledScoredTree trees.

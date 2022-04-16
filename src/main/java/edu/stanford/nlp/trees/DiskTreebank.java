@@ -25,7 +25,7 @@ import edu.stanford.nlp.ling.HasIndex;
 public final class DiskTreebank extends Treebank  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(DiskTreebank.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(DiskTreebank.class);
 
   private static boolean PRINT_FILENAMES = false;
 

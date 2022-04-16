@@ -12,8 +12,8 @@ import org.w3c.dom.*;
  */
 public class SsurgeonWordlist {
   private static final String WORD_ELT = "word";
-  private String id;
-  private HashSet<String> words = new java.util.HashSet<>();
+  private final String id;
+  private final HashSet<String> words = new java.util.HashSet<>();
   
   @Override
   public String toString() {

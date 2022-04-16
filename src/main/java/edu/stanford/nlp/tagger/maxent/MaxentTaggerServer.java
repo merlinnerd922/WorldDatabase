@@ -24,14 +24,14 @@ import edu.stanford.nlp.util.StringUtils;
 public class MaxentTaggerServer  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(MaxentTaggerServer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(MaxentTaggerServer.class);
 
   //// Variables
 
   /**
    * Debugging toggle.
    */
-  private boolean DEBUG = false;
+  private final boolean DEBUG = false;
 
   private final String charset;
 
@@ -120,7 +120,7 @@ public class MaxentTaggerServer  {
     /**
      * The output stream to the client.
      */
-    private PrintWriter out;
+    private final PrintWriter out;
 
 
     //// Constructors

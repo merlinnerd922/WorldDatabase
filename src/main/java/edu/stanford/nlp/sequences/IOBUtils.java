@@ -20,7 +20,7 @@ import edu.stanford.nlp.util.PaddedList;
 public class IOBUtils  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(IOBUtils.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(IOBUtils.class);
 
   private IOBUtils() {} // static methods
 

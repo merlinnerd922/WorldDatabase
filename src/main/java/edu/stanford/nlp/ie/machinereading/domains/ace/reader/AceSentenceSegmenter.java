@@ -20,7 +20,7 @@ public class AceSentenceSegmenter extends DomReader {
   // list of tokens which mark sentence boundaries
   private final static String[] sentenceFinalPunc = new String[] { ".", "!",
       "?" };
-  private static Set<String> sentenceFinalPuncSet = Generics.newHashSet();
+  private static final Set<String> sentenceFinalPuncSet = Generics.newHashSet();
 
   static {
     // set up sentenceFinalPuncSet

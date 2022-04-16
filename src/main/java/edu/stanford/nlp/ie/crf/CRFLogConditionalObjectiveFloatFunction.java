@@ -16,7 +16,7 @@ import java.util.List;
 public class CRFLogConditionalObjectiveFloatFunction extends AbstractCachingDiffFloatFunction implements HasCliquePotentialFunction  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CRFLogConditionalObjectiveFloatFunction.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CRFLogConditionalObjectiveFloatFunction.class);
 
   public static final int NO_PRIOR = 0;
   public static final int QUADRATIC_PRIOR = 1;

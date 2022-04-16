@@ -306,8 +306,8 @@ public class CRFLogConditionalObjectiveFunction extends AbstractStochasticCachin
     }
   }
 
-  private ThreadsafeProcessor<TaskPart, TaskResult> expectedThreadProcessor = new ExpectationThreadsafeProcessor();
-  private ThreadsafeProcessor<TaskPart, TaskResult> expectedAndEmpiricalThreadProcessor = new ExpectationThreadsafeProcessorWithEmpirical();
+  private final ThreadsafeProcessor<TaskPart, TaskResult> expectedThreadProcessor = new ExpectationThreadsafeProcessor();
+  private final ThreadsafeProcessor<TaskPart, TaskResult> expectedAndEmpiricalThreadProcessor = new ExpectationThreadsafeProcessorWithEmpirical();
 
   class ExpectationThreadsafeProcessor implements ThreadsafeProcessor<TaskPart, TaskResult> {
     @Override

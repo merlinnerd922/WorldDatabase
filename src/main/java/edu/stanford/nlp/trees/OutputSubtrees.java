@@ -34,7 +34,7 @@ public class OutputSubtrees {
   private static String INPUT; // = null;
 
   @ArgumentParser.Option(name="root_only", gloss="Output only the roots", required=false)
-  private static boolean ROOT_ONLY = false;
+  private static final boolean ROOT_ONLY = false;
 
   @ArgumentParser.Option(name="ignore_labels", gloss="Labels to ignore as a WS-separated list.", required=false)
   private static String IGNORE_LABELS; // = null;
@@ -43,7 +43,7 @@ public class OutputSubtrees {
   private static String REMAP_LABELS; // = null;
 
   @ArgumentParser.Option(name="assert_binary", gloss="Barf on non-binary trees", required=false)
-  private static boolean ASSERT_BINARY = false;  
+  private static final boolean ASSERT_BINARY = false;
 
   public static void main(String[] args) {
     // Parse the arguments

@@ -18,7 +18,7 @@ import edu.stanford.nlp.trees.TreebankLanguagePack;
 public class SplitMaker  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(SplitMaker.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(SplitMaker.class);
 
   /**
    * @param args

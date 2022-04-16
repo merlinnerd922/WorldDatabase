@@ -25,7 +25,7 @@ import java.util.List;
 public class MLEDependencyGrammar extends AbstractDependencyGrammar  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(MLEDependencyGrammar.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(MLEDependencyGrammar.class);
 
   final boolean useSmoothTagProjection;
   final boolean useUnigramWordSmoothing;
@@ -408,7 +408,7 @@ public class MLEDependencyGrammar extends AbstractDependencyGrammar  {
     expandStop(dependency, distanceBin(dependency.distance), count, true);
   }
 
-  private TagProjection smoothTP;
+  private final TagProjection smoothTP;
   private Index<String> smoothTPIndex;
   private static final String TP_PREFIX = ".*TP*.";
 

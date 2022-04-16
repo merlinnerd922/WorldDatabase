@@ -43,7 +43,7 @@ import edu.stanford.nlp.util.PropertiesUtils;
 public class FTBDataset extends AbstractDataset  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(FTBDataset.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(FTBDataset.class);
 
   private boolean CC_TAGSET = false;
 

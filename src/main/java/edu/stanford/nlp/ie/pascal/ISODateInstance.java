@@ -36,7 +36,7 @@ import java.util.regex.Pattern;
 public class ISODateInstance  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ISODateInstance.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ISODateInstance.class);
 
   private static final boolean DEBUG = false;
   private ArrayList<String> tokens = new ArrayList<>(); //each token contains some piece of the date, from our input.
@@ -413,7 +413,7 @@ public class ISODateInstance  {
     return passed;
   }
 
-  private static String[] rangeIndicators = {"--", "-"};
+  private static final String[] rangeIndicators = {"--", "-"};
 
   /**
    * Attempts to find the two sides of a range in the given string.
@@ -963,8 +963,8 @@ public class ISODateInstance  {
     return false;
   }
 
-  private Pattern re1 = Pattern.compile("[1-2][0-9]{3}|'[0-9]{2}");
-  private Pattern re2 = Pattern.compile("[0-9][^0-9].*([0-9]{2})\\s*$");
+  private final Pattern re1 = Pattern.compile("[1-2][0-9]{3}|'[0-9]{2}");
+  private final Pattern re2 = Pattern.compile("[0-9][^0-9].*([0-9]{2})\\s*$");
 
   public boolean extractYear(String inputDate) {
     if (DEBUG) {

@@ -25,7 +25,7 @@ import java.util.*;
 public class GamePlayerBenchmark  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(GamePlayerBenchmark.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(GamePlayerBenchmark.class);
   static final String DATA_PATH = "/u/nlp/data/ner/conll/";
 
   public static void main(String[] args) throws IOException, ClassNotFoundException {

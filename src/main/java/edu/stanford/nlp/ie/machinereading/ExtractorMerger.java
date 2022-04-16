@@ -24,7 +24,7 @@ public class ExtractorMerger implements Extractor {
 
   private static final long serialVersionUID = 1L;
   private static final Logger logger = Logger.getLogger(ExtractorMerger.class.getName());
-  private Extractor[] extractors;
+  private final Extractor[] extractors;
 
   public ExtractorMerger(Extractor[] extractors) {
     if (extractors.length < 2) {

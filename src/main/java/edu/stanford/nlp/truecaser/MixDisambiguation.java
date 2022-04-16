@@ -17,8 +17,8 @@ import edu.stanford.nlp.util.Generics;
  */
 public class MixDisambiguation {
 
-  private static Map<String, Counter<String>> map = Generics.newHashMap();
-  private static Map<String, String> highest = Generics.newHashMap();
+  private static final Map<String, Counter<String>> map = Generics.newHashMap();
+  private static final Map<String, String> highest = Generics.newHashMap();
 
   private MixDisambiguation() {} // static class
 

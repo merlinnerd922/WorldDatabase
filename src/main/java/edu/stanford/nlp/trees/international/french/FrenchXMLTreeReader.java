@@ -42,7 +42,7 @@ import edu.stanford.nlp.util.XMLUtils;
 public class FrenchXMLTreeReader implements TreeReader  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(FrenchXMLTreeReader.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(FrenchXMLTreeReader.class);
 
   private InputStream stream;
   private final TreeNormalizer treeNormalizer;

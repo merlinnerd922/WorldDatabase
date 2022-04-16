@@ -19,7 +19,7 @@ public class TwoDimensionalCollectionValuedMap<K1, K2, V> implements Serializabl
 
   private static final long serialVersionUID = 1L;
 
-  private Map<K1,CollectionValuedMap<K2, V>> map = Generics.newHashMap();
+  private final Map<K1,CollectionValuedMap<K2, V>> map = Generics.newHashMap();
   protected MapFactory<K2, Collection<V>> mf;
   protected CollectionFactory<V> cf;
   private final boolean treatCollectionsAsImmutable;

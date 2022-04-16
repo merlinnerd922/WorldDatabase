@@ -27,7 +27,7 @@ import edu.stanford.nlp.tagger.maxent.MaxentTagger;
 public class TaggerDemo2  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TaggerDemo2.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TaggerDemo2.class);
 
   private TaggerDemo2() {}
 

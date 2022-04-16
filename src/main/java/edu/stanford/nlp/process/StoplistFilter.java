@@ -15,7 +15,7 @@ import java.io.File;
 
 public class StoplistFilter<L, F> implements DocumentProcessor<Word, Word, L, F> {
 
-  private StopList stoplist;
+  private final StopList stoplist;
 
   /**
    * Create a new StopListFilter with a small default stoplist

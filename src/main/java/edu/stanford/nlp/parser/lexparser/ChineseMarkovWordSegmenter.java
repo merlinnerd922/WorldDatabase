@@ -25,7 +25,7 @@ public class ChineseMarkovWordSegmenter implements WordSegmenter {
 
   private Distribution<String> initialPOSDist;
   private Map<String, Distribution> markovPOSDists;
-  private ChineseCharacterBasedLexicon lex;
+  private final ChineseCharacterBasedLexicon lex;
   private Set<String> POSes;
 
   private final Index<String> wordIndex;

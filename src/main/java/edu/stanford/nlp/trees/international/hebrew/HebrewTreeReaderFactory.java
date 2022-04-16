@@ -19,7 +19,7 @@ import edu.stanford.nlp.trees.TreebankLanguagePack;
 public class HebrewTreeReaderFactory implements TreeReaderFactory, Serializable  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(HebrewTreeReaderFactory.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(HebrewTreeReaderFactory.class);
 
   private static final long serialVersionUID = 818065349424602548L;
 

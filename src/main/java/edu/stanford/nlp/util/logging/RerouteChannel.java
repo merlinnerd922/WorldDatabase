@@ -8,8 +8,8 @@ import edu.stanford.nlp.util.logging.Redwood.Record;
 
 public class RerouteChannel extends LogRecordHandler {
   
-  private Object oldChannelName;
-  private Object newChannelName;
+  private final Object oldChannelName;
+  private final Object newChannelName;
 
   public RerouteChannel(Object oldChannelName, Object newChannelName) {
     this.oldChannelName = oldChannelName;

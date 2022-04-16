@@ -24,7 +24,7 @@ import edu.stanford.nlp.international.morph.MorphoFeatures;
 public class FrenchMorphoFeatureSpecification extends MorphoFeatureSpecification  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(FrenchMorphoFeatureSpecification.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(FrenchMorphoFeatureSpecification.class);
 
   private static final long serialVersionUID = -58379347760106784L;
 

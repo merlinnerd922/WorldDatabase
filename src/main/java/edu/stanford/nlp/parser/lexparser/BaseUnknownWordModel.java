@@ -26,7 +26,7 @@ import edu.stanford.nlp.util.Index;
 public class BaseUnknownWordModel implements UnknownWordModel  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(BaseUnknownWordModel.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(BaseUnknownWordModel.class);
 
   private static final long serialVersionUID = 6355171148751673822L;
 

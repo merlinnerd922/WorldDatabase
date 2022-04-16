@@ -17,16 +17,16 @@ import java.util.*;
 public class CRFLogConditionalObjectiveFunctionWithDropout extends CRFLogConditionalObjectiveFunction  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(CRFLogConditionalObjectiveFunctionWithDropout.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(CRFLogConditionalObjectiveFunctionWithDropout.class);
 
   private final double delta;
   private final double dropoutScale;
-  private double[][] dropoutPriorGradTotal;
+  private final double[][] dropoutPriorGradTotal;
   private final boolean dropoutApprox;
   private double[][] weightSquare;
 
   private final int[][][][] totalData;  // data[docIndex][tokenIndex][][]
-  private int unsupDropoutStartIndex;
+  private final int unsupDropoutStartIndex;
   private final double unsupDropoutScale;
 
   private List<List<Set<Integer>>> dataFeatureHash;
@@ -38,7 +38,7 @@ public class CRFLogConditionalObjectiveFunctionWithDropout extends CRFLogConditi
   private Map<Integer, List<Integer>> currPrevLabelsMap;
   private Map<Integer, List<Integer>> currNextLabelsMap;
 
-  private ThreadsafeProcessor<Pair<Integer, Boolean>, Quadruple<Integer, Double, Map<Integer, double[]>, Map<Integer, double[]>>> dropoutPriorThreadProcessor =
+  private final ThreadsafeProcessor<Pair<Integer, Boolean>, Quadruple<Integer, Double, Map<Integer, double[]>, Map<Integer, double[]>>> dropoutPriorThreadProcessor =
         new ThreadsafeProcessor<Pair<Integer, Boolean>, Quadruple<Integer, Double, Map<Integer, double[]>, Map<Integer, double[]>>>() {
     @Override
     public Quadruple<Integer, Double, Map<Integer, double[]>, Map<Integer, double[]>> process(Pair<Integer,Boolean> docIndexUnsup) {

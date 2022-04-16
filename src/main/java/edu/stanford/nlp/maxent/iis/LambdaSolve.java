@@ -83,7 +83,7 @@ public class LambdaSolve  {
   private double[][] sum;// auxiliary array
   private double[][] sub;// auxiliary array
   public boolean weightRanks = false;
-  private boolean convertValues = false;
+  private final boolean convertValues = false;
 
 
   public LambdaSolve(Problem p1, double eps1, double nerr1) {

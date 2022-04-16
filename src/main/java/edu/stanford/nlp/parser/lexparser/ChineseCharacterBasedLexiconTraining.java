@@ -53,7 +53,7 @@ import edu.stanford.nlp.parser.lexparser.ChineseCharacterBasedLexicon.Symbol;
 public class ChineseCharacterBasedLexiconTraining  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ChineseCharacterBasedLexiconTraining.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ChineseCharacterBasedLexiconTraining.class);
   protected static final NumberFormat formatter = new DecimalFormat("0.000");
 
   public static void printStats(Collection<Tree> trees, PrintWriter pw) {

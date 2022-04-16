@@ -34,28 +34,28 @@ import edu.stanford.nlp.util.Pair;
 public class FactoredLexicon extends BaseLexicon  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(FactoredLexicon.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(FactoredLexicon.class);
 
   private static final long serialVersionUID = -744693222804176489L;
 
   private static final boolean DEBUG = false;
 
-  private MorphoFeatureSpecification morphoSpec;
+  private final MorphoFeatureSpecification morphoSpec;
 
   private static final String NO_MORPH_ANALYSIS = "xXxNONExXx";
 
-  private Index<String> morphIndex = new HashIndex<>();
+  private final Index<String> morphIndex = new HashIndex<>();
 
-  private TwoDimensionalIntCounter<Integer,Integer> wordTag = new TwoDimensionalIntCounter<>(40000);
-  private Counter<Integer> wordTagUnseen = new ClassicCounter<>(500);
+  private final TwoDimensionalIntCounter<Integer,Integer> wordTag = new TwoDimensionalIntCounter<>(40000);
+  private final Counter<Integer> wordTagUnseen = new ClassicCounter<>(500);
 
-  private TwoDimensionalIntCounter<Integer,Integer> lemmaTag = new TwoDimensionalIntCounter<>(40000);
-  private Counter<Integer> lemmaTagUnseen = new ClassicCounter<>(500);
+  private final TwoDimensionalIntCounter<Integer,Integer> lemmaTag = new TwoDimensionalIntCounter<>(40000);
+  private final Counter<Integer> lemmaTagUnseen = new ClassicCounter<>(500);
 
-  private TwoDimensionalIntCounter<Integer,Integer> morphTag = new TwoDimensionalIntCounter<>(500);
-  private Counter<Integer> morphTagUnseen = new ClassicCounter<>(500);
+  private final TwoDimensionalIntCounter<Integer,Integer> morphTag = new TwoDimensionalIntCounter<>(500);
+  private final Counter<Integer> morphTagUnseen = new ClassicCounter<>(500);
 
-  private Counter<Integer> tagCounter = new ClassicCounter<>(300);
+  private final Counter<Integer> tagCounter = new ClassicCounter<>(300);
 
   public FactoredLexicon(MorphoFeatureSpecification morphoSpec, Index<String> wordIndex, Index<String> tagIndex) {
     super(wordIndex, tagIndex);

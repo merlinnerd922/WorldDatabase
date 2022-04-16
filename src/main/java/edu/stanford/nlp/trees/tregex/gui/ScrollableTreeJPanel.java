@@ -30,18 +30,18 @@ import edu.stanford.nlp.util.IntPair;
 public class ScrollableTreeJPanel extends TreeJPanel    {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ScrollableTreeJPanel.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ScrollableTreeJPanel.class);
 
   private int fontSize = 12;
   private Color defaultColor = Color.BLACK;
   private Color matchedColor = Color.RED;
-  private Color tdiffColor = Color.BLUE;
+  private final Color tdiffColor = Color.BLUE;
   private String fontName = "";
   private int style = Font.PLAIN;
   private Dimension preferredSize = null;
 
   private List<Tree> matchedParts = new ArrayList<>();
-  private List<Point2D.Double> matchedPartCoordinates = new ArrayList<>();
+  private final List<Point2D.Double> matchedPartCoordinates = new ArrayList<>();
 
   public ScrollableTreeJPanel() {
     super();

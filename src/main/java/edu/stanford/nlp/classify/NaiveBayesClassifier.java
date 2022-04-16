@@ -55,12 +55,12 @@ public class NaiveBayesClassifier<L, F> implements Classifier<L, F>, RVFClassifi
 
   private static final long serialVersionUID = 1544820342684024068L;
 
-  private Counter<Pair<Pair<L, F>, Number>> weights; //the keys will be class and feature and value
-  private Counter<L> priors;
-  private Set<F> features; // we need all features to add the weights for zero-valued ones
-  private boolean addZeroValued; // whether to add features as having value 0 if they are not in Datum/RFVDatum
+  private final Counter<Pair<Pair<L, F>, Number>> weights; //the keys will be class and feature and value
+  private final Counter<L> priors;
+  private final Set<F> features; // we need all features to add the weights for zero-valued ones
+  private final boolean addZeroValued; // whether to add features as having value 0 if they are not in Datum/RFVDatum
   private Counter<L> priorZero; //if we need to add the zeros, pre-compute the weight for all zeros for each class
-  private Set<L> labels;
+  private final Set<L> labels;
   private final Integer zero = Integer.valueOf(0);
 
   private static final Redwood.RedwoodChannels logger = Redwood.channels(NaiveBayesClassifier.class);

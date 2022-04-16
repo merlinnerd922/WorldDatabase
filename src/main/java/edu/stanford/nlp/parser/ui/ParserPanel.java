@@ -100,10 +100,11 @@ public class ParserPanel extends JPanel  {
   private final JFileChooser jfc;
   private final JFileChooserLocation jfcLocation;
   private final JarFileChooser chooseJarParser;
-  private OpenPageDialog pageDialog;
+  private final OpenPageDialog pageDialog;
 
   // for highlighting
-  private SimpleAttributeSet normalStyle, highlightStyle;
+  private final SimpleAttributeSet normalStyle;
+    private final SimpleAttributeSet highlightStyle;
   private int startIndex, endIndex;
 
   private TreeJPanel treePanel;
@@ -114,7 +115,7 @@ public class ParserPanel extends JPanel  {
   private ParseThread parseThread;
 
   // to monitor progress of long operations
-  private javax.swing.Timer timer;
+  private final javax.swing.Timer timer;
   //private ProgressMonitor progressMonitor;
   private int count; // progress count
   // use glass pane to block input to components other than progressMonitor

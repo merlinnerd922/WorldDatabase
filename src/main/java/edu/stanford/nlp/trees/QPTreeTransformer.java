@@ -61,13 +61,13 @@ public class QPTreeTransformer implements TreeTransformer {
   }
 
 
-  private static TregexPattern flattenNPoverQPTregex =
+  private static final TregexPattern flattenNPoverQPTregex =
     TregexPattern.compile("NP < (QP=left $+ (QP=right < CC))");
 
-  private static TsurgeonPattern flattenNPoverQPTsurgeon =
+  private static final TsurgeonPattern flattenNPoverQPTsurgeon =
     Tsurgeon.parseOperation("[createSubtree QP left right] [excise left left] [excise right right]");
 
-  private static TregexPattern multiwordXSTregex =
+  private static final TregexPattern multiwordXSTregex =
     // TODO: should add NN and $ to the numeric expressions captured
     //   NN is for words such as "half" which are probably misparsed
     // TODO: <3 (IN < as|than) is to avoid one weird case in PTB,
@@ -76,22 +76,22 @@ public class QPTreeTransformer implements TreeTransformer {
     // TODO: "all but about X"
     TregexPattern.compile("QP <1 /^RB|JJ|IN/=left [ ( <2 /^JJ|IN/=right <3 /^CD|DT/ ) | ( <2 /^JJ|IN/ <3 ( IN=right < /^(?i:as|than)$/ ) <4 /^CD|DT/ ) ] ");
 
-  private static TsurgeonPattern multiwordXSTsurgeon =
+  private static final TsurgeonPattern multiwordXSTsurgeon =
     Tsurgeon.parseOperation("createSubtree XS left right");
 
   // the old style split any flat QP with a CC in the middle
   // TOD: there should be some allowances for phrases such as "or more", "or so", etc
-  private static TregexPattern splitCCTregex =
+  private static final TregexPattern splitCCTregex =
     TregexPattern.compile("QP < (CC $- __=r1 $+ __=l2 ?$-- /^[$]|CC$/=lnum ?$++ /^[$]|CC$/=rnum) <1 __=l1 <- __=r2 !< (__ < (__ < __))");
 
-  private static TsurgeonPattern splitCCTsurgeon =
+  private static final TsurgeonPattern splitCCTsurgeon =
     Tsurgeon.parseOperation("[if exists lnum createSubtree QP l1 r1] [if not exists lnum createSubtree NP l1 r1] " +
                             "[if exists rnum createSubtree QP l2 r2] [if not exists rnum createSubtree NP l2 r2]");
 
-  private static TregexPattern splitMoneyTregex =
+  private static final TregexPattern splitMoneyTregex =
     TregexPattern.compile("QP < (/^[$]$/ !$++ /^(?!([$]|CD)).*$/ !$++ (__ < (__ < __)) $+ __=left) <- __=right");
 
-  private static TsurgeonPattern splitMoneyTsurgeon =
+  private static final TsurgeonPattern splitMoneyTsurgeon =
     Tsurgeon.parseOperation("createSubtree QP left right");
 
   /**

@@ -24,7 +24,7 @@ import edu.stanford.nlp.util.UTF8EquivalenceFunction;
 public class ChineseEscaper implements Function<List<HasWord>, List<HasWord>>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ChineseEscaper.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ChineseEscaper.class);
 
   /** IBM entity normalization patterns */
   private static final Pattern p2 = Pattern.compile("\\$[a-z]+_\\((.*?)\\|\\|.*?\\)");

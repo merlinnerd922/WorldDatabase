@@ -59,7 +59,7 @@ import java.util.regex.Matcher;
 public class ExhaustivePCFGParser implements Scorer, KBestViterbiParser  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ExhaustivePCFGParser.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ExhaustivePCFGParser.class);
 
   // public static long insideTime = 0;  // for profiling
   // public static long outsideTime = 0;

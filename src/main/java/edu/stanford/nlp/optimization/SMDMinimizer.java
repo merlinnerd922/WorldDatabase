@@ -39,7 +39,7 @@ import edu.stanford.nlp.util.Pair;
 public class SMDMinimizer<T extends Function> extends StochasticMinimizer<T>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(SMDMinimizer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(SMDMinimizer.class);
 
 
 

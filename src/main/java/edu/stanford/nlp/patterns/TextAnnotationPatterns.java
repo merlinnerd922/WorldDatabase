@@ -23,15 +23,15 @@ import java.util.concurrent.ExecutionException;
  */
 public class TextAnnotationPatterns {
 
-  private Map<String, Class<? extends TSMKey<String>>> humanLabelClasses = new HashMap<>();
-  private Map<String, Class<? extends TSMKey<String>>> machineAnswerClasses = new HashMap<>();
+  private final Map<String, Class<? extends TSMKey<String>>> humanLabelClasses = new HashMap<>();
+  private final Map<String, Class<? extends TSMKey<String>>> machineAnswerClasses = new HashMap<>();
   Properties props;
   private String outputFile;
 
   Counter<String> matchedSeedWords;
 
-  private Map<String, Set<CandidatePhrase>> seedWords = new HashMap<>();
-  private String backgroundSymbol ="O";
+  private final Map<String, Set<CandidatePhrase>> seedWords = new HashMap<>();
+  private final String backgroundSymbol ="O";
 
   //Properties testProps = new Properties();
   /** A logger for this class */

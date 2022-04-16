@@ -28,7 +28,7 @@ import edu.stanford.nlp.objectbank.IteratorFromReaderFactory;
 public class TrueCasingForNISTDocumentReaderAndWriter implements DocumentReaderAndWriter<CoreLabel>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TrueCasingForNISTDocumentReaderAndWriter.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TrueCasingForNISTDocumentReaderAndWriter.class);
 
   public static final String THREE_CLASSES_PROPERTY = "3class";
   public static final boolean THREE_CLASSES = Boolean.parseBoolean(System.getProperty(THREE_CLASSES_PROPERTY, "false"));

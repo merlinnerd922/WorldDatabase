@@ -11,7 +11,7 @@ public class RothEntityExtractor extends BasicEntityExtractor {
   
   public static final boolean USE_SUB_TYPES = false;
 
-  private Map<String, String> entityTagForNer;
+  private final Map<String, String> entityTagForNer;
   
   public RothEntityExtractor() {
     super(null, USE_SUB_TYPES, null, true, new EntityMentionFactory(), true);

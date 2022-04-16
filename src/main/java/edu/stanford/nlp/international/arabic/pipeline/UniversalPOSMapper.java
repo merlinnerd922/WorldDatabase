@@ -24,7 +24,7 @@ import edu.stanford.nlp.util.Generics;
 public class UniversalPOSMapper extends LDCPosMapper  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(UniversalPOSMapper.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(UniversalPOSMapper.class);
 
   private final Map<String,String> universalMap;
   private final MorphoFeatureSpecification morphoSpec;

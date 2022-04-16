@@ -74,10 +74,10 @@ public class PreferencesPanel extends JDialog {
   private static final String HISTORY_ERROR = "history";//error code if history size is not an int >0
   private static final String MAX_MATCH_ERROR = "maxMatch";//error code if history size is not an int >0
 
-  private TregexGUI gui;
+  private final TregexGUI gui;
 
   final JButton highlightButton;
-  private JTextField setEncoding;//declared here because may change in different places
+  private final JTextField setEncoding;//declared here because may change in different places
 
   public PreferencesPanel(TregexGUI gui) {
     super(gui, "Preferences");

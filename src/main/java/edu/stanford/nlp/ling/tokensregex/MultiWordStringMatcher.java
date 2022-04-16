@@ -138,7 +138,7 @@ public class MultiWordStringMatcher {
     return offsets;
   }
 
-  private CacheMap<String, Pattern> targetStringPatternCache = new CacheMap<>(5000);
+  private final CacheMap<String, Pattern> targetStringPatternCache = new CacheMap<>(5000);
 
   public final static Comparator<String> LONGEST_STRING_COMPARATOR = new LongestStringComparator();
   public static class LongestStringComparator implements Comparator<String> {
@@ -202,7 +202,7 @@ public class MultiWordStringMatcher {
     return wordRegex;
   }
 
-  private static Pattern whitespacePattern = Pattern.compile("\\s+");
+  private static final Pattern whitespacePattern = Pattern.compile("\\s+");
   private static final Pattern punctWhitespacePattern = Pattern.compile("\\s*(\\p{Punct})\\s*");
 
   public static String getExctWsRegex(String targetString) {

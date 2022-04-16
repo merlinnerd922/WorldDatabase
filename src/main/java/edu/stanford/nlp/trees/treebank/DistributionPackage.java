@@ -17,7 +17,7 @@ import edu.stanford.nlp.util.RuntimeInterruptedException;
 public class DistributionPackage  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(DistributionPackage.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(DistributionPackage.class);
 
   private final List<String> distFiles;
   private String lastCreatedDistribution = "UNKNOWN";

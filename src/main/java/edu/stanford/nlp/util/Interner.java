@@ -31,7 +31,7 @@ import java.util.Set;
 public class Interner<T>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(Interner.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(Interner.class);
 
   protected static Interner<Object> interner = new Interner<>();
 

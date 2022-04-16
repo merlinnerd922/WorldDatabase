@@ -102,7 +102,7 @@ public class Classifier  {
    */
   private final int numLabels;
 
-  private LeastRecentlyUsedCache<Integer, float[]> cache;
+  private final LeastRecentlyUsedCache<Integer, float[]> cache;
 
   /**
    * Instantiate a classifier with previously learned parameters in

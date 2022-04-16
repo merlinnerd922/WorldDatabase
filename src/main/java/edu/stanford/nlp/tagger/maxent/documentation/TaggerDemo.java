@@ -13,7 +13,7 @@ import edu.stanford.nlp.tagger.maxent.MaxentTagger;
 public class TaggerDemo  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TaggerDemo.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TaggerDemo.class);
 
   private TaggerDemo() {}
 

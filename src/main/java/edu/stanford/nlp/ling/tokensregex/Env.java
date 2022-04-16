@@ -47,7 +47,7 @@ public class Env {
   /**
    * Mapping of per thread temporary variables to their values.
    */
-  private ThreadLocal<Map<String,Object>> threadLocalVariables = new ThreadLocal<>();
+  private final ThreadLocal<Map<String,Object>> threadLocalVariables = new ThreadLocal<>();
 
   /**
    * Mapping of variables that can be expanded in a regular expression for strings,
@@ -58,7 +58,7 @@ public class Env {
    *   the name of the variable to be replaced, and a {@code String} representing the
    *   regular expression (escaped) that is used to replace the name of the variable.
    */
-  private Map<String, Pair<Pattern,String>> stringRegexVariables = new HashMap<>(); //Generics.newHashMap();
+  private final Map<String, Pair<Pattern,String>> stringRegexVariables = new HashMap<>(); //Generics.newHashMap();
 
   /**
    * Default parameters (used when reading in rules for {@link SequenceMatchRules}.

@@ -65,7 +65,7 @@ public class EquivalenceClassEval<IN, OUT> {
     return ErasureUtils.<EquivalenceClasser<T,U>>uncheckedCast(NULL_EQUIVALENCE_CLASSER);
   }
 
-  private boolean verbose = false;
+  private final boolean verbose = false;
 
   EquivalenceClasser<IN, OUT> eq;
   Eval.CollectionContainsChecker<IN> checker;
@@ -132,9 +132,9 @@ public class EquivalenceClassEval<IN, OUT> {
   ClassicCounter<OUT> gold = new ClassicCounter<>();
   ClassicCounter<OUT> goldCorrect = new ClassicCounter<>();
 
-  private ClassicCounter<OUT> lastPrecision = new ClassicCounter<>();
-  private ClassicCounter<OUT> lastRecall = new ClassicCounter<>();
-  private ClassicCounter<OUT> lastF1 = new ClassicCounter<>();
+  private final ClassicCounter<OUT> lastPrecision = new ClassicCounter<>();
+  private final ClassicCounter<OUT> lastRecall = new ClassicCounter<>();
+  private final ClassicCounter<OUT> lastF1 = new ClassicCounter<>();
 
   private ClassicCounter<OUT> previousGuessed;
   private ClassicCounter<OUT> previousGuessedCorrect;
@@ -380,7 +380,7 @@ public class EquivalenceClassEval<IN, OUT> {
   //     return pad + whole + "." + frac1;
   //   }
 
-  private static java.text.NumberFormat numberFormat = java.text.NumberFormat.getNumberInstance();
+  private static final java.text.NumberFormat numberFormat = java.text.NumberFormat.getNumberInstance();
 
   {
     numberFormat.setMaximumFractionDigits(4);
@@ -618,10 +618,10 @@ public class EquivalenceClassEval<IN, OUT> {
    */
   public Factory<IN, OUT> factory() {
     return new Factory<IN, OUT>() {
-      boolean bagEval1 = bagEval;
-      EquivalenceClasser<IN, OUT> eq1 = eq;
-      Eval.CollectionContainsChecker<IN> checker1 = checker;
-      String summaryName1 = summaryName;
+      final boolean bagEval1 = bagEval;
+      final EquivalenceClasser<IN, OUT> eq1 = eq;
+      final Eval.CollectionContainsChecker<IN> checker1 = checker;
+      final String summaryName1 = summaryName;
 
       public EquivalenceClassEval<IN, OUT> equivalenceClassEval() {
         EquivalenceClassEval<IN, OUT> e = new EquivalenceClassEval<>(eq1, checker1, summaryName1);

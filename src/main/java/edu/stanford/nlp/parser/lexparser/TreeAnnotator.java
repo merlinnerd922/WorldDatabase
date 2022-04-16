@@ -18,10 +18,10 @@ import edu.stanford.nlp.ling.Label;
  */
 public class TreeAnnotator implements TreeTransformer {
 
-  private TreeFactory tf;
-  private TreebankLangParserParams tlpParams;
-  private HeadFinder hf;
-  private TrainOptions trainOptions;
+  private final TreeFactory tf;
+  private final TreebankLangParserParams tlpParams;
+  private final HeadFinder hf;
+  private final TrainOptions trainOptions;
 
   public TreeAnnotator(HeadFinder hf, TreebankLangParserParams tlpp,
                        Options op) {

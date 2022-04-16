@@ -65,7 +65,7 @@ public class TeXHyphenator  {
     }
   }
 
-  private Node head = new Node();
+  private final Node head = new Node();
 
   public static String toString(int[]i) {
     StringBuilder sb = new StringBuilder();

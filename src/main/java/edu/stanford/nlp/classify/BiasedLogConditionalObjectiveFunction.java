@@ -26,7 +26,7 @@ public class BiasedLogConditionalObjectiveFunction extends AbstractCachingDiffFu
   protected int[][] data = null;
   protected int[] labels = null;
 
-  private double[][] confusionMatrix;
+  private final double[][] confusionMatrix;
   
   @Override
   public int domainDimension() {

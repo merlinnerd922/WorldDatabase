@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public class Relation {
 
-  private Map<String, List<RelationMention>> relationToRelationMentions = new HashMap<>();
+  private final Map<String, List<RelationMention>> relationToRelationMentions = new HashMap<>();
 
   public void addRelation(String relation, RelationMention rm) {
     List<RelationMention> mentions = this.relationToRelationMentions

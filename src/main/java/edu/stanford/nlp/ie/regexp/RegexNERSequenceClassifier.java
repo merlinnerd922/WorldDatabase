@@ -66,7 +66,7 @@ import edu.stanford.nlp.util.Generics;
 public class RegexNERSequenceClassifier extends AbstractSequenceClassifier<CoreLabel>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(RegexNERSequenceClassifier.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(RegexNERSequenceClassifier.class);
 
   private final List<Entry> entries;
 

@@ -41,7 +41,7 @@ public class ScorePhrases<E extends Pattern>  {
   /** A logger for this class */
   private static final Redwood.RedwoodChannels log = Redwood.channels(ScorePhrases.class);
 
-  private Map<String, Boolean> writtenInJustification = new HashMap<>();
+  private final Map<String, Boolean> writtenInJustification = new HashMap<>();
 
   ConstantsAndVariables constVars = null;
 

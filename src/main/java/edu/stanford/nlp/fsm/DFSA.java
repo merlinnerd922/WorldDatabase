@@ -19,7 +19,7 @@ import java.util.*;
 public final class DFSA<T,S> implements Scored  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(DFSA.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(DFSA.class);
 
   Object dfsaID;
   DFSAState<T,S> initialState;

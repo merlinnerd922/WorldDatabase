@@ -27,7 +27,7 @@ import edu.stanford.nlp.util.Pair;
 public class UnknownGTTrainer  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(UnknownGTTrainer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(UnknownGTTrainer.class);
   ClassicCounter<Pair<String,String>> wtCount = new ClassicCounter<>();
   ClassicCounter<String> tagCount = new ClassicCounter<>();
   ClassicCounter<String> r1 = new ClassicCounter<>(); // for each tag, # of words seen once

@@ -32,10 +32,10 @@ public class LogConditionalEqConstraintFunction extends AbstractCachingDiffFunct
   protected int[][] data = null;
   protected int[] labels = null;
   protected int[] numValues = null;
-  private int prior;
+  private final int prior;
   private double sigma = 1.0;
-  private double epsilon;
-  private Index<IntTuple> featureIndex;
+  private final double epsilon;
+  private final Index<IntTuple> featureIndex;
 
   @Override
   public int domainDimension() {

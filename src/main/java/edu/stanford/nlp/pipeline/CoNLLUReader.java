@@ -78,7 +78,7 @@ public class CoNLLUReader {
    * <p>
    * conllu.extraColumns = CoreAnnotations.TrueCaseAnnotation,CoreAnnotations.CategoryAnnotation
    */
-  private HashMap<Integer, Class> extraColumns = new HashMap<>();
+  private final HashMap<Integer, Class> extraColumns = new HashMap<>();
 
   public CoNLLUReader() throws ClassNotFoundException {
     this(new Properties());

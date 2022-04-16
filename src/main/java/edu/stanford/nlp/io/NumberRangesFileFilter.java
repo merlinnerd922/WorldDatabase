@@ -37,8 +37,8 @@ import java.util.List;
  */
 public class NumberRangesFileFilter implements FileFilter {
 
-  private List<Pair<Integer,Integer>> ranges = new ArrayList<>();
-  private boolean recursively;
+  private final List<Pair<Integer,Integer>> ranges = new ArrayList<>();
+  private final boolean recursively;
 
 
   /**

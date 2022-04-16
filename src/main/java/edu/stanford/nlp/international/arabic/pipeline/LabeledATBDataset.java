@@ -9,7 +9,7 @@ import edu.stanford.nlp.trees.Tree;
 public class LabeledATBDataset extends ATBArabicDataset  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(LabeledATBDataset.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(LabeledATBDataset.class);
 
   @Override
   public void build() {

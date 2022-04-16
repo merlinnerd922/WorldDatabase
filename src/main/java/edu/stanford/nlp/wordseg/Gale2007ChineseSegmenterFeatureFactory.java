@@ -48,7 +48,7 @@ public class Gale2007ChineseSegmenterFeatureFactory<IN extends CoreLabel> extend
 
   private static final int DEBUG = 0;
 
-  private static Redwood.RedwoodChannels logger = Redwood.channels(Gale2007ChineseSegmenterFeatureFactory.class);
+  private static final Redwood.RedwoodChannels logger = Redwood.channels(Gale2007ChineseSegmenterFeatureFactory.class);
 
   private transient TagAffixDetector taDetector; // = null;
   private transient CorpusDictionary outDict; // = null;

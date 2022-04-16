@@ -52,7 +52,7 @@ public class ChineseSegmenterFeatureFactory<IN extends CoreLabel> extends Featur
   private static final long serialVersionUID = 3387166382968763350L;
   private static TagAffixDetector taDetector = null;
 
-  private static Redwood.RedwoodChannels logger = Redwood.channels(ChineseSegmenterFeatureFactory.class);
+  private static final Redwood.RedwoodChannels logger = Redwood.channels(ChineseSegmenterFeatureFactory.class);
 
   public void init(SeqClassifierFlags flags) {
     super.init(flags);
@@ -89,8 +89,8 @@ public class ChineseSegmenterFeatureFactory<IN extends CoreLabel> extends Featur
 
 
 
-  private static Pattern patE = Pattern.compile("[a-z]");
-  private static Pattern patEC = Pattern.compile("[A-Z]");
+  private static final Pattern patE = Pattern.compile("[a-z]");
+  private static final Pattern patEC = Pattern.compile("[A-Z]");
   private static String isEnglish(String Ep, String Ec) {
     String chp = Ep;
     String chc = Ec;
@@ -117,7 +117,7 @@ public class ChineseSegmenterFeatureFactory<IN extends CoreLabel> extends Featur
     }
   }//is English
 
-  private static Pattern patP = Pattern.compile("[\u00b7\\-\\.]");
+  private static final Pattern patP = Pattern.compile("[\u00b7\\-\\.]");
   private static String isEngPU(String Ep) {
     Matcher mp = patP.matcher(Ep);
     if (mp.matches()){

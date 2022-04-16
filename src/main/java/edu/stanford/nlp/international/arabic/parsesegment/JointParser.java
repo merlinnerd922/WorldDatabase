@@ -24,7 +24,7 @@ import edu.stanford.nlp.util.StringUtils;
 public final class JointParser  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(JointParser.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(JointParser.class);
 
   private JointParser() {}
 

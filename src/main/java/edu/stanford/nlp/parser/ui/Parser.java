@@ -39,7 +39,7 @@ public class Parser extends javax.swing.JFrame {
 
   private static final long serialVersionUID = 7179757799978939358L;
 
-  private ParserPanel parserPanel;
+  private final ParserPanel parserPanel;
 
   /**
    * Creates a new Parser Frame using {@link #Parser(String, String)}

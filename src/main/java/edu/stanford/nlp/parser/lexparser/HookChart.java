@@ -15,19 +15,19 @@ import edu.stanford.nlp.util.Generics;
 public class HookChart  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(HookChart.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(HookChart.class);
 
-  private Map<ChartIndex,List<Hook>> registeredPreHooks = Generics.newHashMap();
-  private Map<ChartIndex,List<Hook>> registeredPostHooks = Generics.newHashMap();
-  private Map<ChartIndex,List<Edge>> registeredEdgesByLeftIndex = Generics.newHashMap();
-  private Map<ChartIndex,List<Edge>> registeredEdgesByRightIndex = Generics.newHashMap();
+  private final Map<ChartIndex,List<Hook>> registeredPreHooks = Generics.newHashMap();
+  private final Map<ChartIndex,List<Hook>> registeredPostHooks = Generics.newHashMap();
+  private final Map<ChartIndex,List<Edge>> registeredEdgesByLeftIndex = Generics.newHashMap();
+  private final Map<ChartIndex,List<Edge>> registeredEdgesByRightIndex = Generics.newHashMap();
 
-  private Map<WeakChartIndex,List<Edge>> realEdgesByL = Generics.newHashMap();
-  private Map<WeakChartIndex,List<Edge>> realEdgesByR = Generics.newHashMap();
-  private Set<ChartIndex> builtLIndexes = Generics.newHashSet();
-  private Set<ChartIndex> builtRIndexes = Generics.newHashSet();
+  private final Map<WeakChartIndex,List<Edge>> realEdgesByL = Generics.newHashMap();
+  private final Map<WeakChartIndex,List<Edge>> realEdgesByR = Generics.newHashMap();
+  private final Set<ChartIndex> builtLIndexes = Generics.newHashSet();
+  private final Set<ChartIndex> builtRIndexes = Generics.newHashSet();
 
-  private Interner interner = new Interner();
+  private final Interner interner = new Interner();
 
   private static class ChartIndex {
     public int state;

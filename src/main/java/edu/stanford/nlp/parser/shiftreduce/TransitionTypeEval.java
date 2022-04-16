@@ -15,7 +15,7 @@ import edu.stanford.nlp.trees.Tree;
  * want to make sure it is actually firing
  */
 public class TransitionTypeEval implements ParserQueryEval {
-  private IntCounter<Class<? extends Transition>> transitionCounts = new IntCounter<>();
+  private final IntCounter<Class<? extends Transition>> transitionCounts = new IntCounter<>();
 
   @Override
   public void evaluate(ParserQuery query, Tree gold, PrintWriter pw) {

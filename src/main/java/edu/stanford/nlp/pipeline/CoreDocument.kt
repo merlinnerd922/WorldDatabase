@@ -66,7 +66,7 @@ class CoreDocument {
 
     private fun buildDocumentQuotesList() {
         quotes = QuoteAnnotator.gatherQuotes(annotationDocument).stream()
-            .map { coreMapQuote: CoreMap? -> CoreQuote(this, coreMapQuote) }
+            .map { coreMapQuote: CoreMap? -> CoreQuote(this, coreMapQuote!!) }
             .collect(Collectors.toList())
     }
 

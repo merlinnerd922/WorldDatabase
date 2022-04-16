@@ -34,7 +34,7 @@ import org.ejml.simple.SimpleMatrix;
  */
 public class NeuralCorefAlgorithm implements CorefAlgorithm {
 
-  private static Redwood.RedwoodChannels log = Redwood.channels(NeuralCorefAlgorithm.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(NeuralCorefAlgorithm.class);
 
   private final double greedyness;
   private final int maxMentionDistance;

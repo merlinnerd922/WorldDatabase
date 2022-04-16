@@ -12,7 +12,7 @@ import edu.stanford.nlp.util.Generics;
 public class StringDictionary  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(StringDictionary.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(StringDictionary.class);
 
   public static class IndexAndCount {
 
@@ -35,10 +35,10 @@ public class StringDictionary  {
   private boolean mCreate;
 
   /** The actual dictionary */
-  private Map<String, IndexAndCount> mDict;
+  private final Map<String, IndexAndCount> mDict;
 
   /** Inverse mapping from integer keys to the string values */
-  private Map<Integer, String> mInverse;
+  private final Map<Integer, String> mInverse;
 
   public StringDictionary(String name) {
     mName = name;

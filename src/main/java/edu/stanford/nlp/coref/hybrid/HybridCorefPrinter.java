@@ -50,7 +50,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class HybridCorefPrinter  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(HybridCorefPrinter.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(HybridCorefPrinter.class);
 
   public static final DecimalFormat df = new DecimalFormat("#.####");
 

@@ -22,7 +22,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class InvertedIndexByTokens<E extends Pattern> extends SentenceIndex<E> implements Serializable {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(InvertedIndexByTokens.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(InvertedIndexByTokens.class);
 
   private static final long serialVersionUID = 1L;
 

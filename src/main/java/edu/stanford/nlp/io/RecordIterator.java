@@ -20,13 +20,13 @@ import java.io.*;
 public class RecordIterator implements Iterator<List<String>>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(RecordIterator.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(RecordIterator.class);
 
-  private static String WHITESPACE = "\\s+";
+  private static final String WHITESPACE = "\\s+";
 
-  private BufferedReader reader;
+  private final BufferedReader reader;
   private int fields;                   // -1 means infer from first line of input
-  private boolean filter;
+  private final boolean filter;
   private String delim = WHITESPACE;
   private List<String> nextResult;
 

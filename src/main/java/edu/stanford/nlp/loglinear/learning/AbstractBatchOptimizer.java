@@ -24,7 +24,7 @@ import java.util.Random;
 public abstract class AbstractBatchOptimizer  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AbstractBatchOptimizer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AbstractBatchOptimizer.class);
   public <T> ConcatVector optimize(T[] dataset, AbstractDifferentiableFunction<T> fn) {
     return optimize(dataset, fn, new ConcatVector(0), 0.0, 1.0e-5, false);
   }

@@ -513,8 +513,8 @@ public class Clusterer {
 
   private static int featuresCacheHits;
   private static int featuresCacheMisses;
-  private static Map<MergeKey, CompressedFeatureVector> featuresCache = new HashMap<>();
-  private static Compressor<String> compressor = new Compressor<>();
+  private static final Map<MergeKey, CompressedFeatureVector> featuresCache = new HashMap<>();
+  private static final Compressor<String> compressor = new Compressor<>();
 
   private static Counter<String> getFeatures(ClustererDoc doc, Pair<Integer, Integer> mentionPair,
       Counter<Pair<Integer, Integer>> scores) {

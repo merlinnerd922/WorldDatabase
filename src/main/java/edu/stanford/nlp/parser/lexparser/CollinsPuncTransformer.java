@@ -19,7 +19,7 @@ import edu.stanford.nlp.trees.TreeFactory;
  */
 public class CollinsPuncTransformer implements TreeTransformer {
 
-  private TreebankLanguagePack tlp;
+  private final TreebankLanguagePack tlp;
 
   boolean isPunc(Tree t) {
     if (t.isPreTerminal()) {

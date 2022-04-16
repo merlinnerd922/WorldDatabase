@@ -15,7 +15,7 @@ import java.util.List;
 public class ExactGrammarCompactor extends GrammarCompactor  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ExactGrammarCompactor.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ExactGrammarCompactor.class);
 
   TransducerGraph.GraphProcessor quasiDeterminizer = new QuasiDeterminizer();
   AutomatonMinimizer minimizer = new FastExactAutomatonMinimizer();
@@ -23,7 +23,7 @@ public class ExactGrammarCompactor extends GrammarCompactor  {
   TransducerGraph.NodeProcessor otsp = new TransducerGraph.ObjectToSetNodeProcessor();
   TransducerGraph.ArcProcessor isp = new TransducerGraph.InputSplittingProcessor();
   TransducerGraph.ArcProcessor ocp = new TransducerGraph.OutputCombiningProcessor();
-  private boolean saveGraphs; // = false;
+  private final boolean saveGraphs; // = false;
 
   public ExactGrammarCompactor(Options op, 
                                boolean saveGraphs, boolean verbose) {

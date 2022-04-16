@@ -49,14 +49,14 @@ import java.util.regex.Pattern;
 public class ChineseEnglishWordMap implements Serializable  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ChineseEnglishWordMap.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ChineseEnglishWordMap.class);
 
   /**
    * 
    */
   private static final long serialVersionUID = 7655332268578049993L;
 
-  private Map<String, Set<String>> map = Generics.newHashMap(10000); // large dictionary!
+  private final Map<String, Set<String>> map = Generics.newHashMap(10000); // large dictionary!
 
   private static final String defaultPattern = "[^ ]+ ([^ ]+)[^/]+/(.+)/";
   private static final String defaultDelimiter = "[/;]";

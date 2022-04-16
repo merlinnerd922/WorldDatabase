@@ -32,7 +32,7 @@ import edu.stanford.nlp.util.TwoDimensionalSet;
 public class FilterConfusingRules implements Predicate<Tree>, Serializable  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(FilterConfusingRules.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(FilterConfusingRules.class);
   final Set<String> unaryRules = new HashSet<>();
   final TwoDimensionalSet<String, String> binaryRules = new TwoDimensionalSet<>();
   

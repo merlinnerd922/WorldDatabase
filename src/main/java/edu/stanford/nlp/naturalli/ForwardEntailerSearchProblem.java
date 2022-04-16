@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 public class ForwardEntailerSearchProblem  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ForwardEntailerSearchProblem.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ForwardEntailerSearchProblem.class);
 
   /**
    * The parse of this fragment. The vertices in the parse tree should be a subset

@@ -25,7 +25,7 @@ import edu.stanford.nlp.util.Pair;
 public class ConfigParser implements Iterable<Properties>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ConfigParser.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ConfigParser.class);
 
   //The parameter names and delimiter
   private static final String DELIM = "=";

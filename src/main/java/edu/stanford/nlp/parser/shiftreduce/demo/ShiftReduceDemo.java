@@ -21,7 +21,7 @@ import edu.stanford.nlp.trees.Tree;
 public class ShiftReduceDemo  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ShiftReduceDemo.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ShiftReduceDemo.class);
   public static void main(String[] args) {
     String modelPath = "edu/stanford/nlp/models/srparser/englishSR.ser.gz";
     String taggerPath = "edu/stanford/nlp/models/pos-tagger/english-left3words-distsim.tagger";

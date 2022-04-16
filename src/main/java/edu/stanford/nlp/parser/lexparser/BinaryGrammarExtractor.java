@@ -11,11 +11,11 @@ import edu.stanford.nlp.util.Pair;
 public class BinaryGrammarExtractor extends AbstractTreeExtractor<Pair<UnaryGrammar,BinaryGrammar>> {
 
   protected Index<String> stateIndex;
-  private ClassicCounter<UnaryRule> unaryRuleCounter = new ClassicCounter<>();
-  private ClassicCounter<BinaryRule> binaryRuleCounter = new ClassicCounter<>();
+  private final ClassicCounter<UnaryRule> unaryRuleCounter = new ClassicCounter<>();
+  private final ClassicCounter<BinaryRule> binaryRuleCounter = new ClassicCounter<>();
   protected ClassicCounter<String> symbolCounter = new ClassicCounter<>();
-  private Set<BinaryRule> binaryRules = Generics.newHashSet();
-  private Set<UnaryRule> unaryRules = Generics.newHashSet();
+  private final Set<BinaryRule> binaryRules = Generics.newHashSet();
+  private final Set<UnaryRule> unaryRules = Generics.newHashSet();
 
   //  protected void tallyTree(Tree t, double weight) {
   //    super.tallyTree(t, weight);

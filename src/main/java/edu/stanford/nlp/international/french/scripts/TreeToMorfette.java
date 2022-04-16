@@ -27,7 +27,7 @@ import edu.stanford.nlp.util.Pair;
 public class TreeToMorfette  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TreeToMorfette.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TreeToMorfette.class);
 
   /**
    * @param args

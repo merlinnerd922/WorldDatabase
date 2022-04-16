@@ -18,7 +18,7 @@ public class TimexTreeAnnotator implements Annotator {
 	
   public static enum MatchType {ExactMatch, SmallestEnclosing}
   
-  private MatchType matchType;
+  private final MatchType matchType;
   
   public TimexTreeAnnotator(MatchType matchType) {
     this.matchType = matchType;

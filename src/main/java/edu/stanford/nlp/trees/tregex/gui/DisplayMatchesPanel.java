@@ -70,7 +70,7 @@ import edu.stanford.nlp.util.Pair;
 @SuppressWarnings("serial")
 public class DisplayMatchesPanel extends JPanel implements ListSelectionListener {
 
-  private JScrollPane scroller;
+  private final JScrollPane scroller;
   private MouseEvent firstMouseEvent = null;
 
   private String fontName = "";

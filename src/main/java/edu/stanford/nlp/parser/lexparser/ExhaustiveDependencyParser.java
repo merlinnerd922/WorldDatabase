@@ -65,7 +65,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public class ExhaustiveDependencyParser implements Scorer, KBestViterbiParser  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ExhaustiveDependencyParser.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ExhaustiveDependencyParser.class);
 
   private static final boolean DEBUG = false;
   private static final boolean DEBUG_MORE = false;
@@ -73,12 +73,12 @@ public class ExhaustiveDependencyParser implements Scorer, KBestViterbiParser  {
   private final Index<String> tagIndex;
   private final Index<String> wordIndex;
 
-  private TreeFactory tf;
+  private final TreeFactory tf;
 
-  private DependencyGrammar dg;
-  private Lexicon lex;
-  private Options op;
-  private TreebankLanguagePack tlp;
+  private final DependencyGrammar dg;
+  private final Lexicon lex;
+  private final Options op;
+  private final TreebankLanguagePack tlp;
 
   private List sentence;
   private int[] words;

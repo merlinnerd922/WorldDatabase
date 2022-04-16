@@ -120,7 +120,7 @@ public class UniversalDependenciesFeatureAnnotator  {
     return word.toLowerCase().matches(MULTIPLICATIVE_EXPRESSION);
   }
 
-  private static String SELF_REGEX = EnglishPatterns.selfRegex.replace("/", "");
+  private static final String SELF_REGEX = EnglishPatterns.selfRegex.replace("/", "");
 
   private static HashMap<String, String> getGraphFeatures(SemanticGraph sg, IndexedWord word) {
     HashMap<String, String> features = new HashMap<>();

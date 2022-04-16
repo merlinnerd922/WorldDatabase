@@ -24,9 +24,9 @@ import edu.stanford.nlp.util.Index;
 public class TueBaDZParserParams extends AbstractTreebankParserParams  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(TueBaDZParserParams.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(TueBaDZParserParams.class);
 
-  private HeadFinder hf = new TueBaDZHeadFinder();
+  private final HeadFinder hf = new TueBaDZHeadFinder();
 
   /** How to clean up node labels: 0 = do nothing, 1 = keep category and
    *  function, 2 = just category.

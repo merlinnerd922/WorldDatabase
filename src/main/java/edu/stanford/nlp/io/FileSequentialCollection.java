@@ -247,12 +247,12 @@ public class FileSequentialCollection extends AbstractCollection<File>  {
     // under a directory listing, and a pointer in the current
     // directory.
 
-    private Object[] roots;  // these may be of type File or String
+    private final Object[] roots;  // these may be of type File or String
     private int rootsIndex;
     // these next two simulate a list of pairs, but I was too lazy to
     // make an extra class
-    private Stack<Object> fileArrayStack;
-    private Stack<Integer> fileArrayStackIndices;
+    private final Stack<Object> fileArrayStack;
+    private final Stack<Integer> fileArrayStackIndices;
     private File next;
 
     public FileSequentialCollectionIterator() {

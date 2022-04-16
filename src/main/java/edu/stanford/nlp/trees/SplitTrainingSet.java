@@ -34,10 +34,10 @@ public class SplitTrainingSet {
   private static String OUTPUT; // = null;
 
   @ArgumentParser.Option(name="split_names", gloss="Divisions to use for the output")
-  private static String[] SPLIT_NAMES = { "train", "dev", "test" };
+  private static final String[] SPLIT_NAMES = { "train", "dev", "test" };
 
   @ArgumentParser.Option(name="split_weights", gloss="Portions to use for the divisions")
-  private static Double[] SPLIT_WEIGHTS = { 0.7, 0.15, 0.15 };
+  private static final Double[] SPLIT_WEIGHTS = { 0.7, 0.15, 0.15 };
 
   @ArgumentParser.Option(name="seed", gloss="Random seed to use")
   private static long SEED; // = 0L;

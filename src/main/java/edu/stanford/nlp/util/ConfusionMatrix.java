@@ -136,7 +136,7 @@ public class ConfusionMatrix<U> {
   }
 
 
-  private ConcurrentHashMap<Pair<U, U>, Integer> confTable = new ConcurrentHashMap<>();
+  private final ConcurrentHashMap<Pair<U, U>, Integer> confTable = new ConcurrentHashMap<>();
 
   /**
    * Increments the entry for this guess and gold by 1.
@@ -348,9 +348,9 @@ public class ConfusionMatrix<U> {
   private class ConfusionGrid extends Canvas {
 
     public class Grid extends JPanel {
-      private int columnCount = uniqueLabels().size() + 1;
-      private int rowCount = uniqueLabels().size() + 1;
-      private List<Rectangle> cells;
+      private final int columnCount = uniqueLabels().size() + 1;
+      private final int rowCount = uniqueLabels().size() + 1;
+      private final List<Rectangle> cells;
       private Point selectedCell;
 
       public Grid() {

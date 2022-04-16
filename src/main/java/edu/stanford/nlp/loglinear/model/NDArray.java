@@ -13,7 +13,7 @@ import java.util.Iterator;
  */
 public class NDArray<T> implements Iterable<int[]> {
   // public data
-  private int[] dimensions;
+  private final int[] dimensions;
 
   // implementation details
   private T[] values;
@@ -70,7 +70,7 @@ public class NDArray<T> implements Iterable<int[]> {
   @Override
   public Iterator<int[]> iterator() {
     return new Iterator<int[]>() {
-      Iterator<int[]> unsafe = fastPassByReferenceIterator();
+      final Iterator<int[]> unsafe = fastPassByReferenceIterator();
 
       @Override
       public boolean hasNext() {

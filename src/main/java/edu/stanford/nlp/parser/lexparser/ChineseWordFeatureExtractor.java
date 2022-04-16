@@ -16,7 +16,7 @@ import java.util.*;
 public class ChineseWordFeatureExtractor implements WordFeatureExtractor  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ChineseWordFeatureExtractor.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ChineseWordFeatureExtractor.class);
   /**
    * 
    */
@@ -31,7 +31,7 @@ public class ChineseWordFeatureExtractor implements WordFeatureExtractor  {
   boolean mildConjunctions;
 
   public boolean turnOffWordFeatures = false;
-  private IntCounter wordCounter;
+  private final IntCounter wordCounter;
   private ChineseMorphFeatureSets cmfs = null;
   private static final String featureDir = "gbfeatures";
 

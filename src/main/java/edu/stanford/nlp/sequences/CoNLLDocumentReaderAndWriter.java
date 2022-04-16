@@ -79,7 +79,7 @@ public class CoNLLDocumentReaderAndWriter implements DocumentReaderAndWriter<Cor
     @Override
     public List<CoreLabel> next() { return processDocument(stringIter.next()); }
 
-    private Iterator<String> stringIter; // = null;
+    private final Iterator<String> stringIter; // = null;
 
   } // end class CoNLLIterator
 

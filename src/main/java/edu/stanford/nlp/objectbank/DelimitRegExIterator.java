@@ -25,7 +25,7 @@ import edu.stanford.nlp.util.AbstractIterator;
  */
 public class DelimitRegExIterator<T> extends AbstractIterator<T> {
 
-  private Iterator<String> tokens;
+  private final Iterator<String> tokens;
   private final Function<String,T> op;
   private T nextToken; // = null;
 

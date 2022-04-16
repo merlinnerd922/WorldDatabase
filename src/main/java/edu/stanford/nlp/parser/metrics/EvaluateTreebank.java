@@ -45,7 +45,7 @@ import edu.stanford.nlp.util.concurrent.MulticoreWrapper;
 public class EvaluateTreebank  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(EvaluateTreebank.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(EvaluateTreebank.class);
 
   private final Options op;
   private final TreeTransformer debinarizer;

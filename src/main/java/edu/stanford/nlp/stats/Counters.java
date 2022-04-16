@@ -2663,12 +2663,12 @@ public class Counters  {
 
       public Set<Entry<E, Double>> entrySet() {
         return new AbstractSet<Entry<E, Double>>() {
-          Set<Entry<E, N>> entries = map.entrySet();
+          final Set<Entry<E, N>> entries = map.entrySet();
 
           @Override
           public Iterator<Entry<E, Double>> iterator() {
             return new Iterator<Entry<E, Double>>() {
-              Iterator<Entry<E, N>> it = entries.iterator();
+              final Iterator<Entry<E, N>> it = entries.iterator();
               Entry<E, N> lastEntry; // = null;
 
               public boolean hasNext() {
@@ -2753,7 +2753,7 @@ public class Counters  {
           @Override
           public Iterator<E> iterator() {
             return new Iterator<E>() {
-              Iterator<E> it = map.keySet().iterator();
+              final Iterator<E> it = map.keySet().iterator();
 
               public boolean hasNext() {
                 return it.hasNext();

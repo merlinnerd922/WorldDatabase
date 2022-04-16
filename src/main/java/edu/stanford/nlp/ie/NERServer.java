@@ -47,7 +47,7 @@ public class NERServer  {
   private static final boolean ENV_DEBUG =
           System.getenv("NERSERVER_DEBUG") != null && Boolean.parseBoolean(System.getenv("NERSERVER_DEBUG"));
 
-  private boolean DEBUG = ENV_DEBUG;
+  private final boolean DEBUG = ENV_DEBUG;
 
   private final String charset;
 
@@ -131,7 +131,7 @@ public class NERServer  {
     /**
      * The output stream to the client.
      */
-    private PrintWriter out;
+    private final PrintWriter out;
 
 
     //// Constructors

@@ -22,14 +22,14 @@ public class MWTAnnotator implements Annotator {
    * That is a tsv, with column 1 = token, column 2 = csv of words
    */
 
-  private HashMap<String, List<String>> multiWordTokenMapping = new HashMap<>();
+  private final HashMap<String, List<String>> multiWordTokenMapping = new HashMap<>();
   private boolean useDictionary = false;
 
   /**
    * Preserve casing when generating multi word tokens (e.g. Des -> de les OR De les)
    * or not ?
    */
-  private boolean preserveCasing;
+  private final boolean preserveCasing;
 
   /**
    * A sub annotator for part-of-speech tagging to help with MWT decisions
@@ -54,7 +54,7 @@ public class MWTAnnotator implements Annotator {
    */
 
   private Annotator statisticalMWTAnnotator;
-  private HashMap<String, List<String>> statisticalMultiWordTokenMapping = new HashMap<>();
+  private final HashMap<String, List<String>> statisticalMultiWordTokenMapping = new HashMap<>();
   private boolean useStatisticalModel = false;
 
 

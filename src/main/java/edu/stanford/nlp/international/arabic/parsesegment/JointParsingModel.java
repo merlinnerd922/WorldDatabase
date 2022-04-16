@@ -21,7 +21,7 @@ import edu.stanford.nlp.util.Timing;
 public class JointParsingModel  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(JointParsingModel.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(JointParsingModel.class);
 
   private boolean VERBOSE = false;
 

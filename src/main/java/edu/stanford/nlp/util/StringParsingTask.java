@@ -16,7 +16,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public abstract class StringParsingTask<E>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(StringParsingTask.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(StringParsingTask.class);
   
   // This class represents a parser working on a specific string.  We
   // construct from a specific string in order 

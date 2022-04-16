@@ -17,7 +17,7 @@ import java.util.List;
 public class SimpleTree extends Tree  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(SimpleTree.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(SimpleTree.class);
 
   private static final long serialVersionUID = -8075763706877132926L;
 

@@ -27,14 +27,14 @@ public class FastNeuralCorefModel implements Serializable {
   private final Map<String, Integer> pairFeatureIds;
   private final Map<String, Integer> mentionFeatureIds;
 
-  private SimpleMatrix anaphorKernel;
-  private SimpleMatrix anaphorBias;
-  private SimpleMatrix antecedentKernel;
-  private SimpleMatrix antecedentBias;
-  private SimpleMatrix pairFeaturesKernel;
-  private SimpleMatrix pairFeaturesBias;
-  private SimpleMatrix NARepresentation;
-  private List<SimpleMatrix> networkLayers;
+  private final SimpleMatrix anaphorKernel;
+  private final SimpleMatrix anaphorBias;
+  private final SimpleMatrix antecedentKernel;
+  private final SimpleMatrix antecedentBias;
+  private final SimpleMatrix pairFeaturesKernel;
+  private final SimpleMatrix pairFeaturesBias;
+  private final SimpleMatrix NARepresentation;
+  private final List<SimpleMatrix> networkLayers;
 
   public FastNeuralCorefModel(EmbeddingExtractor embeddingExtractor,
                               Map<String, Integer> pairFeatureIds,

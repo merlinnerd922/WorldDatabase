@@ -18,7 +18,7 @@ import java.util.regex.Matcher;
 public class AuxiliaryTree  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(AuxiliaryTree.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(AuxiliaryTree.class);
 
   private final String originalTreeString;
   final Tree tree;

@@ -15,7 +15,7 @@ import java.util.zip.GZIPOutputStream;
 public class ResultStoringFloatMonitor implements FloatFunction  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(ResultStoringFloatMonitor.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(ResultStoringFloatMonitor.class);
   int i = 0;
   final int outputFreq;
   final String filename;

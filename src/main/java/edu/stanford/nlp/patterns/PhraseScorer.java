@@ -17,7 +17,7 @@ import edu.stanford.nlp.util.logging.Redwood;
 public abstract class PhraseScorer<E extends Pattern>  {
 
   /** A logger for this class */
-  private static Redwood.RedwoodChannels log = Redwood.channels(PhraseScorer.class);
+  private static final Redwood.RedwoodChannels log = Redwood.channels(PhraseScorer.class);
   ConstantsAndVariables constVars;
 
   //these get overwritten in ScorePhrasesLearnFeatWt class
