@@ -25,16 +25,11 @@
 //
 package edu.stanford.nlp.pipeline
 
-import edu.stanford.nlp.util.ArrayCoreMap
-import edu.stanford.nlp.ling.CoreAnnotations.TextAnnotation
-import edu.stanford.nlp.util.CoreMap
-import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation
+import edu.stanford.nlp.ling.CoreAnnotations.*
 import edu.stanford.nlp.ling.CoreLabel
-import java.lang.StringBuilder
-import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation
 import edu.stanford.nlp.ling.SentenceUtils
-import kotlinx.serialization.Serializable
-import java.util.ArrayList
+import edu.stanford.nlp.util.ArrayCoreMap
+import edu.stanford.nlp.util.CoreMap
 
 /**
  * An annotation representing a span of text in a document.

@@ -1,14 +1,7 @@
 package edu.stanford.nlp.examples
 
-import kotlin.jvm.JvmStatic
-import edu.stanford.nlp.pipeline.StanfordCoreNLP
 import edu.stanford.nlp.pipeline.CoreDocument
-import edu.stanford.nlp.ling.CoreLabel
-import edu.stanford.nlp.pipeline.CoreSentence
-import edu.stanford.nlp.semgraph.SemanticGraph
-import edu.stanford.nlp.ie.util.RelationTriple
-import edu.stanford.nlp.pipeline.CoreEntityMention
-import edu.stanford.nlp.pipeline.CoreQuote
+import edu.stanford.nlp.pipeline.StanfordCoreNLP
 import java.util.*
 
 object BasicPipelineExample {

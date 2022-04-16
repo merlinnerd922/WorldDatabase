@@ -8,10 +8,8 @@ import utils.sql.deleteContentsThenSecure
 import webBrowsing.WebTableLocator
 import webBrowsing.getChromeDriver
 import webBrowsing.getTableLocatorByChildCaptionPartial
-import worldDB.RPDRSqlUtils
 import worldDB.RPDRWikipediaPage
 import java.io.File
-import java.lang.Integer.parseInt
 
 /**
  * An entry point for extracting information about RPDR drag queens and adding them to a DB.

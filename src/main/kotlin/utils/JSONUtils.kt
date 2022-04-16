@@ -9,8 +9,6 @@ import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import com.google.gson.Gson
 import kotlinx.serialization.*
-import kotlinx.serialization.json.Json;
-import kotlinx.serialization.json.Json.Default.encodeToString
 import nlp.opennlp.chunk.SpanDeserializer
 import opennlp.tools.util.Span
 

@@ -1,18 +1,8 @@
 package edu.stanford.nlp.pipeline
 
-import edu.stanford.nlp.pipeline.CoreSentence
-import edu.stanford.nlp.util.CoreMap
-import edu.stanford.nlp.ling.CoreAnnotations.TextAnnotation
+import edu.stanford.nlp.ling.CoreAnnotations.*
 import edu.stanford.nlp.ling.CoreLabel
-import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation
-import edu.stanford.nlp.ling.CoreAnnotations.CharacterOffsetBeginAnnotation
-import edu.stanford.nlp.ling.CoreAnnotations.CharacterOffsetEndAnnotation
-import edu.stanford.nlp.ling.CoreAnnotations.EntityTypeAnnotation
-import edu.stanford.nlp.ling.CoreAnnotations.NamedEntityTagProbsAnnotation
-import edu.stanford.nlp.ling.CoreAnnotations.WikipediaEntityAnnotation
-import edu.stanford.nlp.pipeline.CoreEntityMention
-import edu.stanford.nlp.pipeline.CoreDocument
-import edu.stanford.nlp.ling.CoreAnnotations.CanonicalEntityMentionIndexAnnotation
+import edu.stanford.nlp.util.CoreMap
 import edu.stanford.nlp.util.Pair
 import java.util.*
 
