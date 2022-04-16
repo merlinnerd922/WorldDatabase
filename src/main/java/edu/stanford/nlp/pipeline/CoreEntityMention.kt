@@ -20,6 +20,7 @@ import java.util.*
  * Wrapper around a CoreMap representing a entity mention.  Adds some helpful methods.
  *
  */
+@kotlinx.serialization.Serializable
 class CoreEntityMention(private val sentence: CoreSentence, private val entityMentionCoreMap: CoreMap) {
     /** get the underlying CoreMap if need be  */
     fun coreMap(): CoreMap {

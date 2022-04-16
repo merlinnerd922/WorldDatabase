@@ -145,7 +145,7 @@ public class ShiftReduceParserQuery implements ParserQuery  {
       }
     }
 
-    bestParses = beam.stream().filter((state) -> state.isFinished())
+    bestParses = beam.stream().filter(State::isFinished)
       .collect(Collectors.toList());
 
     if (bestParses.size() == 0) {

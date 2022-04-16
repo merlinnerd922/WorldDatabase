@@ -13,6 +13,7 @@ import java.util.function.Function;
 import java.util.regex.Pattern;
 
 import org.ejml.data.DMatrixRMaj;
+import org.ejml.simple.SimpleBase;
 import org.ejml.simple.SimpleMatrix;
 
 import edu.stanford.nlp.neural.Embedding;
@@ -74,9 +75,9 @@ public class DVModel implements Serializable  {
   private static final String START_WORD = "*START*";
   private static final String END_WORD = "*END*";
 
-  private static final Function<SimpleMatrix, DMatrixRMaj> convertSimpleMatrix = matrix -> matrix.getMatrix();
+  private static final Function<SimpleMatrix, DMatrixRMaj> convertSimpleMatrix = SimpleBase::getMatrix;
 
-  private static final Function<DMatrixRMaj, SimpleMatrix> convertDenseMatrix = matrix -> SimpleMatrix.wrap(matrix);
+  private static final Function<DMatrixRMaj, SimpleMatrix> convertDenseMatrix = SimpleMatrix::wrap;
 
   /*
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {

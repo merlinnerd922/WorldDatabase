@@ -526,7 +526,7 @@ public class ScorePhrasesLearnFeatWt<E extends Pattern> extends PhraseScorer<E> 
     Collection<CoreLabel> sampledHeads = CollectionUtils.sampleWithoutReplacement(sent.getTokens(), Math.min(maxNum, (int) (perSelect * sent.getTokens().size())), random);
 
     //TODO: change this for more efficient implementation
-    List<String> textTokens = sent.getTokens().stream().map(x -> x.word()).collect(Collectors.toList());
+    List<String> textTokens = sent.getTokens().stream().map(CoreLabel::word).collect(Collectors.toList());
 
     for(CoreLabel l: sampledHeads) {
       if(!acceptWord.test(l))
@@ -1096,7 +1096,7 @@ public class ScorePhrasesLearnFeatWt<E extends Pattern> extends PhraseScorer<E> 
 
     //Add features on the word, if any!
     if(word.getFeatures()!= null){
-      scoreslist.addAll(Counters.transform(word.getFeatures(), x -> ScorePhraseMeasures.create(x)));
+      scoreslist.addAll(Counters.transform(word.getFeatures(), ScorePhraseMeasures::create));
     } else{
       Redwood.log(ConstantsAndVariables.extremedebug, "features are null for " + word);
     }
@@ -1304,7 +1304,7 @@ public class ScorePhrasesLearnFeatWt<E extends Pattern> extends PhraseScorer<E> 
 
     //Add features on the word, if any!
     if(word.getFeatures()!= null){
-      scoreslist.addAll(Counters.transform(word.getFeatures(), x -> ScorePhraseMeasures.create(x)));
+      scoreslist.addAll(Counters.transform(word.getFeatures(), ScorePhraseMeasures::create));
     } else{
       Redwood.log(ConstantsAndVariables.extremedebug, "features are null for " + word);
     }

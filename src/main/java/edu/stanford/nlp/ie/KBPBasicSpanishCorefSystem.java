@@ -229,7 +229,7 @@ public class KBPBasicSpanishCorefSystem {
     List<List<CoreMap>> coreMapEntityMentionClusters = new ArrayList<List<CoreMap>>();
     for (ArrayList<CoreEntityMention> emCluster : entityMentionClusters) {
       List<CoreMap> coreMapCluster =
-          emCluster.stream().map(coreEM -> coreEM.coreMap()).collect(Collectors.toList());
+          emCluster.stream().map(CoreEntityMention::coreMap).collect(Collectors.toList());
       coreMapEntityMentionClusters.add(coreMapCluster);
     }
     return coreMapEntityMentionClusters;

@@ -199,7 +199,7 @@ public class CoNLLUReader {
    **/
   public List<Annotation> readCoNLLUFile(String filePath) throws IOException {
     List<CoNLLUDocument> docs = readCoNLLUFileCreateCoNLLUDocuments(filePath);
-    return docs.stream().map(doc -> convertCoNLLUDocumentToAnnotation(doc)).collect(Collectors.toList());
+    return docs.stream().map(this::convertCoNLLUDocumentToAnnotation).collect(Collectors.toList());
   }
 
   /**

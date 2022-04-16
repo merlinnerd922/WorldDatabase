@@ -45,7 +45,7 @@ public class ClustererDataLoader {
       this.mentionTypes = mentionTypes;
       this.anaphoricityScores = anaphoricityScores;
 
-      positivePairs = labeledPairs.keySet().stream().filter(p -> labeledPairs.get(p))
+      positivePairs = labeledPairs.keySet().stream().filter(labeledPairs::get)
           .collect(Collectors.toSet());
       Set<Integer> mentionsSet = new HashSet<>();
       for (Pair<Integer, Integer> pair : labeledPairs.keySet()) {

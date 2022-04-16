@@ -127,10 +127,10 @@ public class ConvertModels {
   public static void writeSentiment(SentimentModel model, ObjectOutputStream out)
     throws IOException
   {
-    Function<SimpleMatrix, List<List<Double>>> f = (SimpleMatrix x) -> fromMatrix(x);
+    Function<SimpleMatrix, List<List<Double>>> f = ConvertModels::fromMatrix;
 
     out.writeObject(transform2DMap(model.binaryTransform, f));
-    out.writeObject(transform2DMap(model.binaryTensors, (SimpleTensor x) -> fromTensor(x)));
+    out.writeObject(transform2DMap(model.binaryTensors, ConvertModels::fromTensor));
     out.writeObject(transform2DMap(model.binaryClassification, f));
 
     out.writeObject(transformMap(model.unaryClassification, f));
@@ -142,7 +142,7 @@ public class ConvertModels {
   public static SentimentModel readSentiment(ObjectInputStream in)
     throws IOException, ClassNotFoundException
   {
-    Function<List<List<Double>>, SimpleMatrix> f = (List<List<Double>> x) -> toMatrix(x);
+    Function<List<List<Double>>, SimpleMatrix> f = ConvertModels::toMatrix;
 
     TwoDimensionalMap<String, String, List<List<Double>>> map2dSM = 
       ErasureUtils.uncheckedCast(in.readObject());
@@ -151,7 +151,7 @@ public class ConvertModels {
     TwoDimensionalMap<String, String, List<List<List<Double>>>> map2dST = 
       ErasureUtils.uncheckedCast(in.readObject());
     TwoDimensionalMap<String, String, SimpleTensor> binaryTensor = 
-      transform2DMap(map2dST, (x) -> toTensor(x));
+      transform2DMap(map2dST, ConvertModels::toTensor);
 
     map2dSM = ErasureUtils.uncheckedCast(in.readObject());
     TwoDimensionalMap<String, String, SimpleMatrix> binaryClassification = transform2DMap(map2dSM, f);
@@ -173,7 +173,7 @@ public class ConvertModels {
   {
     out.writeObject(model);
     
-    Function<SimpleMatrix, List<List<Double>>> f = (SimpleMatrix x) -> fromMatrix(x);
+    Function<SimpleMatrix, List<List<Double>>> f = ConvertModels::fromMatrix;
 
     DVModel dvmodel = reranker.getModel();
     out.writeObject(transform2DMap(dvmodel.binaryTransform, f));
@@ -188,7 +188,7 @@ public class ConvertModels {
   {
     LexicalizedParser model = ErasureUtils.uncheckedCast(in.readObject());
 
-    Function<List<List<Double>>, SimpleMatrix> f = (x) -> toMatrix(x);
+    Function<List<List<Double>>, SimpleMatrix> f = ConvertModels::toMatrix;
 
     TwoDimensionalMap<String, String, List<List<Double>>> map2dSM = 
       ErasureUtils.uncheckedCast(in.readObject());
@@ -216,7 +216,7 @@ public class ConvertModels {
   public static void writeEmbedding(Embedding embedding, ObjectOutputStream out)
     throws IOException
   {
-    Function<SimpleMatrix, List<List<Double>>> f = (SimpleMatrix x) -> fromMatrix(x);
+    Function<SimpleMatrix, List<List<Double>>> f = ConvertModels::fromMatrix;
     Map<String, SimpleMatrix> vectors = embedding.getWordVectors();
     Map<String, List<List<Double>>> newVectors = transformMap(vectors, f);
     out.writeObject(newVectors);
@@ -226,7 +226,7 @@ public class ConvertModels {
     throws IOException, ClassNotFoundException
   {
 
-    Function<List<List<Double>>, SimpleMatrix> f = (x) -> toMatrix(x);
+    Function<List<List<Double>>, SimpleMatrix> f = ConvertModels::toMatrix;
     Map<String, List<List<Double>>> map = ErasureUtils.uncheckedCast(in.readObject());
     Map<String, SimpleMatrix> vectors = transformMap(map, f);
     return new Embedding(vectors);
@@ -235,7 +235,7 @@ public class ConvertModels {
   public static void writeCoref(NeuralCorefModel model, ObjectOutputStream out)
     throws IOException
   {
-    Function<SimpleMatrix, List<List<Double>>> f = (SimpleMatrix x) -> fromMatrix(x);
+    Function<SimpleMatrix, List<List<Double>>> f = ConvertModels::fromMatrix;
     out.writeObject(fromMatrix(model.getAntecedentMatrix()));
     out.writeObject(fromMatrix(model.getAnaphorMatrix()));
     out.writeObject(fromMatrix(model.getPairFeaturesMatrix()));
@@ -251,7 +251,7 @@ public class ConvertModels {
   public static NeuralCorefModel readCoref(ObjectInputStream in)
     throws IOException, ClassNotFoundException
   {
-    Function<List<List<Double>>, SimpleMatrix> f = (x) -> toMatrix(x);
+    Function<List<List<Double>>, SimpleMatrix> f = ConvertModels::toMatrix;
     SimpleMatrix antecedentMatrix = toMatrix(ErasureUtils.uncheckedCast(in.readObject()));
     SimpleMatrix anaphorMatrix = toMatrix(ErasureUtils.uncheckedCast(in.readObject()));
     SimpleMatrix pairFeaturesMatrix = toMatrix(ErasureUtils.uncheckedCast(in.readObject()));
@@ -274,7 +274,7 @@ public class ConvertModels {
   public static void writeFastCoref(FastNeuralCorefModel model, ObjectOutputStream out)
     throws IOException
   {
-    Function<SimpleMatrix, List<List<Double>>> f = (SimpleMatrix x) -> fromMatrix(x);
+    Function<SimpleMatrix, List<List<Double>>> f = ConvertModels::fromMatrix;
 
     EmbeddingExtractor embedding = model.getEmbeddingExtractor();
     out.writeObject(embedding.isConll());
@@ -296,7 +296,7 @@ public class ConvertModels {
   public static FastNeuralCorefModel readFastCoref(ObjectInputStream in)
     throws IOException, ClassNotFoundException
   {
-    Function<List<List<Double>>, SimpleMatrix> f = (x) -> toMatrix(x);
+    Function<List<List<Double>>, SimpleMatrix> f = ConvertModels::toMatrix;
 
     boolean conll = ErasureUtils.uncheckedCast(in.readObject());
     boolean hasStatic = ErasureUtils.uncheckedCast(in.readObject());

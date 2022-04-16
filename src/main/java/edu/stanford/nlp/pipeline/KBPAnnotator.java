@@ -279,7 +279,7 @@ public class KBPAnnotator implements Annotator {
     List<Integer> kbpMentionLengths = kbpMentionsForCorefChain.stream().map(
         km -> (Integer.valueOf(km == null ? 0 : km.get(CoreAnnotations.TextAnnotation.class).length()))).collect(
         Collectors.toList());
-    int bestIndex = kbpMentionLengths.indexOf(kbpMentionLengths.stream().reduce(0, (a, b) -> Math.max(a, b)));
+    int bestIndex = kbpMentionLengths.indexOf(kbpMentionLengths.stream().reduce(0, Math::max));
     // return the first occurrence of the kbp mention with max length (possibly null)
     return new Pair<>(kbpMentionsForCorefChain, kbpMentionsForCorefChain.get(bestIndex));
   }

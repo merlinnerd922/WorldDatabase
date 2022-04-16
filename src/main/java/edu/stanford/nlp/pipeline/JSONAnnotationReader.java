@@ -210,7 +210,7 @@ public class JSONAnnotationReader {
         mention.set(CoreAnnotations.NamedEntityTagAnnotation.class, json.getString("ner", null));
         mention.set(CoreAnnotations.NormalizedNamedEntityTagAnnotation.class, json.getString("normalizedNER", null));
         mention.set(CoreAnnotations.WikipediaEntityAnnotation.class, json.getString("entitylink", null));
-        mention.set(TimeAnnotations.TimexAnnotation.class, toNullable(json.getJsonObject("timex"), obj -> toTimex(obj)));
+        mention.set(TimeAnnotations.TimexAnnotation.class, toNullable(json.getJsonObject("timex"), this::toTimex));
         return mention;
     }
 
@@ -232,7 +232,7 @@ public class JSONAnnotationReader {
         token.set(CoreAnnotations.BeforeAnnotation.class, json.getString("before", null));
         token.set(CoreAnnotations.AfterAnnotation.class, json.getString("after", null));
         token.set(CoreAnnotations.WikipediaEntityAnnotation.class, json.getString("entitylink", null));
-        token.set(TimeAnnotations.TimexAnnotation.class, toNullable(json.getJsonObject("timex"), obj -> toTimex(obj)));
+        token.set(TimeAnnotations.TimexAnnotation.class, toNullable(json.getJsonObject("timex"), this::toTimex));
         return token;
     }
 
@@ -253,7 +253,7 @@ public class JSONAnnotationReader {
         sentence.set(CoreAnnotations.SpeakerTypeAnnotation.class, json.getString("speakerType", null));
 
         // (tokens)
-        List<CoreLabel> tokens = toNullableList(json.getJsonArray("tokens"), item -> toToken(item));
+        List<CoreLabel> tokens = toNullableList(json.getJsonArray("tokens"), this::toToken);
         sentence.set(CoreAnnotations.TokensAnnotation.class, tokens);
 
         // (constituency parse)
@@ -263,9 +263,9 @@ public class JSONAnnotationReader {
         }
 
         // (dependency trees)
-        sentence.set(SemanticGraphCoreAnnotations.BasicDependenciesAnnotation.class, toNullable(json.getJsonArray("basicDependencies"), item -> toDependencyParse(item)));
-        sentence.set(SemanticGraphCoreAnnotations.EnhancedDependenciesAnnotation.class, toNullable(json.getJsonArray("enhancedDependencies"), item -> toDependencyParse(item)));
-        sentence.set(SemanticGraphCoreAnnotations.EnhancedPlusPlusDependenciesAnnotation.class, toNullable(json.getJsonArray("enhancedPlusPlusDependencies"), item -> toDependencyParse(item)));
+        sentence.set(SemanticGraphCoreAnnotations.BasicDependenciesAnnotation.class, toNullable(json.getJsonArray("basicDependencies"), this::toDependencyParse));
+        sentence.set(SemanticGraphCoreAnnotations.EnhancedDependenciesAnnotation.class, toNullable(json.getJsonArray("enhancedDependencies"), this::toDependencyParse));
+        sentence.set(SemanticGraphCoreAnnotations.EnhancedPlusPlusDependenciesAnnotation.class, toNullable(json.getJsonArray("enhancedPlusPlusDependencies"), this::toDependencyParse));
 
         // (TODO: sentiment)
 
@@ -275,7 +275,7 @@ public class JSONAnnotationReader {
         sentence.set(CoreAnnotations.KBPTriplesAnnotation.class, toNullableList(json.getJsonArray("kbp"), item -> toRelationTriple(item, tokens)));
 
         // (entity mentions)
-        sentence.set(CoreAnnotations.MentionsAnnotation.class, toNullableList(json.getJsonArray("entitymentions"), item -> toEntityMention(item)));
+        sentence.set(CoreAnnotations.MentionsAnnotation.class, toNullableList(json.getJsonArray("entitymentions"), this::toEntityMention));
 
         return sentence;
     }
@@ -301,7 +301,7 @@ public class JSONAnnotationReader {
         annotation.set(CoreAnnotations.LocationAnnotation.class, json.getString("location", null));
 
         // sentences
-        List<CoreMap> sentences = toNullableList(json.getJsonArray("sentences"), item -> toSentence(item) );
+        List<CoreMap> sentences = toNullableList(json.getJsonArray("sentences"), this::toSentence);
         annotation.set(CoreAnnotations.SentencesAnnotation.class, sentences);
 
         // coref chains
@@ -313,7 +313,7 @@ public class JSONAnnotationReader {
                 }));
 
         // quotations
-        annotation.set(CoreAnnotations.QuotationsAnnotation.class, toNullableList(json.getJsonArray("quotes"), item -> toQuotation(item) ));
+        annotation.set(CoreAnnotations.QuotationsAnnotation.class, toNullableList(json.getJsonArray("quotes"), this::toQuotation));
 
         // sections
         annotation.set(CoreAnnotations.SectionsAnnotation.class, toNullableList(

@@ -87,7 +87,7 @@ public class MWTAnnotator implements Annotator {
       List<String> mwtWords =
           Arrays.asList(
               mapEntry.split("\t")[1].split(",")).stream().map(
-              w -> w.toLowerCase()).collect(Collectors.toList());
+                  String::toLowerCase).collect(Collectors.toList());
       dictionary.put(originalWord, mwtWords);
     }
   }
@@ -141,7 +141,7 @@ public class MWTAnnotator implements Annotator {
           if (preserveCasing) {
             if (StringUtils.isAllUpperCase(token.word())) {
               // DES
-              tokenWords = tokenWords.stream().map(t -> t.toUpperCase()).collect(Collectors.toList());
+              tokenWords = tokenWords.stream().map(String::toUpperCase).collect(Collectors.toList());
             } else if (StringUtils.isTitleCase(token.word())) {
               // Des
               tokenWords.set(0, StringUtils.toTitleCase(tokenWords.get(0)));

@@ -197,7 +197,7 @@ public class ApplyDepPatterns <E extends Pattern>  implements Callable<Pair<TwoD
     List<CoreLabel> tokensC = sent.getTokens();
     //TODO: see if you can get rid of this (only used for matchedGraphs)
 
-    List<String> tokens = tokensC.stream().map(x -> x.word()).collect(Collectors.toList());
+    List<String> tokens = tokensC.stream().map(CoreLabel::word).collect(Collectors.toList());
 
     List<String> outputPhrases = new ArrayList<>();
 

@@ -734,7 +734,7 @@ public class ArgumentParser  {
         ArgumentParser.Option[] anns = field.getAnnotationsByType(ArgumentParser.Option.class);
         return (anns.length > 0) ? anns[0].name() : null;
       }
-      ).filter(argOpt -> (argOpt != null)).collect(Collectors.toList());
+      ).filter(Objects::nonNull).collect(Collectors.toList());
     } catch (Exception e) {
       throw new RuntimeException("Exception thrown while scraping fields from "+c.getName());
     }

@@ -428,11 +428,11 @@ public class UniversalGrammaticalStructure extends GrammaticalStructure {
 
         List<IndexedWord> caseMarkers = new ArrayList<>();
         caseMarkers.add(caseMarker);
-        sg.getChildrenWithReln(caseMarker, FIXED).stream().forEach(iw -> caseMarkers.add(iw));
+        sg.getChildrenWithReln(caseMarker, FIXED).stream().forEach(caseMarkers::add);
 
         Collections.sort(caseMarkers);
 
-        String relnName = StringUtils.join(caseMarkers.stream().map(iw->iw.lemma()), "_");
+        String relnName = StringUtils.join(caseMarkers.stream().map(IndexedWord::lemma), "_");
 
         if (relnName.matches("[^a-zA-Z_]")) {
             return;

@@ -457,7 +457,7 @@ public class Iterables {
       final Iterable<V> iter1, final Iterable<V> iter2,
       final Comparator<V> comparator) {
 
-    final IncrementComparator<V,V> inc = (a, b) -> comparator.compare(a,b);
+    final IncrementComparator<V,V> inc = comparator::compare;
 
     return merge(iter1, iter2, inc);
   }
@@ -503,7 +503,7 @@ public class Iterables {
       final Iterable<V> iter1, final Iterable<V> iter2, Iterable<V> iter3,
       final Comparator<V> comparator) {
 
-    final IncrementComparator<V,V> inc = (a, b) -> comparator.compare(a,b);
+    final IncrementComparator<V,V> inc = comparator::compare;
 
     return merge(iter1, iter2, iter3, inc, inc);
   }

@@ -40,7 +40,7 @@ public class DatasetBuilder implements CorefDocumentProcessor {
     Map<Pair<Integer, Integer>, Boolean> labeledPairs =
         CorefUtils.getLabeledMentionPairs(document);
 
-    long numP = labeledPairs.keySet().stream().filter(m -> labeledPairs.get(m)).count();
+    long numP = labeledPairs.keySet().stream().filter(labeledPairs::get).count();
     List<Pair<Integer, Integer>> negative = labeledPairs.keySet().stream()
         .filter(m -> !labeledPairs.get(m))
         .collect(Collectors.toList());

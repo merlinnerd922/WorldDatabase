@@ -134,7 +134,7 @@ public class CoreNLPDocumentReader implements DocReader {
             final Set<Triple<Integer,Integer,Integer>> f = filterMentionSpans;
             Map<Integer,CorefChain> filtered = annotation.get(CorefCoreAnnotations.CorefChainAnnotation.class)
                     .values().stream().filter(x -> CorefUtils.filterCorefChainWithMentionSpans(x, f))
-                    .collect(Collectors.toMap(x -> x.getChainID(), x -> x));
+                    .collect(Collectors.toMap(CorefChain::getChainID, x -> x));
             annotation.set(CorefCoreAnnotations.CorefChainAnnotation.class, filtered);
         }
 

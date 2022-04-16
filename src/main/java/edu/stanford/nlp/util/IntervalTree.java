@@ -797,14 +797,14 @@ public class IntervalTree<E extends Comparable<E>, T extends HasInterval<E>> ext
   public static <T extends HasInterval<E>, E extends Comparable<E>> List<T> getNonOverlapping(
           List<? extends T> items, Comparator<? super T> compareFunc)
   {
-    Function<T,Interval<E>> toIntervalFunc = in -> in.getInterval();
+    Function<T,Interval<E>> toIntervalFunc = HasInterval::getInterval;
     return getNonOverlapping(items, toIntervalFunc, compareFunc);
   }
 
   public static <T extends HasInterval<E>, E extends Comparable<E>> List<T> getNonOverlapping(
           List<? extends T> items)
   {
-    Function<T,Interval<E>> toIntervalFunc = in -> in.getInterval();
+    Function<T,Interval<E>> toIntervalFunc = HasInterval::getInterval;
     return getNonOverlapping(items, toIntervalFunc);
   }
 
@@ -883,7 +883,7 @@ public class IntervalTree<E extends Comparable<E>, T extends HasInterval<E>> ext
   public static <T extends HasInterval<E>, E extends Comparable<E>> List<T> getNonOverlappingMaxScore(
       List<? extends T> items, ToDoubleFunction<? super T> scoreFunc)
   {
-    Function<T,Interval<E>> toIntervalFunc = in -> in.getInterval();
+    Function<T,Interval<E>> toIntervalFunc = HasInterval::getInterval;
     return getNonOverlappingMaxScore(items, toIntervalFunc, scoreFunc);
   }
 

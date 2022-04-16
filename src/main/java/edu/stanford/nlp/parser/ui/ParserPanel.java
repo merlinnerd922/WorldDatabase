@@ -829,20 +829,20 @@ public class ParserPanel extends JPanel  {
 
     loadFileButton.setText("Load File");
     loadFileButton.setToolTipText("Load a data file.");
-    loadFileButton.addActionListener(evt -> loadFileButtonActionPerformed(evt));
+    loadFileButton.addActionListener(this::loadFileButtonActionPerformed);
 
     loadButtonPanel.add(loadFileButton);
 
     loadParserButton.setText("Load Parser");
     loadParserButton.setToolTipText("Load a serialized parser.");
-    loadParserButton.addActionListener(evt -> loadParserButtonActionPerformed(evt));
+    loadParserButton.addActionListener(this::loadParserButtonActionPerformed);
 
     loadButtonPanel.add(loadParserButton);
 
     saveOutputButton.setText("Save Output");
     saveOutputButton.setToolTipText("Save the processed output.");
     saveOutputButton.setEnabled(false);
-    saveOutputButton.addActionListener(evt -> saveOutputButtonActionPerformed(evt));
+    saveOutputButton.addActionListener(this::saveOutputButtonActionPerformed);
 
     loadButtonPanel.add(saveOutputButton);
 
@@ -852,34 +852,34 @@ public class ParserPanel extends JPanel  {
 
     backButton.setToolTipText("Scroll backward one sentence.");
     backButton.setEnabled(false);
-    backButton.addActionListener(evt -> backButtonActionPerformed(evt));
+    backButton.addActionListener(this::backButtonActionPerformed);
 
     buttonPanel.add(backButton);
 
     forwardButton.setToolTipText("Scroll forward one sentence.");
     forwardButton.setEnabled(false);
-    forwardButton.addActionListener(evt -> forwardButtonActionPerformed(evt));
+    forwardButton.addActionListener(this::forwardButtonActionPerformed);
 
     buttonPanel.add(forwardButton);
 
     parseButton.setText("Parse");
     parseButton.setToolTipText("Parse selected sentence.");
     parseButton.setEnabled(false);
-    parseButton.addActionListener(evt -> parseButtonActionPerformed(evt));
+    parseButton.addActionListener(this::parseButtonActionPerformed);
 
     buttonPanel.add(parseButton);
 
     parseNextButton.setText("Parse >");
     parseNextButton.setToolTipText("Parse selected sentence and then scrolls forward one sentence.");
     parseNextButton.setEnabled(false);
-    parseNextButton.addActionListener(evt -> parseNextButtonActionPerformed(evt));
+    parseNextButton.addActionListener(this::parseNextButtonActionPerformed);
 
     buttonPanel.add(parseNextButton);
 
     clearButton.setText("Clear");
     clearButton.setToolTipText("Clears parse tree.");
     clearButton.setEnabled(false);
-    clearButton.addActionListener(evt -> clearButtonActionPerformed(evt));
+    clearButton.addActionListener(this::clearButtonActionPerformed);
 
     buttonPanel.add(clearButton);
 

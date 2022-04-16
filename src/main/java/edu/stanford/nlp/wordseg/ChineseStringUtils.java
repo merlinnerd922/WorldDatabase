@@ -230,7 +230,7 @@ public class ChineseStringUtils {
         String[] correctPunc = {"\u2014\u2014\u2014", "\u2026\u2026"};
 
         for (int i = 0; i < puncPatterns.length; i++) {
-          Pattern p = patternMap.computeIfAbsent(WHITE + puncPatterns[i] + WHITE, s -> Pattern.compile(s));
+          Pattern p = patternMap.computeIfAbsent(WHITE + puncPatterns[i] + WHITE, Pattern::compile);
           Matcher m = p.matcher(ans);
           ans = m.replaceAll(" " + correctPunc[i] + " ");
         }
@@ -317,7 +317,7 @@ public class ChineseStringUtils {
       String[] correctPunc = {"\u2014\u2014\u2014", "\u2026\u2026"};
 
       for (int i = 0; i < puncPatterns.length; i++) {
-        Pattern p = patternMap.computeIfAbsent(WHITE + puncPatterns[i] + WHITE, (s) -> Pattern.compile(s));
+        Pattern p = patternMap.computeIfAbsent(WHITE + puncPatterns[i] + WHITE, Pattern::compile);
         Matcher m = p.matcher(ans);
         ans = m.replaceAll(" " + correctPunc[i] + " ");
       }
@@ -362,7 +362,7 @@ public class ChineseStringUtils {
       Pattern[] puncsPat = new Pattern[puncs.length];
       for (int i = 0; i < puncs.length; i++) {
         Character punc = puncs[i];
-        puncsPat[i] = patternMap.computeIfAbsent(getEscapedPuncPattern(punc), (s) -> Pattern.compile(s));
+        puncsPat[i] = patternMap.computeIfAbsent(getEscapedPuncPattern(punc), Pattern::compile);
       }
       return puncsPat;
     }
@@ -417,7 +417,7 @@ public class ChineseStringUtils {
         for (int i = 0; i < colons.length; i++) {
           Character colon = colons[i];
           String pattern = "(" + numPat + ")" + WHITEPLUS + colon + WHITEPLUS + "(" + numPat + ")";
-          colonsWhitePat[i] = patternMap.computeIfAbsent(pattern, (s) -> Pattern.compile(s));
+          colonsWhitePat[i] = patternMap.computeIfAbsent(pattern, Pattern::compile);
         }
       }
     }
@@ -427,7 +427,7 @@ public class ChineseStringUtils {
         colonsPat = new Pattern[colons.length];
         for (int i = 0; i < colons.length; i++) {
           Character colon = colons[i];
-          colonsPat[i] = patternMap.computeIfAbsent(WHITE + colon + WHITE, (s) -> Pattern.compile(s));
+          colonsPat[i] = patternMap.computeIfAbsent(WHITE + colon + WHITE, Pattern::compile);
         }
       }
     }
@@ -442,7 +442,7 @@ public class ChineseStringUtils {
 
       // second , combine "6%" patterns
 
-      percentsWhitePat = patternMap.computeIfAbsent("(" + numPat + ")" + percentStr, (s) -> Pattern.compile(s));
+      percentsWhitePat = patternMap.computeIfAbsent("(" + numPat + ")" + percentStr, Pattern::compile);
       Matcher m2 = percentsWhitePat.matcher(ans);
       ans = m2.replaceAll("$1$2");
       ans = ans.trim();
@@ -453,7 +453,7 @@ public class ChineseStringUtils {
     /* all "\d\.\d" patterns */
       String dots = "[\ufe52\u2027\uff0e.]";
       Pattern p = patternMap.computeIfAbsent("(" + numPat + ")" + WHITEPLUS + "(" + dots + ")" + WHITEPLUS +
-              "(" + numPat + ")", s -> Pattern.compile(s));
+              "(" + numPat + ")", Pattern::compile);
       Matcher m = p.matcher(ans);
       while (m.find()) {
         ans = m.replaceAll("$1$2$3");
@@ -461,7 +461,7 @@ public class ChineseStringUtils {
       }
 
       p = patternMap.computeIfAbsent("(" + numPat + ")(" + dots + ")" + WHITEPLUS + "(" + numPat
-              + ")", s -> Pattern.compile(s));
+              + ")", Pattern::compile);
       m = p.matcher(ans);
       while (m.find()) {
         ans = m.replaceAll("$1$2$3");
@@ -469,7 +469,7 @@ public class ChineseStringUtils {
       }
 
       p = patternMap.computeIfAbsent("(" + numPat + ")" + WHITEPLUS + "(" + dots + ")(" + numPat
-              + ")", s -> Pattern.compile(s));
+              + ")", Pattern::compile);
       m = p.matcher(ans);
       while (m.find()) {
         ans = m.replaceAll("$1$2$3");
@@ -494,10 +494,10 @@ public class ChineseStringUtils {
      * surrounding chars.
      */
     protected static String gluePunc(Character punc, String ans) {
-      Pattern p = patternMap.computeIfAbsent(WHITE + punc, s -> Pattern.compile(s));
+      Pattern p = patternMap.computeIfAbsent(WHITE + punc, Pattern::compile);
       Matcher m = p.matcher(ans);
       ans = m.replaceAll(String.valueOf(punc));
-      p = patternMap.computeIfAbsent(punc + WHITE, s -> Pattern.compile(s));
+      p = patternMap.computeIfAbsent(punc + WHITE, Pattern::compile);
       m = p.matcher(ans);
       ans = m.replaceAll(String.valueOf(punc));
       ans = ans.trim();
@@ -515,7 +515,7 @@ public class ChineseStringUtils {
       ans = ans.replaceAll("  ", " ");
       if (DEBUG) EncodingPrintWriter.err.println("ANS (before comma norm): " + ans, "UTF-8");
       Pattern p = patternMap.computeIfAbsent("(" + numPat + ")" + WHITE + "(" + commas + ")" +
-              WHITE + "(" + numPat + "{3}" + nonNumPat + ")", s -> Pattern.compile(s));
+              WHITE + "(" + numPat + "{3}" + nonNumPat + ")", Pattern::compile);
       Matcher m = p.matcher(ans);
       if (m.find()) {
         ans = m.replaceAll("$1$2$3");

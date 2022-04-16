@@ -45,7 +45,7 @@ public class ParsedGigawordReader implements Iterable<Annotation>  {
   public Iterator<Annotation> iterator() {
     return new Iterator<Annotation>() {
       private final Iterator<BufferedReader> readers = Iterables.transform(files,
-          file -> IOUtils.readerFromFile(file)).iterator();
+              IOUtils::readerFromFile).iterator();
 
       private BufferedReader reader = findReader();
       private Annotation annotation = findAnnotation();

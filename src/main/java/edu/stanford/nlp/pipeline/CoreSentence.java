@@ -20,7 +20,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.function.*;
 import java.util.stream.Collectors;
-@Serializable
+@kotlinx.serialization.Serializable
 public class CoreSentence {
 
   private final CoreDocument document;
@@ -32,9 +32,9 @@ public class CoreSentence {
   private static final TregexPattern verbPhrasePattern = TregexPattern.compile("VP");
 
   /** cache to hold general patterns **/
-  private static final ConcurrentHashMap<String, TregexPattern> patternCache = new ConcurrentHashMap<String, TregexPattern>();
-  private static final Function<String,TregexPattern> compilePattern = s -> TregexPattern.compile(s);
-  private static final Function<Tree, String> treeToSpanString = t -> t.spanString();
+  private static final ConcurrentHashMap<String, TregexPattern> patternCache = new ConcurrentHashMap<>();
+  private static final Function<String,TregexPattern> compilePattern = TregexPattern::compile;
+  private static final Function<Tree, String> treeToSpanString = Tree::spanString;
 
   public CoreSentence(CoreDocument myDocument, CoreMap coreMapSentence) {
     this.document = myDocument;
@@ -78,16 +78,16 @@ public class CoreSentence {
 
   /** list of tokens as String **/
   public List<String> tokensAsStrings() {
-    return tokens().stream().map(token -> token.word()).collect(Collectors.toList()); }
+    return tokens().stream().map(CoreLabel::word).collect(Collectors.toList()); }
 
   /** list of pos tags **/
-  public List<String> posTags() { return tokens().stream().map(token -> token.tag()).collect(Collectors.toList()); }
+  public List<String> posTags() { return tokens().stream().map(CoreLabel::tag).collect(Collectors.toList()); }
 
   /** list of lemma tags **/
-  public List<String> lemmas() { return tokens().stream().map(token -> token.lemma()).collect(Collectors.toList()); }
+  public List<String> lemmas() { return tokens().stream().map(CoreLabel::lemma).collect(Collectors.toList()); }
 
   /** list of ner tags **/
-  public List<String> nerTags() { return tokens().stream().map(token -> token.ner()).collect(Collectors.toList()); }
+  public List<String> nerTags() { return tokens().stream().map(CoreLabel::ner).collect(Collectors.toList()); }
 
   /** constituency parse **/
   public Tree constituencyParse() {

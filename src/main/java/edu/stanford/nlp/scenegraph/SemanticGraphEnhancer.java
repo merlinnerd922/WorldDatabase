@@ -571,7 +571,7 @@ public class SemanticGraphEnhancer {
     if (args.length > 2) {
       BufferedReader reader = IOUtils.readerFromString(args[2]);
       vectorIndex.addToIndex("--UNK--");
-      reader.lines().forEach(x -> vectorIndex.addToIndex(x));
+      reader.lines().forEach(vectorIndex::addToIndex);
       reader.close();
       System.err.println(vectorIndex.size());
       vectorIndex.lock();

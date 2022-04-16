@@ -86,7 +86,7 @@ public class OutputSubtrees {
         }
         String value = subtree.label().value();
         List<Tree> leaves = Trees.leaves(subtree);
-        List<Label> labels = leaves.stream().map(x -> x.label()).collect(Collectors.toList());
+        List<Label> labels = leaves.stream().map(Tree::label).collect(Collectors.toList());
         String text = SentenceUtils.listToString(labels);
         if (ignored.contains(value)) {
           continue;

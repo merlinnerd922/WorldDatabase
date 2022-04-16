@@ -83,7 +83,7 @@ public class StatTokSentAnnotator implements Annotator{
 
     // Preprocessing.
     List<String> lines = new ArrayList<String>(Arrays.asList(text.split("\n")));
-    lines.replaceAll(line -> line.trim());
+    lines.replaceAll(String::trim);
     lines.removeAll(Arrays.asList("", null));
     String textPreproc = String.join("\n", lines);
 

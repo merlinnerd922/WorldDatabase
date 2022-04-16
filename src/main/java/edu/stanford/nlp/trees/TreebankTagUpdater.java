@@ -24,7 +24,7 @@ public class TreebankTagUpdater {
     assert(tagsAndWords.size() == tree.getLeaves().size());
     List<CoreLabel> sentence =
         tagsAndWords.stream().map(w -> w.getLeaves().get(0).value()).map(
-            w -> CoreLabel.wordFromString(w)).collect(Collectors.toList());
+                CoreLabel::wordFromString).collect(Collectors.toList());
     maxentTagger.tagCoreLabels(sentence);
     assert(tree.getLeaves().size() == sentence.size());
     for (int i = 0 ; i < sentence.size() ; i++) {
