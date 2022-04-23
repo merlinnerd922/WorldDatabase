@@ -11,14 +11,14 @@ import java.util.*
  *
  */
 
-class CoreEntityMention(private val sentence: CoreSentence, private val entityMentionCoreMap: CoreMap) {
+class CoreEntityMention(private val sentence: CoreSentence?, private val entityMentionCoreMap: CoreMap) {
     /** get the underlying CoreMap if need be  */
     fun coreMap(): CoreMap {
         return entityMentionCoreMap
     }
 
     /** get this entity mention's sentence  */
-    fun sentence(): CoreSentence {
+    fun sentence(): CoreSentence? {
         return sentence
     }
 
@@ -56,7 +56,7 @@ class CoreEntityMention(private val sentence: CoreSentence, private val entityMe
 
     /** return the canonical entity mention for this entity mention  */
     fun canonicalEntityMention(): Optional<CoreEntityMention> {
-        val myDocument = sentence.document()
+        val myDocument = sentence!!.document()
         val canonicalEntityMentionIndex = Optional.ofNullable(
             coreMap()[CanonicalEntityMentionIndexAnnotation::class.java]
         )

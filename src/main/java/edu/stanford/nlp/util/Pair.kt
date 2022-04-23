@@ -27,6 +27,7 @@ import java.util.Comparator
  * @author Christopher Manning (added stuff from Kristina's, rounded out)
  * @version 2002/08/25
  */
+@kotlinx.serialization.Serializable
 public open class Pair<T1, T2> : Comparable<Pair<T1, T2>>, Serializable, PrettyLoggable {
     /**
      * Direct access is deprecated.  Use first().
