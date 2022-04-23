@@ -46,14 +46,14 @@ class CoreDocument {
     /** create list of CoreSentence's based on the Annotation's sentences  */
     private fun wrapSentences() {
         sentences = annotationDocument[SentencesAnnotation::class.java].stream()
-            .map { coreMapSentence: CoreMap? -> CoreSentence(this, coreMapSentence) }
+            .map { coreMapSentence: CoreMap? -> CoreSentence(this, coreMapSentence!!) }
             .collect(Collectors.toList())
         sentences!!.forEach(Consumer { obj: CoreSentence -> obj.wrapEntityMentions() })
     }
 
     /** build a list of all entity mentions in the document from the sentences  */
     private fun buildDocumentEntityMentionsList() {
-        entityMentions = sentences!!.stream().flatMap { sentence: CoreSentence -> sentence.entityMentions().stream() }
+        entityMentions = sentences!!.stream().flatMap { sentence: CoreSentence -> sentence.entityMentions()!!.stream() }
             .collect(Collectors.toList())
     }
 

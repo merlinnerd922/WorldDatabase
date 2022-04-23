@@ -86,11 +86,8 @@ public class KBPBasicSpanishCorefSystem {
         potentialCanonicalMention.get(CoreAnnotations.CharacterOffsetBeginAnnotation.class);
     if (potentialCanonicalMentionText.length() > entityMentionText.length())
       return true;
-    else if (potentialCanonicalMentionText.length() == entityMentionText.length() &&
-        potentialCanonicalMentionStart < entityMentionStart)
-      return true;
-    else
-      return false;
+    else return potentialCanonicalMentionText.length() == entityMentionText.length() &&
+            potentialCanonicalMentionStart < entityMentionStart;
   }
 
   public boolean firstNameMatch(String firstNameOne, String firstNameTwo) {

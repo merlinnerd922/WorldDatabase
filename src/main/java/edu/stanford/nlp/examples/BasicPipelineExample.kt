@@ -80,7 +80,7 @@ object BasicPipelineExample {
         println()
 
         // coreference between entity mentions
-        val originalEntityMention = document.sentences()!![3].entityMentions()[1]
+        val originalEntityMention = document.sentences()!![3].entityMentions()!![1]
         println("Example: original entity mention")
         println(originalEntityMention)
         println("Example: canonical entity mention")

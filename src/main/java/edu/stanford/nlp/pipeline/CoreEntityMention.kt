@@ -11,6 +11,7 @@ import java.util.*
  *
  */
 
+
 class CoreEntityMention(private val sentence: CoreSentence?, private val entityMentionCoreMap: CoreMap) {
     /** get the underlying CoreMap if need be  */
     fun coreMap(): CoreMap {
