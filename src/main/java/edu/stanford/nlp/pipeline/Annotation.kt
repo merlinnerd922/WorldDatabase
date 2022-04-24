@@ -30,6 +30,8 @@ import edu.stanford.nlp.ling.CoreLabel
 import edu.stanford.nlp.ling.SentenceUtils
 import edu.stanford.nlp.util.ArrayCoreMap
 import edu.stanford.nlp.util.CoreMap
+import edu.stanford.nlp.util.TSMKey
+import edu.stanford.nlp.util.TSMKeyClass
 
 /**
  * An annotation representing a span of text in a document.
@@ -60,7 +62,7 @@ open class Annotation : ArrayCoreMap {
      * created Annotation.
      */
     constructor(text: String?) {
-        this[TextAnnotation::class.java] = text
+        this[TextAnnotation::class.java] = text!!
     }
 
     /** The basic toString() method of an Annotation simply
@@ -82,7 +84,7 @@ open class Annotation : ArrayCoreMap {
         for (sentence in sentences) {
             val sentenceTokens = sentence[TokensAnnotation::class.java]
             tokens.addAll(sentenceTokens)
-            if (sentence.containsKey(TextAnnotation::class.java)) {
+            if (sentence.containsKey(TextAnnotation::class.java as Class<out TSMKey<String?>?>?)) {
                 text.append(sentence[TextAnnotation::class.java])
             } else {
                 // If there is no text in the sentence, fake it as best as we can

@@ -234,6 +234,7 @@ public class ArrayCoreMap implements CoreMap /*, Serializable */ {
 
   /**
    * {@inheritDoc}
+   * @param key
    */
   @Override
   public <VALUE> boolean containsKey(Class<? extends TSMKey<VALUE>> key) {

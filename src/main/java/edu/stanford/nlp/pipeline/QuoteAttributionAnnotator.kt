@@ -56,6 +56,7 @@ import edu.stanford.nlp.ling.CoreAnnotations.TokenEndAnnotation
 import edu.stanford.nlp.ling.CoreAnnotations.IndexAnnotation
 import edu.stanford.nlp.ling.CoreAnnotations.OriginalTextAnnotation
 import edu.stanford.nlp.quoteattribution.Person
+import edu.stanford.nlp.util.TSMKey
 import edu.stanford.nlp.util.logging.Redwood.RedwoodChannels
 import edu.stanford.nlp.util.logging.Redwood
 import java.util.*
@@ -232,7 +233,7 @@ class QuoteAttributionAnnotator(props: Properties) : Annotator {
     override fun annotate(annotation: Annotation) {
         // boolean perDocumentCharacterMap = false;
         if (buildCharacterMapPerAnnotation) {
-            if (annotation.containsKey(MentionsAnnotation::class.java)) {
+            if (annotation.containsKey<List<CoreMap>>(MentionsAnnotation::class.java as Class<out TSMKey<List<CoreMap>?>>)) {
                 // Put all mentions from this key that are NER type PERSON into the characterMap
                 entityMentionsToCharacterMap(annotation)
             }
