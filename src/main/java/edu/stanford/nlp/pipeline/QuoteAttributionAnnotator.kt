@@ -217,7 +217,7 @@ class QuoteAttributionAnnotator(props: Properties) : Annotator {
      */
     fun entityMentionsToCharacterMap(annotation: Annotation) {
         characterMap = HashMap()
-        for (entityMention in annotation.get(MentionsAnnotation::class.java)) {
+        for (entityMention in annotation.get(MentionsAnnotation::class.java)!!) {
             if (entityMention.get(NamedEntityTagAnnotation::class.java) == "PERSON") {
                 // always store the replaceAll version of the string so that
                 // whitespace does not have to match exactly to find the
@@ -275,39 +275,39 @@ class QuoteAttributionAnnotator(props: Properties) : Annotator {
             if (firstSpeakerTokenIndex != null) {
                 val firstSpeakerToken = annotation.get(
                     TokensAnnotation::class.java
-                )[firstSpeakerTokenIndex]
+                )!![firstSpeakerTokenIndex]
                 val entityMentionIndex = firstSpeakerToken.get(
                     EntityMentionIndexAnnotation::class.java
                 )
                 if (entityMentionIndex != null) {
                     // set speaker string
-                    val entityMention = annotation.get(MentionsAnnotation::class.java)[entityMentionIndex]
+                    val entityMention = annotation.get(MentionsAnnotation::class.java)!![entityMentionIndex]
                     val canonicalEntityMentionIndex = entityMention.get(
                         CanonicalEntityMentionIndexAnnotation::class.java
                     )
                     if (canonicalEntityMentionIndex != null) {
                         val canonicalEntityMention = annotation.get(
                             MentionsAnnotation::class.java
-                        )[canonicalEntityMentionIndex]
+                        )!![canonicalEntityMentionIndex]
                         // add canonical entity mention info to quote
-                        quote.set<String>(
+                        quote.set(
                             CanonicalMentionAnnotation::class.java,
-                            canonicalEntityMention.get(TextAnnotation::class.java)
+                            canonicalEntityMention.get(TextAnnotation::class.java) as String
                         )
                         // set first and last tokens of canonical entity mention
                         val canonicalEntityMentionTokens = canonicalEntityMention.get(
                             TokensAnnotation::class.java
                         )
-                        val canonicalEntityMentionFirstToken = canonicalEntityMentionTokens[0]
+                        val canonicalEntityMentionFirstToken = canonicalEntityMentionTokens!![0]
                         val canonicalEntityMentionLastToken =
-                            canonicalEntityMentionTokens[canonicalEntityMentionTokens.size - 1]
+                            canonicalEntityMentionTokens!![canonicalEntityMentionTokens.size - 1]
                         quote.set<Int>(
                             CanonicalMentionBeginAnnotation::class.java,
-                            canonicalEntityMentionFirstToken.get(TokenBeginAnnotation::class.java)
+                            canonicalEntityMentionFirstToken.get(TokenBeginAnnotation::class.java) as Int
                         )
                         quote.set<Int>(
                             CanonicalMentionEndAnnotation::class.java,
-                            canonicalEntityMentionLastToken.get(TokenBeginAnnotation::class.java)
+                            canonicalEntityMentionLastToken.get(TokenBeginAnnotation::class.java) as Int
                         )
                     }
                 }

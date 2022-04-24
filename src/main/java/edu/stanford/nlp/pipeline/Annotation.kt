@@ -48,7 +48,7 @@ open class Annotation : ArrayCoreMap {
     /** Copy constructor.
      * @param map The new Annotation copies this one.
      */
-    constructor(map: Annotation?) : super(map) {}
+    constructor(map: Annotation?) : super(map!!) {}
 
     /** Copies the map, but not a deep copy.
      * @return The copy
@@ -73,7 +73,7 @@ open class Annotation : ArrayCoreMap {
      * @return The text underlying this Annotation
      */
     override fun toString(): String {
-        return this[TextAnnotation::class.java]
+        return this[TextAnnotation::class.java]!!
     }
 
     /** Make a new Annotation from a List of tokenized sentences.  */
@@ -83,7 +83,7 @@ open class Annotation : ArrayCoreMap {
         val text = StringBuilder()
         for (sentence in sentences) {
             val sentenceTokens = sentence[TokensAnnotation::class.java]
-            tokens.addAll(sentenceTokens)
+            tokens.addAll(sentenceTokens!!)
             if (sentence.containsKey(TextAnnotation::class.java as Class<out TSMKey<String?>?>?)) {
                 text.append(sentence[TextAnnotation::class.java])
             } else {
