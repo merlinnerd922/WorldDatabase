@@ -359,8 +359,8 @@ public class QuoteAttributionUtils {
   }
 
   //map each alias(i.e. the name of a character) to a character, potentially multiple if ambiguous.
-  public static Map<String, List<Person>> readPersonMap(List<Person> personList) {
-    Map<String, List<Person>>  personMap = new HashMap<>();
+  public static HashMap<String, List<Person>> readPersonMap(List<Person> personList) {
+    HashMap<String, List<Person>>  personMap = new HashMap<>();
     for (Person person : personList) {
       for (String alias : person.aliases) {
         personMap.computeIfAbsent(alias, k -> new ArrayList<>());
@@ -370,7 +370,7 @@ public class QuoteAttributionUtils {
     return personMap;
   }
 
-  public static Map<String, List<Person>> readPersonMap(String fileName) {
+  public static HashMap<String, List<Person>> readPersonMap(String fileName) {
     return readPersonMap(readCharacterList(fileName));
   }
 
