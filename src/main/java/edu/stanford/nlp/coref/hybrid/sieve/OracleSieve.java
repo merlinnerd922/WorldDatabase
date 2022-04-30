@@ -24,7 +24,7 @@ public class OracleSieve extends Sieve  {
   @Override
   public void findCoreferentAntecedent(Mention m, int mIdx, Document document, Dictionaries dict, Properties props, StringBuilder sbLog) throws Exception {
     for(int distance=0 ; distance <= m.sentNum ; distance++) {
-      List<Mention> candidates = document.predictedMentions.get(m.sentNum-distance);
+      List<Mention> candidates = document.orderedMentions.get(m.sentNum-distance);
 
       for(Mention candidate : candidates) {
         if(!matchedMentionType(candidate, aTypeStr) || !matchedMentionType(m, mTypeStr)) continue;

@@ -37,7 +37,7 @@ class CoreSentence(private val document: CoreDocument, private val sentenceCoreM
     /** create list of CoreEntityMention's based on the CoreMap's entity mentions  */
     fun wrapEntityMentions() {
         if (sentenceCoreMap[MentionsAnnotation::class.java] != null) {
-            entityMentions = sentenceCoreMap[MentionsAnnotation::class.java].stream()
+            entityMentions = sentenceCoreMap[MentionsAnnotation::class.java]!!.stream()
                 .map { coreMapEntityMention: CoreMap? -> CoreEntityMention(this, coreMapEntityMention!!) }
                 .collect(Collectors.toList())
         }
@@ -55,19 +55,19 @@ class CoreSentence(private val document: CoreDocument, private val sentenceCoreM
 
     /** full text of the sentence  */
     fun text(): String {
-        return sentenceCoreMap[TextAnnotation::class.java]
+        return sentenceCoreMap[TextAnnotation::class.java]!!
     }
 
     /** char offsets of mention  */
     fun charOffsets(): Pair<Int, Int> {
         val beginCharOffset = sentenceCoreMap[CharacterOffsetBeginAnnotation::class.java]
         val endCharOffset = sentenceCoreMap[CharacterOffsetEndAnnotation::class.java]
-        return Pair(beginCharOffset, endCharOffset)
+        return Pair(beginCharOffset!!, endCharOffset!!)
     }
 
     /** list of tokens  */
     fun tokens(): List<CoreLabel> {
-        return sentenceCoreMap[TokensAnnotation::class.java]
+        return sentenceCoreMap[TokensAnnotation::class.java]!!
     }
 
     /** list of tokens as String  */
@@ -144,17 +144,17 @@ class CoreSentence(private val document: CoreDocument, private val sentenceCoreM
 
     /** dependency parse  */
     fun dependencyParse(): SemanticGraph {
-        return sentenceCoreMap[EnhancedPlusPlusDependenciesAnnotation::class.java]
+        return sentenceCoreMap[EnhancedPlusPlusDependenciesAnnotation::class.java]!!
     }
 
     /** sentiment  */
     fun sentiment(): String {
-        return sentenceCoreMap[SentimentCoreAnnotations.SentimentClass::class.java]
+        return sentenceCoreMap[SentimentCoreAnnotations.SentimentClass::class.java]!!
     }
 
     /** sentiment tree  */
     fun sentimentTree(): Tree {
-        return sentenceCoreMap[SentimentAnnotatedTree::class.java]
+        return sentenceCoreMap[SentimentAnnotatedTree::class.java]!!
     }
 
     /** list of entity mentions  */
@@ -164,7 +164,7 @@ class CoreSentence(private val document: CoreDocument, private val sentenceCoreM
 
     /** list of KBP relations found  */
     fun relations(): List<RelationTriple> {
-        return sentenceCoreMap[KBPTriplesAnnotation::class.java]
+        return sentenceCoreMap[KBPTriplesAnnotation::class.java]!!
     }
 
     override fun toString(): String {

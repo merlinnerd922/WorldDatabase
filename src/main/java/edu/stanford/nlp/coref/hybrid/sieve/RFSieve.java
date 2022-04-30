@@ -65,7 +65,7 @@ public class RFSieve extends Sieve  {
 
     int mentionDist = 0;
     for(int sentDist=0 ; sentDist <= Math.min(this.maxSentDist, sentIdx) ; sentDist++) {
-      List<Mention> candidates = getOrderedAntecedents(m, sentIdx-sentDist, mIdx, document.predictedMentions, dict);
+      List<Mention> candidates = getOrderedAntecedents(m, sentIdx-sentDist, mIdx, document.orderedMentions, dict);
 
 
       for(Mention candidate : candidates) {
@@ -288,7 +288,7 @@ public class RFSieve extends Sieve  {
 
         features.incrementCount("A-FIRSTAPPEAR", aC.representative.sentNum);
         features.incrementCount("M-FIRSTAPPEAR", mC.representative.sentNum);
-        int docSize = document.predictedMentions.size();   // document size in # of sentences
+        int docSize = document.orderedMentions.size();   // document size in # of sentences
         features.incrementCount("A-FIRSTAPPEAR-NORMALIZED", aC.representative.sentNum/docSize);
         features.incrementCount("M-FIRSTAPPEAR-NORMALIZED", mC.representative.sentNum/docSize);
       }

@@ -84,7 +84,7 @@ open class Annotation : ArrayCoreMap {
         for (sentence in sentences) {
             val sentenceTokens = sentence[TokensAnnotation::class.java]
             tokens.addAll(sentenceTokens!!)
-            if (sentence.containsKey(TextAnnotation::class.java as Class<out TSMKey<String?>?>?)) {
+            if (sentence.containsKey(TextAnnotation::class.java as TSMKeyClass<String>)) {
                 text.append(sentence[TextAnnotation::class.java])
             } else {
                 // If there is no text in the sentence, fake it as best as we can

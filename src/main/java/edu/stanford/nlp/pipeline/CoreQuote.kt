@@ -32,7 +32,7 @@ class CoreQuote(private val document: CoreDocument, private val quoteCoreMap: Co
         sentences = ArrayList()
         val firstSentenceIndex = quoteCoreMap[SentenceBeginAnnotation::class.java]
         val lastSentenceIndex = quoteCoreMap[SentenceEndAnnotation::class.java]
-        for (currSentIndex in firstSentenceIndex..lastSentenceIndex) {
+        for (currSentIndex in firstSentenceIndex!!..lastSentenceIndex!!) {
             sentences.add(document.sentences()!![currSentIndex])
         }
         // set up the speaker info
@@ -56,7 +56,7 @@ class CoreQuote(private val document: CoreDocument, private val quoteCoreMap: Co
             val speakerCharOffsetBegin = speakerTokens!![0][CharacterOffsetBeginAnnotation::class.java]
             val speakerCharOffsetEnd =
                 speakerTokens!![speakerTokens!!.size - 1][CharacterOffsetEndAnnotation::class.java]
-            speakerCharOffsets = Pair(speakerCharOffsetBegin, speakerCharOffsetEnd)
+            speakerCharOffsets = Pair(speakerCharOffsetBegin!!, speakerCharOffsetEnd!!)
             for (candidateEntityMention in document.entityMentions()!!) {
                 val entityMentionOffsets = candidateEntityMention.charOffsets()
                 if (entityMentionOffsets.equals(speakerCharOffsets!!)) {
@@ -80,7 +80,7 @@ class CoreQuote(private val document: CoreDocument, private val quoteCoreMap: Co
             val canonicalSpeakerCharOffsetEnd =
                 canonicalSpeakerTokens!![canonicalSpeakerTokens!!.size - 1][CharacterOffsetEndAnnotation::class.java]
             canonicalSpeakerCharOffsets =
-                Pair(canonicalSpeakerCharOffsetBegin, canonicalSpeakerCharOffsetEnd)
+                Pair(canonicalSpeakerCharOffsetBegin!!, canonicalSpeakerCharOffsetEnd!!)
             for (candidateEntityMention in document.entityMentions()!!) {
                 val entityMentionOffsets = candidateEntityMention.charOffsets()
                 if (entityMentionOffsets.equals(canonicalSpeakerCharOffsets!!)) {
@@ -106,7 +106,7 @@ class CoreQuote(private val document: CoreDocument, private val quoteCoreMap: Co
 
     /** full text of the mention  */
     fun text(): String {
-        return quoteCoreMap[TextAnnotation::class.java]
+        return quoteCoreMap[TextAnnotation::class.java]!!
     }
 
     /** retrieve the CoreSentence's attached to this quote  */
@@ -158,7 +158,7 @@ class CoreQuote(private val document: CoreDocument, private val quoteCoreMap: Co
     fun quoteCharOffsets(): Pair<Int, Int> {
         val beginCharOffset = quoteCoreMap[CharacterOffsetBeginAnnotation::class.java]
         val endCharOffset = quoteCoreMap[CharacterOffsetEndAnnotation::class.java]
-        return Pair(beginCharOffset, endCharOffset)
+        return Pair(beginCharOffset!!, endCharOffset!!)
     }
 
     override fun toString(): String {

@@ -25,34 +25,34 @@ class CoreEntityMention(private val sentence: CoreSentence?, private val entityM
 
     /** full text of the mention  */
     fun text(): String {
-        return entityMentionCoreMap[TextAnnotation::class.java]
+        return entityMentionCoreMap[TextAnnotation::class.java]!!
     }
 
     /** the list of tokens for this entity mention  */
     fun tokens(): List<CoreLabel> {
-        return entityMentionCoreMap[TokensAnnotation::class.java]
+        return entityMentionCoreMap[TokensAnnotation::class.java]!!
     }
 
     /** char offsets of mention  */
     fun charOffsets(): Pair<Int, Int> {
         val beginCharOffset = entityMentionCoreMap[CharacterOffsetBeginAnnotation::class.java]
         val endCharOffset = entityMentionCoreMap[CharacterOffsetEndAnnotation::class.java]
-        return Pair(beginCharOffset, endCharOffset)
+        return Pair(beginCharOffset!!, endCharOffset!!)
     }
 
     /** return the type of the entity mention  */
     fun entityType(): String {
-        return entityMentionCoreMap[EntityTypeAnnotation::class.java]
+        return entityMentionCoreMap[EntityTypeAnnotation::class.java]!!
     }
 
     /** return a map of labels to confidences  */
     fun entityTypeConfidences(): Map<String, Double> {
-        return entityMentionCoreMap[NamedEntityTagProbsAnnotation::class.java]
+        return entityMentionCoreMap[NamedEntityTagProbsAnnotation::class.java]!!
     }
 
     /** return the entity this entity mention is linked to  */
     fun entity(): String {
-        return entityMentionCoreMap[WikipediaEntityAnnotation::class.java]
+        return entityMentionCoreMap[WikipediaEntityAnnotation::class.java]!!
     }
 
     /** return the canonical entity mention for this entity mention  */

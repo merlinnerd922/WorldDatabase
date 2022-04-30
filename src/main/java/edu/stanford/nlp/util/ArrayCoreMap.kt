@@ -17,7 +17,7 @@ import java.util.*
 import java.util.concurrent.ConcurrentHashMap
 import java.util.function.Consumer
 
-typealias TSMKeyClass<T> = Class<out TSMKey<T>?>?
+typealias TSMKeyClass<T> = Class<out TSMKey<T>>
 
 /**
  * Base implementation of [CoreMap] backed by two Java arrays.
@@ -42,7 +42,7 @@ typealias TSMKeyClass<T> = Class<out TSMKey<T>?>?
  */
 open class ArrayCoreMap : CoreMap /*, Serializable */ {
     /** Array of keys  */
-    private var keys: MutableList<TSMKeyClass<Any>>
+    private var keys: MutableList<TSMKeyClass<Any>?>
 
     /** Array of values  */
     private var values: MutableList<Any?>
@@ -97,7 +97,7 @@ open class ArrayCoreMap : CoreMap /*, Serializable */ {
     /**
      * {@inheritDoc}
      */
-    override fun <VALUE> get(key: Class<out TSMKey<VALUE>?>?): VALUE? {
+    override fun <VALUE> get(key: Class<out TSMKey<VALUE>>): VALUE? {
         for (i in 0 until size) {
             if (key == keys[i]) {
                 if (listener != null) {
@@ -112,12 +112,12 @@ open class ArrayCoreMap : CoreMap /*, Serializable */ {
     /**
      * {@inheritDoc}
      */
-    override fun <VALUE> set(key: TSMKeyClass<VALUE>, value: VALUE): VALUE? {
+    override fun <V> set(key: TSMKeyClass<V>, value: V): V? {
 
         // search array for existing value to replace
         for (i in 0 until size) {
             if (keys[i] == key) {
-                val rv: VALUE = values[i] as VALUE
+                val rv: V = values[i] as V
                 values[i] = value!!
                 return rv
             }
@@ -127,7 +127,7 @@ open class ArrayCoreMap : CoreMap /*, Serializable */ {
         // increment capacity of arrays if necessary
         if (size >= keys.size) {
             val capacity = keys.size + if (keys.size < 16) 4 else 8
-            val newKeys = mutableListOfNulls<Class<out TSMKey<Any>?>?>(capacity)
+            val newKeys = mutableListOfNulls<TSMKeyClass<Any>>(capacity)
             val newValues = mutableListOfNulls<Any?>(capacity)
             System.arraycopy(keys, 0, newKeys, 0, size)
             System.arraycopy(values, 0, newValues, 0, size)
@@ -147,7 +147,7 @@ open class ArrayCoreMap : CoreMap /*, Serializable */ {
      */
     override fun <VALUE> keySet(): Set<TSMKeyClass<VALUE>> {
         val hashSet = HashSet<TSMKeyClass<VALUE>>()
-        for (key: TSMKeyClass<Any> in keys) {
+        for (key: TSMKeyClass<Any>? in keys) {
             hashSet.add(key as TSMKeyClass<VALUE>);
         }
         return hashSet;
@@ -172,7 +172,7 @@ open class ArrayCoreMap : CoreMap /*, Serializable */ {
     /**
      * {@inheritDoc}
      */
-    override fun <VALUE> remove(key: Class<out TSMKey<VALUE>?>?): VALUE {
+    override fun <VALUE> remove(key: TSMKeyClass<VALUE>): VALUE {
         var rv: Any? = null
         for (i in 0 until size) {
             if (keys[i] == key) {
@@ -192,7 +192,7 @@ open class ArrayCoreMap : CoreMap /*, Serializable */ {
      * {@inheritDoc}
      * @param key
      */
-    override fun <VALUE> containsKey(key: Class<out TSMKey<VALUE?>?>?): Boolean {
+    override fun <VALUE> containsKey(key: TSMKeyClass<VALUE>): Boolean {
         for (i in 0 until size) {
             if (keys[i] == key) {
                 return true
@@ -533,8 +533,8 @@ open class ArrayCoreMap : CoreMap /*, Serializable */ {
         Redwood.startTrack(description)
 
         // sort keys by class name
-        val sortedKeys: ArrayList<Class<out TSMKey<Any>?>?> = ArrayList(keySet())
-        sortedKeys.sortWith(Comparator.comparing { obj: Class<out TSMKey<Any>?>? -> obj!!.canonicalName })
+        val sortedKeys: ArrayList<TSMKeyClass<Any>> = ArrayList(keySet())
+        sortedKeys.sortWith(Comparator.comparing { obj: TSMKeyClass<Any> -> obj!!.canonicalName })
 
         // log key/value pairs
         for (key in sortedKeys) {

@@ -85,7 +85,7 @@ public abstract class DeterministicCorefSieve extends Sieve  {
 
     Set<Mention> roleSet = document.roleSet;
     for (int sentJ = m.sentNum; sentJ >= 0; sentJ--) {
-      List<Mention> l = Sieve.getOrderedAntecedents(m, sentJ, mIdx, document.predictedMentions, dict);
+      List<Mention> l = Sieve.getOrderedAntecedents(m, sentJ, mIdx, document.orderedMentions, dict);
       if(maxSentDist != -1 && m.sentNum - sentJ > maxSentDist) continue;
 
       // TODO: do we need this?

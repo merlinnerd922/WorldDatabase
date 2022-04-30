@@ -161,7 +161,7 @@ public class FeatureExtractor {
     addNumeric(features, "sentence-words", m.sentenceWords.size());
     features.incrementCount("sentence-words=" + bin(m.sentenceWords.size()));
     features.incrementCount("mention-position", m.mentionNum
-        / (double) doc.predictedMentions.size());
+        / (double) doc.orderedMentions.size());
     features.incrementCount("sentence-position", m.sentNum / (double) doc.numSentences);
 
     // lexical features

@@ -115,7 +115,7 @@ public class HybridCorefPrinter  {
     // get dcoref antecedents ordering
     for(int sentDist=0 ; sentDist <= Math.min(sieve.maxSentDist, m.sentNum) ; sentDist++) {
       int sentIdx = m.sentNum-sentDist;
-      orderedAnts.addAll(Sieve.getOrderedAntecedents(m, sentIdx, mIdx, document.predictedMentions, dict));
+      orderedAnts.addAll(Sieve.getOrderedAntecedents(m, sentIdx, mIdx, document.orderedMentions, dict));
     }
     Map<Integer, Integer> orders = Generics.newHashMap();
     for(int i=0 ; i<orderedAnts.size() ; i++) {
@@ -187,7 +187,7 @@ public class HybridCorefPrinter  {
     if (gold) {
       allMentions = document.goldMentions;
     } else {
-      allMentions = document.predictedMentions;
+      allMentions = document.orderedMentions;
     }
     //    String filename = document.annotation.get()
 
@@ -259,7 +259,7 @@ public class HybridCorefPrinter  {
 //        sbLog.append(cl.word()).append("-").append(cl.get(UtteranceAnnotation.class)).append("-").append(cl.get(SpeakerAnnotation.class)).append(" ");
 //      }
 
-      for(Mention p : document.predictedMentions.get(i)) {
+      for(Mention p : document.orderedMentions.get(i)) {
         sbLog.append("\n");
         if(!p.hasTwin) sbLog.append("\tSPURIOUS");
         sbLog.append("\tmention: ").append(p.spanToString()).append("\t\t\theadword: ").append(p.headString).append("\tPOS: ").append(p.headWord.tag()).append("\tmentiontype: ").append(p.mentionType).append("\tnumber: ").append(p.number).append("\tgender: ").append(p.gender).append("\tanimacy: ").append(p.animacy).append("\tperson: ").append(p.person).append("\tNE: ").append(p.nerString);
@@ -304,7 +304,7 @@ public class HybridCorefPrinter  {
     // get dcoref antecedents ordering
     for(int sentDist=0 ; sentDist <= m.sentNum ; sentDist++) {
       int sentIdx = m.sentNum-sentDist;
-      orderedAnts.addAll(Sieve.getOrderedAntecedents(m, sentIdx, mIdx, document.predictedMentions, dict));
+      orderedAnts.addAll(Sieve.getOrderedAntecedents(m, sentIdx, mIdx, document.orderedMentions, dict));
     }
     Map<Integer, Integer> orders = Generics.newHashMap();
     for(int i=0 ; i<orderedAnts.size() ; i++) {
@@ -373,15 +373,15 @@ public class HybridCorefPrinter  {
       Document document = cs.docMaker.nextDoc();
       if(document==null) break;
 
-      for(int sentIdx=0 ; sentIdx < document.predictedMentions.size() ; sentIdx++) {
-        List<Mention> predictedInSent = document.predictedMentions.get(sentIdx);
+      for(int sentIdx = 0; sentIdx < document.orderedMentions.size() ; sentIdx++) {
+        List<Mention> predictedInSent = document.orderedMentions.get(sentIdx);
 
         for(int mIdx = 0 ; mIdx < predictedInSent.size() ; mIdx++) {
           Mention m = predictedInSent.get(mIdx);
 
           loop:
           for(int distance=0 ; distance <= sentIdx ; distance++) {
-            List<Mention> candidates = Sieve.getOrderedAntecedents(m, sentIdx-distance, mIdx, document.predictedMentions, cs.dictionaries);
+            List<Mention> candidates = Sieve.getOrderedAntecedents(m, sentIdx-distance, mIdx, document.orderedMentions, cs.dictionaries);
 
             for(Mention candidate : candidates) {
               if(candidate == m) continue;

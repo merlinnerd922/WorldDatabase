@@ -32,7 +32,7 @@ public class CorefPrinter {
 
   public static String printConllOutput(Document document, boolean gold, boolean filterSingletons,
                                         Map<Integer, CorefCluster> corefClusters) {
-    List<List<Mention>> orderedMentions = gold ? document.goldMentions : document.predictedMentions;
+    List<List<Mention>> orderedMentions = gold ? document.goldMentions : document.orderedMentions;
     if (filterSingletons) {
       orderedMentions = orderedMentions.stream().map(
           ml -> ml.stream().filter(m -> corefClusters.get(m.corefClusterID) != null &&

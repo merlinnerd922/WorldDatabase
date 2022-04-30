@@ -91,7 +91,7 @@ public abstract class Sieve implements Serializable  {
       sbLog.append(HybridCorefPrinter.printRawDoc(document, true, true));
     }
 
-    for(List<Mention> mentionsInSent : document.predictedMentions) {
+    for(List<Mention> mentionsInSent : document.orderedMentions) {
       for(int mIdx = 0 ; mIdx < mentionsInSent.size() ; mIdx++) {
         Mention m = mentionsInSent.get(mIdx);
         if(skipMentionType(m, props)) continue;

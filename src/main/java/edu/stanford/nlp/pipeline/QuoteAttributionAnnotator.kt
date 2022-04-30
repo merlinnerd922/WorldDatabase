@@ -233,7 +233,7 @@ class QuoteAttributionAnnotator(props: Properties) : Annotator {
     override fun annotate(annotation: Annotation) {
         // boolean perDocumentCharacterMap = false;
         if (buildCharacterMapPerAnnotation) {
-            if (annotation.containsKey<List<CoreMap>>(MentionsAnnotation::class.java as Class<out TSMKey<List<CoreMap>?>>)) {
+            if (annotation.containsKey<List<CoreMap>>(MentionsAnnotation::class.java as Class<out TSMKey<List<CoreMap>>>)) {
                 // Put all mentions from this key that are NER type PERSON into the characterMap
                 entityMentionsToCharacterMap(annotation)
             }

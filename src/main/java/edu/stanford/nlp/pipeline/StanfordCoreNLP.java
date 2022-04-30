@@ -678,7 +678,7 @@ public class StanfordCoreNLP extends AnnotationPipeline  {
   @Override
   public void annotate(Annotation annotation) {
     super.annotate(annotation);
-    List<CoreLabel> words = annotation.get(CoreAnnotations.TokensAnnotation.class);
+    List<? extends CoreLabel> words = annotation.get(CoreAnnotations.TokensAnnotation.class);
     if (words != null) {
       numWords += words.size();
     }
